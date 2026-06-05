@@ -1,0 +1,192 @@
+{
+  "date": "2026-06-05",
+  "source": "https://github.com/trending",
+  "total_repos": 14,
+  "top_10": [
+    {
+      "rank": 1,
+      "name": "chopratejas/headroom",
+      "url": "https://github.com/chopratejas/headroom",
+      "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+      "language": "Python",
+      "stars": 13169,
+      "forks": 843,
+      "stars_today": 3142,
+      "analysis": {
+        "what": "本地运行的 AI agent token 压缩工具，支持库、代理、MCP server 三种部署方式",
+        "why_hot": "LLM API 成本是开发者痛点，60-95% token 节省解决了真实成本问题",
+        "tech_stack": "Python 77% + Rust 18%，自研 Kompress-base 模型",
+        "use_case": "日常使用 AI coding agent 且希望降低成本的开发者",
+        "audience": "全栈开发者、AI 工程师",
+        "verdict": "必试工具，成本节省立竿见影"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "NousResearch/hermes-agent",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "description": "The agent that grows with you",
+      "language": "Python",
+      "stars": 181432,
+      "forks": 31137,
+      "stars_today": 1913,
+      "analysis": {
+        "what": "一个「越用越聪明」的 AI agent 框架，支持 200+ 模型",
+        "why_hot": "Nous Research 社区影响力 + 自我进化概念击中 agent 热潮",
+        "tech_stack": "Python 84% + TypeScript 12%，多 LLM provider 支持",
+        "use_case": "想要持续学习、可远程操控、不绑定特定模型的 AI 助手",
+        "audience": "AI 研究者、个人助手用户、多平台 bot 开发者",
+        "verdict": "目前最成熟的选择之一"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "affaan-m/ECC",
+      "url": "https://github.com/affaan-m/ECC",
+      "description": "The agent harness performance optimization system",
+      "language": "JavaScript",
+      "stars": 207567,
+      "forks": 31855,
+      "stars_today": 1750,
+      "analysis": {
+        "what": "完整的 AI agent 配置系统：63 subagent、251 skill、hook 自动化",
+        "why_hot": "v2.0.0-rc.1 发布，新增 Dashboard GUI 和多个技能包",
+        "tech_stack": "TypeScript/JavaScript，Node.js hooks，12+ 语言生态",
+        "use_case": "重度使用 AI coding agent 的开发者，希望获得标准化工作流",
+        "audience": "全栈开发者、DevOps 工程师",
+        "verdict": "统一多平台工作流的最佳选择"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "lfnovo/open-notebook",
+      "url": "https://github.com/lfnovo/open-notebook",
+      "description": "An Open Source implementation of Notebook LM with more flexibility and features",
+      "language": "TypeScript",
+      "stars": 25306,
+      "forks": 2931,
+      "stars_today": 212,
+      "analysis": {
+        "what": "开源的 AI 笔记本工具，对标 Google NotebookLM",
+        "why_hot": "NotebookLM 用户增长但功能受限，开源替代填补需求空白",
+        "tech_stack": "TypeScript，多 LLM provider 支持",
+        "use_case": "需要 AI 笔记本但担心数据隐私的用户",
+        "audience": "研究人员、学生、知识工作者",
+        "verdict": "值得尝试的开源替代"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber",
+      "description": "Talk to any LLM with hands-free voice interaction, voice interruption, and Live2D",
+      "language": "Python",
+      "stars": 9758,
+      "forks": 1166,
+      "stars_today": 581,
+      "analysis": {
+        "what": "本地运行的语音交互 AI，带 Live2D 虚拟形象",
+        "why_hot": "VTuber 和语音 AI 两个热门赛道的结合，趣味性极强",
+        "tech_stack": "Python，Live2D 渲染，本地 ASR/TTS",
+        "use_case": "VTuber 内容创作者、想要语音交互的个人用户",
+        "audience": "VTuber 社区、AI 爱好者",
+        "verdict": "目前最好的开源语音交互方案"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "jwasham/coding-interview-university",
+      "url": "https://github.com/jwasham/coding-interview-university",
+      "description": "A complete computer science study plan to become a software engineer.",
+      "language": null,
+      "stars": 349907,
+      "forks": 83249,
+      "stars_today": 632,
+      "analysis": {
+        "what": "详尽的 CS 学习清单，覆盖数据结构、算法、系统设计",
+        "why_hot": "经典资源持续增长，每年面试季都会有新一波关注度",
+        "tech_stack": "纯 Markdown 学习路线",
+        "use_case": "准备技术面试的工程师、想要系统补 CS 基础的转码者",
+        "audience": "求职者、学生、转行者",
+        "verdict": "350k star 的经典，面试准备终极指南"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "reconurge/flowsint",
+      "url": "https://github.com/reconurge/flowsint",
+      "description": "A modern platform for visual, flexible, and extensible graph-based investigations",
+      "language": "TypeScript",
+      "stars": 5390,
+      "forks": 649,
+      "stars_today": 308,
+      "analysis": {
+        "what": "为安全分析师设计的图谱调查工具",
+        "why_hot": "安全领域缺少好用的开源图分析工具",
+        "tech_stack": "TypeScript，图谱可视化",
+        "use_case": "安全事件调查、威胁情报分析",
+        "audience": "安全分析师、威胁猎人",
+        "verdict": "安全领域的专业工具"
+      }
+    },
+    {
+      "rank": 8,
+      "name": "openclaw/openclaw-windows-node",
+      "url": "https://github.com/openclaw/openclaw-windows-node",
+      "description": "Windows companion suite for OpenClaw",
+      "language": "C#",
+      "stars": 1411,
+      "forks": 171,
+      "stars_today": 411,
+      "analysis": {
+        "what": "OpenClaw 生态的 Windows 端组件",
+        "why_hot": "OpenClaw 社区增长迅速，Windows 支持是用户呼声最高的需求",
+        "tech_stack": "C#，Windows 原生开发",
+        "use_case": "Windows 用户使用 OpenClaw 生态",
+        "audience": "Windows 平台的 OpenClaw 用户",
+        "verdict": "Windows 用户必备"
+      }
+    },
+    {
+      "rank": 9,
+      "name": "PaddlePaddle/PaddleOCR",
+      "url": "https://github.com/PaddlePaddle/PaddleOCR",
+      "description": "Turn any PDF or image document into structured data for your AI",
+      "language": "Python",
+      "stars": 80103,
+      "forks": 10614,
+      "stars_today": 141,
+      "analysis": {
+        "what": "百度飞桨出品的 OCR 工具包，支持 100+ 语言",
+        "why_hot": "多模态 AI 热潮下，OCR 作为数据入口的重要性提升",
+        "tech_stack": "Python，PaddlePaddle 框架",
+        "use_case": "文档数字化、发票/合同处理、多语言 OCR",
+        "audience": "AI 应用开发者、文档处理工程师",
+        "verdict": "中文 OCR 的首选工具"
+      }
+    },
+    {
+      "rank": 10,
+      "name": "NVIDIA/cosmos",
+      "url": "https://github.com/NVIDIA/cosmos",
+      "description": "NVIDIA Cosmos is an open platform of world models, datasets, and tools",
+      "language": "Jupyter Notebook",
+      "stars": 9131,
+      "forks": 585,
+      "stars_today": 133,
+      "analysis": {
+        "what": "NVIDIA 官方的物理 AI 平台",
+        "why_hot": "NVIDIA 在物理 AI 领域的布局 + 具身智能热潮",
+        "tech_stack": "Jupyter Notebook，Python，NVIDIA GPU 加速",
+        "use_case": "机器人开发、自动驾驶仿真、物理世界 AI 研究",
+        "audience": "机器人工程师、自动驾驶研究者",
+        "verdict": "物理 AI 领域的必看项目"
+      }
+    }
+  ],
+  "stats": {
+    "total_stars_today": 8354,
+    "languages": ["Python", "JavaScript", "TypeScript", "C#", "Jupyter Notebook"],
+    "language_count": 5
+  }
+}
