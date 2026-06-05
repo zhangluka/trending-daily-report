@@ -7,612 +7,415 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #faf9f5;
-    --bg-warm: #f5f3ed;
-    --ink: #1a1918;
-    --ink-soft: #6b6966;
-    --ink-muted: #9e9b97;
-    --accent: #c4603c;
-    --accent-soft: rgba(196, 96, 60, 0.08);
-    --rule: #e8e6e1;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    line-height: 1.65;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 4rem 1.5rem 6rem;
-  }
-
-  /* Header */
-  .header {
-    margin-bottom: 4rem;
-  }
-
-  .header-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--ink-muted);
-    letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.5rem;
-  }
-
-  .header-meta {
-    font-size: 0.95rem;
-    color: var(--ink-soft);
-    margin-top: 0.5rem;
-  }
-
-  .header-meta span {
-    margin-right: 1.5rem;
-  }
-
-  .header-meta .mono {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-  }
-
-  /* Section label */
-  .section-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--ink-muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  /* Project card */
-  .project {
-    margin-bottom: 4rem;
-  }
-
-  .project-header {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .rank {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--ink-muted);
-    min-width: 1.5rem;
-  }
-
-  .project-name {
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
-  .project-name a {
-    color: var(--ink);
-    text-decoration: none;
-  }
-
-  .project-name a:hover {
-    color: var(--accent);
-  }
-
-  .project-lang {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--ink-muted);
-    background: var(--bg-warm);
-    padding: 0.15rem 0.5rem;
-    border-radius: 3px;
-  }
-
-  .project-stats {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--ink-soft);
-    margin-bottom: 0.75rem;
-    padding-left: 2.5rem;
-  }
-
-  .project-stats .today {
-    color: var(--accent);
-    font-weight: 500;
-  }
-
-  .project-desc {
-    font-size: 0.95rem;
-    color: var(--ink-soft);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    padding-left: 2.5rem;
-  }
-
-  /* Analysis rows */
-  .analysis {
-    padding-left: 2.5rem;
-  }
-
-  .analysis-row {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 0.75rem;
-    font-size: 0.9rem;
-    line-height: 1.55;
-  }
-
-  .analysis-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--ink-muted);
-    min-width: 5rem;
-    flex-shrink: 0;
-    padding-top: 0.15rem;
-  }
-
-  .analysis-value {
-    color: var(--ink);
-    flex: 1;
-  }
-
-  .project-divider {
-    border: none;
-    border-top: 1px solid var(--rule);
-    margin-top: 3rem;
-    margin-bottom: 0;
-  }
-
-  /* Footer */
-  .footer {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--rule);
-    font-size: 0.85rem;
-    color: var(--ink-muted);
-  }
-
-  .footer a {
-    color: var(--ink-soft);
-    text-decoration: none;
-  }
-
-  .footer a:hover {
-    color: var(--accent);
-  }
-
-  /* Mobile */
-  @media (max-width: 640px) {
-    .container {
-      padding: 2rem 1rem 4rem;
-    }
-
-    h1 {
-      font-size: 1.5rem;
-    }
-
-    .analysis-row {
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .analysis-label {
-      min-width: auto;
-    }
-
-    .project-stats,
-    .project-desc,
-    .analysis {
-      padding-left: 0;
-    }
-
-    .header-meta span {
-      display: block;
-      margin-right: 0;
-      margin-bottom: 0.25rem;
-    }
-  }
+:root {
+  --bg: #faf9f5;
+  --bg-warm: #f5f3ed;
+  --ink: #1a1918;
+  --ink-soft: #6b6966;
+  --ink-muted: #9e9b97;
+  --accent: #c4603c;
+  --accent-soft: rgba(196, 96, 60, 0.08);
+  --rule: #e8e6e1;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Geist Sans', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+header {
+  margin-bottom: 4rem;
+}
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+.meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.stat {
+  font-weight: 500;
+  color: var(--accent);
+}
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.project {
+  margin-bottom: 3.5rem;
+}
+.project:last-child {
+  margin-bottom: 0;
+}
+.project-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.rank {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  min-width: 1.5rem;
+}
+.project-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.project-name a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.project-name a:hover {
+  color: var(--accent);
+}
+.lang-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  background: var(--bg-warm);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+}
+.project-stats {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  margin-bottom: 0.75rem;
+  display: flex;
+  gap: 1rem;
+}
+.project-stats .today {
+  color: var(--accent);
+  font-weight: 500;
+}
+.project-desc {
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+.analysis {
+  background: var(--bg-warm);
+  padding: 1.25rem 1.5rem;
+  border-radius: 4px;
+}
+.analysis-row {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+}
+.analysis-row:last-child {
+  margin-bottom: 0;
+}
+.analysis-label {
+  font-weight: 500;
+  color: var(--ink-muted);
+  font-size: 0.8rem;
+}
+.analysis-value {
+  color: var(--ink-soft);
+}
+.verdict {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  font-weight: 500;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+footer a {
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+footer a:hover {
+  color: var(--accent);
+}
+@media (max-width: 600px) {
+  .container { padding: 2rem 1rem; }
+  h1 { font-size: 1.4rem; }
+  .analysis-row { grid-template-columns: 1fr; gap: 0.25rem; }
+  .meta { flex-direction: column; gap: 0.5rem; }
+}
 </style>
 </head>
 <body>
 <div class="container">
 
-  <header class="header">
-    <div class="header-label">github trending daily</div>
-    <h1>GitHub Trending Daily</h1>
-    <div class="header-meta">
-      <span>2026-06-04 · Top 10 精选</span>
-      <span class="mono">总增星 13,145</span>
-      <span class="mono">语言 7 种</span>
-    </div>
-  </header>
+<header>
+  <h1>GitHub Trending Daily</h1>
+  <div class="meta">
+    <span>2026-06-04 · Top 10 精选</span>
+    <span>总增星 <span class="stat">+9,968</span></span>
+    <span>语言 <span class="stat">6 种</span></span>
+    <span>从 <span class="stat">14</span> 个项目中筛选</span>
+  </div>
+</header>
 
-  <!-- TOP 3 -->
-  <div class="section-label">Top 3</div>
+<!-- TOP 3 -->
+<div class="section-label">Top 3</div>
 
-  <!-- #1 headroom -->
-  <article class="project">
-    <div class="project-header">
-      <span class="rank">01</span>
-      <span class="project-name"><a href="https://github.com/chopratejas/headroom" target="_blank">chopratejas/headroom</a></span>
-      <span class="project-lang">Python</span>
-    </div>
-    <div class="project-stats">
-      <span class="today">+3,530 today</span> · 10,000 stars · 659 forks
-    </div>
-    <p class="project-desc">LLM 上下文压缩层，在数据送入大模型前自动压缩工具输出、日志、文件和 RAG 块，减少 60-95% token 消耗，答案质量不变。</p>
-    <div class="analysis">
-      <div class="analysis-row">
-        <span class="analysis-label">为什么火</span>
-        <span class="analysis-value">AI agent 日益普及，token 成本成为核心痛点。Headroom 提供通用压缩方案，支持 library/proxy/MCP 三种接入方式，兼容 Claude Code、Codex、Cursor 等主流 agent。v0.22.4 活跃发布，152 个 release 说明迭代极快。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">技术栈</span>
-        <span class="analysis-value">Python (76.8%) + Rust (18.4%) + TypeScript，自研 Kompress-base 模型 (HuggingFace)，6 种压缩算法，可逆压缩 (CCR)。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">适用场景</span>
-        <span class="analysis-value">每天使用 AI coding agent 的开发者，尤其是跨多个 agent 工作、需要节省 token 费用或共享跨 agent 记忆的团队。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">受众</span>
-        <span class="analysis-value">AI 工具重度用户、agent 开发者、需要控制 LLM 成本的团队。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">结论</span>
-        <span class="analysis-value">如果你每天用 Claude Code / Cursor 写代码，这是目前最实用的 token 节省工具，必试。</span>
-      </div>
-    </div>
-    <hr class="project-divider">
-  </article>
+<div class="project">
+  <div class="project-header">
+    <span class="rank">#1</span>
+    <span class="project-name"><a href="https://github.com/chopratejas/headroom" target="_blank">chopratejas/headroom</a></span>
+    <span class="lang-tag">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+3,142 today</span>
+    <span>12,709 stars</span>
+    <span>821 forks</span>
+  </div>
+  <p class="project-desc">压缩工具输出、日志、文件和 RAG chunks，在它们到达 LLM 之前。减少 60-95% tokens，答案不变。支持库、代理、MCP 服务器。</p>
+  <div class="analysis">
+    <div class="analysis-row"><span class="analysis-label">做什么</span><span class="analysis-value">在 LLM 调用前自动压缩输入内容，减少 token 消耗。支持 RAG 场景下的 chunks 压缩，对结果质量无损。</span></div>
+    <div class="analysis-row"><span class="analysis-label">为什么火</span><span class="analysis-value">LLM 成本是所有 AI 应用的痛点。这个工具直接解决"token 太贵"问题，且声称 60-95% 压缩率无损，实用性极强。</span></div>
+    <div class="analysis-row"><span class="analysis-label">技术栈</span><span class="analysis-value">Python，支持作为 library、proxy 或 MCP server 集成。</span></div>
+    <div class="analysis-row"><span class="analysis-label">适用场景</span><span class="analysis-value">任何使用 LLM API 的应用——RAG 系统、Agent 框架、批量处理任务。</span></div>
+    <div class="analysis-row"><span class="analysis-label">受众</span><span class="analysis-value">AI/ML 工程师、正在做 LLM 应用的开发者。</span></div>
+    <div class="verdict">如果你在做 LLM 应用且 token 成本是痛点，这是必试工具。</div>
+  </div>
+</div>
 
-  <!-- #2 ECC -->
-  <article class="project">
-    <div class="project-header">
-      <span class="rank">02</span>
-      <span class="project-name"><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></span>
-      <span class="project-lang">JavaScript</span>
-    </div>
-    <div class="project-stats">
-      <span class="today">+2,141 today</span> · 205,857 stars · 31,609 forks
-    </div>
-    <p class="project-desc">Agent harness 性能优化系统，为 Claude Code、Codex、Cursor 等 agent 提供 skills、instincts、memory 和安全机制。</p>
-    <div class="analysis">
-      <div class="analysis-row">
-        <span class="analysis-label">为什么火</span>
-        <span class="analysis-value">20.5 万星的超级项目，今天仍增长 2000+，agent 生态仍在爆发期。ECC 提供标准化的 agent 优化框架，降低了自定义 agent 行为的门槛。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">技术栈</span>
-        <span class="analysis-value">JavaScript 为主，面向多 agent 平台（Claude Code、Codex、Opencode、Cursor）。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">适用场景</span>
-        <span class="analysis-value">想让自己的 coding agent 更聪明、更安全、更有记忆的开发者。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">受众</span>
-        <span class="analysis-value">全栈开发者、AI 工具链开发者。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">结论</span>
-        <span class="analysis-value">20 万星级项目，agent 时代的基础设施级工具，值得关注。</span>
-      </div>
-    </div>
-    <hr class="project-divider">
-  </article>
+<div class="project">
+  <div class="project-header">
+    <span class="rank">#2</span>
+    <span class="project-name"><a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/hermes-agent</a></span>
+    <span class="lang-tag">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+1,913 today</span>
+    <span>181,136 stars</span>
+    <span>31,078 forks</span>
+  </div>
+  <p class="project-desc">The agent that grows with you. NousResearch 出品的 AI Agent 框架。</p>
+  <div class="analysis">
+    <div class="analysis-row"><span class="analysis-label">做什么</span><span class="analysis-value">一个可成长的 AI Agent 框架，支持记忆、技能学习和自我进化。</span></div>
+    <div class="analysis-row"><span class="analysis-label">为什么火</span><span class="analysis-value">NousResearch 在开源 AI 社区影响力极大（Hermes 系列模型），181K 星说明社区信任度极高。Agent 赛道持续火热。</span></div>
+    <div class="analysis-row"><span class="analysis-label">技术栈</span><span class="analysis-value">Python，可能集成 Hermes 系列模型。</span></div>
+    <div class="analysis-row"><span class="analysis-label">适用场景</span><span class="analysis-value">需要构建可自主学习、持续进化的 AI Agent 系统。</span></div>
+    <div class="analysis-row"><span class="analysis-label">受众</span><span class="analysis-value">AI Agent 开发者、对 self-improving AI 感兴趣的研究者。</span></div>
+    <div class="verdict">Agent 赛道的重量级项目，值得关注其架构设计。</div>
+  </div>
+</div>
 
-  <!-- #3 markitdown -->
-  <article class="project">
-    <div class="project-header">
-      <span class="rank">03</span>
-      <span class="project-name"><a href="https://github.com/microsoft/markitdown" target="_blank">microsoft/markitdown</a></span>
-      <span class="project-lang">Python</span>
-    </div>
-    <div class="project-stats">
-      <span class="today">+1,984 today</span> · 142,982 stars · 9,771 forks
-    </div>
-    <p class="project-desc">微软出品的文件转 Markdown 工具，支持 PDF、Word、PowerPoint、Excel、图片、音频等格式，为 LLM 和文本分析管线设计。</p>
-    <div class="analysis">
-      <div class="analysis-row">
-        <span class="analysis-label">为什么火</span>
-        <span class="analysis-value">LLM 时代 Markdown 是最通用的数据交换格式。v0.1.6 新增 Azure Content Understanding 支持（视频/音频），插件生态也在成长。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">技术栈</span>
-        <span class="analysis-value">Python (99.7%)，可选 Azure Document Intelligence / Content Understanding 集成，支持 OCR、音频转录、YouTube 字幕。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">适用场景</span>
-        <span class="analysis-value">需要把各种格式的文档转换为 LLM 可处理文本的开发者，RAG 管线的前置数据处理。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">受众</span>
-        <span class="analysis-value">RAG 开发者、数据工程师、AI 应用开发者。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">结论</span>
-        <span class="analysis-value">14 万星的微软官方工具，做 RAG 或文档处理的必备依赖。</span>
-      </div>
-    </div>
-    <hr class="project-divider">
-  </article>
+<div class="project">
+  <div class="project-header">
+    <span class="rank">#3</span>
+    <span class="project-name"><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></span>
+    <span class="lang-tag">JavaScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+1,750 today</span>
+    <span>207,338 stars</span>
+    <span>31,831 forks</span>
+  </div>
+  <p class="project-desc">Agent harness 性能优化系统。Skills、instincts、memory、security，以及面向 Claude Code、Codex、Cursor 等的 research-first 开发方法。</p>
+  <div class="analysis">
+    <div class="analysis-row"><span class="analysis-label">做什么</span><span class="analysis-value">为各种 AI coding agent（Claude Code、Codex、Cursor 等）提供性能优化框架，包含技能系统、记忆管理和安全机制。</span></div>
+    <div class="analysis-row"><span class="analysis-label">为什么火</span><span class="analysis-value">207K 星的超级项目。AI coding 工具爆发期，所有人都在找"如何让 AI agent 更好用"的方法论。</span></div>
+    <div class="analysis-row"><span class="analysis-label">技术栈</span><span class="analysis-value">JavaScript，跨平台 agent 适配。</span></div>
+    <div class="analysis-row"><span class="analysis-label">适用场景</span><span class="analysis-value">重度使用 AI coding 工具的开发者，想优化 agent 效率和安全性。</span></div>
+    <div class="analysis-row"><span class="analysis-label">受众</span><span class="analysis-value">全栈开发者、AI 工具重度用户。</span></div>
+    <div class="verdict">如果你每天都在用 Claude Code 或 Cursor，这个项目的方法论值得研究。</div>
+  </div>
+</div>
 
-  <!-- TRENDING -->
-  <div class="section-label">Trending</div>
+<!-- TRENDING -->
+<div class="section-label">Trending</div>
 
-  <!-- #4 hermes-agent -->
-  <article class="project">
-    <div class="project-header">
-      <span class="rank">04</span>
-      <span class="project-name"><a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/hermes-agent</a></span>
-      <span class="project-lang">Python</span>
-    </div>
-    <div class="project-stats">
-      <span class="today">+1,735 today</span> · 179,275 stars · 30,707 forks
-    </div>
-    <p class="project-desc">自我进化 AI agent，内置学习循环：从经验中自动创建 skill、使用中自我改进、跨 session 记忆、用户画像建模。支持 10+ 消息平台。</p>
-    <div class="analysis">
-      <div class="analysis-row">
-        <span class="analysis-label">为什么火</span>
-        <span class="analysis-value">Hermes 从模型品牌扩展到 agent 平台，填补了「永远在线、自我进化」的 agent 空白。支持任何 LLM 提供商，可以跑在 $5 VPS 上。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">技术栈</span>
-        <span class="analysis-value">Python (84.4%) + TypeScript (11.9%)，6 种 terminal 后端（本地/Docker/SSH/Singularity/Modal/Daytona），内置 cron 调度器。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">适用场景</span>
-        <span class="analysis-value">想要一个跨平台、有记忆、能自我进化的私人 AI 助手的用户。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">受众</span>
-        <span class="analysis-value">AI 爱好者、独立开发者、想要 self-hosted agent 的技术用户。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">结论</span>
-        <span class="analysis-value">如果你厌倦了每次重开 session 都要重新解释自己，Hermes 是目前最好的自托管 agent 选择。</span>
-      </div>
-    </div>
-    <hr class="project-divider">
-  </article>
+<div class="project">
+  <div class="project-header">
+    <span class="rank">#4</span>
+    <span class="project-name"><a href="https://github.com/openclaw/openclaw-windows-node" target="_blank">openclaw/openclaw-windows-node</a></span>
+    <span class="lang-tag">C#</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+411 today</span>
+    <span>1,356 stars</span>
+    <span>170 forks</span>
+  </div>
+  <p class="project-desc">OpenClaw 的 Windows 配套套件——系统托盘应用、共享库、Node 和 PowerToys Command Palette 扩展。</p>
+  <div class="analysis">
+    <div class="analysis-row"><span class="analysis-label">做什么</span><span class="analysis-value">OpenClaw 的 Windows 端实现，提供系统托盘、命令面板等桌面集成能力。</span></div>
+    <div class="analysis-row"><span class="analysis-label">为什么火</span><span class="analysis-value">OpenClaw 生态扩展，Windows 用户终于有了原生支持。411 星/天说明需求真实。</span></div>
+    <div class="analysis-row"><span class="analysis-label">技术栈</span><span class="analysis-value">C#，.NET 生态。</span></div>
+    <div class="analysis-row"><span class="analysis-label">适用场景</span><span class="analysis-value">Windows 上使用 OpenClaw 的开发者。</span></div>
+    <div class="analysis-row"><span class="analysis-label">受众</span><span class="analysis-value">Windows 开发者、OpenClaw 用户。</span></div>
+    <div class="verdict">OpenClaw 生态补充，已在用 OpenClaw 的 Windows 用户可关注。</div>
+  </div>
+</div>
 
-  <!-- #5 Scrapling -->
-  <article class="project">
-    <div class="project-header">
-      <span class="rank">05</span>
-      <span class="project-name"><a href="https://github.com/D4Vinci/Scrapling" target="_blank">D4Vinci/Scrapling</a></span>
-      <span class="project-lang">Python</span>
-    </div>
-    <div class="project-stats">
-      <span class="today">+1,067 today</span> · 60,342 stars · 5,818 forks
-    </div>
-    <p class="project-desc">自适应 Web 爬虫框架，解析器能从网站变化中学习、自动重新定位元素。内置反 Cloudflare 能力，支持 MCP server 集成。</p>
-    <div class="analysis">
-      <div class="analysis-row">
-        <span class="analysis-label">为什么火</span>
-        <span class="analysis-value">AI agent 需要浏览器数据，Scrapling 提供了 MCP server 集成。解析器比 BeautifulSoup 快 784 倍，自适应能力解决了爬虫最大的维护痛点。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">技术栈</span>
-        <span class="analysis-value">Python (99.9%)，基于 Scrapy/Parsel API 风格，支持 Playwright 浏览器自动化、TLS 指纹伪装、代理轮换。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">适用场景</span>
-        <span class="analysis-value">需要爬取动态网站、对抗反爬机制、或为 AI agent 提供网页数据的开发者。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">受众</span>
-        <span class="analysis-value">数据工程师、爬虫开发者、AI agent 开发者。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">结论</span>
-        <span class="analysis-value">如果你还在用 BeautifulSoup 手动维护 CSS 选择器，Scrapling 的自适应能力会让你省下大量时间。</span>
-      </div>
-    </div>
-    <hr class="project-divider">
-  </article>
+<div class="project">
+  <div class="project-header">
+    <span class="rank">#5</span>
+    <span class="project-name"><a href="https://github.com/jwasham/coding-interview-university" target="_blank">jwasham/coding-interview-university</a></span>
+    <span class="lang-tag">—</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+632 today</span>
+    <span>349,774 stars</span>
+    <span>83,238 forks</span>
+  </div>
+  <p class="project-desc">一个完整的计算机科学学习计划，助你成为软件工程师。</p>
+  <div class="analysis">
+    <div class="analysis-row"><span class="analysis-label">做什么</span><span class="analysis-value">GitHub 上最火的面试准备资源之一。涵盖数据结构、算法、系统设计等完整知识体系。</span></div>
+    <div class="analysis-row"><span class="analysis-label">为什么火</span><span class="analysis-value">常青内容，每年求职季都会重新获得关注。349K 星证明其长期价值。</span></div>
+    <div class="analysis-row"><span class="analysis-label">技术栈</span><span class="analysis-value">纯文档/学习计划，无代码依赖。</span></div>
+    <div class="analysis-row"><span class="analysis-label">适用场景</span><span class="analysis-value">准备技术面试、系统性补 CS 基础。</span></div>
+    <div class="analysis-row"><span class="analysis-label">受众</span><span class="analysis-value">求职者、转码人群、想补基础的开发者。</span></div>
+    <div class="verdict">经典永不过时。如果你或身边人要准备面试，收藏这个仓库。</div>
+  </div>
+</div>
 
-  <!-- #6 hermes-webui -->
-  <article class="project">
-    <div class="project-header">
-      <span class="rank">06</span>
-      <span class="project-name"><a href="https://github.com/nesquena/hermes-webui" target="_blank">nesquena/hermes-webui</a></span>
-      <span class="project-lang">Python</span>
-    </div>
-    <div class="project-stats">
-      <span class="today">+719 today</span> · 13,133 stars · 1,596 forks
-    </div>
-    <p class="project-desc">Hermes Agent 的 Web UI 界面，三栏布局，支持移动端、语音输入、多主题、workspace 文件浏览，与 CLI 功能完全对等。</p>
-    <div class="analysis">
-      <div class="analysis-row">
-        <span class="analysis-label">为什么火</span>
-        <span class="analysis-value">Hermes Agent 用户量增长带动 WebUI 需求。无构建步骤、纯 Python + vanilla JS 的极简架构吸引了 190+ contributors，570 个 release 说明迭代极快。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">技术栈</span>
-        <span class="analysis-value">Python (73.6%) + JavaScript (21.4%)，标准库 HTTP 服务器，无 npm/webpack 依赖，支持 Docker 部署。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">适用场景</span>
-        <span class="analysis-value">Hermes Agent 用户需要从浏览器或手机访问 agent 的场景。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">受众</span>
-        <span class="analysis-value">Hermes Agent 用户、想要 self-hosted AI 聊天界面的开发者。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">结论</span>
-        <span class="analysis-value">Hermes Agent 的最佳伴侣，如果你在用 Hermes，这个 WebUI 几乎是必装的。</span>
-      </div>
-    </div>
-    <hr class="project-divider">
-  </article>
+<div class="project">
+  <div class="project-header">
+    <span class="rank">#6</span>
+    <span class="project-name"><a href="https://github.com/Open-LLM-VTuber/Open-LLM-VTuber" target="_blank">Open-LLM-VTuber/Open-LLM-VTuber</a></span>
+    <span class="lang-tag">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+581 today</span>
+    <span>9,656 stars</span>
+    <span>1,156 forks</span>
+  </div>
+  <p class="project-desc">用免提语音交互与任何 LLM 对话，支持语音打断和 Live2D 虚拟形象，本地运行跨平台。</p>
+  <div class="analysis">
+    <div class="analysis-row"><span class="analysis-label">做什么</span><span class="analysis-value">让 LLM 具备语音交互能力 + Live2D 虚拟形象。支持语音打断（说话时可随时插嘴），完全本地运行。</span></div>
+    <div class="analysis-row"><span class="analysis-label">为什么火</span><span class="analysis-value">语音交互 + 虚拟形象是 AI 交互的下一个前沿。Live2D 在二次元文化圈有巨大受众。</span></div>
+    <div class="analysis-row"><span class="analysis-label">技术栈</span><span class="analysis-value">Python，Live2D，本地 LLM 推理。</span></div>
+    <div class="analysis-row"><span class="analysis-label">适用场景</span><span class="analysis-value">做 AI 虚拟助手、VTuber 内容创作、语音交互原型验证。</span></div>
+    <div class="analysis-row"><span class="analysis-label">受众</span><span class="analysis-value">VTuber 创作者、AI 语音交互开发者、二次元爱好者。</span></div>
+    <div class="verdict">有趣的项目，如果你对 AI 语音交互或 VTuber 感兴趣，值得试玩。</div>
+  </div>
+</div>
 
-  <!-- #7 Open-LLM-VTuber -->
-  <article class="project">
-    <div class="project-header">
-      <span class="rank">07</span>
-      <span class="project-name"><a href="https://github.com/Open-LLM-VTuber/Open-LLM-VTuber" target="_blank">Open-LLM-VTuber/Open-LLM-VTuber</a></span>
-      <span class="project-lang">Python</span>
-    </div>
-    <div class="project-stats">
-      <span class="today">+693 today</span> · 9,011 stars · 1,109 forks
-    </div>
-    <p class="project-desc">语音交互 AI 伴侣，支持实时语音对话、视觉感知、Live2D 虚拟形象，所有功能可完全离线运行。支持桌面宠物模式。</p>
-    <div class="analysis">
-      <div class="analysis-row">
-        <span class="analysis-label">为什么火</span>
-        <span class="analysis-value">v2.0 重写计划引发社区关注。在 AI 伴侣/虚拟角色领域有独特定位，支持几乎所有主流 LLM/ASR/TTS 后端。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">技术栈</span>
-        <span class="analysis-value">Python (96.6%)，Live2D SDK，支持 Ollama/OpenAI/Gemini/Claude 等 LLM，sherpa-onnx/Faster-Whisper 等 ASR，多种 TTS 引擎。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">适用场景</span>
-        <span class="analysis-value">想要一个有视觉、有声音、有形象的本地 AI 伴侣的用户。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">受众</span>
-        <span class="analysis-value">AI 爱好者、VTuber 社区、二次元用户、想要本地化 AI 伴侣的技术用户。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">结论</span>
-        <span class="analysis-value">本地化 AI 伴侣的最佳开源方案，如果你对虚拟角色感兴趣，值得深入体验。</span>
-      </div>
-    </div>
-    <hr class="project-divider">
-  </article>
+<div class="project">
+  <div class="project-header">
+    <span class="rank">#7</span>
+    <span class="project-name"><a href="https://github.com/aquasecurity/trivy" target="_blank">aquasecurity/trivy</a></span>
+    <span class="lang-tag">Go</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+255 today</span>
+    <span>35,680 stars</span>
+    <span>431 forks</span>
+  </div>
+  <p class="project-desc">发现容器、Kubernetes、代码仓库、云环境中的漏洞、错误配置、机密信息和 SBOM。</p>
+  <div class="analysis">
+    <div class="analysis-row"><span class="analysis-label">做什么</span><span class="analysis-value">全方位安全扫描工具——容器镜像、K8s 集群、代码仓库、云配置，一站式安全检测。</span></div>
+    <div class="analysis-row"><span class="analysis-label">为什么火</span><span class="analysis-value">老牌安全工具，持续迭代。供应链安全话题持续升温，Trivy 是事实标准之一。</span></div>
+    <div class="analysis-row"><span class="analysis-label">技术栈</span><span class="analysis-value">Go，高性能扫描引擎。</span></div>
+    <div class="analysis-row"><span class="analysis-label">适用场景</span><span class="analysis-value">CI/CD 安全扫描、容器安全审计、供应链安全合规。</span></div>
+    <div class="analysis-row"><span class="analysis-label">受众</span><span class="analysis-value">DevOps、安全工程师、SRE。</span></div>
+    <div class="verdict">如果你做容器化部署，Trivy 是必装工具，没有之一。</div>
+  </div>
+</div>
 
-  <!-- #8 supermemory -->
-  <article class="project">
-    <div class="project-header">
-      <span class="rank">08</span>
-      <span class="project-name"><a href="https://github.com/supermemoryai/supermemory" target="_blank">supermemoryai/supermemory</a></span>
-      <span class="project-lang">TypeScript</span>
-    </div>
-    <div class="project-stats">
-      <span class="today">+600 today</span> · 25,214 stars · 2,214 forks
-    </div>
-    <p class="project-desc">AI 时代的记忆引擎，自动从对话中提取事实、构建用户画像、处理知识更新和矛盾。三大 AI 记忆基准测试均排名第一。</p>
-    <div class="analysis">
-      <div class="analysis-row">
-        <span class="analysis-label">为什么火</span>
-        <span class="analysis-value">AI agent 的核心瓶颈之一是「记忆」。Supermemory 提供完整上下文栈（记忆 + RAG + 用户画像 + 连接器 + 文件处理），一个 API 搞定。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">技术栈</span>
-        <span class="analysis-value">TypeScript (63.4%) + MDX (29.5%) + Python (6.2%)，基于 Cloudflare Workers 架构。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">适用场景</span>
-        <span class="analysis-value">需要为 AI agent/应用添加持久化记忆能力的开发者。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">受众</span>
-        <span class="analysis-value">AI 应用开发者、agent 构建者。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">结论</span>
-        <span class="analysis-value">如果你的 AI 应用还在用简单的 RAG，Supermemory 的记忆引擎会让你的用户体验质变。</span>
-      </div>
-    </div>
-    <hr class="project-divider">
-  </article>
+<div class="project">
+  <div class="project-header">
+    <span class="rank">#8</span>
+    <span class="project-name"><a href="https://github.com/reconurge/flowsint" target="_blank">reconurge/flowsint</a></span>
+    <span class="lang-tag">TypeScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+308 today</span>
+    <span>5,330 stars</span>
+    <span>641 forks</span>
+  </div>
+  <p class="project-desc">一个现代化的可视化、灵活、可扩展的基于图形的调查平台。面向网络安全分析师和调查人员。</p>
+  <div class="analysis">
+    <div class="analysis-row"><span class="analysis-label">做什么</span><span class="analysis-value">用可视化图谱方式做网络安全调查——把分散的线索、IP、域名、漏洞关联成网络图。</span></div>
+    <div class="analysis-row"><span class="analysis-label">为什么火</span><span class="analysis-value">安全调查工具一直是刚需，但现有工具要么太重（如 Maltego）要么太简陋。flowsint 填补了中间地带。</span></div>
+    <div class="analysis-row"><span class="analysis-label">技术栈</span><span class="analysis-value">TypeScript，图可视化引擎。</span></div>
+    <div class="analysis-row"><span class="analysis-label">适用场景</span><span class="analysis-value">安全事件调查、威胁情报分析、数字取证。</span></div>
+    <div class="analysis-row"><span class="analysis-label">受众</span><span class="analysis-value">安全分析师、渗透测试人员、SOC 团队。</span></div>
+    <div class="verdict">安全调查领域的可视化新选择，如果你做安全运营可以试试。</div>
+  </div>
+</div>
 
-  <!-- #9 opendataloader-pdf -->
-  <article class="project">
-    <div class="project-header">
-      <span class="rank">09</span>
-      <span class="project-name"><a href="https://github.com/opendataloader-project/opendataloader-pdf" target="_blank">opendataloader-project/opendataloader-pdf</a></span>
-      <span class="project-lang">Java</span>
-    </div>
-    <div class="project-stats">
-      <span class="today">+570 today</span> · 23,348 stars · 2,185 forks
-    </div>
-    <p class="project-desc">AI 就绪的 PDF 解析器，混合模式基准测试排名第一（0.907），支持 PDF 转 Markdown/JSON/HTML，带边界框和语义类型标注。</p>
-    <div class="analysis">
-      <div class="analysis-row">
-        <span class="analysis-label">为什么火</span>
-        <span class="analysis-value">RAG 管线中 PDF 解析是最大痛点。在准确性上超越 docling、marker、unstructured 等竞品，且无需 GPU。无障碍自动化是新的合规需求驱动。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">技术栈</span>
-        <span class="analysis-value">Java (85.6%) + Python (9.4%) + TypeScript (2.7%)，本地模式纯 CPU，混合模式可选 AI 后端。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">适用场景</span>
-        <span class="analysis-value">需要高精度 PDF 解析的 RAG 管线，或需要 PDF 无障碍合规的企业。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">受众</span>
-        <span class="analysis-value">RAG 开发者、文档处理工程师、需要无障碍合规的企业。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">结论</span>
-        <span class="analysis-value">PDF 解析的新标杆，如果你的 RAG 管线还在用 PyMuPDF4LLM，该换了。</span>
-      </div>
-    </div>
-    <hr class="project-divider">
-  </article>
+<div class="project">
+  <div class="project-header">
+    <span class="rank">#9</span>
+    <span class="project-name"><a href="https://github.com/lfnovo/open-notebook" target="_blank">lfnovo/open-notebook</a></span>
+    <span class="lang-tag">TypeScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+212 today</span>
+    <span>25,132 stars</span>
+    <span>2,922 forks</span>
+  </div>
+  <p class="project-desc">Notebook LM 的开源实现，更多灵活性和功能。</p>
+  <div class="analysis">
+    <div class="analysis-row"><span class="analysis-label">做什么</span><span class="analysis-value">Google Notebook LM 的开源替代品。把文档、笔记、音频等素材喂给 AI，自动生成摘要、问答、播客等。</span></div>
+    <div class="analysis-row"><span class="analysis-label">为什么火</span><span class="analysis-value">Google Notebook LM 大火但闭源。开源替代品满足了数据隐私需求和自定义需求。</span></div>
+    <div class="analysis-row"><span class="analysis-label">技术栈</span><span class="analysis-value">TypeScript，支持多种 LLM 后端。</span></div>
+    <div class="analysis-row"><span class="analysis-label">适用场景</span><span class="analysis-value">个人知识管理、团队文档协作、学术研究。</span></div>
+    <div class="analysis-row"><span class="analysis-label">受众</span><span class="analysis-value">知识工作者、研究者、Notebook LM 用户想自托管的。</span></div>
+    <div class="verdict">Notebook LM 的开源替代，注重数据隐私的团队值得评估。</div>
+  </div>
+</div>
 
-  <!-- #10 airllm -->
-  <article class="project">
-    <div class="project-header">
-      <span class="rank">10</span>
-      <span class="project-name"><a href="https://github.com/lyogavin/airllm" target="_blank">lyogavin/airllm</a></span>
-      <span class="project-lang">Jupyter Notebook</span>
-    </div>
-    <div class="project-stats">
-      <span class="today">+208 today</span> · 18,953 stars · 2,075 forks
-    </div>
-    <p class="project-desc">通过逐层加载技术，让 70B 大模型在单张 4GB 显卡上跑推理，405B Llama3.1 在 8GB 显存上运行，无需量化/蒸馏/剪枝。</p>
-    <div class="analysis">
-      <div class="analysis-row">
-        <span class="analysis-label">为什么火</span>
-        <span class="analysis-value">大模型推理的显存门槛是最大痛点。逐层 offloading 方案让用户可以用消费级硬件跑大模型，支持 4bit/8bit 压缩进一步加速 3 倍。支持 MacOS (Apple Silicon)。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">技术栈</span>
-        <span class="analysis-value">Jupyter Notebook (96.2%) + Python (3.7%)，基于 transformers，支持 Llama/Qwen/ChatGLM/Mistral 等主流模型。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">适用场景</span>
-        <span class="analysis-value">显存有限但想跑大模型推理的个人开发者和研究者。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">受众</span>
-        <span class="analysis-value">ML 研究者、个人开发者、没有高端 GPU 的用户。</span>
-      </div>
-      <div class="analysis-row">
-        <span class="analysis-label">结论</span>
-        <span class="analysis-value">4GB 显卡跑 70B 模型，虽然推理速度慢，但对于个人实验和学习来说是极具吸引力的方案。</span>
-      </div>
-    </div>
-  </article>
+<div class="project">
+  <div class="project-header">
+    <span class="rank">#10</span>
+    <span class="project-name"><a href="https://github.com/github/spec-kit" target="_blank">github/spec-kit</a></span>
+    <span class="lang-tag">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+321 today</span>
+    <span>108,623 stars</span>
+    <span>9,602 forks</span>
+  </div>
+  <p class="project-desc">GitHub 官方出品的 Spec-Driven Development 工具包，帮助你开始规范驱动开发。</p>
+  <div class="analysis">
+    <div class="analysis-row"><span class="analysis-label">做什么</span><span class="analysis-value">GitHub 官方工具，用"先写规范再写代码"的方式驱动开发流程。规范即文档，代码从规范生成。</span></div>
+    <div class="analysis-row"><span class="analysis-label">为什么火</span><span class="analysis-value">GitHub 官方出品自带流量。Spec-Driven Development 是 AI coding 时代的新范式。</span></div>
+    <div class="analysis-row"><span class="analysis-label">技术栈</span><span class="analysis-value">Python，与 GitHub 生态深度集成。</span></div>
+    <div class="analysis-row"><span class="analysis-label">适用场景</span><span class="analysis-value">新项目启动、团队协作开发、AI 辅助编程。</span></div>
+    <div class="analysis-row"><span class="analysis-label">受众</span><span class="analysis-value">所有开发者，尤其是用 GitHub 的团队。</span></div>
+    <div class="verdict">GitHub 官方出品，值得了解其理念。但 108K 星可能有"官方光环"加成，实际价值需验证。</div>
+  </div>
+</div>
 
-  <footer class="footer">
-    <p>Source: <a href="https://github.com/trending">github.com/trending</a> · Generated by Claude Code</p>
-  </footer>
+<footer>
+  <p>Source: <a href="https://github.com/trending">github.com/trending</a> · Generated by GitHub Trending Daily Skill · 2026-06-04</p>
+</footer>
 
 </div>
 </body>
