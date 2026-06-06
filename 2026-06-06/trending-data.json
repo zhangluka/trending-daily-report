@@ -1,0 +1,16 @@
+{
+  "date": "2026-06-06",
+  "total_repos": 17,
+  "top_10": [
+    {"rank":1,"name":"chopratejas/headroom","language":"Python","stars":14598,"forks":926,"stars_today":2473},
+    {"rank":2,"name":"NousResearch/hermes-agent","language":"Python","stars":183261,"forks":31430,"stars_today":1845},
+    {"rank":3,"name":"lfnovo/open-notebook","language":"TypeScript","stars":26060,"forks":2997,"stars_today":1152},
+    {"rank":4,"name":"affaan-m/ECC","language":"JavaScript","stars":208412,"forks":31972,"stars_today":1361},
+    {"rank":5,"name":"mvanhorn/last30days-skill","language":"Python","stars":28246,"forks":2392,"stars_today":731},
+    {"rank":6,"name":"NVIDIA/cosmos","language":"Jupyter Notebook","stars":9435,"forks":602,"stars_today":479},
+    {"rank":7,"name":"666ghj/MiroFish","language":"Python","stars":64731,"forks":10088,"stars_today":320},
+    {"rank":8,"name":"CopilotKit/CopilotKit","language":"TypeScript","stars":32735,"forks":4196,"stars_today":366},
+    {"rank":9,"name":"Panniantong/Agent-Reach","language":"Python","stars":21619,"forks":1869,"stars_today":148},
+    {"rank":10,"name":"PaddlePaddle/PaddleOCR","language":"Python","stars":80576,"forks":10634,"stars_today":747}
+  ]
+}
