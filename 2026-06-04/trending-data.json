@@ -1,0 +1,16 @@
+{
+  "date": "2026-06-04",
+  "total_repos": 17,
+  "top_10": [
+    {"rank":1,"name":"chopratejas/headroom","language":"Python","stars":14584,"forks":925,"stars_today":2473,"analysis":{"what":"LLM 调用前自动压缩输入内容，减少 token 消耗。","why_hot":"LLM 成本痛点，60-95% 压缩率无损。","verdict":"LLM 应用必试工具。"}},
+    {"rank":2,"name":"NousResearch/hermes-agent","language":"Python","stars":183234,"forks":31428,"stars_today":1845,"analysis":{"what":"可成长的 AI Agent 框架。","why_hot":"NousResearch 社区影响力大，Agent 赛道火热。","verdict":"Agent 赛道重量级项目。"}},
+    {"rank":3,"name":"lfnovo/open-notebook","language":"TypeScript","stars":26050,"forks":2995,"stars_today":1152,"analysis":{"what":"Notebook LM 开源替代。","why_hot":"闭源替代满足隐私需求。","verdict":"注重隐私的团队值得评估。"}},
+    {"rank":4,"name":"affaan-m/ECC","language":"JavaScript","stars":208406,"forks":31972,"stars_today":1361,"analysis":{"what":"AI coding agent 性能优化框架。","why_hot":"AI coding 工具爆发期。","verdict":"Claude Code/Cursor 用户值得研究。"}},
+    {"rank":5,"name":"mvanhorn/last30days-skill","language":"Python","stars":28242,"forks":2392,"stars_today":731,"analysis":{"what":"AI agent 跨平台调研 skill。","why_hot":"解决 agent 不能上网的痛点。","verdict":"现成的 agent 联网方案。"}},
+    {"rank":6,"name":"NVIDIA/cosmos","language":"Jupyter Notebook","stars":9434,"forks":602,"stars_today":479,"analysis":{"what":"NVIDIA 物理 AI 开放平台。","why_hot":"NVIDIA 官方出品，Physical AI 浪潮。","verdict":"Physical AI 方向值得关注。"}},
+    {"rank":7,"name":"666ghj/MiroFish","language":"Python","stars":64728,"forks":10088,"stars_today":320,"analysis":{"what":"群体智能预测引擎。","why_hot":"群体智能是预测新范式。","verdict":"有意思的框架，先看文档。"}},
+    {"rank":8,"name":"CopilotKit/CopilotKit","language":"TypeScript","stars":32731,"forks":4196,"stars_today":366,"analysis":{"what":"AI agent 前端 UI 组件。","why_hot":"agent 需要前端交互界面。","verdict":"做 agent 前端界面首选。"}},
+    {"rank":9,"name":"Panniantong/Agent-Reach","language":"Python","stars":21615,"forks":1866,"stars_today":148,"analysis":{"what":"AI agent 联网读取多平台。","why_hot":"支持 B 站小红书是差异化。","verdict":"中文 AI 开发者值得关注。"}},
+    {"rank":10,"name":"PaddlePaddle/PaddleOCR","language":"Python","stars":80573,"forks":10633,"stars_today":747,"analysis":{"what":"OCR 工具包，100+ 语言。","why_hot":"AI 时代文档处理需求爆发。","verdict":"中文 OCR 首选工具。"}}
+  ]
+}
