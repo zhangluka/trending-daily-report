@@ -1,0 +1,191 @@
+{
+  "date": "2026-06-07",
+  "generated_at": "2026-06-07T10:00:00+08:00",
+  "source": "https://github.com/trending",
+  "total_repos": 18,
+  "selected_count": 10,
+  "total_stars_today": 3882,
+  "languages": ["Python", "TypeScript", "JavaScript", "Go", "Rust"],
+  "projects": [
+    {
+      "rank": 1,
+      "name": "lfnovo/open-notebook",
+      "url": "https://github.com/lfnovo/open-notebook",
+      "description": "开源版 Google Notebook LM — 隐私优先、多模型、全本地运行的 AI 笔记研究工具",
+      "language": "TypeScript",
+      "stars": 26653,
+      "forks": 3043,
+      "stars_today": 794,
+      "analysis": {
+        "what": "让你像用 Notebook LM 一样和文档对话，但数据完全在本地，支持 18+ AI 模型，还能自动生成播客。",
+        "why_trending": "v1.9.0 刚发布（6月2日），新增 Esperanto 2.22 和新音频提供商。Notebook LM 的开源替代品需求一直很大。",
+        "tech_stack": "TypeScript + Python，SurrealDB，FastAPI，Next.js，Docker",
+        "use_case": "需要私密处理研究资料的场景：学术研究、商业分析、个人知识管理",
+        "audience": "研究人员、内容创作者、注重隐私的知识工作者",
+        "verdict": "如果你用过 Notebook LM 但介意数据在 Google 云端，这是目前最成熟的开源替代品。"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "Panniantong/Agent-Reach",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "description": "给你的 AI Agent 一键装上互联网能力 — 读 Twitter、搜 Reddit、看 YouTube、刷小红书",
+      "language": "Python",
+      "stars": 22384,
+      "forks": 1912,
+      "stars_today": 683,
+      "analysis": {
+        "what": "一个脚手架工具，帮 AI Agent 快速接入 15+ 互联网平台的读取和搜索能力，零 API 费用。",
+        "why_trending": "AI Agent 生态爆发期，让 Agent 能上网是刚需。把分散的工具整合成一键安装，极大降低门槛。",
+        "tech_stack": "Python，twitter-cli，rdt-cli，xhs-cli，yt-dlp，Jina Reader，Exa",
+        "use_case": "给 AI Agent 装上"眼睛"：搜推特、读 Reddit、看 YouTube、刷小红书",
+        "audience": "使用 Claude Code / Cursor / Windsurf 等 AI 编程工具的开发者",
+        "verdict": "如果你的 AI Agent 还不能上网搜索，装这个。五分钟搞定。"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "CopilotKit/CopilotKit",
+      "url": "https://github.com/CopilotKit/CopilotKit",
+      "description": "Agent 原生应用的前端栈 — Generative UI、共享状态、人机协作",
+      "language": "TypeScript",
+      "stars": 33244,
+      "forks": 4245,
+      "stars_today": 631,
+      "analysis": {
+        "what": "一套 SDK，让 AI Agent 能在 Web/移动端应用中动态生成 UI、共享状态、暂停等待用户确认。",
+        "why_trending": "AG-UI Protocol 被 Google、LangChain、AWS、Microsoft 采纳，CopilotKit 成为 Agent UI 层事实标准。",
+        "tech_stack": "TypeScript，React/Angular/Vue/React Native，AG-UI 协议，Python SDK",
+        "use_case": "需要在产品中嵌入 AI Agent 交互界面的团队",
+        "audience": "全栈开发者、前端工程师、构建 AI 产品的产品团队",
+        "verdict": "如果你要在产品里做 Agent 交互，CopilotKit 是目前最成熟的选择。"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "MemPalace/mempalace",
+      "url": "https://github.com/MemPalace/mempalace",
+      "description": "本地优先的 AI 记忆系统 — 逐字存储、可插拔后端，LongMemEval R@5 达 96.6%",
+      "language": "Python",
+      "stars": 54311,
+      "forks": 7111,
+      "stars_today": 446,
+      "analysis": {
+        "what": "给 AI Agent 提供长期记忆：把对话历史逐字存储，用语义搜索检索，支持多后端。",
+        "why_trending": "v3.4.0 发布（6月6日），LongMemEval 96.6% R@5 是开源记忆系统中最好的成绩。",
+        "tech_stack": "Python，ChromaDB，SQLite，支持 Qdrant/pgvector，MCP 服务器",
+        "use_case": "AI Agent 需要跨会话记忆的场景：长期项目协作、个人知识库",
+        "audience": "AI 应用开发者、Claude Code 重度用户、构建 Agent 系统的团队",
+        "verdict": "Agent 记忆是刚需，MemPalace 用基准数据证明了自己。"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "PaddlePaddle/PaddleOCR",
+      "url": "https://github.com/PaddlePaddle/PaddleOCR",
+      "description": "全球领先的 OCR 工具包 — PDF/图片转 LLM 可用的结构化数据，100+ 语言",
+      "language": "Python",
+      "stars": 81000,
+      "forks": 10663,
+      "stars_today": 433,
+      "analysis": {
+        "what": "把文档转换成结构化数据（JSON/Markdown），是 RAG 和 AI 应用的底层基建。",
+        "why_trending": "v3.6.0 发布，PaddleOCR-VL-1.6 在 OmniDocBench 上达到 96.3% 准确率，超越闭源方案。",
+        "tech_stack": "Python + C++，PaddlePaddle，ONNX/TensorRT，Hugging Face",
+        "use_case": "需要从文档中提取结构化信息的任何场景：RAG、文档数字化、多语言 OCR",
+        "audience": "构建 RAG 应用的开发者、文档处理工程师、AI 基建团队",
+        "verdict": "做 RAG 或文档 AI 的必备工具。81K Star 不是白来的。"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "mvanhorn/last30days-skill",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI Agent 驱动的搜索引擎 — 搜索 Reddit/X/YouTube/HN/Polymarket，按真实互动排序",
+      "language": "Python",
+      "stars": 28889,
+      "forks": 2444,
+      "stars_today": 439,
+      "analysis": {
+        "what": "给一个话题，并行搜索 12+ 平台，按真实互动量排序，生成带引用的研究简报。",
+        "why_trending": "v3.0 带来智能搜索、可分享 HTML 简报、跨源聚类合并。解决"Google 搜不到真实讨论"的痛点。",
+        "tech_stack": "Python 3.12+，yt-dlp，ScrapeCreators API，1,012 个测试",
+        "use_case": "开会前了解某人/公司动态、做竞品调研、追踪热点事件",
+        "audience": "研究人员、内容创作者、商务人士",
+        "verdict": "如果你每天花 30 分钟手动搜 Reddit 和 X，这个 skill 能帮你省下来。"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "microsoft/VibeVoice",
+      "url": "https://github.com/microsoft/VibeVoice",
+      "description": "微软开源前沿语音 AI — 60 分钟 ASR + 90 分钟多说话人 TTS + 实时流式语音",
+      "language": "Python",
+      "stars": 48492,
+      "forks": 5391,
+      "stars_today": 216,
+      "analysis": {
+        "what": "语音 AI 模型家族：ASR 处理 60 分钟音频，TTS 生成 90 分钟对话，0.5B 实时流式 TTS。",
+        "why_trending": "ASR 模型被 Hugging Face Transformers 集成，大幅降低使用门槛。60 分钟单次处理行业领先。",
+        "tech_stack": "Python，Transformer，vLLM，Qwen2.5 基座",
+        "use_case": "会议记录、播客转写、语音助手、多语言语音处理",
+        "audience": "语音 AI 开发者、播客制作者、长音频处理研究人员",
+        "verdict": "微软在语音 AI 上的开源诚意十足。60 分钟 ASR + 50 语言覆盖，做语音应用的必看。"
+      }
+    },
+    {
+      "rank": 8,
+      "name": "santifer/career-ops",
+      "url": "https://github.com/santifer/career-ops",
+      "description": "AI 驱动的求职系统 — 14 种技能模式，自动评估 Offer、生成 ATS 简历、扫描招聘门户",
+      "language": "JavaScript",
+      "stars": 49404,
+      "forks": 10209,
+      "stars_today": 193,
+      "analysis": {
+        "what": "把 Claude Code 变成求职指挥中心：粘贴 Job URL，自动评估匹配度、生成定制简历、追踪申请状态。",
+        "why_trending": "解决 universal 求职痛点。作者用这套系统评估了 740+ Offer，拿到 Head of Applied AI 职位。",
+        "tech_stack": "JavaScript + Go，Playwright，Claude Code 技能系统",
+        "use_case": "正在找工作或准备跳槽的人：自动化简历投递前的筛选和定制",
+        "audience": "求职者、职业转型者",
+        "verdict": "不是"海投"工具，而是帮你找到少数值得投入的 Offer。"
+      }
+    },
+    {
+      "rank": 9,
+      "name": "openai/plugins",
+      "url": "https://github.com/openai/plugins",
+      "description": "OpenAI 官方 Codex 插件合集 — Figma、Notion、Expo、Netlify 等高质量示例",
+      "language": "JavaScript",
+      "stars": 1792,
+      "forks": 257,
+      "stars_today": 213,
+      "analysis": {
+        "what": "OpenAI 为 Codex 发布的官方插件示例库，展示 Codex 与外部工具的深度集成。",
+        "why_trending": "OpenAI Codex 生态的官方扩展，213 stars today 说明社区密切关注 Codex 生态。",
+        "tech_stack": "JavaScript + Python，Codex 插件系统",
+        "use_case": "使用 OpenAI Codex 的开发者，想了解如何构建高质量插件",
+        "audience": "Codex 开发者、OpenAI 生态构建者",
+        "verdict": "Codex 生态的"官方参考实现"。想做 Codex 插件的人必读。"
+      }
+    },
+    {
+      "rank": 10,
+      "name": "microsoft/mxc",
+      "url": "https://github.com/microsoft/mxc",
+      "description": "微软 eXecution Container — 策略驱动的沙箱系统，安全运行 AI 生成的不可信代码",
+      "language": "Rust",
+      "stars": 597,
+      "forks": 25,
+      "stars_today": 64,
+      "analysis": {
+        "what": "跨平台代码沙箱，用 JSON 配置策略隔离运行不可信代码，支持多种后端。",
+        "why_trending": "AI Agent 生成的代码需要安全执行环境。微软开源内部项目，为 AI 代码执行提供标准隔离方案。",
+        "tech_stack": "Rust，TypeScript SDK，JSON Schema",
+        "use_case": "需要安全执行 AI 生成代码的平台：AI IDE、代码沙箱",
+        "audience": "安全工程师、AI 平台开发者",
+        "verdict": "AI 代码执行的安全基建。微软出品，值得关注。目前还是早期预览。"
+      }
+    }
+  ]
+}

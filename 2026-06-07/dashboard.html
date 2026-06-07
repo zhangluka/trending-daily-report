@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Daily · 2026-06-07</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf9f5;
+  --bg-warm: #f5f3ed;
+  --ink: #1a1918;
+  --ink-soft: #6b6966;
+  --ink-muted: #9e9b97;
+  --accent: #c4603c;
+  --accent-soft: rgba(196, 96, 60, 0.08);
+  --rule: #e8e6e1;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+/* Header */
+.header {
+  margin-bottom: 3.5rem;
+}
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+.header .date {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.header .stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.header .stats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.header .stats .dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+}
+/* Section label */
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+/* Project card */
+.project {
+  margin-bottom: 4rem;
+}
+.project:last-child {
+  margin-bottom: 0;
+}
+.project-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+.rank {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  min-width: 1.5rem;
+}
+.project-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+.project-name:hover {
+  color: var(--accent);
+}
+.project-lang {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  background: var(--bg-warm);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+}
+.project-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+  padding-left: 2.25rem;
+}
+.project-desc {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+  padding-left: 2.25rem;
+  line-height: 1.55;
+}
+/* Analysis grid */
+.analysis {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0.35rem 0;
+  padding-left: 2.25rem;
+  font-size: 0.85rem;
+}
+.analysis dt {
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.analysis dd {
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.conclusion {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--accent-soft);
+  border-left: 2px solid var(--accent);
+  font-size: 0.85rem;
+  color: var(--ink);
+  margin-left: 2.25rem;
+  line-height: 1.55;
+}
+/* Trending section */
+.trending-divider {
+  margin: 4rem 0 2rem;
+  border: none;
+  border-top: 1px solid var(--rule);
+}
+/* Footer */
+.footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  display: flex;
+  justify-content: space-between;
+}
+/* Responsive */
+@media (max-width: 600px) {
+  .container { padding: 2rem 1rem; }
+  .header h1 { font-size: 1.5rem; }
+  .analysis {
+    grid-template-columns: 1fr;
+    gap: 0.15rem 0;
+  }
+  .analysis dt { margin-top: 0.4rem; }
+  .project-head { flex-wrap: wrap; gap: 0.4rem; }
+  .conclusion { margin-left: 0; }
+  .project-meta, .project-desc, .analysis, .conclusion { padding-left: 0; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="header">
+  <h1>GitHub Trending Daily</h1>
+  <div class="date">2026-06-07 · Top 10 精选</div>
+  <div class="stats">
+    <span><span class="dot"></span>总增星 3,882</span>
+    <span><span class="dot"></span>语言 5 种</span>
+    <span><span class="dot"></span>18 个项目中筛选</span>
+  </div>
+</header>
+
+<!-- TOP 3 -->
+<div class="section-label">Top 3</div>
+
+<article class="project">
+  <div class="project-head">
+    <span class="rank">01</span>
+    <a class="project-name" href="https://github.com/lfnovo/open-notebook" target="_blank">lfnovo / open-notebook</a>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-meta">+794 today · 26,653 stars · 3,043 forks</div>
+  <div class="project-desc">开源版 Google Notebook LM — 隐私优先、多模型、全本地运行的 AI 笔记研究工具。</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>让你像用 Notebook LM 一样和文档对话，但数据完全在本地，支持 18+ AI 模型，还能自动生成播客。</dd>
+    <dt>为什么火</dt>
+    <dd>v1.9.0 刚发布（6月2日），新增 Esperanto 2.22 和新音频提供商。Notebook LM 的开源替代品需求一直很大，这次更新带来了多项功能增强。</dd>
+    <dt>技术栈</dt>
+    <dd>TypeScript + Python，SurrealDB 数据库，FastAPI 后端，Next.js 前端，Docker 部署。</dd>
+    <dt>适用场景</dt>
+    <dd>需要私密处理研究资料的场景：学术研究、商业分析、个人知识管理。</dd>
+    <dt>受众</dt>
+    <dd>研究人员、内容创作者、注重隐私的知识工作者。</dd>
+  </dl>
+  <div class="conclusion">结论：如果你用过 Notebook LM 但介意数据在 Google 云端，这是目前最成熟的开源替代品。</div>
+</article>
+
+<article class="project">
+  <div class="project-head">
+    <span class="rank">02</span>
+    <a class="project-name" href="https://github.com/Panniantong/Agent-Reach" target="_blank">Panniantong / Agent-Reach</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-meta">+683 today · 22,384 stars · 1,912 forks</div>
+  <div class="project-desc">给你的 AI Agent 一键装上互联网能力 — 读 Twitter、搜 Reddit、看 YouTube、刷小红书，一个 CLI 搞定。</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>一个脚手架工具，帮 AI Agent（Claude Code、Cursor 等）快速接入 15+ 互联网平台的读取和搜索能力，零 API 费用。</dd>
+    <dt>为什么火</dt>
+    <dd>AI Agent 生态爆发期，让 Agent 能上网是一个刚需。这个项目把分散的工具（twitter-cli、rdt-cli、yt-dlp 等）整合成一键安装，极大降低了门槛。</dd>
+    <dt>技术栈</dt>
+    <dd>Python，上游依赖 twitter-cli、rdt-cli、xhs-cli、yt-dlp、Jina Reader、Exa 搜索等。</dd>
+    <dt>适用场景</dt>
+    <dd>给你的 AI Agent 装上"眼睛"：让它能搜推特、读 Reddit、看 YouTube 视频字幕、刷小红书。</dd>
+    <dt>受众</dt>
+    <dd>使用 Claude Code / Cursor / Windsurf 等 AI 编程工具的开发者。</dd>
+  </dl>
+  <div class="conclusion">结论：如果你的 AI Agent 还不能上网搜索，装这个。五分钟搞定，以后 Agent 遇到"帮我搜一下"就自动调用。</div>
+</article>
+
+<article class="project">
+  <div class="project-head">
+    <span class="rank">03</span>
+    <a class="project-name" href="https://github.com/CopilotKit/CopilotKit" target="_blank">CopilotKit / CopilotKit</a>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-meta">+631 today · 33,244 stars · 4,245 forks</div>
+  <div class="project-desc">Agent 原生应用的前端栈 — Generative UI、共享状态、人机协作，支持 React/Angular/Vue/Slack。</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>一套 SDK，让 AI Agent 能在你的 Web/移动端应用中动态生成 UI、共享状态、暂停等待用户确认，甚至部署到 Slack/Teams。</dd>
+    <dt>为什么火</dt>
+    <dd>AG-UI Protocol 被 Google、LangChain、AWS、Microsoft 等巨头采纳，CopilotKit 成为 Agent UI 层的事实标准。1,371 次发版说明迭代极快。</dd>
+    <dt>技术栈</dt>
+    <dd>TypeScript，React/Angular/Vue/React Native，AG-UI 协议，Python SDK。</dd>
+    <dt>适用场景</dt>
+    <dd>需要在产品中嵌入 AI Agent 交互界面的团队：从聊天机器人到复杂的多步骤工作流。</dd>
+    <dt>受众</dt>
+    <dd>全栈开发者、前端工程师、构建 AI 产品的产品团队。</dd>
+  </dl>
+  <div class="conclusion">结论：如果你要在产品里做 Agent 交互，CopilotKit 是目前最成熟的选择。AG-UI 生态的护城河在形成。</div>
+</article>
+
+<!-- TRENDING -->
+<hr class="trending-divider">
+<div class="section-label">Trending</div>
+
+<article class="project">
+  <div class="project-head">
+    <span class="rank">04</span>
+    <a class="project-name" href="https://github.com/MemPalace/mempalace" target="_blank">MemPalace / mempalace</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-meta">+446 today · 54,311 stars · 7,111 forks</div>
+  <div class="project-desc">本地优先的 AI 记忆系统 — 逐字存储、可插拔后端，LongMemEval 基准 R@5 达 96.6%，零 API 调用。</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>给 AI Agent 提供长期记忆：把对话历史逐字存储，用语义搜索检索。索引按"翼-房间-抽屉"结构组织，支持多后端。</dd>
+    <dt>为什么火</dt>
+    <dd>v3.4.0 发布（6月6日），LongMemEval 96.6% R@5 的基准成绩是开源记忆系统中最好的。解决 Claude Code 会话 30 天过期的问题。</dd>
+    <dt>技术栈</dt>
+    <dd>Python，ChromaDB（默认后端），SQLite，支持 Qdrant/pgvector，MCP 服务器。</dd>
+    <dt>适用场景</dt>
+    <dd>AI Agent 需要跨会话记忆的场景：长期项目协作、个人知识库、客服上下文保持。</dd>
+    <dt>受众</dt>
+    <dd>AI 应用开发者、Claude Code 重度用户、构建 Agent 系统的团队。</dd>
+  </dl>
+  <div class="conclusion">结论：Agent 记忆是刚需，MemPalace 用基准数据证明了自己。如果你的 Agent 每次重启都"失忆"，值得试试。</div>
+</article>
+
+<article class="project">
+  <div class="project-head">
+    <span class="rank">05</span>
+    <a class="project-name" href="https://github.com/PaddlePaddle/PaddleOCR" target="_blank">PaddlePaddle / PaddleOCR</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-meta">+433 today · 81,000 stars · 10,663 forks</div>
+  <div class="project-desc">全球领先的 OCR 工具包 — 把 PDF 和图片转成 LLM 可用的结构化数据，支持 100+ 种语言。</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>把文档（PDF、图片）转换成结构化数据（JSON/Markdown），是 RAG 和 AI 应用的底层基建。</dd>
+    <dt>为什么火</dt>
+    <dd>v3.6.0 发布（5月28日），PaddleOCR-VL-1.6 在 OmniDocBench 上达到 96.3% 准确率，超越闭源方案。被 Dify、RAGFlow、Cherry Studio 等热门项目集成。</dd>
+    <dt>技术栈</dt>
+    <dd>Python + C++，PaddlePaddle 框架，支持 ONNX/TensorRT 推理，Hugging Face 集成。</dd>
+    <dt>适用场景</dt>
+    <dd>需要从文档中提取结构化信息的任何场景：RAG 系统、文档数字化、多语言 OCR。</dd>
+    <dt>受众</dt>
+    <dd>构建 RAG 应用的开发者、文档处理工程师、AI 基建团队。</dd>
+  </dl>
+  <div class="conclusion">结论：做 RAG 或文档 AI 的必备工具。81K Star 不是白来的——准确率、语言覆盖、部署灵活性都是顶级。</div>
+</article>
+
+<article class="project">
+  <div class="project-head">
+    <span class="rank">06</span>
+    <a class="project-name" href="https://github.com/mvanhorn/last30days-skill" target="_blank">mvanhorn / last30days-skill</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-meta">+439 today · 28,889 stars · 2,444 forks</div>
+  <div class="project-desc">AI Agent 驱动的搜索引擎 — 搜索 Reddit/X/YouTube/HN/Polymarket，按真实互动数据排序。</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>你给一个话题，它并行搜索 12+ 平台（Reddit、X、YouTube、TikTok、HN、Polymarket 等），按真实互动量排序，生成一份带引用的研究简报。</dd>
+    <dt>为什么火</dt>
+    <dd>v3.0 带来了智能搜索（自动解析人物/公司相关渠道）、可分享 HTML 简报、跨源聚类合并。解决了"Google 搜不到 Reddit 和 X 真实讨论"的痛点。</dd>
+    <dt>技术栈</dt>
+    <dd>Python 3.12+，yt-dlp，ScrapeCreators API，1,012 个测试用例。</dd>
+    <dt>适用场景</dt>
+    <dd>开会前快速了解某人/某公司的最新动态、做竞品调研、追踪热点事件的全网讨论。</dd>
+    <dt>受众</dt>
+    <dd>研究人员、内容创作者、商务人士、需要快速了解全网声音的人。</dd>
+  </dl>
+  <div class="conclusion">结论：如果你每天花 30 分钟手动搜 Reddit 和 X，这个 skill 能帮你省下来。v3 的智能搜索是真正的升级。</div>
+</article>
+
+<article class="project">
+  <div class="project-head">
+    <span class="rank">07</span>
+    <a class="project-name" href="https://github.com/microsoft/VibeVoice" target="_blank">microsoft / VibeVoice</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-meta">+216 today · 48,492 stars · 5,391 forks</div>
+  <div class="project-desc">微软开源的前沿语音 AI — 60 分钟长音频 ASR + 90 分钟多说话人 TTS + 实时流式语音合成。</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>一套语音 AI 模型家族：ASR 能一次处理 60 分钟音频并输出"谁在什么时候说了什么"；TTS 能生成 90 分钟多说话人对话；还有 0.5B 的实时流式 TTS。</dd>
+    <dt>为什么火</dt>
+    <dd>ASR 模型被 Hugging Face Transformers 集成（3月6日），大幅降低了使用门槛。60 分钟单次处理是行业领先的。</dd>
+    <dt>技术栈</dt>
+    <dd>Python，Transformer 架构，vLLM 推理支持，Qwen2.5 基座模型。</dd>
+    <dt>适用场景</dt>
+    <dd>会议记录、播客转写、语音助手、多语言语音处理。</dd>
+    <dt>受众</dt>
+    <dd>语音 AI 开发者、播客制作者、需要长音频处理的研究人员。</dd>
+  </dl>
+  <div class="conclusion">结论：微软在语音 AI 上的开源诚意十足。60 分钟 ASR + 50 语言覆盖，做语音应用的必看。</div>
+</article>
+
+<article class="project">
+  <div class="project-head">
+    <span class="rank">08</span>
+    <a class="project-name" href="https://github.com/santifer/career-ops" target="_blank">santifer / career-ops</a>
+    <span class="project-lang">JavaScript</span>
+  </div>
+  <div class="project-meta">+193 today · 49,404 stars · 10,209 forks</div>
+  <div class="project-desc">AI 驱动的求职系统 — 14 种技能模式，自动评估 Offer、生成 ATS 优化简历、扫描招聘门户。</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>把 Claude Code 变成你的求职指挥中心：粘贴一个 Job URL，自动评估匹配度（A-F 评分）、生成定制简历、追踪申请状态。</dd>
+    <dt>为什么火</dt>
+    <dd>解决了一个 universal 痛点——求职。作者用这套系统评估了 740+ 个 Offer、生成了 100+ 份简历，最终拿到 Head of Applied AI 的职位。实战验证过的方法论。</dd>
+    <dt>技术栈</dt>
+    <dd>JavaScript + Go（Dashboard），Playwright 浏览器自动化，Claude Code 技能系统。</dd>
+    <dt>适用场景</dt>
+    <dd>正在找工作或准备跳槽的人：自动化简历投递前的筛选和定制流程。</dd>
+    <dt>受众</dt>
+    <dd>求职者、职业转型者、想用 AI 优化求职流程的人。</dd>
+  </dl>
+  <div class="conclusion">结论：不是"海投"工具，而是帮你找到少数值得投入的 Offer。作者亲身验证过，适合认真对待求职的人。</div>
+</article>
+
+<article class="project">
+  <div class="project-head">
+    <span class="rank">09</span>
+    <a class="project-name" href="https://github.com/openai/plugins" target="_blank">openai / plugins</a>
+    <span class="project-lang">JavaScript</span>
+  </div>
+  <div class="project-meta">+213 today · 1,792 stars · 257 forks</div>
+  <div class="project-desc">OpenAI 官方 Codex 插件合集 — Figma、Notion、Expo、Netlify 等高质量插件示例。</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>OpenAI 为 Codex（AI 编程 Agent）发布的官方插件示例库，包含 Figma 设计协作、Notion 知识管理、iOS/macOS 应用开发等场景。</dd>
+    <dt>为什么火</dt>
+    <dd>OpenAI Codex 生态的官方扩展，每个插件都展示了 Codex 与外部工具的深度集成能力。213 stars today 说明社区在密切关注 Codex 生态。</dd>
+    <dt>技术栈</dt>
+    <dd>JavaScript + Python，Codex 插件系统，.codex-plugin 清单文件。</dd>
+    <dt>适用场景</dt>
+    <dd>使用 OpenAI Codex 的开发者，想了解如何为 Codex 构建高质量插件。</dd>
+    <dt>受众</dt>
+    <dd>Codex 开发者、OpenAI 生态构建者、想集成设计工具的 AI 开发者。</dd>
+  </dl>
+  <div class="conclusion">结论：Codex 生态的"官方参考实现"。想做 Codex 插件的人必读，不想做的也可以看看 OpenAI 在想什么。</div>
+</article>
+
+<article class="project">
+  <div class="project-head">
+    <span class="rank">10</span>
+    <a class="project-name" href="https://github.com/microsoft/mxc" target="_blank">microsoft / mxc</a>
+    <span class="project-lang">Rust</span>
+  </div>
+  <div class="project-meta">+64 today · 597 stars · 25 forks</div>
+  <div class="project-desc">微软 eXecution Container — 策略驱动的沙箱系统，安全运行 AI 生成的不可信代码。</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>一个跨平台（Windows/Linux/macOS）的代码沙箱，用 JSON 配置策略来隔离运行不可信代码。支持多种后端：进程沙箱、LXC、Bubblewrap、Windows Sandbox、MicroVM 等。</dd>
+    <dt>为什么火</dt>
+    <dd>AI Agent 生成的代码需要安全执行环境。微软开源了这个内部项目，为 AI 代码执行提供了标准化的隔离方案。64 stars today 对一个 597 Star 的新项目来说增速很高。</dd>
+    <dt>技术栈</dt>
+    <dd>Rust（核心），TypeScript SDK，JSON 配置 Schema。</dd>
+    <dt>适用场景</dt>
+    <dd>需要安全执行 AI 生成代码的平台：AI IDE、代码沙箱、在线编程环境。</dd>
+    <dt>受众</dt>
+    <dd>安全工程师、AI 平台开发者、构建在线代码执行环境的团队。</dd>
+  </dl>
+  <div class="conclusion">结论：AI 代码执行的安全基建。微软出品，跨平台支持，值得关注。目前还是早期预览阶段。</div>
+</article>
+
+<footer class="footer">
+  <span>Source: github.com/trending · Generated by Claude Code</span>
+  <span>2026-06-07</span>
+</footer>
+
+</div>
+</body>
+</html>
