@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Daily · 2026-06-08</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf9f5;
+  --bg-warm: #f5f3ed;
+  --ink: #1a1918;
+  --ink-soft: #6b6966;
+  --ink-muted: #9e9b97;
+  --accent: #c4603c;
+  --accent-soft: rgba(196, 96, 60, 0.08);
+  --rule: #e8e6e1;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+.header { margin-bottom: 3.5rem; }
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+.header .date {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.header .stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.header .stats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.header .stats .dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+}
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+.project { margin-bottom: 4rem; }
+.project:last-child { margin-bottom: 0; }
+.project-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+.rank {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  min-width: 1.5rem;
+}
+.project-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.project-name a {
+  color: inherit;
+  text-decoration: none;
+}
+.project-name a:hover { color: var(--accent); }
+.lang-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  background: var(--bg-warm);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.project-meta {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+.project-meta .stars-today {
+  color: var(--accent);
+  font-weight: 500;
+}
+.project-desc {
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.analysis {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0.4rem 1rem;
+  font-size: 0.88rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+.analysis dt {
+  color: var(--ink-muted);
+  font-weight: 500;
+  padding-top: 0.1rem;
+}
+.analysis dd {
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.conclusion {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.88rem;
+  color: var(--ink);
+  font-style: italic;
+}
+.footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  text-align: center;
+}
+.footer a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.footer a:hover { color: var(--accent); }
+@media (max-width: 600px) {
+  .container { padding: 2.5rem 1rem; }
+  .header h1 { font-size: 1.5rem; }
+  .analysis {
+    grid-template-columns: 1fr;
+    gap: 0.15rem 0;
+  }
+  .analysis dt {
+    margin-top: 0.6rem;
+  }
+  .lang-tag { margin-left: 0; margin-top: 0.25rem; }
+  .project-head { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>GitHub Trending Daily</h1>
+    <div class="date">2026-06-08 · Top 10 精选</div>
+    <div class="stats">
+      <span><span class="dot"></span>总增星 6,981</span>
+      <span><span class="dot"></span>语言 6 种</span>
+      <span><span class="dot"></span>从 15 个项目中筛选</span>
+    </div>
+  </div>
+
+  <div class="section-label">Top 3</div>
+
+  <!-- #1 turbovec -->
+  <div class="project">
+    <div class="project-head">
+      <span class="rank">01</span>
+      <span class="project-name"><a href="https://github.com/RyanCodrai/turbovec" target="_blank">RyanCodrai / turbovec</a></span>
+      <span class="lang-tag">Rust</span>
+    </div>
+    <div class="project-meta"><span class="stars-today">+1,554 today</span> · 7,300 stars · 708 forks</div>
+    <p class="project-desc">基于 Google Research TurboQuant 算法（ICLR 2026）的高性能向量索引库，Rust 实现 + Python 绑定。10M 向量从 31GB 压缩到 4GB，搜索速度比 FAISS 快 12-20%。</p>
+    <dl class="analysis">
+      <dt>做什么</dt>
+      <dd>替代 FAISS 的向量搜索库，16x 压缩比，无需训练阶段即可在线索引。</dd>
+      <dt>为什么火</dt>
+      <dd>ICLR 2026 论文背书，Apple Silicon 社区追捧（ARM NEON 优化），隐私优先的本地 RAG 需求爆发。</dd>
+      <dt>技术栈</dt>
+      <dd>Rust 核心 + PyO3 Python 绑定，NEON/AVX-512 SIMD 内核，TurboQuant 量化算法。</dd>
+      <dt>适用场景</dt>
+      <dd>本地 RAG 管线、内存受限的向量搜索、需要替换 FAISS 的团队。</dd>
+      <dt>受众</dt>
+      <dd>ML 工程师、RAG 开发者、向量数据库用户。</dd>
+    </dl>
+    <p class="conclusion">如果你做 RAG 且受够了 FAISS 的内存开销，这是目前最优的替代方案。</p>
+  </div>
+
+  <!-- #2 hermes-agent -->
+  <div class="project">
+    <div class="project-head">
+      <span class="rank">02</span>
+      <span class="project-name"><a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch / hermes-agent</a></span>
+      <span class="lang-tag">Python</span>
+    </div>
+    <div class="project-meta"><span class="stars-today">+1,112 today</span> · 186,078 stars · 32,003 forks</div>
+    <p class="project-desc">唯一内置学习闭环的 AI Agent——从经验中创建技能、使用中自我改进、跨会话记住你是谁。支持 Telegram/Discord/Slack/WhatsApp/Signal/桌面端。</p>
+    <dl class="analysis">
+      <dt>做什么</dt>
+      <dd>自我进化的 AI 助手，能跨平台（消息App + 桌面）运行，自动学习用户习惯并积累技能。</dd>
+      <dt>为什么火</dt>
+      <dd>v0.16.0 "Surface Release"（6月5日发布）：874 commits、原生桌面 App、170 位贡献者。186k 星仍在猛涨。</dd>
+      <dt>技术栈</dt>
+      <dd>Python 83% + Electron 桌面端，SQLite+FTS5 记忆存储，支持 200+ 模型。</dd>
+      <dt>适用场景</dt>
+      <dd>需要跨平台、有记忆、能自我进化的 AI 助手的个人和团队。</dd>
+      <dt>受众</dt>
+      <dd>所有 AI 工具用户，从 CLI 极客到普通桌面用户。</dd>
+    </dl>
+    <p class="conclusion">如果你想让 AI 助手"认识你"并且越来越懂你，hermes-agent 是目前最成熟的开源选择。</p>
+  </div>
+
+  <!-- #3 last30days-skill -->
+  <div class="project">
+    <div class="project-head">
+      <span class="rank">03</span>
+      <span class="project-name"><a href="https://github.com/mvanhorn/last30days-skill" target="_blank">mvanhorn / last30days-skill</a></span>
+      <span class="lang-tag">Python</span>
+    </div>
+    <div class="project-meta"><span class="stars-today">+1,111 today</span> · 31,350 stars · 2,613 forks</div>
+    <p class="project-desc">AI Agent 驱动的搜索引擎，同时搜索 Reddit、X、YouTube、TikTok、HN、Polymarket 等 15+ 平台，按真实用户参与度排序。</p>
+    <dl class="analysis">
+      <dt>做什么</dt>
+      <dd>"Google 聚合编辑。last30days 搜索真人。" 一个 agent 技能，帮你同时调研 15+ 社交平台。</dd>
+      <dt>为什么火</dt>
+      <dd>Agent Skills 生态爆发（支持 50+ 主机），每周迭代（v3.3.2），跨源聚类合并功能填补了搜索空白。</dd>
+      <dt>技术栈</dt>
+      <dd>Python 3.12+，yt-dlp 提取 YouTube 字幕，ScrapeCreators API 覆盖 TikTok/Instagram，SQLite 持久化。</dd>
+      <dt>适用场景</dt>
+      <dd>会前调研、产品对比、趋势监控、旅行规划——任何需要"真实用户怎么说"的场景。</dd>
+      <dt>受众</dt>
+      <dd>产品经理、市场调研者、内容创作者、全栈开发者。</dd>
+    </dl>
+    <p class="conclusion">如果你需要知道"真实用户在聊什么"而不是 SEO 排名，安装这个 skill 一键搞定。</p>
+  </div>
+
+  <div class="section-label">Trending</div>
+
+  <!-- #4 taste-skill -->
+  <div class="project">
+    <div class="project-head">
+      <span class="rank">04</span>
+      <span class="project-name"><a href="https://github.com/Leonxlnx/taste-skill" target="_blank">Leonxlnx / taste-skill</a></span>
+      <span class="lang-tag">Shell</span>
+    </div>
+    <div class="project-meta"><span class="stars-today">+1,103 today</span> · 36,886 stars · 2,655 forks</div>
+    <p class="project-desc">AI 编码 Agent 的"反丑"前端框架。通过注入 SKILL.md 指令文件，消除 AI 生成的千篇一律模板化界面。</p>
+    <dl class="analysis">
+      <dt>做什么</dt>
+      <dd>给 AI 编码工具（Cursor/Claude Code/Codex/v0）注入设计品味规则，让前端输出不再像"AI slop"。</dd>
+      <dt>为什么火</dt>
+      <dd>v2 重写（5轮测试、18个测试版本），硬性禁止过度使用的模式（serif字体、米色+黄铜配色），Vercel npx skills 生态爆发。</dd>
+      <dt>技术栈</dt>
+      <dd>纯 SKILL.md 指令文件，无运行时依赖，框架无关（React/Vue/Svelte/Tailwind 均可）。</dd>
+      <dt>适用场景</dt>
+      <dd>用 AI 工具做前端但对输出质量不满的开发者和设计师。</dd>
+      <dt>受众</dt>
+      <dd>前端开发者、vibe coder、AI 辅助设计者。</dd>
+    </dl>
+    <p class="conclusion">如果你用 AI 写前端但对"又一个米色渐变着陆页"感到厌倦，装这个立竿见影。</p>
+  </div>
+
+  <!-- #5 open-notebook -->
+  <div class="project">
+    <div class="project-head">
+      <span class="rank">05</span>
+      <span class="project-name"><a href="https://github.com/lfnovo/open-notebook" target="_blank">lfnovo / open-notebook</a></span>
+      <span class="lang-tag">TypeScript</span>
+    </div>
+    <div class="project-meta"><span class="stars-today">+554 today</span> · 27,340 stars · 3,105 forks</div>
+    <p class="project-desc">Google NotebookLM 的开源替代品。导入 PDF/视频/音频/网页，通过 AI 对话、搜索、播客生成与内容交互，完全本地运行。</p>
+    <dl class="analysis">
+      <dt>做什么</dt>
+      <dd>自托管的知识管理平台：导入多模态内容，AI 聊天、搜索、生成播客（支持 1-4 位说话人）。</dd>
+      <dt>为什么火</dt>
+      <dd>NotebookLM 需求旺盛但用户要隐私替代品。37 个版本快速迭代，多播客说话人是杀手功能。</dd>
+      <dt>技术栈</dt>
+      <dd>Python FastAPI + Next.js 前端，SurrealDB 图+文档数据库，LangChain + Esperanto 多模型抽象。</dd>
+      <dt>适用场景</dt>
+      <dd>研究者、学生、知识工作者——任何想用 AI 整理自己资料库的人。</dd>
+      <dt>受众</dt>
+      <dd>研究者、学生、内容创作者、隐私敏感用户。</dd>
+    </dl>
+    <p class="conclusion">NotebookLM 的功能 + 数据主权。如果你在意隐私又想要 NotebookLM 体验，这就是答案。</p>
+  </div>
+
+  <!-- #6 ChinaTextbook -->
+  <div class="project">
+    <div class="project-head">
+      <span class="rank">06</span>
+      <span class="project-name"><a href="https://github.com/TapXWorld/ChinaTextbook" target="_blank">TapXWorld / ChinaTextbook</a></span>
+      <span class="lang-tag">Roff</span>
+    </div>
+    <div class="project-meta"><span class="stars-today">+350 today</span> · 72,542 stars · 16,253 forks</div>
+    <p class="project-desc">中国 K-12 及大学 PDF 教材合集，覆盖小学到大学全阶段，支持 6-3 和 5-4 学制。</p>
+    <dl class="analysis">
+      <dt>做什么</dt>
+      <dd>在 GitHub 上公开分享中国全套教材 PDF，对抗教育平台的资源垄断和付费墙。</dd>
+      <dt>为什么火</dt>
+      <dd>教育公平叙事引发共鸣，海外华人家庭刚需，DMCA 争议反而加速传播。</dd>
+      <dt>技术栈</dt>
+      <dd>PDF 文件仓库 + Roff 脚本工具（合并分割文件），无代码技术栈。</dd>
+      <dt>适用场景</dt>
+      <dd>海外华人家庭同步国内课程、教育工作者备课、学生复习。</dd>
+      <dt>受众</dt>
+      <dd>海外华人家长、教育工作者、学生。</dd>
+    </dl>
+    <p class="conclusion">72k 星的教育仓库，有孩子的海外华人必备收藏。</p>
+  </div>
+
+  <!-- #7 goose -->
+  <div class="project">
+    <div class="project-head">
+      <span class="rank">07</span>
+      <span class="project-name"><a href="https://github.com/aaif-goose/goose" target="_blank">aaif-goose / goose</a></span>
+      <span class="lang-tag">Rust</span>
+    </div>
+    <div class="project-meta"><span class="stars-today">+322 today</span> · 47,556 stars · 5,016 forks</div>
+    <p class="project-desc">通用开源 AI Agent，超越代码建议——安装、执行、编辑、测试，支持 15+ LLM 提供商。从 Block 转移到 Linux Foundation AAIF。</p>
+    <dl class="analysis">
+      <dt>做什么</dt>
+      <dd>本地运行的全能 AI Agent，不限于代码，处理研究、写作、自动化、数据分析等任意工作流。</dd>
+      <dt>为什么火</dt>
+      <dd>捐赠给 Linux Foundation AAIF 治理转移，MCP 生态爆发（70+ 扩展），47.6k 星的社区信任。</dd>
+      <dt>技术栈</dt>
+      <dd>Rust 核心 64% + TypeScript 桌面端 29%，MCP 协议，支持 15+ LLM 提供商。</dd>
+      <dt>适用场景</dt>
+      <dd>需要跨提供商、社区治理、企业级可信的开源 Agent 的团队。</dd>
+      <dt>受众</dt>
+      <dd>全栈开发者、DevOps、企业技术团队。</dd>
+    </dl>
+    <p class="conclusion">企业级 AI Agent 的开源标准——Linux Foundation 背书 + MCP 生态是最大差异化。</p>
+  </div>
+
+  <!-- #8 pg_durable -->
+  <div class="project">
+    <div class="project-head">
+      <span class="rank">08</span>
+      <span class="project-name"><a href="https://github.com/microsoft/pg_durable" target="_blank">microsoft / pg_durable</a></span>
+      <span class="lang-tag">Rust</span>
+    </div>
+    <div class="project-meta"><span class="stars-today">+316 today</span> · 1,477 stars · 33 forks</div>
+    <p class="project-desc">微软出品的 PostgreSQL 扩展，直接在数据库内实现持久执行。SQL 函数自动检查点，崩溃后从断点恢复，无需 Redis/Temporal 等外部服务。</p>
+    <dl class="analysis">
+      <dt>做什么</dt>
+      <dd>用 SQL 定义容错工作流：`~>` 组合步骤、`df.if()` 分支、`df.loop()` 循环，全部在 Postgres 内执行。</dd>
+      <dt>为什么火</dt>
+      <dd>微软 + PostgreSQL 许可证（零遥测），杀死 pg_cron+jobs表+轮询 worker 的脆弱模式，Azure HorizonDB 内置。</dd>
+      <dt>技术栈</dt>
+      <dd>Rust (pgrx) + duroxide 持久执行引擎，支持 PG 17/18。</dd>
+      <dt>适用场景</dt>
+      <dd>已在用 Postgres 的团队，替代 Airflow/Temporal 的轻量工作流方案。</dd>
+      <dt>受众</dt>
+      <dd>后端工程师、数据工程师、AI 管线开发者。</dd>
+    </dl>
+    <p class="conclusion">Postgres 用户的新玩具——如果工作流可以写成 SQL，为什么还要装 Temporal？</p>
+  </div>
+
+  <!-- #9 project-nomad -->
+  <div class="project">
+    <div class="project-head">
+      <span class="rank">09</span>
+      <span class="project-name"><a href="https://github.com/Crosstalk-Solutions/project-nomad" target="_blank">Crosstalk-Solutions / project-nomad</a></span>
+      <span class="lang-tag">TypeScript</span>
+    </div>
+    <div class="project-meta"><span class="stars-today">+309 today</span> · 29,767 stars · 2,951 forks</div>
+    <p class="project-desc">离线生存计算机：本地 AI 聊天（Ollama）、离线 Wikipedia、Khan Academy 课程、离线地图、数据加密工具，全部打包成一个服务器。</p>
+    <dl class="analysis">
+      <dt>做什么</dt>
+      <dd>一台装在服务器里的"离线百科全书+AI 助手+教育平台+地图"，安装后不再需要互联网。</dd>
+      <dt>为什么火</dt>
+      <dd>离线 AI + 生存主义交叉赛道热度，Crosstalk Solutions YouTube 粉丝驱动，社区硬件跑分排行榜制造病毒传播。</dd>
+      <dt>技术栈</dt>
+      <dd>TypeScript 93% + Docker Compose，Ollama 推理，Qdrant 向量搜索，Kiwix 离线内容，Kolibri 教育。</dd>
+      <dt>适用场景</dt>
+      <dd>灾难准备、偏远地区教育、离线知识服务器、NGO 项目。</dd>
+      <dt>受众</dt>
+      <dd>生存主义者、教育工作者、网络工程师、户外爱好者。</dd>
+    </dl>
+    <p class="conclusion">概念独特——如果你需要一个"断网也能用的 AI 知识中心"，这就是现成方案。</p>
+  </div>
+
+  <!-- #10 openai/plugins -->
+  <div class="project">
+    <div class="project-head">
+      <span class="rank">10</span>
+      <span class="project-name"><a href="https://github.com/openai/plugins" target="_blank">openai / plugins</a></span>
+      <span class="lang-tag">JavaScript</span>
+    </div>
+    <div class="project-meta"><span class="stars-today">+262 today</span> · 2,062 stars · 273 forks</div>
+    <p class="project-desc">OpenAI 官方 Codex 插件示例集。包含 Figma、Notion、iOS/macOS/Web 构建器等官方插件，是 Codex CLI 生态的参考实现。</p>
+    <dl class="analysis">
+      <dt>做什么</dt>
+      <dd>OpenAI Codex CLI 的插件参考库，一个 TypeScript 接口 + npm 包即可发布插件。</dd>
+      <dt>为什么火</dt>
+      <dd>OpenAI 对标 Claude Code 的开源 Agent 生态布局，官方插件（Figma/Notion）降低入门门槛。</dd>
+      <dt>技术栈</dt>
+      <dd>Node.js + TypeScript（CodexPlugin 接口），MCP 协议集成，Apache 2.0 许可证。</dd>
+      <dt>适用场景</dt>
+      <dd>使用 Codex CLI 的开发者，想为 Agent 构建扩展的团队。</dd>
+      <dt>受众</dt>
+      <dd>Codex CLI 用户、Agent 插件开发者。</dd>
+    </dl>
+    <p class="conclusion">Codex CLI 生态的起点——如果你在用 Codex，这些官方插件是必看参考。</p>
+  </div>
+
+  <div class="footer">
+    <p>Source: <a href="https://github.com/trending">github.com/trending</a> · Generated by AI · 2026-06-08</p>
+  </div>
+
+</div>
+</body>
+</html>

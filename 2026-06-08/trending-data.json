@@ -1,0 +1,188 @@
+{
+  "date": "2026-06-08",
+  "total_stars_today": 6981,
+  "total_repos_scanned": 15,
+  "languages": ["Python", "Rust", "TypeScript", "Shell", "Roff", "JavaScript"],
+  "top10": [
+    {
+      "rank": 1,
+      "name": "RyanCodrai/turbovec",
+      "url": "https://github.com/RyanCodrai/turbovec",
+      "description": "High-performance vector index built on TurboQuant (ICLR 2026), Rust with Python bindings. 16x compression, faster than FAISS.",
+      "language": "Rust",
+      "stars": 7300,
+      "forks": 708,
+      "stars_today": 1554,
+      "analysis": {
+        "what": "FAISS 替代方案，基于 TurboQuant 算法实现 16x 压缩的向量搜索库",
+        "why_trending": "ICLR 2026 论文背书，ARM NEON 优化受 Apple Silicon 社区追捧，隐私优先 RAG 需求爆发",
+        "tech_stack": "Rust + PyO3, NEON/AVX-512 SIMD, TurboQuant 量化",
+        "use_case": "本地 RAG 管线、内存受限向量搜索、替换 FAISS",
+        "audience": "ML 工程师、RAG 开发者",
+        "verdict": "如果你做 RAG 且受够了 FAISS 的内存开销，这是目前最优的替代方案"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "NousResearch/hermes-agent",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "description": "Self-improving AI agent with closed learning loop, multi-platform messaging, native desktop app.",
+      "language": "Python",
+      "stars": 186078,
+      "forks": 32003,
+      "stars_today": 1112,
+      "analysis": {
+        "what": "自我进化的 AI 助手，跨平台运行，自动学习用户习惯并积累技能",
+        "why_trending": "v0.16.0 Surface Release 发布（6月5日），原生桌面 App，170 位贡献者",
+        "tech_stack": "Python 83% + Electron, SQLite+FTS5, 200+ 模型支持",
+        "use_case": "需要跨平台、有记忆、能自我进化的 AI 助手",
+        "audience": "所有 AI 工具用户",
+        "verdict": "如果你想让 AI 助手"认识你"并且越来越懂你，这是最成熟的开源选择"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "mvanhorn/last30days-skill",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI agent search engine across 15+ platforms (Reddit, X, YouTube, TikTok, HN, Polymarket), ranked by real engagement.",
+      "language": "Python",
+      "stars": 31350,
+      "forks": 2613,
+      "stars_today": 1111,
+      "analysis": {
+        "what": "AI Agent 驱动的跨平台搜索引擎，同时搜索 15+ 社交平台",
+        "why_trending": "Agent Skills 生态爆发，每周迭代，跨源聚类合并功能",
+        "tech_stack": "Python 3.12+, yt-dlp, ScrapeCreators API, SQLite",
+        "use_case": "会前调研、产品对比、趋势监控",
+        "audience": "产品经理、市场调研者、内容创作者",
+        "verdict": "如果你需要知道"真实用户在聊什么"，安装这个 skill 一键搞定"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "Leonxlnx/taste-skill",
+      "url": "https://github.com/Leonxlnx/taste-skill",
+      "description": "Anti-slop frontend framework for AI coding agents. SKILL.md files that force higher-quality UI output.",
+      "language": "Shell",
+      "stars": 36886,
+      "forks": 2655,
+      "stars_today": 1103,
+      "analysis": {
+        "what": "AI 编码工具的反丑前端框架，注入设计品味规则消除千篇一律的模板界面",
+        "why_trending": "v2 重写，硬性禁止过度使用模式，Vercel npx skills 生态爆发",
+        "tech_stack": "纯 SKILL.md 指令文件，无运行时依赖，框架无关",
+        "use_case": "用 AI 工具做前端但对输出质量不满的开发者",
+        "audience": "前端开发者、vibe coder",
+        "verdict": "如果你对"又一个米色渐变着陆页"感到厌倦，装这个立竿见影"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "lfnovo/open-notebook",
+      "url": "https://github.com/lfnovo/open-notebook",
+      "description": "Self-hosted NotebookLM alternative. Import multi-modal content, AI chat, search, podcast generation.",
+      "language": "TypeScript",
+      "stars": 27340,
+      "forks": 3105,
+      "stars_today": 554,
+      "analysis": {
+        "what": "自托管知识管理平台：导入多模态内容，AI 聊天、搜索、生成播客",
+        "why_trending": "NotebookLM 需求旺盛但用户要隐私替代品，多播客说话人是杀手功能",
+        "tech_stack": "Python FastAPI + Next.js, SurrealDB, LangChain + Esperanto",
+        "use_case": "研究者、学生、知识工作者的知识管理",
+        "audience": "研究者、学生、内容创作者",
+        "verdict": "NotebookLM 的功能 + 数据主权，隐私敏感用户的首选"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "TapXWorld/ChinaTextbook",
+      "url": "https://github.com/TapXWorld/ChinaTextbook",
+      "description": "Chinese K-12 and university textbook PDFs, covering all grades and curricula.",
+      "language": "Roff",
+      "stars": 72542,
+      "forks": 16253,
+      "stars_today": 350,
+      "analysis": {
+        "what": "中国全套教材 PDF 公开仓库，对抗教育平台资源垄断",
+        "why_trending": "教育公平叙事引发共鸣，海外华人家庭刚需，DMCA 争议加速传播",
+        "tech_stack": "PDF 文件仓库 + Roff 脚本工具",
+        "use_case": "海外华人同步国内课程、教育工作者备课",
+        "audience": "海外华人家长、教育工作者、学生",
+        "verdict": "72k 星的教育仓库，有孩子的海外华人必备收藏"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "aaif-goose/goose",
+      "url": "https://github.com/aaif-goose/goose",
+      "description": "General-purpose open-source AI agent. Install, execute, edit, test with any LLM. Now under Linux Foundation.",
+      "language": "Rust",
+      "stars": 47556,
+      "forks": 5016,
+      "stars_today": 322,
+      "analysis": {
+        "what": "本地运行的全能 AI Agent，处理研究、写作、自动化、数据分析",
+        "why_trending": "捐赠给 Linux Foundation AAIF，MCP 生态爆发（70+ 扩展）",
+        "tech_stack": "Rust 64% + TypeScript 29%, MCP 协议, 15+ LLM 提供商",
+        "use_case": "需要跨提供商、社区治理、企业级可信的开源 Agent",
+        "audience": "全栈开发者、DevOps、企业技术团队",
+        "verdict": "企业级 AI Agent 的开源标准——Linux Foundation 背书是最大差异化"
+      }
+    },
+    {
+      "rank": 8,
+      "name": "microsoft/pg_durable",
+      "url": "https://github.com/microsoft/pg_durable",
+      "description": "PostgreSQL in-database durable execution. SQL functions with auto-checkpointing, crash recovery.",
+      "language": "Rust",
+      "stars": 1477,
+      "forks": 33,
+      "stars_today": 316,
+      "analysis": {
+        "what": "用 SQL 定义容错工作流，全部在 Postgres 内执行",
+        "why_trending": "微软 + PostgreSQL 许可证，杀死 pg_cron 脆弱模式，Azure HorizonDB 内置",
+        "tech_stack": "Rust (pgrx) + duroxide, PG 17/18",
+        "use_case": "已在用 Postgres 的团队，替代 Airflow/Temporal",
+        "audience": "后端工程师、数据工程师",
+        "verdict": "如果工作流可以写成 SQL，为什么还要装 Temporal？"
+      }
+    },
+    {
+      "rank": 9,
+      "name": "Crosstalk-Solutions/project-nomad",
+      "url": "https://github.com/Crosstalk-Solutions/project-nomad",
+      "description": "Offline survival computer with local AI, Wikipedia, education, maps, data tools.",
+      "language": "TypeScript",
+      "stars": 29767,
+      "forks": 2951,
+      "stars_today": 309,
+      "analysis": {
+        "what": "一台装在服务器里的离线百科全书+AI 助手+教育平台+地图",
+        "why_trending": "离线 AI + 生存主义交叉赛道，YouTube 粉丝驱动，硬件跑分排行榜病毒传播",
+        "tech_stack": "TypeScript 93% + Docker, Ollama, Qdrant, Kiwix, Kolibri",
+        "use_case": "灾难准备、偏远地区教育、离线知识服务器",
+        "audience": "生存主义者、教育工作者、网络工程师",
+        "verdict": "概念独特——断网也能用的 AI 知识中心"
+      }
+    },
+    {
+      "rank": 10,
+      "name": "openai/plugins",
+      "url": "https://github.com/openai/plugins",
+      "description": "OpenAI official Codex plugin examples. Figma, Notion, iOS/macOS/Web builders.",
+      "language": "JavaScript",
+      "stars": 2062,
+      "forks": 273,
+      "stars_today": 262,
+      "analysis": {
+        "what": "OpenAI Codex CLI 的插件参考库，一个接口即可发布插件",
+        "why_trending": "OpenAI 对标 Claude Code 的 Agent 生态布局，官方插件降低门槛",
+        "tech_stack": "Node.js + TypeScript, MCP 协议, Apache 2.0",
+        "use_case": "使用 Codex CLI 的开发者，Agent 插件构建",
+        "audience": "Codex CLI 用户、Agent 插件开发者",
+        "verdict": "Codex CLI 生态的起点，官方插件是必看参考"
+      }
+    }
+  ]
+}

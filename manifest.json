@@ -1,6 +1,10 @@
 {
   "reports": [
     {
+      "date": "2026-06-08",
+      "top3": "RyanCodrai / turbovec · NousResearch / hermes-agent · mvanhorn / last30days-skill"
+    },
+    {
       "date": "2026-06-07",
       "top3": "lfnovo / open-notebook · Panniantong / Agent-Reach · CopilotKit / CopilotKit"
     },
