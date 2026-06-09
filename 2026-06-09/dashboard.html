@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Daily · 2026-06-09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf9f5;
+  --bg-warm: #f5f3ed;
+  --ink: #1a1918;
+  --ink-soft: #6b6966;
+  --ink-muted: #9e9b97;
+  --accent: #c4603c;
+  --accent-soft: rgba(196, 96, 60, 0.08);
+  --rule: #e8e6e1;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 4rem;
+}
+
+/* Header */
+.header {
+  margin-bottom: 4rem;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.header .meta {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.header .meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.header .meta .dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--ink-muted);
+  display: inline-block;
+}
+
+/* Section labels */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Project card */
+.project {
+  margin-bottom: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.project:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.project-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.rank {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+  min-width: 1.5rem;
+}
+
+.project-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.project-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-name a:hover {
+  color: var(--accent);
+}
+
+.project-lang {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.project-stats {
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.75rem;
+  padding-left: 2.25rem;
+}
+
+.project-stats .today {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.project-desc {
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  padding-left: 2.25rem;
+}
+
+/* Analysis grid */
+.analysis {
+  padding-left: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.analysis-row {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.analysis-label {
+  flex-shrink: 0;
+  width: 5rem;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.analysis-value {
+  color: var(--ink-soft);
+  flex: 1;
+}
+
+.conclusion {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  padding-left: 2.25rem;
+  font-size: 0.8125rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.conclusion::before {
+  content: '→ ';
+  color: var(--accent);
+}
+
+/* Trending section (projects 4-10) */
+.trending-section {
+  margin-top: 4rem;
+}
+
+.trending-section .section-label {
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+.footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.footer a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--accent);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .container { padding: 3rem 1rem 2.5rem; }
+  .header h1 { font-size: 1.375rem; }
+  .analysis-row { flex-direction: column; gap: 0.125rem; }
+  .analysis-label { width: auto; }
+  .project-header { flex-wrap: wrap; }
+  .project-lang { margin-left: 2.25rem; margin-top: 0.25rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="header">
+  <h1>GitHub Trending Daily</h1>
+  <div class="meta">
+    <span>2026-06-09</span>
+    <span class="dot"></span>
+    <span>Top 10 精选</span>
+    <span class="dot"></span>
+    <span>总增星 10,034</span>
+    <span class="dot"></span>
+    <span>4 种语言</span>
+  </div>
+</header>
+
+<!-- TOP 3 -->
+<div class="section-label">Top 3</div>
+
+<!-- #1 -->
+<article class="project">
+  <div class="project-header">
+    <span class="rank">01</span>
+    <span class="project-name"><a href="https://github.com/mvanhorn/last30days-skill" target="_blank">mvanhorn/last30days-skill</a></span>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+3,558 today</span> · 34,780 stars · 2,846 forks
+  </div>
+  <p class="project-desc">
+    AI Agent 的多平台研究插件，并行搜索 Reddit、X、YouTube、HN、Polymarket 等十几个平台，用真实用户的点赞/投票/押注数据排序，生成基于"人们实际在关注什么"的综合报告。
+  </p>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">让 Claude Code/Cursor 等 Agent 一键搜索 14+ 平台，综合分析一个话题的全网热度。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">v3 大版本发布，"intelligent search"自动解析人物 X handle、GitHub、subreddit 再并行搜索，AI Agent 生态爆发期精准命中。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Python 3.12+, Node.js, yt-dlp, ScrapeCreators API, Brave Search, SQLite</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">会前做功课、竞品调研、技术趋势追踪、旅行前社区情报收集。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">谁应该关注</span>
+      <span class="analysis-value">Claude Code/Cursor/Codex 用户，做市场研究/BD/内容创作的人。</span>
+    </div>
+  </div>
+  <p class="conclusion">信息聚合+AI Synthesis 赛道的标杆实现，如果你用 Claude Code，这是必装的 skill 之一。</p>
+</article>
+
+<!-- #2 -->
+<article class="project">
+  <div class="project-header">
+    <span class="rank">02</span>
+    <span class="project-name"><a href="https://github.com/RyanCodrai/turbovec" target="_blank">RyanCodrai/turbovec</a></span>
+    <span class="project-lang">Python / Rust</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+1,729 today</span> · 9,006 stars · 817 forks
+  </div>
+  <p class="project-desc">
+    基于 Google Research TurboQuant 论文的向量索引库，Rust 核心 + Python 绑定。无需训练阶段，1536 维向量从 6KB 压缩到 384 字节（16x），搜索速度比 FAISS 快 12-20%。
+  </p>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">高性能向量索引，Rust SIMD 内核实现在线量化，数据直接插入无需训练。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">TurboQuant 论文（ICLR 2026）的高质量开源实现，填补"在线量化+无需训练"的工程空白。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Rust (NEON + AVX-512BW SIMD), Python (maturin), LangChain/LlamaIndex/Haystack 集成</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">本地 RAG 系统、内存受限的向量搜索、实时检索、隐私敏感场景。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">谁应该关注</span>
+      <span class="analysis-value">RAG pipeline 工程师、FAISS 用户、边缘设备向量搜索开发者。</span>
+    </div>
+  </div>
+  <p class="conclusion">FAISS 的有力替代品，ARM 设备和内存受限场景下尤其值得试用。</p>
+</article>
+
+<!-- #3 -->
+<article class="project">
+  <div class="project-header">
+    <span class="rank">03</span>
+    <span class="project-name"><a href="https://github.com/roboflow/supervision" target="_blank">roboflow/supervision</a></span>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+1,288 today</span> · 42,394 stars · 3,786 forks
+  </div>
+  <p class="project-desc">
+    计算机视觉的"瑞士军刀"——检测结果可视化、数据集格式转换、目标跟踪、区域计数等可复用模块，与 YOLO、RF-DETR、Transformers 等任何 CV 模型即插即用。
+  </p>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">CV 模型推理后的可视化、标注、统计分析工具链，与任何检测模型无缝对接。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">v0.28.0 引入 CompactMask 和 SAM3 支持，CV + AI Agent 交叉需求持续升温。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">纯 Python, OpenCV, NumPy, 支持 YOLO/Ultralytics/RF-DETR/Transformers/MMDetection</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">CV 推理可视化、数据集格式转换（YOLO/COCO/VOC 互转）、视频流区域计数。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">谁应该关注</span>
+      <span class="analysis-value">CV 开发者、视频分析/智能监控/工业检测工程师、CV 初学者。</span>
+    </div>
+  </div>
+  <p class="conclusion">CV 领域的工具链标配，做目标检测/跟踪没有理由不用。</p>
+</article>
+
+<!-- TRENDING -->
+<div class="trending-section">
+<div class="section-label">Trending</div>
+
+<!-- #4 -->
+<article class="project">
+  <div class="project-header">
+    <span class="rank">04</span>
+    <span class="project-name"><a href="https://github.com/aaif-goose/goose" target="_blank">aaif-goose/goose</a></span>
+    <span class="project-lang">Rust</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+699 today</span> · 48,147 stars · 5,070 forks
+  </div>
+  <p class="project-desc">
+    通用 AI Agent 平台，Rust 构建，支持 15+ LLM 后端，通过 MCP 协议接入 70+ 扩展。从 Block 独立后加入 Linux Foundation 的 AAIF。
+  </p>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">不绑定厂商的通用 Agent 平台，桌面+CLI+API，支持写代码、研究、数据分析、自动化。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">加入 Linux Foundation AAIF，企业级 AI Agent 走向标准化和中立化的信号。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Rust 64%, TypeScript/JS 前端, ACP + MCP 协议, 15+ LLM 后端</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">需要 LLM 厂商中立的 Agent 工具、企业自建分发版、跨平台 CLI+桌面场景。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">谁应该关注</span>
+      <span class="analysis-value">企业技术负责人、独立开发者、AI 基础设施/MCP 协议生态关注者。</span>
+    </div>
+  </div>
+  <p class="conclusion">担心 vendor lock-in 的话，goose 值得评估。</p>
+</article>
+
+<!-- #5 -->
+<article class="project">
+  <div class="project-header">
+    <span class="rank">05</span>
+    <span class="project-name"><a href="https://github.com/Panniantong/Agent-Reach" target="_blank">Panniantong/Agent-Reach</a></span>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+679 today</span> · 24,327 stars · 2,042 forks
+  </div>
+  <p class="project-desc">
+    AI Agent 互联网能力安装器——一条命令把 Twitter/Reddit/YouTube/小红书/B站/微博/微信公众号等 16+ 平台的读取搜索能力装到任何 Agent，零 API 费用。
+  </p>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">用开源 CLI + Cookie 认证，给 AI Agent 装上全平台联网能力，中英文平台全覆盖。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">精准解决中国开发者痛点：小红书/B站/微博/微信公众号这些海外工具覆盖不到。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Python 3.10+, twitter-cli/rdt-cli/xhs-cli/yt-dlp/gh CLI, pipx 安装</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">给 Claude Code/Cursor 装"能上网"的能力、中英文全平台信息检索、竞品分析。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">谁应该关注</span>
+      <span class="analysis-value">中国 AI Agent 用户、海外+国内双市场研究者、觉得 Agent "上不了网"的开发者。</span>
+    </div>
+  </div>
+  <p class="conclusion">中国 AI Agent 生态的基础设施级项目，目前最佳的中文互联网平台接入方案。</p>
+</article>
+
+<!-- #6 -->
+<article class="project">
+  <div class="project-header">
+    <span class="rank">06</span>
+    <span class="project-name"><a href="https://github.com/CopilotKit/CopilotKit" target="_blank">CopilotKit/CopilotKit</a></span>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+378 today</span> · 34,183 stars · 4,306 forks
+  </div>
+  <p class="project-desc">
+    全栈 Agent UI 框架，在 React/Angular/Vue/React Native 上快速构建 AI Agent 前端界面，同一套后端驱动 Web、手机和 Slack/Teams。AG-UI Protocol 发起者。
+  </p>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">Agent 前端一站式方案，聊天窗口、生成式 UI、人机协作、多端复用。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">AG-UI Protocol 被 Google/LangChain/AWS/Microsoft 采用，v5 支持 Generative UI。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">TypeScript 78.9%, Python SDK, React/Next.js, Turborepo, AG-UI Protocol</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">产品里加 AI Agent 交互、Agent 跨 Web/Mobile/Slack 多端复用。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">谁应该关注</span>
+      <span class="analysis-value">前端/全栈开发者、AI-native 产品团队、需要嵌入 Agent 能力的 PM 和技术负责人。</span>
+    </div>
+  </div>
+  <p class="conclusion">Agent 前端领域最完整的开源方案，做 AI 应用 UI 层 must-try。</p>
+</article>
+
+<!-- #7 -->
+<article class="project">
+  <div class="project-header">
+    <span class="rank">07</span>
+    <span class="project-name"><a href="https://github.com/refactoringhq/tolaria" target="_blank">refactoringhq/tolaria</a></span>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+651 today</span> · 13,639 stars · 954 forks
+  </div>
+  <p class="project-desc">
+    跨平台 Markdown 知识库桌面工具，files-first、Git-first、离线优先、零锁定。Tauri 架构，支持 Claude Code/Codex CLI/Gemini CLI 直接读取 vault。
+  </p>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">Obsidian 的开源替代，每个笔记库就是 Git 仓库，AI-first 设计支持 Agent 直接读取。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">Refactoring Newsletter 团队开源，Obsidian 替代品热潮+AI-first 差异化。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">TypeScript 70.5%, Rust 13.6% (Tauri), React, AGPL-3.0, MCP Server 内置</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">个人知识管理、AI Agent 结构化上下文源、需要版本控制的 Markdown 工作流。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">谁应该关注</span>
+      <span class="analysis-value">Obsidian/Notion 用户、AI 开发者、注重数据主权的团队。</span>
+    </div>
+  </div>
+  <p class="conclusion">Obsidian 的开源挑战者，AI-first 是独特优势，给 Agent 搭知识库值得认真看。</p>
+</article>
+
+<!-- #8 -->
+<article class="project">
+  <div class="project-header">
+    <span class="rank">08</span>
+    <span class="project-name"><a href="https://github.com/TapXWorld/ChinaTextbook" target="_blank">TapXWorld/ChinaTextbook</a></span>
+    <span class="project-lang">Roff</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+592 today</span> · 73,035 stars · 16,345 forks
+  </div>
+  <p class="project-desc">
+    中国所有小学、初中、高中、大学教材 PDF 电子版合集，覆盖人教版等主流教材，完全免费开源。
+  </p>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">国内教材 PDF 一站式资源库，整合散落各处的教材电子版。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">教育类资源刚需项目，开学季/教育话题热议时持续爆发，常青树型增长。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">PDF 文件存储, Git LFS, mergePDFs 工具</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">家长找电子教材、海外华人家庭教育、教育工作者备课、AI 中文教育语料。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">谁应该关注</span>
+      <span class="analysis-value">家长、教师、海外华人社区、教育科技从业者。</span>
+    </div>
+  </div>
+  <p class="conclusion">海外华人家庭的刚需收藏级项目。</p>
+</article>
+
+<!-- #9 -->
+<article class="project">
+  <div class="project-header">
+    <span class="rank">09</span>
+    <span class="project-name"><a href="https://github.com/phuryn/pm-skills" target="_blank">phuryn/pm-skills</a></span>
+    <span class="project-lang">—</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+164 today</span> · 12,770 stars · 1,503 forks
+  </div>
+  <p class="project-desc">
+    产品经理 AI Skill 市场，68 个 PM 技能 + 42 个链式工作流，覆盖发现、策略、执行、上市、增长全流程。通过 Claude Code 插件安装。
+  </p>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">把顶级 PM 方法论编码成 AI 可执行工作流，直接把 Claude 变成 PM 操作系统。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">v2.0.0 于 6月5日发布，新增 red-team PRD、AI Shipping Kit 等重磅能力。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Claude Code Plugin Marketplace, SKILL.md 标准格式, MIT 许可</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">写 PRD、竞品分析、定 OKR、用户访谈、A/B 测试、上市策略、审计 vibe-coded 代码。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">谁应该关注</span>
+      <span class="analysis-value">产品经理（尤其独立 PM/小团队 PM）、用 AI 辅助工作的创始人。</span>
+    </div>
+  </div>
+  <p class="conclusion">最完善的 PM + AI Skill 集合，PM 用 Claude Code 的必装插件。</p>
+</article>
+
+<!-- #10 -->
+<article class="project">
+  <div class="project-header">
+    <span class="rank">10</span>
+    <span class="project-name"><a href="https://github.com/openai/plugins" target="_blank">openai/plugins</a></span>
+    <span class="project-lang">JavaScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+296 today</span> · 2,339 stars · 289 forks
+  </div>
+  <p class="project-desc">
+    OpenAI 官方 Codex 插件示例集合，包含 Figma、Notion、Expo、Netlify、Remotion 等插件的参考实现。
+  </p>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">Codex CLI 插件生态的官方标杆，提供 plugin.json 标准化清单格式的参考实现。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">Codex CLI 用户增长带动插件生态关注度，Agent 插件标准格式的社区需求。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">JavaScript 58.9%, Python 32.8%, Codex Plugin Manifest, MCP 集成</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">给 Codex CLI 写插件、了解 Agent 插件标准格式、快速搭建 Figma-to-Code 工作流。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">谁应该关注</span>
+      <span class="analysis-value">Codex CLI 用户、AI Agent 工具链开发者、想做插件生态的团队。</span>
+    </div>
+  </div>
+  <p class="conclusion">Agent 插件生态的官方参考实现，目前还是示例级，离成熟插件市场有距离。</p>
+</article>
+
+</div><!-- trending-section -->
+
+<footer class="footer">
+  <p>Source: <a href="https://github.com/trending">github.com/trending</a> · Generated by Claude Code</p>
+</footer>
+
+</div><!-- container -->
+</body>
+</html>

@@ -1,0 +1,187 @@
+{
+  "date": "2026-06-09",
+  "source": "https://github.com/trending",
+  "total_repos": 16,
+  "top_10": [
+    {
+      "rank": 1,
+      "name": "mvanhorn/last30days-skill",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "language": "Python",
+      "stars": 34780,
+      "forks": 2846,
+      "stars_today": 3558,
+      "analysis": {
+        "what": "让 Claude Code/Cursor 等 Agent 一键搜索 14+ 平台，综合分析一个话题的全网热度",
+        "why_hot": "v3 大版本发布，intelligent search 自动解析人物 X handle、GitHub、subreddit 再并行搜索，AI Agent 生态爆发期精准命中",
+        "tech_stack": "Python 3.12+, Node.js, yt-dlp, ScrapeCreators API, Brave Search, SQLite",
+        "use_cases": "会前做功课、竞品调研、技术趋势追踪、旅行前社区情报收集",
+        "audience": "Claude Code/Cursor/Codex 用户，做市场研究/BD/内容创作的人",
+        "verdict": "信息聚合+AI Synthesis 赛道的标杆实现，如果你用 Claude Code，这是必装的 skill 之一"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "RyanCodrai/turbovec",
+      "url": "https://github.com/RyanCodrai/turbovec",
+      "description": "A vector index built on TurboQuant, written in Rust with Python bindings",
+      "language": "Python / Rust",
+      "stars": 9006,
+      "forks": 817,
+      "stars_today": 1729,
+      "analysis": {
+        "what": "高性能向量索引，Rust SIMD 内核实现在线量化，数据直接插入无需训练",
+        "why_hot": "TurboQuant 论文（ICLR 2026）的高质量开源实现，填补在线量化+无需训练的工程空白",
+        "tech_stack": "Rust (NEON + AVX-512BW SIMD), Python (maturin), LangChain/LlamaIndex/Haystack 集成",
+        "use_cases": "本地 RAG 系统、内存受限的向量搜索、实时检索、隐私敏感场景",
+        "audience": "RAG pipeline 工程师、FAISS 用户、边缘设备向量搜索开发者",
+        "verdict": "FAISS 的有力替代品，ARM 设备和内存受限场景下尤其值得试用"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "roboflow/supervision",
+      "url": "https://github.com/roboflow/supervision",
+      "description": "We write your reusable computer vision tools",
+      "language": "Python",
+      "stars": 42394,
+      "forks": 3786,
+      "stars_today": 1288,
+      "analysis": {
+        "what": "CV 模型推理后的可视化、标注、统计分析工具链，与任何检测模型无缝对接",
+        "why_hot": "v0.28.0 引入 CompactMask 和 SAM3 支持，CV + AI Agent 交叉需求持续升温",
+        "tech_stack": "纯 Python, OpenCV, NumPy, 支持 YOLO/Ultralytics/RF-DETR/Transformers/MMDetection",
+        "use_cases": "CV 推理可视化、数据集格式转换（YOLO/COCO/VOC 互转）、视频流区域计数",
+        "audience": "CV 开发者、视频分析/智能监控/工业检测工程师、CV 初学者",
+        "verdict": "CV 领域的工具链标配，做目标检测/跟踪没有理由不用"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "aaif-goose/goose",
+      "url": "https://github.com/aaif-goose/goose",
+      "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
+      "language": "Rust",
+      "stars": 48147,
+      "forks": 5070,
+      "stars_today": 699,
+      "analysis": {
+        "what": "不绑定厂商的通用 Agent 平台，桌面+CLI+API，支持写代码、研究、数据分析、自动化",
+        "why_hot": "加入 Linux Foundation AAIF，企业级 AI Agent 走向标准化和中立化的信号",
+        "tech_stack": "Rust 64%, TypeScript/JS 前端, ACP + MCP 协议, 15+ LLM 后端",
+        "use_cases": "需要 LLM 厂商中立的 Agent 工具、企业自建分发版、跨平台 CLI+桌面场景",
+        "audience": "企业技术负责人、独立开发者、AI 基础设施/MCP 协议生态关注者",
+        "verdict": "担心 vendor lock-in 的话，goose 值得评估"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "Panniantong/Agent-Reach",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "language": "Python",
+      "stars": 24327,
+      "forks": 2042,
+      "stars_today": 679,
+      "analysis": {
+        "what": "用开源 CLI + Cookie 认证，给 AI Agent 装上全平台联网能力，中英文平台全覆盖",
+        "why_hot": "精准解决中国开发者痛点：小红书/B站/微博/微信公众号这些海外工具覆盖不到",
+        "tech_stack": "Python 3.10+, twitter-cli/rdt-cli/xhs-cli/yt-dlp/gh CLI, pipx 安装",
+        "use_cases": "给 Claude Code/Cursor 装能上网的能力、中英文全平台信息检索、竞品分析",
+        "audience": "中国 AI Agent 用户、海外+国内双市场研究者、觉得 Agent 上不了网的开发者",
+        "verdict": "中国 AI Agent 生态的基础设施级项目，目前最佳的中文互联网平台接入方案"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "CopilotKit/CopilotKit",
+      "url": "https://github.com/CopilotKit/CopilotKit",
+      "description": "The Frontend Stack for Agents & Generative UI. React, Angular, Mobile, Slack, and more.",
+      "language": "TypeScript",
+      "stars": 34183,
+      "forks": 4306,
+      "stars_today": 378,
+      "analysis": {
+        "what": "Agent 前端一站式方案，聊天窗口、生成式 UI、人机协作、多端复用",
+        "why_hot": "AG-UI Protocol 被 Google/LangChain/AWS/Microsoft 采用，v5 支持 Generative UI",
+        "tech_stack": "TypeScript 78.9%, Python SDK, React/Next.js, Turborepo, AG-UI Protocol",
+        "use_cases": "产品里加 AI Agent 交互、Agent 跨 Web/Mobile/Slack 多端复用",
+        "audience": "前端/全栈开发者、AI-native 产品团队、需要嵌入 Agent 能力的 PM 和技术负责人",
+        "verdict": "Agent 前端领域最完整的开源方案，做 AI 应用 UI 层 must-try"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "refactoringhq/tolaria",
+      "url": "https://github.com/refactoringhq/tolaria",
+      "description": "Desktop app to manage markdown knowledge bases",
+      "language": "TypeScript",
+      "stars": 13639,
+      "forks": 954,
+      "stars_today": 651,
+      "analysis": {
+        "what": "Obsidian 的开源替代，每个笔记库就是 Git 仓库，AI-first 设计支持 Agent 直接读取",
+        "why_hot": "Refactoring Newsletter 团队开源，Obsidian 替代品热潮+AI-first 差异化",
+        "tech_stack": "TypeScript 70.5%, Rust 13.6% (Tauri), React, AGPL-3.0, MCP Server 内置",
+        "use_cases": "个人知识管理、AI Agent 结构化上下文源、需要版本控制的 Markdown 工作流",
+        "audience": "Obsidian/Notion 用户、AI 开发者、注重数据主权的团队",
+        "verdict": "Obsidian 的开源挑战者，AI-first 是独特优势，给 Agent 搭知识库值得认真看"
+      }
+    },
+    {
+      "rank": 8,
+      "name": "TapXWorld/ChinaTextbook",
+      "url": "https://github.com/TapXWorld/ChinaTextbook",
+      "description": "所有小初高、大学PDF教材",
+      "language": "Roff",
+      "stars": 73035,
+      "forks": 16345,
+      "stars_today": 592,
+      "analysis": {
+        "what": "国内教材 PDF 一站式资源库，整合散落各处的教材电子版",
+        "why_hot": "教育类资源刚需项目，开学季/教育话题热议时持续爆发，常青树型增长",
+        "tech_stack": "PDF 文件存储, Git LFS, mergePDFs 工具",
+        "use_cases": "家长找电子教材、海外华人家庭教育、教育工作者备课、AI 中文教育语料",
+        "audience": "家长、教师、海外华人社区、教育科技从业者",
+        "verdict": "海外华人家庭的刚需收藏级项目"
+      }
+    },
+    {
+      "rank": 9,
+      "name": "phuryn/pm-skills",
+      "url": "https://github.com/phuryn/pm-skills",
+      "description": "PM Skills Marketplace: 100+ agentic skills, commands, and plugins",
+      "language": "—",
+      "stars": 12770,
+      "forks": 1503,
+      "stars_today": 164,
+      "analysis": {
+        "what": "把顶级 PM 方法论编码成 AI 可执行工作流，直接把 Claude 变成 PM 操作系统",
+        "why_hot": "v2.0.0 于 6月5日发布，新增 red-team PRD、AI Shipping Kit 等重磅能力",
+        "tech_stack": "Claude Code Plugin Marketplace, SKILL.md 标准格式, MIT 许可",
+        "use_cases": "写 PRD、竞品分析、定 OKR、用户访谈、A/B 测试、上市策略、审计 vibe-coded 代码",
+        "audience": "产品经理（尤其独立 PM/小团队 PM）、用 AI 辅助工作的创始人",
+        "verdict": "最完善的 PM + AI Skill 集合，PM 用 Claude Code 的必装插件"
+      }
+    },
+    {
+      "rank": 10,
+      "name": "openai/plugins",
+      "url": "https://github.com/openai/plugins",
+      "description": "OpenAI Plugins",
+      "language": "JavaScript",
+      "stars": 2339,
+      "forks": 289,
+      "stars_today": 296,
+      "analysis": {
+        "what": "Codex CLI 插件生态的官方标杆，提供 plugin.json 标准化清单格式的参考实现",
+        "why_hot": "Codex CLI 用户增长带动插件生态关注度，Agent 插件标准格式的社区需求",
+        "tech_stack": "JavaScript 58.9%, Python 32.8%, Codex Plugin Manifest, MCP 集成",
+        "use_cases": "给 Codex CLI 写插件、了解 Agent 插件标准格式、快速搭建 Figma-to-Code 工作流",
+        "audience": "Codex CLI 用户、AI Agent 工具链开发者、想做插件生态的团队",
+        "verdict": "Agent 插件生态的官方参考实现，目前还是示例级，离成熟插件市场有距离"
+      }
+    }
+  ]
+}
