@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Daily · 2026-06-09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf9f5;--bg-warm:#f5f3ed;--ink:#1a1918;--ink-soft:#6b6966;--ink-muted:#9e9b97;--accent:#c4603c;--accent-soft:rgba(196,96,60,0.08);--rule:#e8e6e1}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Geist Sans',-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.page{max-width:720px;margin:0 auto;padding:5rem 2rem}
+.header{margin-bottom:5rem}
+.header h1{font-size:1.6rem;font-weight:600;letter-spacing:-0.02em;margin-bottom:.5rem}
+.header .meta{font-size:.9rem;color:var(--ink-soft)}
+.header .meta span{margin-right:1.5rem}
+.header .meta .mono{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--accent)}
+.section-label{font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);margin-bottom:2.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--rule)}
+.project{margin-bottom:4rem}
+.project-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:.5rem}
+.rank{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--ink-muted);min-width:1.5rem}
+.project-name{font-size:1.1rem;font-weight:600;color:var(--ink);text-decoration:none}
+.project-name:hover{color:var(--accent)}
+.project-lang{font-size:.8rem;color:var(--ink-muted);margin-left:auto}
+.project-stats{padding-left:2.25rem;margin-bottom:.75rem}
+.project-stats .mono{font-family:'JetBrains Mono',monospace;font-size:.85rem}
+.stars-today{color:var(--accent);font-weight:500}
+.stars-total{color:var(--ink-muted);margin-left:1rem}
+.project-desc{padding-left:2.25rem;color:var(--ink-soft);font-size:.95rem;margin-bottom:1.25rem;line-height:1.6}
+.analysis{padding-left:2.25rem;display:grid;grid-template-columns:5rem 1fr;gap:.5rem 1rem;font-size:.9rem;line-height:1.7}
+.analysis dt{color:var(--ink-muted);font-weight:500}
+.analysis dd{color:var(--ink-soft)}
+.project-divider{margin:4rem 0;border:none;border-top:1px solid var(--rule)}
+.footer{margin-top:5rem;padding-top:2rem;border-top:1px solid var(--rule);font-size:.8rem;color:var(--ink-muted)}
+@media(max-width:600px){.page{padding:3rem 1.25rem}.analysis{grid-template-columns:1fr;gap:.25rem}.analysis dt{margin-top:.75rem}.project-header{flex-wrap:wrap}.project-lang{margin-left:0;margin-top:.25rem}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="header">
+<h1>GitHub Trending Daily</h1>
+<div class="meta">
+<span>2026-06-09 · Top 10 精选</span>
+<span class="mono">总增星 9,937</span>
+<span>语言 7 种</span>
+</div>
+</header>
+
+<div class="section-label">Top 3</div>
+
+<article class="project">
+<div class="project-header">
+<span class="rank">01</span>
+<a class="project-name" href="https://github.com/mvanhorn/last30days-skill" target="_blank">mvanhorn/last30days-skill</a>
+<span class="project-lang">Python</span>
+</div>
+<div class="project-stats">
+<span class="mono stars-today">+3,191 today</span>
+<span class="mono stars-total">· 37,527 stars</span>
+</div>
+<p class="project-desc">AI agent skill，跨 Reddit、X、YouTube、TikTok、HN、Polymarket 等十余个平台并行搜索，按真实互动指标排名，输出一份综合简报。</p>
+<dl class="analysis">
+<dt>做什么</dt><dd>给 AI agent 装一个跨平台社交搜索引擎，输入一个话题就能拿到全网讨论热度和观点摘要。</dd>
+<dt>为什么火</dt><dd>GitHub 今日 #1 仓库，填补了"单一工具搜索所有社交平台"的空白，实用场景广泛（会前调研、竞品追踪、事件监测）。</dd>
+<dt>技术栈</dt><dd>Python 3.12+, yt-dlp, Node.js (X client), ScrapeCreators API, SQLite。</dd>
+<dt>适用场景</dt><dd>需要了解某个话题/产品/人在全网的讨论热度和舆论走向。</dd>
+<dt>受众</dt><dd>产品经理、研究员、记者、市场分析师。</dd>
+<dt>结论</dt><dd>如果你的工作需要"知道网上在说什么"，这是目前最全面的自动化方案。</dd>
+</dl>
+</article>
+
+<hr class="project-divider">
+
+<article class="project">
+<div class="project-header">
+<span class="rank">02</span>
+<a class="project-name" href="https://github.com/RyanCodrai/turbovec" target="_blank">RyanCodrai/turbovec</a>
+<span class="project-lang">Rust / Python</span>
+</div>
+<div class="project-stats">
+<span class="mono stars-today">+1,801 today</span>
+<span class="mono stars-total">· 10,257 stars</span>
+</div>
+<p class="project-desc">基于 Google Research TurboQuant 算法的向量索引库，将高维向量压缩 16 倍，搜索速度比 FAISS 快 12-20%。</p>
+<dl class="analysis">
+<dt>做什么</dt><dd>一个更快、更省内存的向量搜索库，10M 文档从 31GB 压缩到 4GB，无需训练阶段。</dd>
+<dt>为什么火</dt><dd>在核心指标上全面超越 FAISS（速度、召回率、压缩率），RAG 和向量搜索是当前最热的基础设施赛道。</dd>
+<dt>技术栈</dt><dd>Rust 核心 + Python 绑定 (PyO3/maturin)，SIMD 优化（NEON/AVX-512），MIT 协议。</dd>
+<dt>适用场景</dt><dd>大规模向量搜索、RAG 系统、内存受限的 embedding 检索部署。</dd>
+<dt>受众</dt><dd>ML 工程师、搜索基础设施团队、RAG 系统构建者。</dd>
+<dt>结论</dt><dd>如果你在用 FAISS 做向量搜索，值得认真评估这个替代方案。</dd>
+</dl>
+</article>
+
+<hr class="project-divider">
+
+<article class="project">
+<div class="project-header">
+<span class="rank">03</span>
+<a class="project-name" href="https://github.com/santifer/career-ops" target="_blank">santifer/career-ops</a>
+<span class="project-lang">JavaScript / Go</span>
+</div>
+<div class="project-stats">
+<span class="mono stars-today">+1,110 today</span>
+<span class="mono stars-total">· 51,765 stars</span>
+</div>
+<p class="project-desc">AI 驱动的求职指挥中心，将 AI coding CLI 变成完整的职位评估管线。作者用它评估了 740+ 个职位并成功入职。</p>
+<dl class="analysis">
+<dt>做什么</dt><dd>14 种 skill 模式覆盖职位分类、匹配度评分、简历生成、45+ 公司 career portal 扫描、面试故事库。</dd>
+<dt>为什么火</dt><dd>被 Wired 和 Business Insider 报道，有真实求职成功案例背书，解决了"AI 帮你海投"到"AI 帮你精选"的转变。</dd>
+<dt>技术栈</dt><dd>JavaScript (62%), Go (30%), Playwright, Claude Code, Bubble Tea TUI。</dd>
+<dt>适用场景</dt><dd>求职者想系统性评估和筛选职位，而不是盲目投递。</dd>
+<dt>受众</dt><dd>正在找工作的开发者、职业转型者。</dd>
+<dt>结论</dt><dd>目前最全面的 AI 求职工具，有真实成果证明，值得每个求职者试试。</dd>
+</dl>
+</article>
+
+<div class="section-label" style="margin-top:5rem">Trending</div>
+
+<article class="project">
+<div class="project-header">
+<span class="rank">04</span>
+<a class="project-name" href="https://github.com/refactoringhq/tolaria" target="_blank">refactoringhq/tolaria</a>
+<span class="project-lang">TypeScript</span>
+</div>
+<div class="project-stats">
+<span class="mono stars-today">+829 today</span>
+<span class="mono stars-total">· 14,388 stars</span>
+</div>
+<p class="project-desc">桌面端 Markdown 知识库管理器，git-first、offline-first、keyboard-first，支持 AI agent 集成。</p>
+<dl class="analysis">
+<dt>做什么</dt><dd>用 Tauri + React 构建的本地知识库工具，每个 vault 就是一个 git repo，纯 markdown 文件无锁定。</dd>
+<dt>为什么火</dt><dd>在 Obsidian/Logseq 之外提供了真正开源、无账号、无云依赖的方案，且原生支持 Claude Code 等 AI agent。</dd>
+<dt>技术栈</dt><dd>Tauri (Rust), React, TypeScript, AGPL-3.0。</dd>
+<dt>适用场景</dt><dd>个人知识管理、团队文档、AI agent 记忆存储。</dd>
+<dt>受众</dt><dd>开发者、知识工作者、AI 重度用户。</dd>
+<dt>结论</dt><dd>想要一个本地优先、git 驱动、与 AI agent 协作的 markdown 知识库，这是目前最好的选择之一。</dd>
+</dl>
+</article>
+
+<hr class="project-divider">
+
+<article class="project">
+<div class="project-header">
+<span class="rank">05</span>
+<a class="project-name" href="https://github.com/phuryn/pm-skills" target="_blank">phuryn/pm-skills</a>
+<span class="project-lang">Markdown</span>
+</div>
+<div class="project-stats">
+<span class="mono stars-today">+806 today</span>
+<span class="mono stars-total">· 13,489 stars</span>
+</div>
+<p class="project-desc">100+ 产品经理技能和 42 个链式工作流，编码了成熟的 PM 框架，让 AI 输出结构化而非泛泛而谈。</p>
+<dl class="analysis">
+<dt>做什么</dt><dd>9 个插件覆盖产品发现、策略、执行、市场研究、数据分析、GTM 等全流程，以 slash command 形式在 Claude Code 中使用。</dd>
+<dt>为什么火</dt><dd>精准连接了两个热门领域：AI 编程助手和产品经理方法论，v2.0 刚发布。</dd>
+<dt>技术栈</dt><dd>Markdown skill 文件, Claude Code 插件格式, Python 验证脚本, MIT 协议。</dd>
+<dt>适用场景</dt><dd>产品经理用 AI 工具做结构化工作（PRD、竞品分析、用户画像等）。</dd>
+<dt>受众</dt><dd>产品经理、产品负责人。</dd>
+<dt>结论</dt><dd>把通用 AI 输出变成结构化 PM 交付物，PM 用 AI 的正确打开方式。</dd>
+</dl>
+</article>
+
+<hr class="project-divider">
+
+<article class="project">
+<div class="project-header">
+<span class="rank">06</span>
+<a class="project-name" href="https://github.com/Andyyyy64/whichllm" target="_blank">Andyyyy64/whichllm</a>
+<span class="project-lang">Python</span>
+</div>
+<div class="project-stats">
+<span class="mono stars-today">+633 today</span>
+<span class="mono stars-total">· 4,143 stars</span>
+</div>
+<p class="project-desc">自动检测你的硬件配置，从 HuggingFace 推荐最适合本地运行的大模型，按真实 benchmark 打分。</p>
+<dl class="analysis">
+<dt>做什么</dt><dd>一条命令搞定本地 LLM 选型：检测 GPU/RAM → 匹配模型 → 按质量/速度/兼容性打分 (0-100)。</dd>
+<dt>为什么火</dt><dd>在 HN 上发了 Show HN，精准解决了"本地跑大模型选哪个"的痛点，正处于快速迭代期。</dd>
+<dt>技术栈</dt><dd>Python 3.11+, Typer CLI, nvidia-ml-py, HuggingFace API。</dd>
+<dt>适用场景</dt><dd>有一台 GPU 机器想跑本地 LLM 但不知道选哪个模型。</dd>
+<dt>受众</dt><dd>本地 LLM 玩家、AI 开发者、GPU 选购决策者。</dd>
+<dt>结论</dt><dd>本地跑大模型选型终于有了靠谱的自动化方案，比手动查 benchmark 表高效得多。</dd>
+</dl>
+</article>
+
+<hr class="project-divider">
+
+<article class="project">
+<div class="project-header">
+<span class="rank">07</span>
+<a class="project-name" href="https://github.com/roboflow/supervision" target="_blank">roboflow/supervision</a>
+<span class="project-lang">Python</span>
+</div>
+<div class="project-stats">
+<span class="mono stars-today">+733 today</span>
+<span class="mono stars-total">· 43,059 stars</span>
+</div>
+<p class="project-desc">Roboflow 出品的 Python 计算机视觉工具包，提供模型推理可视化、标注、数据集处理、多目标跟踪等通用 CV 工具。</p>
+<dl class="analysis">
+<dt>做什么</dt><dd>"计算机视觉的瑞士军刀"，一行代码可视化 YOLO 检测结果，支持 6600+ 依赖项目。</dd>
+<dt>为什么火</dt><dd>v0.28.0 新增 CompactMask 和 SAM3 支持，多篇技术博客将其列为 2026 年顶级开源 CV 库。</dd>
+<dt>技术栈</dt><dd>100% Python, MIT 协议, 兼容 YOLO/HuggingFace/MMDetection。</dd>
+<dt>适用场景</dt><dd>需要快速可视化模型检测/分割结果、处理 YOLO/COCO 数据集。</dd>
+<dt>受众</dt><dd>CV 工程师、无人机/机器人开发者、监控系统开发者。</dd>
+<dt>结论</dt><dd>做 CV 项目还在手写可视化和数据处理？supervision 能省掉大量重复工作。</dd>
+</dl>
+</article>
+
+<hr class="project-divider">
+
+<article class="project">
+<div class="project-header">
+<span class="rank">08</span>
+<a class="project-name" href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a>
+<span class="project-lang">Shell</span>
+</div>
+<div class="project-stats">
+<span class="mono stars-today">+443 today</span>
+<span class="mono stars-total">· 49,872 stars</span>
+</div>
+<p class="project-desc">给 AI 编程 agent 提供的生产级工程规范 skills，用 Markdown 定义从需求到上线的完整工作流，防止 agent 跳过关键步骤。</p>
+<dl class="analysis">
+<dt>做什么</dt><dd>把 Google 内部工程文化（Hyrum's Law、Beyonce Rule、Chesterton's Fence）包装成 AI agent 可消费的 skill 格式。</dd>
+<dt>为什么火</dt><dd>作者 Addy Osmani 是 Google Chrome 团队核心人物，在前端/工程文化圈有极大影响力。</dd>
+<dt>技术栈</dt><dd>Shell (78.6%) + JavaScript (21.4%), 核心是 Markdown skill 文件, 兼容所有主流 AI 编程工具。</dd>
+<dt>适用场景</dt><dd>用 AI agent 写代码但遇到跳过测试、不写 spec、安全审查缺失等问题。</dd>
+<dt>受众</dt><dd>所有使用 AI 编程工具的开发者、技术团队 lead。</dd>
+<dt>结论</dt><dd>给 AI agent 装了一套 senior engineer 的行为准则，每个 AI 编程用户都值得收藏。</dd>
+</dl>
+</article>
+
+<hr class="project-divider">
+
+<article class="project">
+<div class="project-header">
+<span class="rank">09</span>
+<a class="project-name" href="https://github.com/yikart/AiToEarn" target="_blank">yikart/AiToEarn</a>
+<span class="project-lang">TypeScript</span>
+</div>
+<div class="project-stats">
+<span class="mono stars-today">+402 today</span>
+<span class="mono stars-total">· 19,997 stars</span>
+</div>
+<p class="project-desc">一站式 AI 内容变现平台，用 AI agent 帮创作者自动完成内容创作、14+ 平台发布、互动和接单赚钱。</p>
+<dl class="analysis">
+<dt>做什么</dt><dd>AI 自动写内容 → 多平台发布（抖音/TikTok/YouTube/Instagram/X）→ 自动互动 → CPS/CPE 分成变现。</dd>
+<dt>为什么火</dt><dd>精准命中"一人公司"和"AI 赚钱"两个热点赛道，支持 MCP 协议对接 Claude/Cursor。</dd>
+<dt>技术栈</dt><dd>TypeScript (91%), Electron, MongoDB/Redis, Docker。</dd>
+<dt>适用场景</dt><dd>个人创作者/自媒体想用 AI 自动化内容生产和分发。</dd>
+<dt>受众</dt><dd>自媒体创作者、个人创业者、MCN 运营。</dd>
+<dt>结论</dt><dd>把"用 AI 做自媒体赚钱"从概念落地成工具链，功能全面但要注意平台风控政策。</dd>
+</dl>
+</article>
+
+<hr class="project-divider">
+
+<article class="project">
+<div class="project-header">
+<span class="rank">10</span>
+<a class="project-name" href="https://github.com/francescopace/espectre" target="_blank">francescopace/espectre</a>
+<span class="project-lang">Python</span>
+</div>
+<div class="project-stats">
+<span class="mono stars-today">+134 today</span>
+<span class="mono stars-total">· 8,238 stars</span>
+</div>
+<p class="project-desc">用 ESP32 (~10 欧元) + Wi-Fi 信号扰动分析检测人体运动，无需摄像头和麦克风，可穿透墙壁。</p>
+<dl class="analysis">
+<dt>做什么</dt><dd>分析 Wi-Fi 信号被人体干扰后的变化来感知移动，v2.8.0 新增 ESP32 端 ML 神经网络检测器。</dd>
+<dt>为什么火</dt><dd>隐私保护需求增长背景下，"无摄像头人体感知"概念极具吸引力，10 欧元硬件成本极低。</dd>
+<dt>技术栈</dt><dd>ESP32 (C++/ESPHome), Python, Home Assistant 原生集成, GPL v3。</dd>
+<dt>适用场景</dt><dd>智能家居需要人体检测但不想装摄像头（卧室、浴室等隐私区域）。</dd>
+<dt>受众</dt><dd>智能家居爱好者、Home Assistant 用户、IoT 开发者。</dd>
+<dt>结论</dt><dd>10 欧元 + Wi-Fi = 穿墙人体检测，隐私保护和成本都远优于摄像头方案。</dd>
+</dl>
+</article>
+
+<footer class="footer">
+<p>Source: github.com/trending · Generated by GitHub Trending Daily</p>
+</footer>
+</div>
+</body>
+</html>
