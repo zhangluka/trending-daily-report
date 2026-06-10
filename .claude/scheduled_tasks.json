@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {
+      "id": "19f5db98",
+      "cron": "3 10 * * *",
+      "prompt": "Generate today's GitHub Trending Daily report:\n\n1. WebFetch https://github.com/trending to get today's trending repos\n2. For the top 10 projects, generate Chinese deep analysis (what / why_hot / tech_stack / use_cases / audience / verdict)\n3. Create YYYY-MM-DD/trending-data.json with the data\n4. Copy and adapt dashboard.html from 2026-06-09/ as template, replace date and data\n5. Update manifest.json - insert new entry at top of reports array\n6. Git commit and push\n\nFollow the project conventions in CLAUDE.md.",
+      "createdAt": 1780973649725,
+      "recurring": true,
+      "createdBySessionId": "1a6e9e3c-7562-49ce-a12e-7cacfc356643",
+      "createdByPid": 60006,
+      "createdByProcStart": "Tue Jun  9 02:52:46 2026"
+    }
+  ]
+}
