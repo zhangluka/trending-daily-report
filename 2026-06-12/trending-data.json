@@ -1,0 +1,189 @@
+{
+  "date": "2026-06-12",
+  "source": "https://github.com/trending",
+  "total_repos": 19,
+  "total_stars_today": 13503,
+  "languages": ["Shell", "Swift", "Python", "TypeScript", "Go", "Ruby", "Kotlin", "Roff"],
+  "top_10": [
+    {
+      "rank": 1,
+      "name": "addyosmani/agent-skills",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "Shell",
+      "stars": 54967,
+      "forks": 5963,
+      "stars_today": 3278,
+      "analysis": {
+        "what": "为 AI 编程代理设计的技能集合，包含代码审查、测试生成、重构等最佳实践",
+        "why_hot": "Chrome 团队负责人 Addy Osmani 出品，名人效应 + AI agent 热门话题",
+        "tech_stack": "Shell 脚本，兼容 Claude Code、Cursor、Copilot",
+        "use_case": "使用 AI 编程代理的开发者，想提升 agent 输出质量",
+        "audience": "全栈开发者、AI 工具重度用户、技术团队 Lead",
+        "conclusion": "如果你每天用 AI 写代码，这是必装的技能包"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "apple/container",
+      "url": "https://github.com/apple/container",
+      "description": "A tool for creating and running Linux containers using lightweight virtual machines on a Mac.",
+      "language": "Swift",
+      "stars": 32751,
+      "forks": 916,
+      "stars_today": 2430,
+      "analysis": {
+        "what": "Mac 原生 Linux 容器工具，专为 Apple Silicon 优化",
+        "why_hot": "Apple 官方开源，解决 Mac Docker 性能痛点",
+        "tech_stack": "Swift，Apple Virtualization.framework",
+        "use_case": "Mac 开发者需要运行 Linux 容器",
+        "audience": "macOS 开发者、DevOps 工程师",
+        "conclusion": "Mac 用户的 Docker 替代方案，值得尝试但生态需观察"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "phuryn/pm-skills",
+      "url": "https://github.com/phuryn/pm-skills",
+      "description": "PM Skills Marketplace: 100+ agentic skills, commands, and plugins.",
+      "language": null,
+      "stars": 16293,
+      "forks": 1695,
+      "stars_today": 1978,
+      "analysis": {
+        "what": "产品经理版技能商店，100+ skills 覆盖产品全生命周期",
+        "why_hot": "AI agent 技能库赛道火热，PM 人群基数大",
+        "tech_stack": "技能定义文件，兼容主流 AI 工具",
+        "use_case": "产品经理用 AI 辅助工作",
+        "audience": "产品经理、项目管理者",
+        "conclusion": "PM 人群的 AI 武器库，实用但需验证质量"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "msitarzewski/agency-agents",
+      "url": "https://github.com/msitarzewski/agency-agents",
+      "description": "A complete AI agency at your fingertips.",
+      "language": "Shell",
+      "stars": 111656,
+      "forks": 18261,
+      "stars_today": 1599,
+      "analysis": {
+        "what": "完整的 AI 代理集合，模拟一个完整 agency 团队",
+        "why_hot": "AI agency 概念新颖，多代理协作是热门方向",
+        "tech_stack": "Shell 脚本，兼容主流 AI 工具",
+        "use_case": "想用 AI 组建虚拟团队的创业者",
+        "audience": "创业者、自由职业者",
+        "conclusion": "概念有趣，适合想一人成军的独立开发者"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 224942,
+      "forks": 19997,
+      "stars_today": 1322,
+      "analysis": {
+        "what": "agentic 开发框架和方法论，教你如何用 AI agent 高效开发",
+        "why_hot": "老牌热门项目，方法论 + 工具的组合解决痛点",
+        "tech_stack": "Shell 脚本，方法论文档",
+        "use_case": "想系统学习 AI 辅助开发的团队",
+        "audience": "所有软件开发者",
+        "conclusion": "224k stars 说明一切，AI 开发方法论的标杆"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "soxoj/maigret",
+      "url": "https://github.com/soxoj/maigret",
+      "description": "Collect a dossier on a person by username from 3000+ sites.",
+      "language": "Python",
+      "stars": 32657,
+      "forks": 2394,
+      "stars_today": 661,
+      "analysis": {
+        "what": "通过用户名在 3000+ 网站搜索某人的公开信息",
+        "why_hot": "OSINT 工具需求稳定，覆盖范围惊人",
+        "tech_stack": "Python，异步请求",
+        "use_case": "安全研究、渗透测试、记者调查",
+        "audience": "安全研究员、渗透测试工程师",
+        "conclusion": "OSINT 必备工具，安全从业者的瑞士军刀"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "refactoringhq/tolaria",
+      "url": "https://github.com/refactoringhq/tolaria",
+      "description": "Desktop app to manage markdown knowledge bases.",
+      "language": "TypeScript",
+      "stars": 15439,
+      "forks": 1062,
+      "stars_today": 604,
+      "analysis": {
+        "what": "桌面端 Markdown 知识库管理工具",
+        "why_hot": "Obsidian/Logseq 用户基数大，原生 Markdown 管理工具稀缺",
+        "tech_stack": "TypeScript，桌面应用",
+        "use_case": "重度 Markdown 用户，管理大量笔记",
+        "audience": "开发者、写作者、知识工作者",
+        "conclusion": "Markdown 重度用户的桌面管理方案，值得试用"
+      }
+    },
+    {
+      "rank": 8,
+      "name": "masterking32/MasterDnsVPN",
+      "url": "https://github.com/masterking32/MasterDnsVPN",
+      "description": "Advanced DNS tunneling VPN for censorship bypass.",
+      "language": "Go",
+      "stars": 5727,
+      "forks": 520,
+      "stars_today": 507,
+      "analysis": {
+        "what": "基于 DNS 隧道的 VPN 工具，用于绕过网络审查",
+        "why_hot": "网络审查日益严格，DNS 隧道是刚需技术",
+        "tech_stack": "Go 语言，DNS 隧道协议",
+        "use_case": "审查地区用户需要稳定翻墙",
+        "audience": "审查地区用户、隐私关注者",
+        "conclusion": "翻墙工具的技术升级，实用性高但需注意合规风险"
+      }
+    },
+    {
+      "rank": 9,
+      "name": "maziyarpanahi/openmed",
+      "url": "https://github.com/maziyarpanahi/openmed",
+      "description": "Open-source healthcare AI.",
+      "language": "Python",
+      "stars": 2805,
+      "forks": 276,
+      "stars_today": 426,
+      "analysis": {
+        "what": "开源医疗 AI 框架",
+        "why_hot": "医疗 AI 是高门槛高价值赛道，开源方案稀缺",
+        "tech_stack": "Python，可能基于 LLM 或传统 ML",
+        "use_case": "医疗 AI 研究、医学信息学项目",
+        "audience": "医疗 AI 研究者",
+        "conclusion": "医疗 AI 开源先行者，有潜力但需验证临床价值"
+      }
+    },
+    {
+      "rank": 10,
+      "name": "hexo-ai/sia",
+      "url": "https://github.com/hexo-ai/sia",
+      "description": "Self Improving AI framework to autonomously improve AI performance.",
+      "language": "Python",
+      "stars": 1338,
+      "forks": 162,
+      "stars_today": 199,
+      "analysis": {
+        "what": "自我改进 AI 框架，让 AI 系统自主优化表现",
+        "why_hot": "Self Improving AI 是前沿研究方向，概念新颖",
+        "tech_stack": "Python，AI/ML 框架",
+        "use_case": "AI 研究、模型优化",
+        "audience": "AI 研究者、ML 工程师",
+        "conclusion": "前沿概念，适合 AI 研究者探索，生产环境慎用"
+      }
+    }
+  ]
+}

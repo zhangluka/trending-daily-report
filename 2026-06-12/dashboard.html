@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Trending Daily · 2026-06-12</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --bg-warm: #f5f3ed;
+      --ink: #1a1918;
+      --ink-soft: #6b6966;
+      --ink-muted: #9e9b97;
+      --accent: #c4603c;
+      --accent-soft: rgba(196, 96, 60, 0.08);
+      --rule: #e8e6e1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 16px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    /* Header */
+    .header {
+      margin-bottom: 4rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .header h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .header .meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+    }
+
+    .header .stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+
+    .header .stats span {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* Section Label */
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      margin-bottom: 2rem;
+    }
+
+    /* Project Card */
+    .project {
+      margin-bottom: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .project:last-child {
+      border-bottom: none;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-rank {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      min-width: 2rem;
+    }
+
+    .project-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .project-name a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .project-name a:hover {
+      color: var(--accent);
+    }
+
+    .project-lang {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      padding: 0.2rem 0.5rem;
+      background: var(--bg-warm);
+      border-radius: 3px;
+    }
+
+    .project-stats {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      margin-bottom: 1rem;
+    }
+
+    .project-stats .today {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .project-desc {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    /* Analysis Grid */
+    .analysis {
+      display: grid;
+      grid-template-columns: 5rem 1fr;
+      gap: 0.75rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .analysis dt {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      padding-top: 0.15rem;
+    }
+
+    .analysis dd {
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    .conclusion {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.9rem;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .conclusion::before {
+      content: '结论: ';
+      color: var(--ink-muted);
+      font-weight: 400;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+    }
+
+    .footer a {
+      color: var(--ink-soft);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      .container {
+        padding: 2rem 1.25rem;
+      }
+
+      .header h1 {
+        font-size: 1.5rem;
+      }
+
+      .header .stats {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .analysis {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+
+      .analysis dt {
+        margin-top: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>GitHub Trending Daily</h1>
+      <div class="meta">2026-06-12 · Top 10 精选</div>
+      <div class="stats">
+        <div>总增星 <span>13,503</span></div>
+        <div>语言 <span>7 种</span></div>
+        <div>项目 <span>19 个</span></div>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-label">Top 3</div>
+
+      <!-- #1 -->
+      <article class="project">
+        <div class="project-header">
+          <span class="project-rank">#1</span>
+          <h2 class="project-name"><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a></h2>
+          <span class="project-lang">Shell</span>
+        </div>
+        <div class="project-stats"><span class="today">+3,278 today</span> · 54,967 stars · 5,963 forks</div>
+        <p class="project-desc">Production-grade engineering skills for AI coding agents. 为 Claude Code、Cursor 等 AI 编程代理提供生产级工程技能库。</p>
+        <dl class="analysis">
+          <dt>做什么</dt>
+          <dd>一套为 AI 编程代理设计的技能集合，包含代码审查、测试生成、重构等最佳实践，让 AI agent 输出更接近资深工程师水平。</dd>
+          <dt>为什么火</dt>
+          <dd>作者 Addy Osmani 是 Chrome 团队负责人，在前端圈有极高影响力。AI agent 技能库是当前热门话题，加上名人效应，引爆增长。</dd>
+          <dt>技术栈</dt>
+          <dd>Shell 脚本为主，兼容 Claude Code、Cursor、Copilot 等主流 AI 编程工具。</dd>
+          <dt>适用场景</dt>
+          <dd>任何使用 AI 编程代理的开发者，想提升 agent 输出质量的团队。</dd>
+          <dt>受众</dt>
+          <dd>全栈开发者、AI 工具重度用户、技术团队 Lead。</dd>
+        </dl>
+        <p class="conclusion">如果你每天用 AI 写代码，这是必装的技能包。</p>
+      </article>
+
+      <!-- #2 -->
+      <article class="project">
+        <div class="project-header">
+          <span class="project-rank">#2</span>
+          <h2 class="project-name"><a href="https://github.com/apple/container" target="_blank">apple/container</a></h2>
+          <span class="project-lang">Swift</span>
+        </div>
+        <div class="project-stats"><span class="today">+2,430 today</span> · 32,751 stars · 916 forks</div>
+        <p class="project-desc">A tool for creating and running Linux containers using lightweight virtual machines on a Mac. Apple 官方出品的 Mac 原生 Linux 容器工具。</p>
+        <dl class="analysis">
+          <dt>做什么</dt>
+          <dd>在 Mac 上用轻量级虚拟机运行 Linux 容器，专为 Apple Silicon 优化，比 Docker Desktop 更原生。</dd>
+          <dt>为什么火</dt>
+          <dd>Apple 官方开源，解决了 Mac 上跑 Docker 的性能痛点，Swift 编写原生体验好，果粉和开发者双重关注。</dd>
+          <dt>技术栈</dt>
+          <dd>Swift 编写，基于 Apple 虚拟化框架，利用 Apple Silicon 的 Virtualization.framework。</dd>
+          <dt>适用场景</dt>
+          <dd>Mac 开发者需要运行 Linux 容器，对 Docker Desktop 性能或 licensing 不满意。</dd>
+          <dt>受众</dt>
+          <dd>macOS 开发者、DevOps 工程师、Swift/Apple 生态开发者。</dd>
+        </dl>
+        <p class="conclusion">Mac 用户的 Docker 替代方案，值得尝试，但生态成熟度还需观察。</p>
+      </article>
+
+      <!-- #3 -->
+      <article class="project">
+        <div class="project-header">
+          <span class="project-rank">#3</span>
+          <h2 class="project-name"><a href="https://github.com/phuryn/pm-skills" target="_blank">phuryn/pm-skills</a></h2>
+          <span class="project-lang">—</span>
+        </div>
+        <div class="project-stats"><span class="today">+1,978 today</span> · 16,293 stars · 1,695 forks</div>
+        <p class="project-desc">PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.</p>
+        <dl class="analysis">
+          <dt>做什么</dt>
+          <dd>产品经理版的"技能商店"，100+ agentic skills 覆盖产品全生命周期：需求发现、策略制定、执行、发布、增长。</dd>
+          <dt>为什么火</dt>
+          <dd>AI agent 技能库赛道火热，PM 人群基数大，"100+ skills" 的数字有冲击力。</dd>
+          <dt>技术栈</dt>
+          <dd>技能定义文件为主，兼容主流 AI 编程工具。</dd>
+          <dt>适用场景</dt>
+          <dd>产品经理用 AI 辅助工作，想有一套标准化的 prompt/skill 集合。</dd>
+          <dt>受众</dt>
+          <dd>产品经理、项目管理者、创业团队。</dd>
+        </dl>
+        <p class="conclusion">PM 人群的 AI 武器库，实用但需验证质量。</p>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-label">Trending</div>
+
+      <!-- #4 -->
+      <article class="project">
+        <div class="project-header">
+          <span class="project-rank">#4</span>
+          <h2 class="project-name"><a href="https://github.com/msitarzewski/agency-agents" target="_blank">msitarzewski/agency-agents</a></h2>
+          <span class="project-lang">Shell</span>
+        </div>
+        <div class="project-stats"><span class="today">+1,599 today</span> · 111,656 stars · 18,261 forks</div>
+        <p class="project-desc">A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, each agent is a specialized expert.</p>
+        <dl class="analysis">
+          <dt>做什么</dt>
+          <dd>一套完整的 AI 代理集合，每个代理专精一个领域（前端、社区运营、内容创作等），模拟一个完整agency团队。</dd>
+          <dt>为什么火</dt>
+          <dd>"AI agency" 概念新颖，111k+ stars 说明已验证市场需求，多代理协作是热门方向。</dd>
+          <dt>技术栈</dt>
+          <dd>Shell 脚本，兼容主流 AI 编程工具。</dd>
+          <dt>适用场景</dt>
+          <dd>想用 AI 组建虚拟团队的创业者、自由职业者。</dd>
+          <dt>受众</dt>
+          <dd>创业者、自由职业者、全栈开发者。</dd>
+        </dl>
+        <p class="conclusion">概念有趣，适合想"一人成军"的独立开发者。</p>
+      </article>
+
+      <!-- #5 -->
+      <article class="project">
+        <div class="project-header">
+          <span class="project-rank">#5</span>
+          <h2 class="project-name"><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></h2>
+          <span class="project-lang">Shell</span>
+        </div>
+        <div class="project-stats"><span class="today">+1,322 today</span> · 224,942 stars · 19,997 forks</div>
+        <p class="project-desc">An agentic skills framework & software development methodology that works.</p>
+        <dl class="analysis">
+          <dt>做什么</dt>
+          <dd>一套 agentic 开发框架和方法论，教你如何用 AI agent 高效开发软件，224k+ stars 的现象级项目。</dd>
+          <dt>为什么火</dt>
+          <dd>老牌热门项目持续增长，"方法论 + 工具"的组合解决了"会用 AI 但不知道怎么用好"的痛点。</dd>
+          <dt>技术栈</dt>
+          <dd>Shell 脚本，方法论文档。</dd>
+          <dt>适用场景</dt>
+          <dd>想系统学习 AI 辅助开发的团队和个人。</dd>
+          <dt>受众</dt>
+          <dd>所有软件开发者，特别是想提升 AI 工具使用效率的人。</dd>
+        </dl>
+        <p class="conclusion">224k stars 说明一切，AI 开发方法论的标杆。</p>
+      </article>
+
+      <!-- #6 -->
+      <article class="project">
+        <div class="project-header">
+          <span class="project-rank">#6</span>
+          <h2 class="project-name"><a href="https://github.com/soxoj/maigret" target="_blank">soxoj/maigret</a></h2>
+          <span class="project-lang">Python</span>
+        </div>
+        <div class="project-stats"><span class="today">+661 today</span> · 32,657 stars · 2,394 forks</div>
+        <p class="project-desc">🕵️♂️ Collect a dossier on a person by username from 3000+ sites.</p>
+        <dl class="analysis">
+          <dt>做什么</dt>
+          <dd>通过用户名在 3000+ 网站上搜索某人的公开信息，生成一份完整的 OSINT 档案。</dd>
+          <dt>为什么火</dt>
+          <dd>OSINT 工具需求稳定，3000+ 站点覆盖范围惊人，Python 生态友好。</dd>
+          <dt>技术栈</dt>
+          <dd>Python，异步请求，支持导出多种格式。</dd>
+          <dt>适用场景</dt>
+          <dd>安全研究、渗透测试、记者调查、找回自己的遗忘账号。</dd>
+          <dt>受众</dt>
+          <dd>安全研究员、渗透测试工程师、调查记者。</dd>
+        </dl>
+        <p class="conclusion">OSINT 必备工具，安全从业者的瑞士军刀。</p>
+      </article>
+
+      <!-- #7 -->
+      <article class="project">
+        <div class="project-header">
+          <span class="project-rank">#7</span>
+          <h2 class="project-name"><a href="https://github.com/refactoringhq/tolaria" target="_blank">refactoringhq/tolaria</a></h2>
+          <span class="project-lang">TypeScript</span>
+        </div>
+        <div class="project-stats"><span class="today">+604 today</span> · 15,439 stars · 1,062 forks</div>
+        <p class="project-desc">Desktop app to manage markdown knowledge bases.</p>
+        <dl class="analysis">
+          <dt>做什么</dt>
+          <dd>桌面端 Markdown 知识库管理工具，帮你整理和浏览大量 Markdown 笔记。</dd>
+          <dt>为什么火</dt>
+          <dd>Obsidian/Logseq 用户基数大，但原生 Markdown 管理工具稀缺，TypeScript 实现质量高。</dd>
+          <dt>技术栈</dt>
+          <dd>TypeScript，可能是 Electron/Tauri 桌面应用。</dd>
+          <dt>适用场景</dt>
+          <dd>重度 Markdown 用户，需要管理大量笔记/文档。</dd>
+          <dt>受众</dt>
+          <dd>开发者、写作者、知识工作者。</dd>
+        </dl>
+        <p class="conclusion">Markdown 重度用户的桌面管理方案，值得试用。</p>
+      </article>
+
+      <!-- #8 -->
+      <article class="project">
+        <div class="project-header">
+          <span class="project-rank">#8</span>
+          <h2 class="project-name"><a href="https://github.com/masterking32/MasterDnsVPN" target="_blank">masterking32/MasterDnsVPN</a></h2>
+          <span class="project-lang">Go</span>
+        </div>
+        <div class="project-stats"><span class="today">+507 today</span> · 5,727 stars · 520 forks</div>
+        <p class="project-desc">Advanced DNS tunneling VPN for censorship bypass, optimized beyond DNSTT and SlipStream.</p>
+        <dl class="analysis">
+          <dt>做什么</dt>
+          <dd>基于 DNS 隧道的 VPN 工具，用于绕过网络审查，优化了低开销 ARQ、解析器负载均衡等。</dd>
+          <dt>为什么火</dt>
+          <dd>网络审查日益严格，DNS 隧道是翻墙的刚需技术，Go 语言实现性能好。</dd>
+          <dt>技术栈</dt>
+          <dd>Go 语言，DNS 隧道协议，ARQ 纠错。</dd>
+          <dt>适用场景</dt>
+          <dd>网络审查地区的用户需要稳定翻墙。</dd>
+          <dt>受众</dt>
+          <dd>审查地区用户、隐私关注者、安全研究者。</dd>
+        </dl>
+        <p class="conclusion">翻墙工具的技术升级，实用性高但需注意合规风险。</p>
+      </article>
+
+      <!-- #9 -->
+      <article class="project">
+        <div class="project-header">
+          <span class="project-rank">#9</span>
+          <h2 class="project-name"><a href="https://github.com/maziyarpanahi/openmed" target="_blank">maziyarpanahi/openmed</a></h2>
+          <span class="project-lang">Python</span>
+        </div>
+        <div class="project-stats"><span class="today">+426 today</span> · 2,805 stars · 276 forks</div>
+        <p class="project-desc">Open-source healthcare AI.</p>
+        <dl class="analysis">
+          <dt>做什么</dt>
+          <dd>开源医疗 AI 框架，可能包含医学问答、辅助诊断等功能。</dd>
+          <dt>为什么火</dt>
+          <dd>医疗 AI 是高门槛高价值赛道，开源方案稀缺，Python 生态易上手。</dd>
+          <dt>技术栈</dt>
+          <dd>Python，可能基于 LLM 或传统 ML。</dd>
+          <dt>适用场景</dt>
+          <dd>医疗 AI 研究、医学信息学项目。</dd>
+          <dt>受众</dt>
+          <dd>医疗 AI 研究者、医学信息学开发者。</dd>
+        </dl>
+        <p class="conclusion">医疗 AI 开源先行者，有潜力但需验证临床价值。</p>
+      </article>
+
+      <!-- #10 -->
+      <article class="project">
+        <div class="project-header">
+          <span class="project-rank">#10</span>
+          <h2 class="project-name"><a href="https://github.com/hexo-ai/sia" target="_blank">hexo-ai/sia</a></h2>
+          <span class="project-lang">Python</span>
+        </div>
+        <div class="project-stats"><span class="today">+199 today</span> · 1,338 stars · 162 forks</div>
+        <p class="project-desc">SIA is a Self Improving AI framework to autonomously improve the performance of any AI system.</p>
+        <dl class="analysis">
+          <dt>做什么</dt>
+          <dd>自我改进 AI 框架，让 AI 系统能自主优化在 benchmark 上的表现，无需人工干预。</dd>
+          <dt>为什么火</dt>
+          <dd>"Self Improving AI" 是前沿研究方向，概念新颖，Python 实现易上手。</dd>
+          <dt>技术栈</dt>
+          <dd>Python，AI/ML 框架。</dd>
+          <dt>适用场景</dt>
+          <dd>AI 研究、模型优化、自动化调参。</dd>
+          <dt>受众</dt>
+          <dd>AI 研究者、ML 工程师。</dd>
+        </dl>
+        <p class="conclusion">前沿概念，适合 AI 研究者探索，生产环境慎用。</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>Source: <a href="https://github.com/trending" target="_blank">github.com/trending</a></p>
+      <p>Generated by GitHub Trending Daily · Claude Code</p>
+    </footer>
+  </main>
+</body>
+</html>
