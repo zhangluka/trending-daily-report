@@ -1,0 +1,191 @@
+{
+  "date": "2026-06-13",
+  "generated_at": "2026-06-13T10:03:00+08:00",
+  "source": "https://github.com/trending",
+  "total_repos_scanned": 14,
+  "selected_count": 10,
+  "total_stars_today": 5433,
+  "languages": ["Shell", "Swift", "Python", "Go", "C", "TypeScript", "Ruby"],
+  "top10": [
+    {
+      "rank": 1,
+      "name": "addyosmani/agent-skills",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "Shell",
+      "stars": 57660,
+      "forks": 6231,
+      "stars_today": 1507,
+      "analysis": {
+        "what": "给 AI coding agent 注入工程规范，24 个 skill 覆盖完整开发生命周期",
+        "why_trending": "v0.6.2 发布，新增 /build auto 模式，Addy Osmani（Google）出品",
+        "tech_stack": "Shell 78.6%, JavaScript 21.4%",
+        "use_case": "用 AI agent 写代码时保证工程质量",
+        "audience": "全栈 / AI agent 用户",
+        "verdict": "重度 AI agent 用户必装的工程化 skill pack"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "apple/container",
+      "url": "https://github.com/apple/container",
+      "description": "A tool for creating and running Linux containers using lightweight virtual machines on a Mac.",
+      "language": "Swift",
+      "stars": 35790,
+      "forks": 1010,
+      "stars_today": 1471,
+      "analysis": {
+        "what": "Mac 上用轻量 VM 运行 Linux 容器，Docker Desktop 的原生替代",
+        "why_trending": "6月9日发布 v1.0.0 正式版，Apple 官方进入容器生态",
+        "tech_stack": "Swift 98.2%, Apple Virtualization.framework",
+        "use_case": "Mac 开发者需要轻量原生容器体验",
+        "audience": "后端 / DevOps / Mac 用户",
+        "verdict": "macOS 26 + Apple silicon 用户的 Docker 替代首选"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 226511,
+      "forks": 20128,
+      "stars_today": 931,
+      "analysis": {
+        "what": "完整的 AI coding agent 开发方法论，子 agent 驱动 + TDD",
+        "why_trending": "226k 星使其成为最受欢迎的 agent skill 框架，社区持续增长",
+        "tech_stack": "Shell 66.4%, JavaScript 24.8%, 支持全平台 agent",
+        "use_case": "让 AI agent 自主完成复杂开发任务并保持工程质量",
+        "audience": "全栈 / 规模化 AI agent 开发者",
+        "verdict": "和 agent-skills 互补，偏方法论层面"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "NVIDIA/SkillSpector",
+      "url": "https://github.com/NVIDIA/SkillSpector",
+      "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, and security risks.",
+      "language": "Python",
+      "stars": 3939,
+      "forks": 297,
+      "stars_today": 809,
+      "analysis": {
+        "what": "AI agent skill 安全扫描器，64 种漏洞模式，16 个类别",
+        "why_trending": "NVIDIA 出品，26.1% skill 有漏洞的研究数据引发关注",
+        "tech_stack": "Python 97.4%, YARA, LangGraph",
+        "use_case": "安装第三方 skill 前安全审查",
+        "audience": "安全工程师 / AI agent 团队",
+        "verdict": "AI agent 安全领域首个专业工具"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "kenn-io/agentsview",
+      "url": "https://github.com/kenn-io/agentsview",
+      "description": "Local-first session intelligence and analytics for coding agents.",
+      "language": "Go",
+      "stars": 2160,
+      "forks": 201,
+      "stars_today": 187,
+      "analysis": {
+        "what": "跨 20+ AI agent 的会话分析和成本追踪，比 ccusage 快 100 倍",
+        "why_trending": "v0.33.1 发布，迭代极频繁（53 个 release）",
+        "tech_stack": "Go 75.3%, Svelte 8.7%, SQLite + FTS5",
+        "use_case": "多 agent 用户统一查看 token 消耗和成本",
+        "audience": "重度 AI agent 用户",
+        "verdict": "多 agent 用户的必备工具"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "microsoft/PowerToys",
+      "url": "https://github.com/microsoft/PowerToys",
+      "description": "Microsoft PowerToys is a collection of utilities that supercharge productivity on Windows.",
+      "language": "C",
+      "stars": 134507,
+      "forks": 8070,
+      "stars_today": 103,
+      "analysis": {
+        "what": "Windows 增强工具集，30+ 实用工具",
+        "why_trending": "v0.100.0 里程碑版本发布",
+        "tech_stack": "C 56.1%, C# 26.8%, C++ 16.1%",
+        "use_case": "Windows 用户提升日常操作效率",
+        "audience": "Windows 用户",
+        "verdict": "Windows 必装工具，v0.100 是里程碑"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+      "description": "FULL system prompts and models of AI tools.",
+      "language": null,
+      "stars": 140180,
+      "forks": 34650,
+      "stars_today": 107,
+      "analysis": {
+        "what": "30+ 主流 AI 工具的系统提示词和内部模型合集",
+        "why_trending": "持续增长，每次新 AI 工具发布都带动一波关注",
+        "tech_stack": "纯文档仓库",
+        "use_case": "了解 AI 工具内部机制，学习 prompt engineering",
+        "audience": "AI 工具用户 / Prompt 工程师",
+        "verdict": "了解 AI 工具内部机制的最佳窗口"
+      }
+    },
+    {
+      "rank": 8,
+      "name": "iptv-org/iptv",
+      "url": "https://github.com/iptv-org/iptv",
+      "description": "Collection of publicly available IPTV channels from all over the world.",
+      "language": "TypeScript",
+      "stars": 118352,
+      "forks": 6324,
+      "stars_today": 179,
+      "analysis": {
+        "what": "全球公开 IPTV 频道合集，M3U 播放列表",
+        "why_trending": "长期常青项目，IPTV 需求全球范围内持续旺盛",
+        "tech_stack": "TypeScript 55.3%, JavaScript 44.7%",
+        "use_case": "免费观看全球公开电视频道",
+        "audience": "媒体爱好者 / cord-cutter",
+        "verdict": "全球 IPTV 频道的百科全书"
+      }
+    },
+    {
+      "rank": 9,
+      "name": "chatwoot/chatwoot",
+      "url": "https://github.com/chatwoot/chatwoot",
+      "description": "Open-source live-chat, email support, omni-channel desk.",
+      "language": "Ruby",
+      "stars": 30661,
+      "forks": 7540,
+      "stars_today": 86,
+      "analysis": {
+        "what": "开源全渠道客服平台，Intercom/Zendesk 替代品",
+        "why_trending": "v4.14.2 发布，Captain AI 助手是近期亮点",
+        "tech_stack": "Ruby on Rails 47.1%, Vue.js 27.4%",
+        "use_case": "中小企业需要全渠道客服但不想付高额订阅费",
+        "audience": "创业者 / 客服团队",
+        "verdict": "开源客服平台的事实标准"
+      }
+    },
+    {
+      "rank": 10,
+      "name": "andrewyng/aisuite",
+      "url": "https://github.com/andrewyng/aisuite",
+      "description": "Simple, unified interface to multiple Generative AI providers.",
+      "language": "Python",
+      "stars": 13988,
+      "forks": 1482,
+      "stars_today": 132,
+      "analysis": {
+        "what": "多 LLM 统一接口 + OpenCoworker 桌面 AI 助手",
+        "why_trending": "Andrew Ng 出品，OpenCoworker 桌面应用发布",
+        "tech_stack": "Python 74.9%, TypeScript 18.6%, 支持 MCP",
+        "use_case": "跨 LLM 提供商快速切换和构建 agent 应用",
+        "audience": "AI 应用开发者 / ML 工程师",
+        "verdict": "LLM 统一接口领域的瑞士军刀"
+      }
+    }
+  ]
+}

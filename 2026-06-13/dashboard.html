@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Daily · 2026-06-13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf9f5;
+  --bg-warm: #f5f3ed;
+  --ink: #1a1918;
+  --ink-soft: #6b6966;
+  --ink-muted: #9e9b97;
+  --accent: #c4603c;
+  --accent-soft: rgba(196, 96, 60, 0.08);
+  --rule: #e8e6e1;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+.header {
+  margin-bottom: 4rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+.header .meta {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.header .meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+.project { margin-bottom: 4rem; }
+.project:last-child { margin-bottom: 0; }
+.project-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+.project-rank {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  flex-shrink: 0;
+  width: 1.75rem;
+}
+.project-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.project-name a { color: var(--ink); text-decoration: none; }
+.project-name a:hover { color: var(--accent); }
+.project-lang {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  background: var(--bg-warm);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.project-stats {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.75rem;
+  padding-left: 2.5rem;
+}
+.project-stats .stars-today { color: var(--accent); font-weight: 500; }
+.project-desc {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.25rem;
+  padding-left: 2.5rem;
+  line-height: 1.6;
+}
+.analysis {
+  padding-left: 2.5rem;
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0.35rem 1rem;
+  font-size: 0.8125rem;
+}
+.analysis-label { color: var(--ink-muted); font-weight: 500; white-space: nowrap; }
+.analysis-value { color: var(--ink-soft); line-height: 1.55; }
+.analysis-conclusion {
+  grid-column: 1 / -1;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8125rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+.analysis-conclusion::before {
+  content: '结论: ';
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+.footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  text-align: center;
+}
+.footer a { color: var(--ink-soft); text-decoration: none; }
+.footer a:hover { color: var(--accent); }
+@media (max-width: 600px) {
+  .container { padding: 2rem 1rem 4rem; }
+  .analysis { grid-template-columns: 1fr; gap: 0.5rem; }
+  .analysis-label { margin-top: 0.25rem; }
+  .project-stats, .project-desc, .analysis { padding-left: 0; }
+  .project-header { flex-wrap: wrap; }
+  .header .meta { flex-direction: column; gap: 0.5rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="header">
+  <h1>GitHub Trending Daily</h1>
+  <div class="meta">
+    <span>2026-06-13</span>
+    <span>Top 10 精选</span>
+    <span>总增星 5,433</span>
+    <span>语言 7 种</span>
+  </div>
+</header>
+
+<div class="section-label">Top 3</div>
+
+<!-- #1 addyosmani/agent-skills -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">01</span>
+    <span class="project-name"><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a></span>
+    <span class="project-lang">Shell</span>
+  </div>
+  <div class="project-stats"><span class="stars-today">+1,507 today</span> · 57,660 stars · 6,231 forks</div>
+  <div class="project-desc">Production-grade engineering skills for AI coding agents — 24 个结构化技能覆盖完整开发生命周期</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">给 AI coding agent（Claude Code、Cursor、Gemini CLI 等）注入工程规范。24 个 skill 覆盖从需求定义到部署上线全流程，每个 skill 都是可执行的工作流。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">v0.6.2 于 6 月 11 日发布，新增 /build auto 自动化模式。Addy Osmani（Google Chrome 工程负责人）个人出品，背书力强。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Shell 78.6%、JavaScript 21.4%，纯 Markdown 技能文件，零运行时依赖</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">用 AI agent 写代码时想保证工程质量（有 spec、有测试、有 code review），而非 vibe coding</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">全栈 / 使用 AI coding agent 的所有开发者</span>
+  </div>
+  <div class="analysis-conclusion">重度 AI agent 用户必装的工程化 skill pack，目前同类最成熟。</div>
+</article>
+
+<!-- #2 apple/container -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">02</span>
+    <span class="project-name"><a href="https://github.com/apple/container" target="_blank">apple/container</a></span>
+    <span class="project-lang">Swift</span>
+  </div>
+  <div class="project-stats"><span class="stars-today">+1,471 today</span> · 35,790 stars · 1,010 forks</div>
+  <div class="project-desc">Apple 官方出品的 Linux 容器工具，用 Swift 写的轻量虚拟机方案，专为 Apple silicon 优化</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">在 Mac 上用轻量级虚拟机运行 Linux 容器，兼容 OCI 镜像标准，可从任何容器 registry 拉取和推送镜像。Docker Desktop 的原生替代方案。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">6 月 9 日发布 v1.0.0 正式版。Apple 官方开源的容器运行时达到 1.0 里程碑，正式进入容器生态。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Swift 98.2%，基于 Apple Virtualization.framework，要求 macOS 26 + Apple silicon</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">Mac 开发者需要跑 Linux 容器但不想装 Docker Desktop，想要更原生、更轻量的容器体验</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">后端 / DevOps / Mac 用户</span>
+  </div>
+  <div class="analysis-conclusion">macOS 26 + Apple silicon 用户的 Docker Desktop 替代首选，v1.0 可用于生产。</div>
+</article>
+
+<!-- #3 obra/superpowers -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">03</span>
+    <span class="project-name"><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></span>
+    <span class="project-lang">Shell</span>
+  </div>
+  <div class="project-stats"><span class="stars-today">+931 today</span> · 226,511 stars · 20,128 forks</div>
+  <div class="project-desc">完整的 AI coding agent 开发方法论，基于可组合 skill 和自动化工作流</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">为 coding agent 提供完整软件开发方法论：头脑风暴→写 spec→拆任务→子 agent 并行开发→TDD→code review→部署。skill 自动触发，无需手动调用。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">226k 星使其成为 GitHub 上最受欢迎的 agent skill 框架。Jesse Vincent 出品，社区活跃，Discord 社群持续增长。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Shell 66.4%、JavaScript 24.8%，支持 Claude Code / Codex / Gemini CLI / Cursor / Copilot 全平台</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">想让 AI agent 自主完成复杂开发任务（数小时级别），同时保持工程质量和 TDD 纪律</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">全栈 / 使用 AI agent 进行规模化开发的工程师</span>
+  </div>
+  <div class="analysis-conclusion">和 agent-skills 定位类似但更偏方法论层面，两者可互补使用。</div>
+</article>
+
+<div class="section-label">Trending</div>
+
+<!-- #4 NVIDIA/SkillSpector -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">04</span>
+    <span class="project-name"><a href="https://github.com/NVIDIA/SkillSpector" target="_blank">NVIDIA/SkillSpector</a></span>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats"><span class="stars-today">+809 today</span> · 3,939 stars · 297 forks</div>
+  <div class="project-desc">AI agent skill 安全扫描器，检测漏洞、恶意模式和安全风险</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">扫描 AI agent skill，检测 64 种漏洞模式覆盖 16 个类别：prompt 注入、数据外泄、权限提升、供应链攻击等。两阶段分析：静态扫描 + LLM 语义分析。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">NVIDIA 官方出品。研究表明 26.1% 的 skill 存在漏洞、5.2% 有恶意意图，精准切中 AI agent 生态的安全痛点。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Python 97.4%、YARA 签名、LangGraph 工作流，支持 OpenAI/Anthropic/NVIDIA 推理端点</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">安装第三方 AI agent skill 前做安全审查，CI/CD 集成安全扫描</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">安全工程师 / 使用 AI agent 的团队</span>
+  </div>
+  <div class="analysis-conclusion">AI agent 安全领域首个专业工具，建议集成到 skill 安装流程中。</div>
+</article>
+
+<!-- #5 kenn-io/agentsview -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">05</span>
+    <span class="project-name"><a href="https://github.com/kenn-io/agentsview" target="_blank">kenn-io/agentsview</a></span>
+    <span class="project-lang">Go</span>
+  </div>
+  <div class="project-stats"><span class="stars-today">+187 today</span> · 2,160 stars · 201 forks</div>
+  <div class="project-desc">本地优先的 AI coding agent 会话分析和成本追踪工具，支持 20+ agent</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">统一浏览、搜索、追踪所有 AI coding agent 的会话数据。本地 SQLite 存储，Web UI 可视化，CLI 查询 token 消耗和成本。号称比 ccusage 快 100 倍。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">v0.33.1 于 6 月 12 日发布，迭代极频繁（53 个 release）。跨 agent 统一分析填补了市场空白。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Go 75.3%、TypeScript 13.6%、Svelte 8.7%，SQLite + FTS5 全文搜索，支持 PostgreSQL/DuckDB</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">同时使用多个 AI coding agent，需要统一查看 token 消耗、成本和会话历史</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">重度 AI agent 用户 / 团队管理者</span>
+  </div>
+  <div class="analysis-conclusion">多 agent 用户的必备工具，本地优先理念好，迭代速度快到飞起。</div>
+</article>
+
+<!-- #6 microsoft/PowerToys -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">06</span>
+    <span class="project-name"><a href="https://github.com/microsoft/PowerToys" target="_blank">microsoft/PowerToys</a></span>
+    <span class="project-lang">C</span>
+  </div>
+  <div class="project-stats"><span class="stars-today">+103 today</span> · 134,507 stars · 8,070 forks</div>
+  <div class="project-desc">Microsoft 官方 Windows 生产力工具集，30+ 实用工具</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">Windows 增强工具集：FancyZones 窗口管理、PowerRename 批量重命名、Color Picker 取色器、Command Palette 命令面板等 30+ 工具。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">v0.100.0 于 6 月 10 日发布，版本号达到里程碑 0.100，社区关注度高。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">C 56.1%、C# 26.8%、C++ 16.1%，Windows 原生应用</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">Windows 用户提升日常操作效率，自定义快捷键、窗口布局、文件管理</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">Windows 用户 / 生产力工具爱好者</span>
+  </div>
+  <div class="analysis-conclusion">Windows 用户必装工具，v0.100 里程碑版本，稳定性已非常好。</div>
+</article>
+
+<!-- #7 x1xhlol/system-prompts-and-models-of-ai-tools -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">07</span>
+    <span class="project-name"><a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools" target="_blank">x1xhlol/system-prompts-and-models-of-ai-tools</a></span>
+  </div>
+  <div class="project-stats"><span class="stars-today">+107 today</span> · 140,180 stars · 34,650 forks</div>
+  <div class="project-desc">主流 AI 工具的系统提示词和内部模型合集 — Claude Code、Cursor、Devin、Windsurf 等</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">收集并公开主流 AI coding 工具的系统提示词、内部工具配置和模型信息，覆盖 30+ 工具。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">持续稳定增长，140k 星说明开发者对 AI 工具内部机制的好奇心极强。每次新 AI 工具发布都带动一波关注。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">纯文档仓库，无代码依赖</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">了解 AI 工具内部指令逻辑，学习 prompt engineering 技巧，安全研究</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">AI 工具用户 / Prompt 工程师 / 安全研究者</span>
+  </div>
+  <div class="analysis-conclusion">了解 AI 工具"脑子里在想什么"的最佳窗口，适合所有 AI 用户翻阅。</div>
+</article>
+
+<!-- #8 iptv-org/iptv -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">08</span>
+    <span class="project-name"><a href="https://github.com/iptv-org/iptv" target="_blank">iptv-org/iptv</a></span>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats"><span class="stars-today">+179 today</span> · 118,352 stars · 6,324 forks</div>
+  <div class="project-desc">全球公开 IPTV 频道合集，M3U 播放列表</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">收集整理全球公开的 IPTV 频道链接，生成 M3U 播放列表。支持 EPG 电子节目指南，有配套 API 和数据库。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">长期稳定增长的"常青"项目。118k 星，社区持续贡献频道数据，IPTV 需求全球旺盛。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">TypeScript 55.3%、JavaScript 44.7%，自动化脚本验证频道可用性</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">免费观看全球公开的电视频道，或为媒体中心配置直播源</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">媒体爱好者 / cord-cutter / 家庭影院用户</span>
+  </div>
+  <div class="analysis-conclusion">全球 IPTV 频道的"百科全书"，播放器粘贴即用，零门槛。</div>
+</article>
+
+<!-- #9 chatwoot/chatwoot -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">09</span>
+    <span class="project-name"><a href="https://github.com/chatwoot/chatwoot" target="_blank">chatwoot/chatwoot</a></span>
+    <span class="project-lang">Ruby</span>
+  </div>
+  <div class="project-stats"><span class="stars-today">+86 today</span> · 30,661 stars · 7,540 forks</div>
+  <div class="project-desc">开源全渠道客服平台，Intercom / Zendesk 的自托管替代方案</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">将网站在线客服、邮件、WhatsApp、Telegram 等渠道的客户消息统一到一个收件箱。内置 Captain AI 客服助手自动回复常见问题。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">v4.14.2 于 6 月 10 日发布。自托管客服平台需求持续增长，尤其在数据隐私要求高的企业中。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Ruby on Rails 47.1%、Vue.js 27.4%、JavaScript 22.4%，支持 Heroku/DigitalOcean 一键部署</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">中小企业需要全渠道客服但不想付 Intercom/Zendesk 的高额订阅费，或对数据主权有要求</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">创业者 / 客服团队 / SaaS 产品经理</span>
+  </div>
+  <div class="analysis-conclusion">开源客服平台的事实标准，Captain AI 助手是近期最大亮点。</div>
+</article>
+
+<!-- #10 andrewyng/aisuite -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">10</span>
+    <span class="project-name"><a href="https://github.com/andrewyng/aisuite" target="_blank">andrewyng/aisuite</a></span>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats"><span class="stars-today">+132 today</span> · 13,988 stars · 1,482 forks</div>
+  <div class="project-desc">多 LLM 提供商统一接口 + OpenCoworker 桌面 AI 助手</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">两层架构：底层统一 Chat Completions API（兼容 OpenAI/Anthropic/Google/Mistral 等），上层 Agents API + Toolkits + MCP。新推出的 OpenCoworker 是桌面 AI 助手应用。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">Andrew Ng（吴恩达）出品。6 月 11 日发布 OpenCoworker 桌面应用，从纯库升级为"库+产品"双轮驱动。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Python 74.9%、TypeScript 18.6%，支持 MCP 协议，有 Python 和 JS 双 SDK</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">需要在多个 LLM 提供商之间快速切换，或构建跨 provider 的 agent 应用</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">AI 应用开发者 / ML 工程师</span>
+  </div>
+  <div class="analysis-conclusion">LLM 统一接口领域的"瑞士军刀"，OpenCoworker 让它从库变成了可用产品。</div>
+</article>
+
+<footer class="footer">
+  <p>Source: <a href="https://github.com/trending" target="_blank">github.com/trending</a> · Generated 2026-06-13</p>
+</footer>
+</div>
+</body>
+</html>
