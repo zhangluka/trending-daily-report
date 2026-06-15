@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Trending Daily · 2026-06-15</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --bg-warm: #f5f3ed;
+      --ink: #1a1918;
+      --ink-soft: #6b6966;
+      --ink-muted: #9e9b97;
+      --accent: #c4603c;
+      --accent-soft: rgba(196, 96, 60, 0.08);
+      --rule: #e8e6e1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    /* Header */
+    .header {
+      margin-bottom: 5rem;
+    }
+
+    .header-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-date {
+      font-size: 1.1rem;
+      color: var(--ink-soft);
+      margin-bottom: 1.5rem;
+    }
+
+    .header-stats {
+      display: flex;
+      gap: 2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+    }
+
+    .stat-value {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 5rem;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* Repo Card */
+    .repo {
+      margin-bottom: 4rem;
+    }
+
+    .repo-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .repo-rank {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      min-width: 2rem;
+    }
+
+    .repo-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .repo-name:hover {
+      color: var(--accent);
+    }
+
+    .repo-lang {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      background: var(--bg-warm);
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+    }
+
+    .repo-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      margin-bottom: 1.5rem;
+      padding-left: 3rem;
+    }
+
+    .repo-meta .stars-today {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .repo-desc {
+      color: var(--ink-soft);
+      margin-bottom: 1.5rem;
+      padding-left: 3rem;
+      font-size: 0.95rem;
+    }
+
+    .repo-analysis {
+      padding-left: 3rem;
+    }
+
+    .analysis-row {
+      display: flex;
+      margin-bottom: 0.75rem;
+    }
+
+    .analysis-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      min-width: 5rem;
+      padding-top: 0.15rem;
+    }
+
+    .analysis-value {
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      flex: 1;
+    }
+
+    .analysis-conclusion {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      padding-left: 5rem;
+    }
+
+    .conclusion-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .conclusion-text {
+      color: var(--ink);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+    }
+
+    .footer a {
+      color: var(--ink-muted);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .container {
+        padding: 2rem 1.25rem;
+      }
+
+      .header-title {
+        font-size: 1.75rem;
+      }
+
+      .header-stats {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .repo-header {
+        flex-wrap: wrap;
+      }
+
+      .analysis-row {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .analysis-label {
+        min-width: auto;
+      }
+
+      .analysis-conclusion {
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-label">GitHub Trending Daily</div>
+      <h1 class="header-title">Top 10 精选</h1>
+      <div class="header-date">2026-06-15 · 从 15 个项目中筛选</div>
+      <div class="header-stats">
+        <span>总增星 <span class="stat-value">4,639</span></span>
+        <span>语言 <span class="stat-value">5 种</span></span>
+        <span>涵盖 <span class="stat-value">6 个领域</span></span>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section-label">Top 3</div>
+
+      <!-- #1 iptv-org/iptv -->
+      <article class="repo">
+        <div class="repo-header">
+          <span class="repo-rank">01</span>
+          <a href="https://github.com/iptv-org/iptv" class="repo-name" target="_blank">iptv-org/iptv</a>
+          <span class="repo-lang">TypeScript</span>
+        </div>
+        <div class="repo-meta">
+          <span class="stars-today">+1,528 today</span> · 121,057 stars · 6,482 forks
+        </div>
+        <p class="repo-desc">Collection of publicly available IPTV channels from all over the world</p>
+        <div class="repo-analysis">
+          <div class="analysis-row">
+            <span class="analysis-label">做什么</span>
+            <span class="analysis-value">全球公开 IPTV 频道集合，提供 M3U 播放列表，支持任何视频播放器观看直播电视</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">为什么火</span>
+            <span class="analysis-value">社区持续维护，新增频道和稳定性改进，作为免费电视资源持续吸引用户</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">技术栈</span>
+            <span class="analysis-value">TypeScript/JavaScript，自动化脚本维护频道列表</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">适用场景</span>
+            <span class="analysis-value">想免费观看全球电视直播频道的用户</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">受众</span>
+            <span class="analysis-value">所有用户，特别是 cord-cutters 和电视爱好者</span>
+          </div>
+          <div class="analysis-conclusion">
+            <div class="conclusion-label">结论</div>
+            <div class="conclusion-text">免费电视的终极资源库，12万星不是盖的</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- #2 NVIDIA/SkillSpector -->
+      <article class="repo">
+        <div class="repo-header">
+          <span class="repo-rank">02</span>
+          <a href="https://github.com/NVIDIA/SkillSpector" class="repo-name" target="_blank">NVIDIA/SkillSpector</a>
+          <span class="repo-lang">Python</span>
+        </div>
+        <div class="repo-meta">
+          <span class="stars-today">+964 today</span> · 5,329 stars · 408 forks
+        </div>
+        <p class="repo-desc">Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, and security risks.</p>
+        <div class="repo-analysis">
+          <div class="analysis-row">
+            <span class="analysis-label">做什么</span>
+            <span class="analysis-value">AI agent 技能安全扫描器，检测漏洞、恶意模式和安全风险</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">为什么火</span>
+            <span class="analysis-value">NVIDIA 官方出品，研究发现 26.1% 的 agent 技能存在漏洞，5.2% 有恶意意图</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">技术栈</span>
+            <span class="analysis-value">Python，LangGraph，支持 OpenAI/Anthropic/NVIDIA 推理</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">适用场景</span>
+            <span class="analysis-value">安装第三方 AI agent 技能前的安全检查</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">受众</span>
+            <span class="analysis-value">AI 开发者、安全工程师、使用 Claude Code/Codex CLI 的用户</span>
+          </div>
+          <div class="analysis-conclusion">
+            <div class="conclusion-label">结论</div>
+            <div class="conclusion-text">AI agent 时代的必备安全工具，强烈推荐</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- #3 chatwoot/chatwoot -->
+      <article class="repo">
+        <div class="repo-header">
+          <span class="repo-rank">03</span>
+          <a href="https://github.com/chatwoot/chatwoot" class="repo-name" target="_blank">chatwoot/chatwoot</a>
+          <span class="repo-lang">Ruby</span>
+        </div>
+        <div class="repo-meta">
+          <span class="stars-today">+400 today</span> · 31,245 stars · 7,589 forks
+        </div>
+        <p class="repo-desc">Open-source live-chat, email support, omni-channel desk. An alternative to Intercom, Zendesk, Salesforce Service Cloud etc.</p>
+        <div class="repo-analysis">
+          <div class="analysis-row">
+            <span class="analysis-label">做什么</span>
+            <span class="analysis-value">开源客户支持平台，Intercom/Zendesk 的替代品，支持全渠道客服</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">为什么火</span>
+            <span class="analysis-value">v4.14.2 发布，AI agent Captain 功能增强，企业级功能完善</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">技术栈</span>
+            <span class="analysis-value">Ruby on Rails + Vue.js，支持 Docker/Kubernetes 部署</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">适用场景</span>
+            <span class="analysis-value">需要客户支持系统但不想支付高昂 SaaS 费用的企业</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">受众</span>
+            <span class="analysis-value">创业公司、中小企业、技术团队</span>
+          </div>
+          <div class="analysis-conclusion">
+            <div class="conclusion-label">结论</div>
+            <div class="conclusion-text">开源客服的最佳选择，功能媲美商业产品</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Trending</div>
+
+      <!-- #4 andrewyng/aisuite -->
+      <article class="repo">
+        <div class="repo-header">
+          <span class="repo-rank">04</span>
+          <a href="https://github.com/andrewyng/aisuite" class="repo-name" target="_blank">andrewyng/aisuite</a>
+          <span class="repo-lang">Python</span>
+        </div>
+        <div class="repo-meta">
+          <span class="stars-today">+291 today</span> · 14,399 stars · 1,504 forks
+        </div>
+        <p class="repo-desc">Simple, unified interface to multiple Generative AI providers</p>
+        <div class="repo-analysis">
+          <div class="analysis-row">
+            <span class="analysis-label">做什么</span>
+            <span class="analysis-value">统一的 LLM 接口库，一套代码对接 OpenAI/Anthropic/Google 等多个提供商</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">为什么火</span>
+            <span class="analysis-value">Andrew Ng 出品，新增 OpenCoworker 桌面 AI agent，MCP 支持</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">技术栈</span>
+            <span class="analysis-value">Python，支持 MCP 协议，Agents API</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">适用场景</span>
+            <span class="analysis-value">需要对接多个 LLM 提供商的开发者</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">受众</span>
+            <span class="analysis-value">AI 应用开发者、需要灵活切换模型的团队</span>
+          </div>
+          <div class="analysis-conclusion">
+            <div class="conclusion-label">结论</div>
+            <div class="conclusion-text">LLM 开发的瑞士军刀，Andrew Ng 的又一力作</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- #5 Introduction-to-Autonomous-Robots -->
+      <article class="repo">
+        <div class="repo-header">
+          <span class="repo-rank">05</span>
+          <a href="https://github.com/Introduction-to-Autonomous-Robots/Introduction-to-Autonomous-Robots" class="repo-name" target="_blank">Introduction-to-Autonomous-Robots</a>
+          <span class="repo-lang">TeX</span>
+        </div>
+        <div class="repo-meta">
+          <span class="stars-today">+293 today</span> · 2,736 stars · 614 forks
+        </div>
+        <p class="repo-desc">Introduction to Autonomous Robots</p>
+        <div class="repo-analysis">
+          <div class="analysis-row">
+            <span class="analysis-label">做什么</span>
+            <span class="analysis-value">自主机器人入门开源教材，MIT Press 出版，涵盖机制、传感器、执行器和算法</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">为什么火</span>
+            <span class="analysis-value">机器人学和 AI agent 热度带动，免费教育资源持续受欢迎</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">技术栈</span>
+            <span class="analysis-value">TeX/LaTeX，Wolfram Language，MATLAB</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">适用场景</span>
+            <span class="analysis-value">学习机器人学基础的学生和研究人员</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">受众</span>
+            <span class="analysis-value">大学生、研究生、机器人爱好者</span>
+          </div>
+          <div class="analysis-conclusion">
+            <div class="conclusion-label">结论</div>
+            <div class="conclusion-text">机器人学入门的权威教材，免费且开源</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- #6 shiyu-coder/Kronos -->
+      <article class="repo">
+        <div class="repo-header">
+          <span class="repo-rank">06</span>
+          <a href="https://github.com/shiyu-coder/Kronos" class="repo-name" target="_blank">shiyu-coder/Kronos</a>
+          <span class="repo-lang">Python</span>
+        </div>
+        <div class="repo-meta">
+          <span class="stars-today">+244 today</span> · 29,922 stars · 5,152 forks
+        </div>
+        <p class="repo-desc">Kronos: A Foundation Model for the Language of Financial Markets</p>
+        <div class="repo-analysis">
+          <div class="analysis-row">
+            <span class="analysis-label">做什么</span>
+            <span class="analysis-value">金融市场基础模型，专门针对 K 线数据预训练，支持价格预测</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">为什么火</span>
+            <span class="analysis-value">AAAI 2026 论文被接收，45+ 全球交易所数据训练，提供微调框架</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">技术栈</span>
+            <span class="analysis-value">Python，PyTorch，Hugging Face，支持 Qlib 回测</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">适用场景</span>
+            <span class="analysis-value">量化交易、金融预测、K 线模式分析</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">受众</span>
+            <span class="analysis-value">量化研究员、金融工程师、AI 在金融领域的应用者</span>
+          </div>
+          <div class="analysis-conclusion">
+            <div class="conclusion-label">结论</div>
+            <div class="conclusion-text">金融 AI 的新标杆，论文质量高且代码完整</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- #7 music-assistant/server -->
+      <article class="repo">
+        <div class="repo-header">
+          <span class="repo-rank">07</span>
+          <a href="https://github.com/music-assistant/server" class="repo-name" target="_blank">music-assistant/server</a>
+          <span class="repo-lang">Python</span>
+        </div>
+        <div class="repo-meta">
+          <span class="stars-today">+197 today</span> · 2,194 stars · 437 forks
+        </div>
+        <p class="repo-desc">Music Assistant is a free, opensource Media library manager that connects to your streaming services and a wide range of connected speakers.</p>
+        <div class="repo-analysis">
+          <div class="analysis-row">
+            <span class="analysis-label">做什么</span>
+            <span class="analysis-value">开源媒体库管理器，连接流媒体服务和智能音箱，统一管理音乐</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">为什么火</span>
+            <span class="analysis-value">v2.9.1 发布，Home Assistant 深度集成，多房间音频支持</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">技术栈</span>
+            <span class="analysis-value">Python，Docker，Home Assistant 插件</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">适用场景</span>
+            <span class="analysis-value">有多套音响系统和多个流媒体订阅的音乐爱好者</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">受众</span>
+            <span class="analysis-value">Home Assistant 用户、智能家居爱好者、音乐发烧友</span>
+          </div>
+          <div class="analysis-conclusion">
+            <div class="conclusion-label">结论</div>
+            <div class="conclusion-text">智能家居音乐管理的终极方案</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- #8 swc-project/swc -->
+      <article class="repo">
+        <div class="repo-header">
+          <span class="repo-rank">08</span>
+          <a href="https://github.com/swc-project/swc" class="repo-name" target="_blank">swc-project/swc</a>
+          <span class="repo-lang">Rust</span>
+        </div>
+        <div class="repo-meta">
+          <span class="stars-today">+163 today</span> · 33,784 stars · 1,402 forks
+        </div>
+        <p class="repo-desc">Rust-based platform for the Web</p>
+        <div class="repo-analysis">
+          <div class="analysis-row">
+            <span class="analysis-label">做什么</span>
+            <span class="analysis-value">Rust 编写的超快 TypeScript/JavaScript 编译器，可替代 Babel</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">为什么火</span>
+            <span class="analysis-value">v1.15.41 持续迭代，Next.js/Turbopack 底层依赖，性能优势明显</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">技术栈</span>
+            <span class="analysis-value">Rust，Node.js 绑定，支持 ECMAScript 全特性</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">适用场景</span>
+            <span class="analysis-value">需要极快编译速度的前端项目</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">受众</span>
+            <span class="analysis-value">前端工程师、构建工具开发者、追求极致性能的团队</span>
+          </div>
+          <div class="analysis-conclusion">
+            <div class="conclusion-label">结论</div>
+            <div class="conclusion-text">前端编译的未来，Rust 带来的性能革命</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- #9 GorvGoyl/Clone-Wars -->
+      <article class="repo">
+        <div class="repo-header">
+          <span class="repo-rank">09</span>
+          <a href="https://github.com/GorvGoyl/Clone-Wars" class="repo-name" target="_blank">GorvGoyl/Clone-Wars</a>
+          <span class="repo-lang">Multiple</span>
+        </div>
+        <div class="repo-meta">
+          <span class="stars-today">+269 today</span> · 35,484 stars · 3,186 forks
+        </div>
+        <p class="repo-desc">100+ open-source clones of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Whatsapp, Youtube etc.</p>
+        <div class="repo-analysis">
+          <div class="analysis-row">
+            <span class="analysis-label">做什么</span>
+            <span class="analysis-value">100+ 知名网站的开源克隆，包含 Airbnb、Netflix、Spotify 等</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">为什么火</span>
+            <span class="analysis-value">学习资源持续受欢迎，新增更多克隆项目和技术栈</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">技术栈</span>
+            <span class="analysis-value">多种技术栈，涵盖 React/Vue/Next.js/Node.js 等</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">适用场景</span>
+            <span class="analysis-value">通过克隆知名网站学习全栈开发</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">受众</span>
+            <span class="analysis-value">初学者、想快速上手项目的开发者</span>
+          </div>
+          <div class="analysis-conclusion">
+            <div class="conclusion-label">结论</div>
+            <div class="conclusion-text">学习全栈开发的最佳实践库</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- #10 freeCodeCamp/freeCodeCamp -->
+      <article class="repo">
+        <div class="repo-header">
+          <span class="repo-rank">10</span>
+          <a href="https://github.com/freeCodeCamp/freeCodeCamp" class="repo-name" target="_blank">freeCodeCamp/freeCodeCamp</a>
+          <span class="repo-lang">TypeScript</span>
+        </div>
+        <div class="repo-meta">
+          <span class="stars-today">+146 today</span> · 447,226 stars · 44,951 forks
+        </div>
+        <p class="repo-desc">freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.</p>
+        <div class="repo-analysis">
+          <div class="analysis-row">
+            <span class="analysis-label">做什么</span>
+            <span class="analysis-value">免费编程教育平台，提供全栈开发和机器学习课程</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">为什么火</span>
+            <span class="analysis-value">持续更新课程内容，新增语言认证（中文/西班牙语），社区活跃</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">技术栈</span>
+            <span class="analysis-value">TypeScript/React/Node.js，MongoDB，Docker</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">适用场景</span>
+            <span class="analysis-value">零基础学习编程，获取开发者认证</span>
+          </div>
+          <div class="analysis-row">
+            <span class="analysis-label">受众</span>
+            <span class="analysis-value">编程初学者、想转行的职场人、自学开发者</span>
+          </div>
+          <div class="analysis-conclusion">
+            <div class="conclusion-label">结论</div>
+            <div class="conclusion-text">编程教育的标杆，44万星的传奇项目</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>Source: <a href="https://github.com/trending" target="_blank">github.com/trending</a></p>
+      <p style="margin-top: 0.5rem">Generated by GitHub Trending Daily · 2026-06-15 09:03</p>
+    </footer>
+  </div>
+</body>
+</html>

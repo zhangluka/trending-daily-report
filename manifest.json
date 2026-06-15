@@ -1,6 +1,10 @@
 {
   "reports": [
     {
+      "date": "2026-06-15",
+      "top3": "iptv-org/iptv · NVIDIA/SkillSpector · chatwoot/chatwoot"
+    },
+    {
       "date": "2026-06-14",
       "top3": "addyosmani/agent-skills · apple/container · obra/superpowers"
     },
