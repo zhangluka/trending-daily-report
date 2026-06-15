@@ -43,73 +43,166 @@ h1 {
 .subtitle {
   font-size: 1rem;
   color: var(--ink-soft);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
-.list-label {
+/* Week Nav */
+.week-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.week-nav-label {
+  width: 100%;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-muted);
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--rule);
+  margin-bottom: 0.5rem;
 }
 
-.report-list {
-  list-style: none;
-}
-
-.report-list li {
-  margin-bottom: 1rem;
-}
-
-.report-list a {
-  display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  padding: 0.75rem 0;
+.week-nav-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
   text-decoration: none;
-  color: var(--ink);
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  transition: all 0.15s;
+}
+
+.week-nav-item:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.week-nav-item.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(196, 96, 60, 0.06);
+}
+
+/* Week Group */
+.week-group {
+  margin-bottom: 2rem;
+}
+
+.week-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  user-select: none;
   border-bottom: 1px solid var(--rule);
   transition: color 0.15s;
 }
 
-.report-list a:hover {
+.week-header:hover {
   color: var(--accent);
+}
+
+.week-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.week-range {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+.week-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  background: var(--bg-warm, #f5f3ed);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  margin-left: auto;
+}
+
+.week-arrow {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  transition: transform 0.2s;
+}
+
+.week-group.open .week-arrow {
+  transform: rotate(90deg);
+}
+
+.week-body {
+  display: none;
+  padding: 0.5rem 0;
+}
+
+.week-group.open .week-body {
+  display: block;
+}
+
+/* Report List */
+.report-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.6rem 0 0.6rem 1rem;
+  text-decoration: none;
+  color: var(--ink);
+  border-left: 2px solid transparent;
+  transition: all 0.15s;
+}
+
+.report-item:hover {
+  color: var(--accent);
+  border-left-color: var(--accent);
 }
 
 .report-date {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--ink-muted);
-  min-width: 7rem;
+  min-width: 5.5rem;
+}
+
+.report-weekday {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  min-width: 1.5rem;
 }
 
 .report-title {
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .report-arrow {
-  margin-left: auto;
   color: var(--ink-muted);
-  font-size: 0.85rem;
-  transition: transform 0.15s;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: all 0.15s;
 }
 
-.report-list a:hover .report-arrow {
-  transform: translateX(3px);
+.report-item:hover .report-arrow {
+  opacity: 1;
+  transform: translateX(2px);
   color: var(--accent);
 }
 
-.empty {
-  font-size: 0.9rem;
-  color: var(--ink-muted);
-  padding: 2rem 0;
-}
-
+/* Footer */
 .footer {
   margin-top: 5rem;
   padding-top: 2rem;
@@ -131,9 +224,16 @@ h1 {
   border-bottom-color: var(--accent);
 }
 
+.empty {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  padding: 2rem 0;
+}
+
 @media (max-width: 640px) {
   .page { padding: 3rem 1.25rem 4rem; }
   h1 { font-size: 1.8rem; }
+  .report-title { font-size: 0.85rem; }
 }
 </style>
 </head>
@@ -143,43 +243,124 @@ h1 {
   <h1>GitHub Trending Daily</h1>
   <div class="subtitle">每天精选 GitHub Trending Top 10 项目，AI 深度分析。</div>
 
-  <div class="list-label">日报存档</div>
+  <div class="week-nav" id="weekNav">
+    <div class="week-nav-label">快速跳转</div>
+  </div>
 
-  <ul class="report-list" id="reports">
-    <li><a href="2026-06-03/dashboard.html">
-      <span class="report-date">2026-06-03</span>
-      <span class="report-title">headroom · ECC · markitdown · hermes-agent · trivy</span>
-      <span class="report-arrow">&rarr;</span>
-    </a></li>
-  </ul>
+  <div id="weekGroups"></div>
 
   <footer class="footer">
     <div>Built with <a href="https://github.com/zhangluka/trending-daily-report">GitHub Pages</a></div>
-    <div>Updated daily at 10:03 AM</div>
+    <div>Updated daily at 9:03 AM</div>
   </footer>
 
 </div>
 
 <script>
-// Auto-generate report list from directory structure
-// This script reads a manifest.json if available, otherwise falls back to static HTML
+const WEEKDAYS = ['日', '一', '二', '三', '四', '五', '六'];
+
+// Get ISO week number (Mon-Sun)
+function getISOWeek(date) {
+  const d = new Date(date);
+  d.setHours(0, 0, 0, 0);
+  d.setDate(d.getDate() + 3 - (d.getDay() + 6) % 7);
+  const week1 = new Date(d.getFullYear(), 0, 4);
+  return {
+    year: d.getFullYear(),
+    week: 1 + Math.round(((d - week1) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7)
+  };
+}
+
+// Get week date range (Mon-Sun)
+function getWeekRange(dateStr) {
+  const d = new Date(dateStr);
+  const day = d.getDay();
+  const diffToMon = day === 0 ? -6 : 1 - day;
+  const mon = new Date(d);
+  mon.setDate(mon.getDate() + diffToMon);
+  const sun = new Date(mon);
+  sun.setDate(sun.getDate() + 6);
+  const fmt = d => `${d.getMonth()+1}/${d.getDate()}`;
+  return `${fmt(mon)} - ${fmt(sun)}`;
+}
+
+// Group reports by ISO week
+function groupByWeek(reports) {
+  const groups = {};
+  reports.forEach(r => {
+    const { year, week } = getISOWeek(r.date);
+    const key = `${year}-W${String(week).padStart(2, '0')}`;
+    if (!groups[key]) {
+      groups[key] = { key, year, week, range: getWeekRange(r.date), reports: [] };
+    }
+    groups[key].reports.push(r);
+  });
+  return Object.values(groups).sort((a, b) => b.key.localeCompare(a.key));
+}
+
+// Render
 fetch('manifest.json')
   .then(r => r.ok ? r.json() : null)
   .then(data => {
-    if (!data || !data.reports) return;
-    const list = document.getElementById('reports');
-    list.innerHTML = '';
-    data.reports.forEach(r => {
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="${r.date}/dashboard.html">
-        <span class="report-date">${r.date}</span>
-        <span class="report-title">${r.top3}</span>
-        <span class="report-arrow">&rarr;</span>
-      </a>`;
-      list.appendChild(li);
+    if (!data || !data.reports || data.reports.length === 0) {
+      document.getElementById('weekGroups').innerHTML = '<div class="empty">暂无日报</div>';
+      return;
+    }
+
+    const groups = groupByWeek(data.reports);
+    const navEl = document.getElementById('weekNav');
+    const groupsEl = document.getElementById('weekGroups');
+
+    groups.forEach((group, i) => {
+      // Nav item
+      const navItem = document.createElement('a');
+      navItem.className = 'week-nav-item' + (i === 0 ? ' active' : '');
+      navItem.href = `#week-${group.key}`;
+      navItem.textContent = `${group.year} 第${group.week}周`;
+      navItem.onclick = (e) => {
+        e.preventDefault();
+        const el = document.getElementById(`week-${group.key}`);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (!el.classList.contains('open')) {
+            el.classList.add('open');
+          }
+        }
+      };
+      navEl.appendChild(navItem);
+
+      // Week group
+      const groupDiv = document.createElement('div');
+      groupDiv.className = 'week-group' + (i === 0 ? ' open' : '');
+      groupDiv.id = `week-${group.key}`;
+
+      groupDiv.innerHTML = `
+        <div class="week-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="week-arrow">▸</span>
+          <span class="week-label">${group.year} 第${group.week}周</span>
+          <span class="week-range">${group.range}</span>
+          <span class="week-count">${group.reports.length} 篇</span>
+        </div>
+        <div class="week-body">
+          ${group.reports.map(r => {
+            const d = new Date(r.date);
+            const wd = WEEKDAYS[d.getDay()];
+            return `<a class="report-item" href="${r.date}/dashboard.html">
+              <span class="report-date">${r.date}</span>
+              <span class="report-weekday">周${wd}</span>
+              <span class="report-title">${r.top3}</span>
+              <span class="report-arrow">&rarr;</span>
+            </a>`;
+          }).join('')}
+        </div>
+      `;
+
+      groupsEl.appendChild(groupDiv);
     });
   })
-  .catch(() => {});
+  .catch(() => {
+    document.getElementById('weekGroups').innerHTML = '<div class="empty">暂无日报</div>';
+  });
 </script>
 </body>
 </html>
