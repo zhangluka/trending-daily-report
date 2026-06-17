@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Daily · 2026-06-17</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f5;
+    --bg-warm: #f5f3ed;
+    --ink: #1a1918;
+    --ink-soft: #6b6966;
+    --ink-muted: #9e9b97;
+    --accent: #c4603c;
+    --accent-soft: rgba(196, 96, 60, 0.08);
+    --rule: #e8e6e1;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 4rem;
+  }
+
+  .header-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .header-date {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+  }
+
+  .header-stats {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    margin-top: 0.15rem;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 4rem;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* Project Card */
+  .project {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .project:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .project-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-rank {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    flex-shrink: 0;
+    width: 1.5rem;
+  }
+
+  .project-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .project-name:hover {
+    color: var(--accent);
+  }
+
+  .project-lang {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .project-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-meta span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  .project-meta .stars-today {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .project-desc {
+    margin-left: 2.25rem;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+
+  .project-analysis {
+    margin-left: 2.25rem;
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .analysis-label {
+    color: var(--ink-muted);
+    font-weight: 500;
+  }
+
+  .analysis-value {
+    color: var(--ink-soft);
+  }
+
+  .analysis-conclusion {
+    margin-left: 2.25rem;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--accent-soft);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer a {
+    color: var(--ink-muted);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    color: var(--accent);
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .container {
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    .header h1 {
+      font-size: 1.5rem;
+    }
+
+    .header-stats {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .project-header {
+      flex-wrap: wrap;
+    }
+
+    .project-lang {
+      margin-left: 2.25rem;
+      margin-top: -0.25rem;
+    }
+
+    .project-analysis {
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+    }
+
+    .analysis-label {
+      margin-top: 0.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="header">
+    <div class="header-label">GitHub Trending Daily</div>
+    <h1>2026-06-17 · Top 10 精选</h1>
+    <p class="header-date">从 13 个 trending 项目中筛选</p>
+    <div class="header-stats">
+      <div class="stat">
+        <span class="stat-value">3,659</span>
+        <span class="stat-label">总增星</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">7</span>
+        <span class="stat-label">语言</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">10</span>
+        <span class="stat-label">精选项目</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-label">Top 3</div>
+
+    <!-- #1 iptv-org/iptv -->
+    <article class="project">
+      <div class="project-header">
+        <span class="project-rank">01</span>
+        <a class="project-name" href="https://github.com/iptv-org/iptv" target="_blank">iptv-org/iptv</a>
+        <span class="project-lang">TypeScript</span>
+      </div>
+      <div class="project-meta">
+        <span class="stars-today">+1,197 today</span>
+        <span>124,142 stars</span>
+        <span>6,705 forks</span>
+      </div>
+      <p class="project-desc">Collection of publicly available IPTV channels from all over the world.</p>
+      <div class="project-analysis">
+        <span class="analysis-label">做什么</span>
+        <span class="analysis-value">收集全球公开 IPTV 频道，提供可直接导入播放器的 M3U 播放列表，配合 EPG 电子节目指南使用</span>
+        <span class="analysis-label">为什么火</span>
+        <span class="analysis-value">社区持续活跃，频道列表定期更新，是 cord-cutting 社区的基础设施级项目</span>
+        <span class="analysis-label">技术栈</span>
+        <span class="analysis-value">TypeScript, M3U playlists, GitHub Actions 自动化验证</span>
+        <span class="analysis-label">适用场景</span>
+        <span class="analysis-value">想免费看全球电视直播，搭配 VLC / Kodi / IPTV 播放器使用</span>
+        <span class="analysis-label">受众</span>
+        <span class="analysis-value">普通用户、cord-cutters、智能家居爱好者</span>
+      </div>
+      <div class="analysis-conclusion">全球 IPTV 频道的百科全书，持续维护的社区基础设施</div>
+    </article>
+
+    <!-- #2 freeCodeCamp/freeCodeCamp -->
+    <article class="project">
+      <div class="project-header">
+        <span class="project-rank">02</span>
+        <a class="project-name" href="https://github.com/freeCodeCamp/freeCodeCamp" target="_blank">freeCodeCamp/freeCodeCamp</a>
+        <span class="project-lang">TypeScript</span>
+      </div>
+      <div class="project-meta">
+        <span class="stars-today">+633 today</span>
+        <span>448,593 stars</span>
+        <span>45,045 forks</span>
+      </div>
+      <p class="project-desc">freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.</p>
+      <div class="project-analysis">
+        <span class="analysis-label">做什么</span>
+        <span class="analysis-value">免费开源编程学习平台，提供全栈开发、机器学习等认证课程，已帮助 10 万人+ 获得开发者工作</span>
+        <span class="analysis-label">为什么火</span>
+        <span class="analysis-value">GitHub 最高星项目之一，持续有新课程和语言认证上线，社区活跃度极高</span>
+        <span class="analysis-label">技术栈</span>
+        <span class="analysis-value">TypeScript, Node.js, React, MongoDB, PostgreSQL</span>
+        <span class="analysis-label">适用场景</span>
+        <span class="analysis-value">零基础学编程、转行开发者、补充 CS 知识</span>
+        <span class="analysis-label">受众</span>
+        <span class="analysis-value">编程初学者、转行人群、自学者</span>
+      </div>
+      <div class="analysis-conclusion">编程免费学习的标杆，社区驱动的教育基础设施</div>
+    </article>
+
+    <!-- #3 OpenBMB/VoxCPM -->
+    <article class="project">
+      <div class="project-header">
+        <span class="project-rank">03</span>
+        <a class="project-name" href="https://github.com/OpenBMB/VoxCPM" target="_blank">OpenBMB/VoxCPM</a>
+        <span class="project-lang">Python</span>
+      </div>
+      <div class="project-meta">
+        <span class="stars-today">+408 today</span>
+        <span>30,145 stars</span>
+        <span>3,407 forks</span>
+      </div>
+      <p class="project-desc">VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning</p>
+      <div class="project-analysis">
+        <span class="analysis-label">做什么</span>
+        <span class="analysis-value">无 Tokenizer 的 TTS 系统，直接生成连续语音表示。2B 参数模型，支持 30 种语言、语音设计、可控克隆，48kHz 录音室品质输出</span>
+        <span class="analysis-label">为什么火</span>
+        <span class="analysis-value">VoxCPM2 于 2026 年 4 月发布，基于 MiniCPM-4 骨干网络，200 万小时多语言数据训练，benchmark 表现优异</span>
+        <span class="analysis-label">技术栈</span>
+        <span class="analysis-value">Python, PyTorch, CUDA, 扩散自回归架构, AudioVAE V2</span>
+        <span class="analysis-label">适用场景</span>
+        <span class="analysis-value">高质量多语言语音合成、语音克隆、有声读物、虚拟主播</span>
+        <span class="analysis-label">受众</span>
+        <span class="analysis-value">AI/ML 开发者、语音应用开发者、内容创作者</span>
+      </div>
+      <div class="analysis-conclusion">开源 TTS 的新标杆，Apache-2.0 商用友好，30 语言 + 语音设计能力炸裂</div>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Trending</div>
+
+    <!-- #4 n0-computer/iroh -->
+    <article class="project">
+      <div class="project-header">
+        <span class="project-rank">04</span>
+        <a class="project-name" href="https://github.com/n0-computer/iroh" target="_blank">n0-computer/iroh</a>
+        <span class="project-lang">Rust</span>
+      </div>
+      <div class="project-meta">
+        <span class="stars-today">+334 today</span>
+        <span>9,306 stars</span>
+        <span>436 forks</span>
+      </div>
+      <p class="project-desc">IP addresses break, dial keys instead. Modular networking stack in Rust.</p>
+      <div class="project-analysis">
+        <span class="analysis-label">做什么</span>
+        <span class="analysis-value">用公钥代替 IP 地址的 P2P 网络栈，基于 QUIC 协议，自动 NAT 打洞，失败时回退到公共 relay 服务器</span>
+        <span class="analysis-label">为什么火</span>
+        <span class="analysis-value">P2P 网络基础设施的优雅实现，由 IPFS/IPLD Rust 工具链团队打造，社区增长迅速</span>
+        <span class="analysis-label">技术栈</span>
+        <span class="analysis-value">Rust, QUIC, BLAKE3 内容寻址, NAT traversal</span>
+        <span class="analysis-label">适用场景</span>
+        <span class="analysis-value">P2P 直连应用、分布式文件同步、去中心化社交</span>
+        <span class="analysis-label">受众</span>
+        <span class="analysis-value">Rust 开发者、P2P 应用开发者、去中心化基础设施</span>
+      </div>
+      <div class="analysis-conclusion">如果做 P2P 应用，这是目前最优雅的底层方案 — 用密钥而非 IP 寻址</div>
+    </article>
+
+    <!-- #5 meshery/meshery -->
+    <article class="project">
+      <div class="project-header">
+        <span class="project-rank">05</span>
+        <a class="project-name" href="https://github.com/meshery/meshery" target="_blank">meshery/meshery</a>
+        <span class="project-lang">TypeScript</span>
+      </div>
+      <div class="project-meta">
+        <span class="stars-today">+228 today</span>
+        <span>10,857 stars</span>
+        <span>3,448 forks</span>
+      </div>
+      <p class="project-desc">Meshery, the cloud native manager — CNCF 项目，可视化管理 K8s 多集群部署</p>
+      <div class="project-analysis">
+        <span class="analysis-label">做什么</span>
+        <span class="analysis-value">云原生管理平台，可视化 GitOps，支持 380+ 云原生集成，多集群多云统一管理</span>
+        <span class="analysis-label">为什么火</span>
+        <span class="analysis-value">CNCF 毕业项目，持续迭代，平台工程热度不减</span>
+        <span class="analysis-label">技术栈</span>
+        <span class="analysis-value">TypeScript, Go, React, GraphQL, NATS</span>
+        <span class="analysis-label">适用场景</span>
+        <span class="analysis-value">多云 K8s 管理、平台工程、基础设施即代码</span>
+        <span class="analysis-label">受众</span>
+        <span class="analysis-value">DevOps 工程师、平台工程师、SRE</span>
+      </div>
+      <div class="analysis-conclusion">K8s 管理的瑞士军刀，YAML 地狱的终结者</div>
+    </article>
+
+    <!-- #6 teslamate-org/teslamate -->
+    <article class="project">
+      <div class="project-header">
+        <span class="project-rank">06</span>
+        <a class="project-name" href="https://github.com/teslamate-org/teslamate" target="_blank">teslamate-org/teslamate</a>
+        <span class="project-lang">Elixir</span>
+      </div>
+      <div class="project-meta">
+        <span class="stars-today">+215 today</span>
+        <span>8,417 stars</span>
+        <span>956 forks</span>
+      </div>
+      <p class="project-desc">A powerful, self-hosted data logger for your Tesla.</p>
+      <div class="project-analysis">
+        <span class="analysis-label">做什么</span>
+        <span class="analysis-value">Tesla 车辆自托管数据记录器，高精度驾驶数据、充电追踪、电池健康监控，Grafana 可视化</span>
+        <span class="analysis-label">为什么火</span>
+        <span class="analysis-value">近期发布安全警告提醒用户只用官方版本，可能因此引起关注</span>
+        <span class="analysis-label">技术栈</span>
+        <span class="analysis-value">Elixir, PostgreSQL, Grafana, MQTT, Docker</span>
+        <span class="analysis-label">适用场景</span>
+        <span class="analysis-value">Tesla 车主追踪车辆数据、分析驾驶习惯、监控电池退化</span>
+        <span class="analysis-label">受众</span>
+        <span class="analysis-value">Tesla 车主、智能家居爱好者、数据极客</span>
+      </div>
+      <div class="analysis-conclusion">Tesla 数据追踪的标配工具，自托管 = 你的数据你做主</div>
+    </article>
+
+    <!-- #7 music-assistant/server -->
+    <article class="project">
+      <div class="project-header">
+        <span class="project-rank">07</span>
+        <a class="project-name" href="https://github.com/music-assistant/server" target="_blank">music-assistant/server</a>
+        <span class="project-lang">Python</span>
+      </div>
+      <div class="project-meta">
+        <span class="stars-today">+157 today</span>
+        <span>2,569 stars</span>
+        <span>450 forks</span>
+      </div>
+      <p class="project-desc">Music Assistant is a free, opensource Media library manager that connects to your streaming services and a wide range of connected speakers.</p>
+      <div class="project-analysis">
+        <span class="analysis-label">做什么</span>
+        <span class="analysis-value">开源媒体库管理器，统一管理 Spotify / Tidal / Qobuz / 本地音乐等多个音源，支持多房间音频</span>
+        <span class="analysis-label">为什么火</span>
+        <span class="analysis-value">Home Assistant 生态核心组件，智能家居 + 音乐管理的交叉热点</span>
+        <span class="analysis-label">技术栈</span>
+        <span class="analysis-value">Python, Docker, Home Assistant Add-on, Chromecast / AirPlay / Sonos</span>
+        <span class="analysis-label">适用场景</span>
+        <span class="analysis-value">统一管理多个音乐流媒体服务，多房间音频播放</span>
+        <span class="analysis-label">受众</span>
+        <span class="analysis-value">Home Assistant 用户、音乐爱好者、智能家居玩家</span>
+      </div>
+      <div class="analysis-conclusion">Home Assistant 生态的音乐管理利器，把所有音源合成一个库</div>
+    </article>
+
+    <!-- #8 alibaba/zvec -->
+    <article class="project">
+      <div class="project-header">
+        <span class="project-rank">08</span>
+        <a class="project-name" href="https://github.com/alibaba/zvec" target="_blank">alibaba/zvec</a>
+        <span class="project-lang">C++</span>
+      </div>
+      <div class="project-meta">
+        <span class="stars-today">+156 today</span>
+        <span>10,484 stars</span>
+        <span>607 forks</span>
+      </div>
+      <p class="project-desc">A lightweight, lightning-fast, in-process vector database</p>
+      <div class="project-analysis">
+        <span class="analysis-label">做什么</span>
+        <span class="analysis-value">轻量级进程内向量数据库，支持稠密/稀疏向量、全文搜索、混合检索，无需独立服务器</span>
+        <span class="analysis-label">为什么火</span>
+        <span class="analysis-value">v0.5.0 刚发布（6 月 12 日），新增全文搜索、DiskANN 索引、Go/Rust SDK、RISC-V 支持</span>
+        <span class="analysis-label">技术栈</span>
+        <span class="analysis-value">C++ 核心, Python / Node.js / Go / Rust / Dart SDK, WAL 持久化</span>
+        <span class="analysis-label">适用场景</span>
+        <span class="analysis-value">嵌入式向量搜索、RAG 应用、语义检索、边缘设备 AI</span>
+        <span class="analysis-label">受众</span>
+        <span class="analysis-value">AI/ML 开发者、搜索工程师、全栈开发者</span>
+      </div>
+      <div class="analysis-conclusion">嵌入式向量搜索的性能怪兽 — pip install zvec 就能用，不需要部署服务</div>
+    </article>
+
+    <!-- #9 rmyndharis/OpenWA -->
+    <article class="project">
+      <div class="project-header">
+        <span class="project-rank">09</span>
+        <a class="project-name" href="https://github.com/rmyndharis/OpenWA" target="_blank">rmyndharis/OpenWA</a>
+        <span class="project-lang">TypeScript</span>
+      </div>
+      <div class="project-meta">
+        <span class="stars-today">+185 today</span>
+        <span>9,096 stars</span>
+        <span>1,998 forks</span>
+      </div>
+      <p class="project-desc">Free, Open Source, Self-Hosted WhatsApp API Gateway</p>
+      <div class="project-analysis">
+        <span class="analysis-label">做什么</span>
+        <span class="analysis-value">开源 WhatsApp API 网关，自托管，可插拔架构（SQLite/PostgreSQL, Local/S3, Memory/Redis），带 Web Dashboard</span>
+        <span class="analysis-label">为什么火</span>
+        <span class="analysis-value">WhatsApp 商业 API 收费高，开源替代方案需求旺盛，n8n 集成降低了自动化门槛</span>
+        <span class="analysis-label">技术栈</span>
+        <span class="analysis-value">TypeScript, NestJS 11, whatsapp-web.js, TypeORM, Docker</span>
+        <span class="analysis-label">适用场景</span>
+        <span class="analysis-value">WhatsApp 消息自动化、客服机器人、营销群发</span>
+        <span class="analysis-label">受众</span>
+        <span class="analysis-value">后端开发者、业务自动化、中小企业</span>
+      </div>
+      <div class="analysis-conclusion">WhatsApp API 的开源替代方案，告别 Meta 的付费墙</div>
+    </article>
+
+    <!-- #10 Universal-Debloater-Alliance/UAD-ng -->
+    <article class="project">
+      <div class="project-header">
+        <span class="project-rank">10</span>
+        <a class="project-name" href="https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation" target="_blank">Universal-Debloater-Alliance/UAD-ng</a>
+        <span class="project-lang">Rust</span>
+      </div>
+      <div class="project-meta">
+        <span class="stars-today">+146 today</span>
+        <span>7,331 stars</span>
+        <span>315 forks</span>
+      </div>
+      <p class="project-desc">Cross-platform GUI written in Rust using ADB to debloat non-rooted Android devices.</p>
+      <div class="project-analysis">
+        <span class="analysis-label">做什么</span>
+        <span class="analysis-value">跨平台 Android 去膨胀工具，用 ADB 移除预装应用，不需要 root，改善隐私、安全和电池寿命</span>
+        <span class="analysis-label">为什么火</span>
+        <span class="analysis-value">社区驱动的包列表持续更新，Canta 等移动端集成扩大了用户群</span>
+        <span class="analysis-label">技术栈</span>
+        <span class="analysis-value">Rust, Iced GUI, ADB</span>
+        <span class="analysis-label">适用场景</span>
+        <span class="analysis-value">清理 Android 预装应用、提升设备性能、改善隐私</span>
+        <span class="analysis-label">受众</span>
+        <span class="analysis-value">Android 用户、隐私关注者、极客</span>
+      </div>
+      <div class="analysis-conclusion">Android 去膨胀的首选工具 — 不需要 root，社区维护的安全评级</div>
+    </article>
+  </section>
+
+  <footer class="footer">
+    <span>Source: <a href="https://github.com/trending" target="_blank">github.com/trending</a></span>
+    <span>Generated by Claude Code</span>
+  </footer>
+
+</div>
+</body>
+</html>
