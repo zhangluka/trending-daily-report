@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Daily · 2026-06-18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf9f5;
+  --bg-warm: #f5f3ed;
+  --ink: #1a1918;
+  --ink-soft: #6b6966;
+  --ink-muted: #9e9b97;
+  --accent: #c4603c;
+  --accent-soft: rgba(196, 96, 60, 0.08);
+  --rule: #e8e6e1;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+header {
+  margin-bottom: 3.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+header .meta {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-family: 'JetBrains Mono', monospace;
+}
+header .meta span { margin-right: 1.2rem; }
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.project {
+  margin-bottom: 4rem;
+}
+.project-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+.project-rank {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  flex-shrink: 0;
+  width: 1.8rem;
+}
+.project-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.project-name:hover { color: var(--accent); }
+.project-lang {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  flex-shrink: 0;
+}
+.project-stats {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin-left: 2.55rem;
+  margin-bottom: 0.75rem;
+}
+.project-stats .stars-today {
+  color: var(--accent);
+  font-weight: 500;
+}
+.project-desc {
+  margin-left: 2.55rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+  line-height: 1.55;
+}
+.project-analysis {
+  margin-left: 2.55rem;
+}
+.analysis-row {
+  display: flex;
+  gap: 0;
+  margin-bottom: 0.45rem;
+  font-size: 0.88rem;
+}
+.analysis-label {
+  flex-shrink: 0;
+  width: 5rem;
+  color: var(--ink-muted);
+  font-size: 0.78rem;
+  padding-top: 0.08rem;
+}
+.analysis-value {
+  color: var(--ink);
+  flex: 1;
+}
+.verdict {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  margin-left: 2.55rem;
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+.verdict-label {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.78rem;
+}
+footer {
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+footer a { color: var(--ink-soft); text-decoration: none; }
+footer a:hover { color: var(--accent); }
+@media (max-width: 600px) {
+  .container { padding: 2rem 1rem 3rem; }
+  .analysis-row { flex-direction: column; gap: 0.15rem; }
+  .analysis-label { width: auto; }
+  .project-header { flex-wrap: wrap; gap: 0.4rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>GitHub Trending Daily</h1>
+  <div class="meta">
+    <span>2026-06-18</span>
+    <span>Top 10 精选</span>
+    <span>总增星 6,777</span>
+    <span>语言 7 种</span>
+  </div>
+</header>
+
+<div class="section-label">Top 3</div>
+
+<!-- #1 Agent-Reach -->
+<div class="project">
+  <div class="project-header">
+    <span class="project-rank">01</span>
+    <a class="project-name" href="https://github.com/Panniantong/Agent-Reach" target="_blank">Panniantong/Agent-Reach</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="stars-today">+1,161 today</span> · 33,321 stars · 2,678 forks
+  </div>
+  <div class="project-desc">给你的 AI Agent 一键装上互联网能力——读推特、搜 Reddit、看 YouTube、刷小红书，一个 CLI 搞定，零 API 费用。</div>
+  <div class="project-analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">AI Agent 的"互联网能力层"，通过一个 CLI 工具统一接入 Twitter、Reddit、YouTube、B站、小红书、GitHub、RSS 等十几个平台的内容读取和搜索能力，免去逐个平台找工具、装依赖、调配置的麻烦。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">v1.5.0 刚发布（6月11日），引入"首选+备选"多后端路由架构——平台封了自动切换（如 yt-dlp 被 B站风控后切到 bili-cli），用户零操作。加上与腾讯云 OpenClaw 的合作推广，推动了这波增长。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Python, Shell, MCP 协议, yt-dlp, Jina Reader, Exa 搜索, feedparser, 各平台专用 CLI</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">使用 Claude Code / Cursor / OpenClaw / Windsurf 等 AI 编程 Agent 的开发者，需要让 Agent 读取社交媒体内容、搜索全网信息、提取视频字幕、监控 RSS 源等场景。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">AI Agent 深度用户、独立开发者、内容创作者、需要让 Agent 具备信息检索能力的技术团队</span>
+    </div>
+  </div>
+  <div class="verdict">
+    <span class="verdict-label">结论：</span>解决了 AI Agent "看得见代码、看不见世界"的基础问题，架构务实（多后端路由+自动体检），免费开源且持续维护，是目前 Agent 互联网接入层最实用的开源方案之一。
+  </div>
+</div>
+
+<!-- #2 superpowers -->
+<div class="project">
+  <div class="project-header">
+    <span class="project-rank">02</span>
+    <a class="project-name" href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a>
+    <span class="project-lang">Shell</span>
+  </div>
+  <div class="project-stats">
+    <span class="stars-today">+1,129 today</span> · 231,186 stars · 20,546 forks
+  </div>
+  <div class="project-desc">An agentic skills framework & software development methodology that works.</div>
+  <div class="project-analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">面向 AI 编程 Agent 的插件式开发方法论框架，通过可组合的 skills 自动引导 Agent 执行头脑风暴、TDD、子 Agent 驱动开发、代码审查等完整工程流程。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">v6.0.2 于 6 月 17 日刚发布，已进入 Claude Code、Codex、Cursor、Gemini CLI、GitHub Copilot CLI 等主流 Agent 的官方插件市场，生态覆盖度极高，正在全职招聘社区工程师。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Shell (50.9%), JavaScript (41.9%), TypeScript (2.6%), HTML, Python</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">使用 AI 编程 Agent 进行实际软件开发时，希望 Agent 不乱写代码、遵循 TDD 和工程规范、能自主完成多步骤任务的场景。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">每天用 Claude Code、Cursor、Codex 等 AI 编程工具干活的开发者，尤其是对 Agent 输出质量不满意、希望引入结构化工程流程的人</span>
+    </div>
+  </div>
+  <div class="verdict">
+    <span class="verdict-label">结论：</span>23 万星的"Agent 开发方法论"，本质上是给 AI 编程 Agent 套上一套人类工程师的工作规范——先问需求、再写计划、TDD 驱动、子 Agent 并行执行，是目前最成熟的 coding agent workflow 框架。
+  </div>
+</div>
+
+<!-- #3 mattpocock/skills -->
+<div class="project">
+  <div class="project-header">
+    <span class="project-rank">03</span>
+    <a class="project-name" href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills</a>
+    <span class="project-lang">Shell</span>
+  </div>
+  <div class="project-stats">
+    <span class="stars-today">+1,523 today</span> · 133,748 stars · 11,615 forks
+  </div>
+  <div class="project-desc">Skills For Real Engineers. My agent skills that I use every day to do real engineering - not vibe coding.</div>
+  <div class="project-analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">一套面向 Claude Code / Codex 等 AI 编程 Agent 的可复用技能集合，涵盖需求对齐（grill-me）、TDD 循环、代码架构改进、领域建模、Bug 诊断等软件工程核心实践，通过结构化工作流约束 Agent 行为。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">6 月 17 日刚发布 v1.0.0 大版本，新增 ask-matt 路由技能、codebase-design 和 domain-modeling 两个设计类共享技能。Matt Pocock 是 TypeScript 社区顶流（Total TypeScript 作者），大版本发布叠加个人影响力驱动了爆发式增长。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Shell 脚本 + Markdown（技能定义文件），通过 npx skills@latest 一键安装，兼容所有主流 AI 编程 Agent</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">使用 Claude Code、Codex 等 AI 编程工具进行实际工程项目开发时，需要需求对齐、TDD、架构治理、Bug 排查等工程纪律的场景。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">用 AI 编程 Agent 做实际项目（而非 demo/原型）的开发者，尤其是对代码质量和工程规范有要求的团队和个人</span>
+    </div>
+  </div>
+  <div class="verdict">
+    <span class="verdict-label">结论：</span>目前 AI 编程 Agent 技能生态中完成度最高、工程理念最扎实的开源项目，Matt Pocock 把多年工程经验压缩成了一套可组合的 Agent 操作系统——不是教你"提示词技巧"，而是教 Agent"怎么写好软件"。
+  </div>
+</div>
+
+<div class="section-label">Trending</div>
+
+<!-- #4 freeCodeCamp -->
+<div class="project">
+  <div class="project-header">
+    <span class="project-rank">04</span>
+    <a class="project-name" href="https://github.com/freeCodeCamp/freeCodeCamp" target="_blank">freeCodeCamp/freeCodeCamp</a>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="stars-today">+757 today</span> · 449,168 stars · 45,090 forks
+  </div>
+  <div class="project-desc">freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.</div>
+  <div class="project-analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">全球最大的免费编程学习平台，提供全栈 Web 开发、机器学习、数据库等方向的交互式课程和认证，已帮助超过 10 万人获得第一份开发者工作。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">6 月 16-18 日密集提交了数十个 PR，包括新增「认证与授权」测验、Tailwind CSS 工作坊、Python 错误处理讲座修正、移动端每日编程挑战语言选择器等，社区贡献极为活跃。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">TypeScript (60.2%), JavaScript (35.7%), CSS (4.0%), React, Node.js, Docker</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">零基础或初中级开发者想系统学习 Web 全栈开发、Python、数据库等技术；想获得免费且被雇主认可的开发者认证。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">编程初学者、转行进入科技行业的求职者、想教授编程课程的教育工作者</span>
+    </div>
+  </div>
+  <div class="verdict">
+    <span class="verdict-label">结论：</span>449K 星的编程教育标杆项目，近期密集的课程迭代和社区活跃度是登上 Trending 的直接原因，适合任何想免费学编程的人长期关注。
+  </div>
+</div>
+
+<!-- #5 timesfm -->
+<div class="project">
+  <div class="project-header">
+    <span class="project-rank">05</span>
+    <a class="project-name" href="https://github.com/google-research/timesfm" target="_blank">google-research/timesfm</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="stars-today">+606 today</span> · 21,956 stars · 2,135 forks
+  </div>
+  <div class="project-desc">TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.</div>
+  <div class="project-analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">Google Research 开发的时间序列基础模型，基于 Transformer decoder-only 架构，支持零样本/少样本时序预测，无需针对特定数据集训练即可直接使用。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">2026 年 6 月 5 日发布了 PyPI timesfm 2.0.0 正式版本，200M 参数、16k 上下文、连续分位数预测，社区活跃度和关注度持续攀升。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Python, PyTorch / JAX (Flax), Hugging Face Transformers, PEFT (LoRA)</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">时序预测场景——包括销售预测、需求规划、金融指标预测、IoT 传感器数据预测等，尤其适合缺少大量标注数据、需要快速冷启动的预测任务。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">数据科学家、ML 工程师、时序分析研究人员、需要在 BigQuery/Vertex AI 中使用时序预测的企业用户</span>
+    </div>
+  </div>
+  <div class="verdict">
+    <span class="verdict-label">结论：</span>Google 出品的时序预测基础模型，2.0.0 正式发布是本次上榜的直接推手，200M 参数+16k 上下文+零样本能力让它成为时序预测领域最值得关注的开源基座模型之一。
+  </div>
+</div>
+
+<!-- #6 android-debloater -->
+<div class="project">
+  <div class="project-header">
+    <span class="project-rank">06</span>
+    <a class="project-name" href="https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation" target="_blank">Universal-Debloater-Alliance/...next-generation</a>
+    <span class="project-lang">Rust</span>
+  </div>
+  <div class="project-stats">
+    <span class="stars-today">+457 today</span> · 7,664 stars · 328 forks
+  </div>
+  <div class="project-desc">Cross-platform GUI written in Rust using ADB to debloat non-rooted Android devices. Improve your privacy, the security and battery life of your device.</div>
+  <div class="project-analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">跨平台图形界面工具，通过 ADB 命令帮助用户在无需 Root 的情况下卸载/禁用 Android 设备上的预装臃肿软件，支持三星、小米、华为、OPPO 等主流厂商，内置社区维护的包数据库并按安全等级分类。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">原版 UAD 停止维护后的社区接力 fork，v1.2.0 于 2026 年 1 月发布，新增键盘快捷键、包状态校验、描述搜索等大量功能，社区持续扩充 OEM 包列表，配套移动端工具 Canta 联动推广。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Rust (99%), Iced GUI 框架, ADB (Android Debug Bridge), Nix flake</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">Android 用户想要移除手机厂商和运营商预装的无用应用，不想解锁 Bootloader 或获取 Root 权限，仅通过 USB 连接电脑即可完成清理的场景。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">关注手机隐私和安全的 Android 用户；使用三星、小米、华为等重预装品牌手机的用户</span>
+    </div>
+  </div>
+  <div class="verdict">
+    <span class="verdict-label">结论：</span>Android 去臃肿领域的事实标准工具，Rust + Iced 实现的跨平台 GUI 搭配社区驱动的包数据库，让"不 Root 也能卸载系统垃圾"变得安全可控，适合任何想给 Android 设备瘦身的用户。
+  </div>
+</div>
+
+<!-- #7 iroh -->
+<div class="project">
+  <div class="project-header">
+    <span class="project-rank">07</span>
+    <a class="project-name" href="https://github.com/n0-computer/iroh" target="_blank">n0-computer/iroh</a>
+    <span class="project-lang">Rust</span>
+  </div>
+  <div class="project-stats">
+    <span class="stars-today">+421 today</span> · 9,687 stars · 452 forks
+  </div>
+  <div class="project-desc">IP addresses break, dial keys instead. Modular networking stack in Rust.</div>
+  <div class="project-analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">基于公钥寻址的 P2P 网络库，用公钥代替 IP 地址建立连接，自动完成 NAT 穿透和中继回退，底层基于 QUIC 协议提供加密传输和多路复用。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">2026 年 6 月 15 日刚发布 v1.0.0 正式版（"Dial keys, not IPs"），标志着项目达到稳定里程碑，引发社区关注。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Rust, QUIC (noq), BLAKE3 内容寻址, DNS/Pkarr 节点发现</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">需要 P2P 直连的去中心化应用，如分布式存储（iroh-blobs）、发布订阅网络（iroh-gossip）、协作文档同步（iroh-docs），尤其适合 NAT 穿透和跨网络设备通信场景。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">构建去中心化/P2P 应用的 Rust 开发者、对 libp2p 替代方案感兴趣的网络工程师</span>
+    </div>
+  </div>
+  <div class="verdict">
+    <span class="verdict-label">结论：</span>iroh 以"公钥即地址"的极简理念重构 P2P 网络栈，v1.0 发布标志成熟可用，是 Rust 生态中 libp2p 之外最值得关注的网络基础设施项目。
+  </div>
+</div>
+
+<!-- #8 codebase-memory-mcp -->
+<div class="project">
+  <div class="project-header">
+    <span class="project-rank">08</span>
+    <a class="project-name" href="https://github.com/DeusData/codebase-memory-mcp" target="_blank">DeusData/codebase-memory-mcp</a>
+    <span class="project-lang">C</span>
+  </div>
+  <div class="project-stats">
+    <span class="stars-today">+371 today</span> · 5,470 stars · 493 forks
+  </div>
+  <div class="project-desc">High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.</div>
+  <div class="project-analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">基于 tree-sitter AST 解析，将整个代码仓库索引为知识图谱，支持 158 种语言的结构化查询（调用链、死代码检测、架构分析等），通过 MCP 协议为 AI 编程助手提供代码智能。Linux 内核全量索引仅需 3 分钟，查询延迟低于 1ms。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">v0.8.0 于 6 月 12 日发布——新增 Java/Kotlin/Rust 的 Hybrid LSP 语义类型解析（扩展至 9 种语言）、Leiden 社区检测用于模块边界发现、Symfony 仓库索引速度提升 35 倍，已收录进官方 MCP Registry。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">C (88%), C++ (10%), tree-sitter, SQLite, LZ4, Hybrid LSP, Cypher-like 图查询引擎</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">大型代码仓库的结构化理解与导航；AI 编程助手需要跨文件/跨包理解调用链和架构时；需要死代码检测、影响分析的工程场景。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">使用 Claude Code、Codex CLI、Gemini CLI、Aider 等 MCP 兼容编程助手的开发者；负责大型代码库维护和重构的工程团队</span>
+    </div>
+  </div>
+  <div class="verdict">
+    <span class="verdict-label">结论：</span>目前 MCP 生态中最成熟的代码智能引擎，纯 C 实现的单体二进制做到了零依赖和极致性能，v0.8 的 Hybrid LSP 扩展到 9 种语言让它从"结构搜索"升级为"语义理解"，是 AI 编程助手的标准基础设施级工具。
+  </div>
+</div>
+
+<!-- #9 chatwoot -->
+<div class="project">
+  <div class="project-header">
+    <span class="project-rank">09</span>
+    <a class="project-name" href="https://github.com/chatwoot/chatwoot" target="_blank">chatwoot/chatwoot</a>
+    <span class="project-lang">Ruby</span>
+  </div>
+  <div class="project-stats">
+    <span class="stars-today">+264 today</span> · 32,400 stars · 7,715 forks
+  </div>
+  <div class="project-desc">Open-source live-chat, email support, omni-channel desk. An alternative to Intercom, Zendesk, Salesforce Service Cloud etc.</div>
+  <div class="project-analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">开源的全渠道客户支持平台，将网站在线聊天、邮件、WhatsApp、Facebook、Instagram、Telegram、Line、SMS 等渠道的客户消息统一到一个收件箱中管理，定位为 Intercom 和 Zendesk 的开源替代品。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">6 月 16 日刚发布 v4.15.0 大版本，新增对话未读计数与侧边栏徽章、全新帮助中心布局、WhatsApp/Twilio 语音通话支持、联系人过滤器等多项重要功能，内置 AI Agent「Captain」持续迭代。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Ruby on Rails (46.9%), Vue.js (27.4%), JavaScript (22.6%), Docker/Kubernetes, WhatsApp Cloud API, Slack, Dialogflow, Shopify</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">需要统一管理多渠道客户沟通的中小企业或团队，尤其是希望自托管、掌控数据、避免 SaaS 高额订阅费的团队；也适合想在客服系统中嵌入 AI 自动回复能力的公司。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">客服团队负责人、SaaS 创业公司、Zendesk/Intercom 的潜在迁移用户</span>
+    </div>
+  </div>
+  <div class="verdict">
+    <span class="verdict-label">结论：</span>成熟稳定的开源全渠道客服平台，v4.15 大版本 + AI Captain 持续进化是本轮上榜的直接推手，是 Zendesk/Intercom 最有力的开源替代方案。
+  </div>
+</div>
+
+<!-- #10 nautilus_trader -->
+<div class="project">
+  <div class="project-header">
+    <span class="project-rank">10</span>
+    <a class="project-name" href="https://github.com/nautechsystems/nautilus_trader" target="_blank">nautechsystems/nautilus_trader</a>
+    <span class="project-lang">Rust</span>
+  </div>
+  <div class="project-stats">
+    <span class="stars-today">+98 today</span> · 23,831 stars · 3,019 forks
+  </div>
+  <div class="project-desc">Production-grade Rust-native trading engine with deterministic event-driven architecture</div>
+  <div class="project-analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">开源的高性能量化交易引擎，用 Rust 编写核心运行时，Python 作为策略开发控制面，支持多资产、多交易所的回测和实盘交易，且从研究到生产无需修改代码。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">6 月 8 日刚发布 v1.228.0 Beta 版本，持续两周一次的发布节奏保持了社区活跃度；项目正在从 Cython 向 PyO3（Rust-Python 绑定）迁移，Rust 原生核心逐步完善。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Rust (70.8%), Python (22.7%), Cython (5.5%), tokio 异步网络, PyO3 绑定, Redis</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">需要纳秒级精度回测和低延迟实盘的量化交易团队；跨交易所套利/做市策略；从 Python 研究环境无缝迁移到生产级 Rust 引擎的场景；AI/RL 交易代理训练。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">量化交易开发者、算法交易团队、对交易系统性能有极致要求的个人交易者、fintech 工程师</span>
+    </div>
+  </div>
+  <div class="verdict">
+    <span class="verdict-label">结论：</span>目前开源量化交易引擎中 Rust 化最彻底、交易所集成最广的项目，适合认真做量化的团队长期投入。
+  </div>
+</div>
+
+<footer>
+  <p>Source: <a href="https://github.com/trending" target="_blank">github.com/trending</a> · Generated by GitHub Trending Daily</p>
+  <p style="margin-top: 0.3rem;">2026-06-18 · 10 repos · 6,777 total stars today · 7 languages</p>
+</footer>
+
+</div>
+</body>
+</html>
