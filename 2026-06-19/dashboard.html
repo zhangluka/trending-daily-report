@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Daily · 2026-06-19</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f5;
+    --bg-warm: #f5f3ed;
+    --ink: #1a1918;
+    --ink-soft: #6b6966;
+    --ink-muted: #9e9b97;
+    --accent: #c4603c;
+    --accent-soft: rgba(196, 96, 60, 0.08);
+    --rule: #e8e6e1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Geist Sans', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+  header {
+    margin-bottom: 3.5rem;
+  }
+  header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  header h1 span {
+    color: var(--ink-soft);
+    font-weight: 400;
+  }
+  .meta-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    margin-top: 0.75rem;
+  }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .project {
+    margin-bottom: 3.5rem;
+  }
+  .project-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+  .rank {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    flex-shrink: 0;
+    width: 1.8rem;
+  }
+  .project-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .project-name:hover {
+    color: var(--accent);
+  }
+  .lang-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--ink-muted);
+    background: var(--bg-warm);
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .stats-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    margin-left: 2.55rem;
+    margin-bottom: 0.5rem;
+  }
+  .stats-line .highlight {
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .desc {
+    margin-left: 2.55rem;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .analysis {
+    margin-left: 2.55rem;
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 0.35rem 1rem;
+    font-size: 0.85rem;
+  }
+  .analysis dt {
+    color: var(--ink-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding-top: 0.1rem;
+  }
+  .analysis dd {
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .verdict {
+    margin-left: 2.55rem;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.85rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--ink-muted);
+    display: flex;
+    justify-content: space-between;
+  }
+  footer a {
+    color: var(--ink-muted);
+    text-decoration: none;
+  }
+  footer a:hover { color: var(--accent); }
+  @media (max-width: 600px) {
+    .container { padding: 2rem 1rem 3rem; }
+    .analysis {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
+    }
+    .analysis dt { padding-top: 0.5rem; }
+    .analysis dd { margin-left: 0; }
+    header h1 { font-size: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>GitHub Trending Daily <span>· 2026-06-19</span></h1>
+  <div class="meta-line">Top 10 · 总增星 6,349 · 语言 7 种 · 16 repos scanned</div>
+</header>
+
+<!-- TOP 3 -->
+<div class="section-label">Top 3</div>
+
+<!-- #1 -->
+<div class="project">
+  <div class="project-header">
+    <span class="rank">01</span>
+    <a class="project-name" href="https://github.com/DeusData/codebase-memory-mcp" target="_blank">DeusData/codebase-memory-mcp</a>
+    <span class="lang-tag">C</span>
+  </div>
+  <div class="stats-line"><span class="highlight">+2,322</span> today · 7,314 stars · 576 forks</div>
+  <div class="desc">高性能代码智能 MCP 服务器，用 tree-sitter 解析 158 种语言构建持久化知识图谱，亚毫秒查询，token 消耗降低 99.2%</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>用 tree-sitter 解析 158 种语言的源码，构建函数/类/调用链/跨服务链接的知识图谱，通过 14 个 MCP 工具暴露给 AI Agent。Linux 内核 2800 万行代码 3 分钟全量索引，查询 &lt;1ms</dd>
+    <dt>为什么火</dt>
+    <dd>token 效率极高（5 次查询 3400 tokens vs 文件搜索 41.2 万 tokens）；零依赖单二进制下载即用；有 arXiv 论文 + SLSA 3 级签名，企业级可信度</dd>
+    <dt>技术栈</dt>
+    <dd>纯 C · tree-sitter · SQLite + FTS5 · LZ4 · Nomic embed-code 向量嵌入（768 维 int8）· Hybrid LSP · 自研 Cypher 查询引擎</dd>
+    <dt>适用场景</dt>
+    <dd>中大型代码库的 AI 辅助开发，跨文件调用链分析、死代码检测、架构概览、Git diff 影响分析。支持 11 种 Agent 一键配置</dd>
+    <dt>受众</dt>
+    <dd>使用 AI 编码 Agent 的中大型团队 · 追求极致索引性能的工程团队 · CI/CD 集成代码智能的 DevOps</dd>
+  </dl>
+  <div class="verdict">MCP 生态代码索引赛道的性能标杆，纯 C + 知识图谱 + 亚毫秒查询，适合做 AI Agent 的"代码大脑"</div>
+</div>
+
+<!-- #2 -->
+<div class="project">
+  <div class="project-header">
+    <span class="rank">02</span>
+    <a class="project-name" href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a>
+    <span class="lang-tag">Shell</span>
+  </div>
+  <div class="stats-line"><span class="highlight">+1,429</span> today · 232,674 stars · 20,663 forks</div>
+  <div class="desc">AI 编码 Agent 的软件开发方法论框架——注入强制流程（TDD、代码审查、子 Agent 驱动），让 AI 写出工程级代码</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>一组可组合的 Skills，注入编码 Agent 后强制执行标准化流程：头脑风暴 → 设计确认 → 实施计划 → 子 Agent 开发 → 严格 TDD → 代码审查 → 分支合并</dd>
+    <dt>为什么火</dt>
+    <dd>解决了 AI 编码最核心的问题——Agent 不按套路出牌，代码质量不稳定。把 TDD/YAGNI/DRY 编码成 Agent 必须遵循的流程。8 个月 23 万 stars，现象级</dd>
+    <dt>技术栈</dt>
+    <dd>Shell 脚本 + Markdown 技能定义文件。通过各 Agent 的插件机制注入（Claude Code、Cursor、Codex、Gemini CLI 等 11 种）</dd>
+    <dt>适用场景</dt>
+    <dd>任何用 AI Agent 做正式项目开发的场景，特别是需要保证代码质量、有测试要求、多人协作的团队项目</dd>
+    <dt>受众</dt>
+    <dd>所有用 AI Agent 写生产代码的开发者 · 想让 AI 编码输出更可控的技术 Lead · 对 AI 编码质量不满意的人</dd>
+  </dl>
+  <div class="verdict">不是工具，是"AI 时代的软件工程方法论"。23 万 stars 说明它击中了行业集体焦虑——AI 写代码快但不靠谱，Superpowers 用强制流程解决了这个问题</div>
+</div>
+
+<!-- #3 -->
+<div class="project">
+  <div class="project-header">
+    <span class="rank">03</span>
+    <a class="project-name" href="https://github.com/Kilo-Org/kilocode" target="_blank">Kilo-Org/kilocode</a>
+    <span class="lang-tag">TypeScript</span>
+  </div>
+  <div class="stats-line"><span class="highlight">+1,345</span> today · 22,412 stars · 2,714 forks</div>
+  <div class="desc">开源全平台 AI 编码 Agent 平台，VS Code + JetBrains + CLI 三形态，内置 500+ 模型，零加价按原价计费</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>支持 VS Code 扩展、JetBrains 插件、CLI 三种形态，内置 500+ 模型（GPT-5.5、Claude Opus 4.7 等），提供 Code/Plan/Ask/Debug/Review 五种 Agent 模式。前身是 Roo Code（Cline 的 fork）</dd>
+    <dt>为什么火</dt>
+    <dd>真正开源 + 开放定价，不绑定任何供应商；全平台覆盖是目前最广的；从 Cline/Roo Code 演化有成熟社区基础</dd>
+    <dt>技术栈</dt>
+    <dd>TypeScript · VS Code Extension API · JetBrains Plugin SDK · Node.js CLI · 统一 API 网关对接 500+ 模型 · MCP 协议扩展</dd>
+    <dt>适用场景</dt>
+    <dd>需要在不同 IDE 间切换的开发者；不想被单一供应商锁定的团队；CI/CD 集成 AI 编码（kilo run --auto）</dd>
+    <dt>受众</dt>
+    <dd>对 Cursor/Copilot 定价或模型锁定不满的开发者 · 混合 IDE 用户 · 想在 CI/CD 加入 AI Agent 的团队</dd>
+  </dl>
+  <div class="verdict">开源 AI 编码 Agent 的"瑞士军刀"——全平台、全模型、零加价，用覆盖面和开放性赢得用户，是 Cursor/Copilot 的最强开源替代品</div>
+</div>
+
+<!-- TRENDING -->
+<div class="section-label">Trending</div>
+
+<!-- #4 -->
+<div class="project">
+  <div class="project-header">
+    <span class="rank">04</span>
+    <a class="project-name" href="https://github.com/google-research/timesfm" target="_blank">google-research/timesfm</a>
+    <span class="lang-tag">Python</span>
+  </div>
+  <div class="stats-line"><span class="highlight">+844</span> today · 23,543 stars · 2,234 forks</div>
+  <div class="desc">Google Research 预训练时间序列基础模型，200M 参数支持 16k 上下文，零样本预测，已整合进 BigQuery/Sheets/Vertex</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>Decoder-only Transformer 架构的时序预测模型，在大量真实和合成时序数据上预训练，支持零样本预测。2.5 版本 200M 参数 + 16k 上下文 + 连续分位数输出</dd>
+    <dt>为什么火</dt>
+    <dd>ICML 2024 论文背书；2.5 版参数压缩实用性大增；Google 将其整合进 BigQuery ML/Sheets/Vertex 三款核心产品，进入生产级</dd>
+    <dt>技术栈</dt>
+    <dd>Python · JAX/Flax · PyTorch · HuggingFace Transformers + PEFT (LoRA 微调) · pip install timesfm[torch]</dd>
+    <dt>适用场景</dt>
+    <dd>零样本时序预测 · 金融/零售/运维的库存/销量/流量预测 · XReg 协变量输入 · LoRA 微调适配垂直场景</dd>
+    <dt>受众</dt>
+    <dd>数据科学家/ML 工程师 · BigQuery/Google Cloud 用户 · 需要开箱即用时序预测的产品团队</dd>
+  </dl>
+  <div class="verdict">Google 把时序预测做成了"预训练大模型"范式，目前最实用的开源时序基础模型之一</div>
+</div>
+
+<!-- #5 -->
+<div class="project">
+  <div class="project-header">
+    <span class="rank">05</span>
+    <a class="project-name" href="https://github.com/makeplane/plane" target="_blank">makeplane/plane</a>
+    <span class="lang-tag">TypeScript</span>
+  </div>
+  <div class="stats-line"><span class="highlight">+613</span> today · 51,935 stars · 4,610 forks</div>
+  <div class="desc">开源项目管理平台，定位 Jira/Linear/ClickUp 替代品，支持 Docker/K8s 自托管，UI 现代干净</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>Issue 追踪、Cycles（冲刺管理）、Modules（模块化拆分）、自定义 Views、Pages（内置 AI 富文本）、Analytics 看板</dd>
+    <dt>为什么火</dt>
+    <dd>企业对 Jira 的不满长期存在——臃肿/贵/自托管困难；Plane 用现代技术栈把体验拉到 Linear 水平；支持自托管满足数据主权；7044 次提交迭代快</dd>
+    <dt>技术栈</dt>
+    <dd>前端 TypeScript + React Router · 后端 Python + Django · PostgreSQL + Redis · pnpm monorepo + Turborepo</dd>
+    <dt>适用场景</dt>
+    <dd>中小团队替代 Jira/Linear · 需要自托管的企业 · 创业团队搭建项目管理 · sprint/cycle + roadmap 可视化</dd>
+    <dt>受众</dt>
+    <dd>受够 Jira 的工程团队 Leader · 选型项目管理工具的 CTO · 自托管需求的 DevOps</dd>
+  </dl>
+  <div class="verdict">目前最成熟的开源 Jira 替代品，51.9k stars 不是虚的——现代技术栈 + 自托管自由度的组合拳</div>
+</div>
+
+<!-- #6 -->
+<div class="project">
+  <div class="project-header">
+    <span class="rank">06</span>
+    <a class="project-name" href="https://github.com/n0-computer/iroh" target="_blank">n0-computer/iroh</a>
+    <span class="lang-tag">Rust</span>
+  </div>
+  <div class="stats-line"><span class="highlight">+369</span> today · 10,081 stars · 464 forks</div>
+  <div class="desc">Rust 模块化 P2P 网络库，"拨公钥不拨 IP"，基于 QUIC，支持 NAT 穿透，v1.0.0 刚发布</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>自动寻找最快连接路径，支持 NAT 穿透 + relay 回退。上层可组合 iroh-blobs（内容寻址传输）、iroh-gossip（发布订阅）、iroh-docs（KV 存储）</dd>
+    <dt>为什么火</dt>
+    <dd>2026-06-15 刚发布 v1.0.0——API 稳定承诺，可上生产。填补了 libp2p（复杂）和裸 QUIC（不足）之间的空白</dd>
+    <dt>技术栈</dt>
+    <dd>Rust 99.6% · QUIC（自研 noq 库）· BLAKE3 · DNS 地址解析 · FFI 绑定 · Apache-2.0 / MIT 双许可</dd>
+    <dt>适用场景</dt>
+    <dd>P2P 直连应用 · 分布式文件同步 · NAT 穿透实时通信 · 去中心化存储/分发 · 不想依赖中心服务器的网络应用</dd>
+    <dt>受众</dt>
+    <dd>Rust 分布式系统开发者 · Web3/去中心化应用 · P2P 文件传输工具 · 觉得 libp2p 太重的工程师</dd>
+  </dl>
+  <div class="verdict">v1.0.0 标志着从实验到生产级——"拨公钥不拨 IP"理念简洁优雅，Rust 保证性能安全，当前最值得关注的 P2P 底层库</div>
+</div>
+
+<!-- #7 -->
+<div class="project">
+  <div class="project-header">
+    <span class="rank">07</span>
+    <a class="project-name" href="https://github.com/alibaba/zvec" target="_blank">alibaba/zvec</a>
+    <span class="lang-tag">C++</span>
+  </div>
+  <div class="stats-line"><span class="highlight">+259</span> today · 11,352 stars · 658 forks</div>
+  <div class="desc">阿里开源进程内向量数据库，"向量数据库界的 SQLite"，pip install 即用，零配置零运维，底层基于 Proxima</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>无需独立服务器，嵌入应用进程运行。支持稠密/稀疏向量、全文检索、混合检索。HNSW + DiskANN 索引，WAL 持久化，多进程并发读取</dd>
+    <dt>为什么火</dt>
+    <dd>填补市场空白——Milvus/Pinecone/Qdrant 都需独立部署，Zvec 像 SQLite 一样零配置。LinkedIn/Medium/Reddit 自发传播</dd>
+    <dt>技术栈</dt>
+    <dd>C++ 80% · Python/SWIG 绑定 · CMake · HNSW/DiskANN · SDK 覆盖 Python/Node.js/Go/Rust/Dart/Flutter</dd>
+    <dt>适用场景</dt>
+    <dd>RAG 本地向量检索 · 嵌入式 AI 产品 · CLI/Notebook 快速相似度搜索 · 边缘设备向量搜索</dd>
+    <dt>受众</dt>
+    <dd>做 RAG/语义搜索的 AI 工程师 · 不想运维 Milvus/Qdrant 的全栈 · 对延迟敏感的生产环境</dd>
+  </dl>
+  <div class="verdict">向量数据库领域的"SQLite 时刻"，阿里内部打磨多年后开源，轻量 + 高性能的组合拳</div>
+</div>
+
+<!-- #8 -->
+<div class="project">
+  <div class="project-header">
+    <span class="rank">08</span>
+    <a class="project-name" href="https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation" target="_blank">universal-android-debloater-ng</a>
+    <span class="lang-tag">Rust</span>
+  </div>
+  <div class="stats-line"><span class="highlight">+244</span> today · 7,978 stars · 343 forks</div>
+  <div class="desc">跨平台 Android 去臃肿工具，通过 ADB 安全移除厂商预装垃圾应用，无需 Root，Rust 完全重写</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>原版 UAD 停更后社区接管分叉，用 Rust 完全重写。通过 ADB 在非 Root 设备上移除预装应用，支持快照备份和 OTA 恢复</dd>
+    <dt>为什么火</dt>
+    <dd>原版停更后唯一活跃维护的工具；Chris Titus Tech 等 YouTuber 推广；与 Canta 集成；Android 用户对隐私/电池持续关注</dd>
+    <dt>技术栈</dt>
+    <dd>Rust 99% · Iced GUI 框架 · ADB 通信 · JSON 配置包分类数据库（安全/推荐/高级）</dd>
+    <dt>适用场景</dt>
+    <dd>去除预装垃圾但不想 Root · 手机隐私安全 · 企业批量管理 Android 设备 · 手机维修/优化</dd>
+    <dt>受众</dt>
+    <dd>Android 重度用户 · 隐私倡导者 · IT 管理员 · 手机评测博主</dd>
+  </dl>
+  <div class="verdict">Android 去臃肿领域事实标准，社区驱动 + Rust 重写 + 零数据收集，每个 Android 用户都该知道的"手机瘦身"利器</div>
+</div>
+
+<!-- #9 -->
+<div class="project">
+  <div class="project-header">
+    <span class="rank">09</span>
+    <a class="project-name" href="https://github.com/zai-org/GLM-5" target="_blank">zai-org/GLM-5</a>
+  </div>
+  <div class="stats-line"><span class="highlight">+202</span> today · 4,268 stars · 437 forks</div>
+  <div class="desc">智谱 AI 开源大模型，744B MoE 架构，1M token 上下文，编码和 Agent 任务逼近闭源前沿</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>GLM-5/5.1/5.2 三代，定位复杂系统工程和长时域 Agent 任务。744B 总参/40B 激活，MoE 架构，1M 上下文窗口，开源权重</dd>
+    <dt>为什么火</dt>
+    <dd>中国第一家上市 AI 公司的前沿级开源模型。Terminal-Bench 81.0（Claude Opus 4.8 为 85.0），SWE-bench Pro 62.1，开源第一</dd>
+    <dt>技术栈</dt>
+    <dd>MoE · DeepSeek Sparse Attention · IndexShare 索引复用（减 2.9x FLOPs）· MTP 推测解码 · 支持 SGLang/vLLM/Transformers · 兼容华为昇腾</dd>
+    <dt>适用场景</dt>
+    <dd>代码生成/软件工程自动化 · 长上下文 Agent 任务 · 本地部署前沿开源模型 · 国产化 AI 基础设施</dd>
+    <dt>受众</dt>
+    <dd>AI 研究者/工程师 · 需要开源前沿模型的团队 · 关注国产 AI 的技术决策者</dd>
+  </dl>
+  <div class="verdict">智谱 AI 旗舰开源力作，在编码和 Agent 任务上逼近闭源前沿，2026 年中国开源大模型标杆</div>
+</div>
+
+<!-- #10 -->
+<div class="project">
+  <div class="project-header">
+    <span class="rank">10</span>
+    <a class="project-name" href="https://github.com/withastro/flue" target="_blank">withastro/flue</a>
+    <span class="lang-tag">TypeScript</span>
+  </div>
+  <div class="stats-line"><span class="highlight">+162</span> today · 5,581 stars · 308 forks</div>
+  <div class="desc">Astro 联合创始人出品的 Agent Harness 框架，把 Claude Code 的 harness 架构抽象成通用可编程框架</div>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>不是 LLM SDK，而是把编码 Agent 的 harness 架构（会话管理/工具调用/沙箱执行/技能包/子 Agent）抽象成通用框架</dd>
+    <dt>为什么火</dt>
+    <dd>Fred K. Schott 推文 3.8K+ 赞；"不是 SDK 而是 harness"直接对标 Claude Code 架构；Better Stack 视频 3.4 万播放；微软 BUILD 2026 提到 Agent Harness 概念</dd>
+    <dt>技术栈</dt>
+    <dd>TypeScript 90% · pnpm monorepo · OpenTelemetry · Postgres 持久化 · MCP 协议 · 部署支持 Node.js/Cloudflare Workers/GitHub Actions</dd>
+    <dt>适用场景</dt>
+    <dd>构建自主代码审查/Issue 分诊 Agent · 企业 AI 工作流自动化 · 需要沙箱安全执行的 Agent 应用</dd>
+    <dt>受众</dt>
+    <dd>AI Agent 平台开发者 · Astro 生态用户 · 需要标准化 Agent 架构的工程团队</dd>
+  </dl>
+  <div class="verdict">把编码 Agent 的核心架构提炼成通用框架，Astro 团队工程信誉加持，2026 年 Agent 基础设施赛道的重要新玩家</div>
+</div>
+
+<footer>
+  <span>Source: <a href="https://github.com/trending" target="_blank">github.com/trending</a></span>
+  <span>Generated by Agent Reach · 2026-06-19 15:30 CST</span>
+</footer>
+
+</div>
+</body>
+</html>

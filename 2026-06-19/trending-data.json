@@ -1,0 +1,109 @@
+{
+  "date": "2026-06-19",
+  "scanned": 16,
+  "selected": 10,
+  "total_stars_today": 6349,
+  "languages": 7,
+  "top10": [
+    {
+      "rank": 1,
+      "name": "DeusData/codebase-memory-mcp",
+      "url": "https://github.com/DeusData/codebase-memory-mcp",
+      "language": "C",
+      "stars": 7314,
+      "forks": 576,
+      "stars_today": 2322,
+      "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph."
+    },
+    {
+      "rank": 2,
+      "name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "language": "Shell",
+      "stars": 232674,
+      "forks": 20663,
+      "stars_today": 1429,
+      "description": "An agentic skills framework & software development methodology that works."
+    },
+    {
+      "rank": 3,
+      "name": "Kilo-Org/kilocode",
+      "url": "https://github.com/Kilo-Org/kilocode",
+      "language": "TypeScript",
+      "stars": 22412,
+      "forks": 2714,
+      "stars_today": 1345,
+      "description": "Kilo is the all-in-one agentic engineering platform."
+    },
+    {
+      "rank": 4,
+      "name": "google-research/timesfm",
+      "url": "https://github.com/google-research/timesfm",
+      "language": "Python",
+      "stars": 23543,
+      "forks": 2234,
+      "stars_today": 844,
+      "description": "TimesFM is a pretrained time-series foundation model developed by Google Research."
+    },
+    {
+      "rank": 5,
+      "name": "makeplane/plane",
+      "url": "https://github.com/makeplane/plane",
+      "language": "TypeScript",
+      "stars": 51935,
+      "forks": 4610,
+      "stars_today": 613,
+      "description": "Open-source Jira, Linear, Monday, and ClickUp alternative."
+    },
+    {
+      "rank": 6,
+      "name": "n0-computer/iroh",
+      "url": "https://github.com/n0-computer/iroh",
+      "language": "Rust",
+      "stars": 10081,
+      "forks": 464,
+      "stars_today": 369,
+      "description": "IP addresses break, dial keys instead. Modular networking stack in Rust."
+    },
+    {
+      "rank": 7,
+      "name": "alibaba/zvec",
+      "url": "https://github.com/alibaba/zvec",
+      "language": "C++",
+      "stars": 11352,
+      "forks": 658,
+      "stars_today": 259,
+      "description": "A lightweight, lightning-fast, in-process vector database."
+    },
+    {
+      "rank": 8,
+      "name": "Universal-Debloater-Alliance/universal-android-debloater-next-generation",
+      "url": "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation",
+      "language": "Rust",
+      "stars": 7978,
+      "forks": 343,
+      "stars_today": 244,
+      "description": "Cross-platform GUI written in Rust using ADB to debloat non-rooted Android devices."
+    },
+    {
+      "rank": 9,
+      "name": "zai-org/GLM-5",
+      "url": "https://github.com/zai-org/GLM-5",
+      "language": null,
+      "stars": 4268,
+      "forks": 437,
+      "stars_today": 202,
+      "description": "GLM-5: From Vibe Coding to Agentic Engineering."
+    },
+    {
+      "rank": 10,
+      "name": "withastro/flue",
+      "url": "https://github.com/withastro/flue",
+      "language": "TypeScript",
+      "stars": 5581,
+      "forks": 308,
+      "stars_today": 162,
+      "description": "The sandbox agent framework."
+    }
+  ]
+}
