@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Daily · 2026-06-21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf9f5;
+  --bg-warm: #f5f3ed;
+  --ink: #1a1918;
+  --ink-soft: #6b6966;
+  --ink-muted: #9e9b97;
+  --accent: #c4603c;
+  --accent-soft: rgba(196, 96, 60, 0.08);
+  --rule: #e8e6e1;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Geist Sans', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+/* Header */
+.header {
+  margin-bottom: 3.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+.header-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+.header .date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.header .stats {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+/* Section labels */
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+/* Project card */
+.project {
+  margin-bottom: 3rem;
+}
+.project-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.project-rank {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  flex-shrink: 0;
+  width: 1.5rem;
+}
+.project-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.project-name a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.project-name a:hover {
+  color: var(--accent);
+}
+.project-lang {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  background: var(--bg-warm);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.project-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  margin-bottom: 0.75rem;
+  padding-left: 2.25rem;
+}
+.project-meta .accent {
+  color: var(--accent);
+  font-weight: 500;
+}
+.project-desc {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.25rem;
+  padding-left: 2.25rem;
+}
+/* Analysis grid */
+.analysis {
+  padding-left: 2.25rem;
+}
+.analysis-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+}
+.analysis-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  flex-shrink: 0;
+  width: 5rem;
+  padding-top: 0.1rem;
+  letter-spacing: 0.02em;
+}
+.analysis-value {
+  color: var(--ink-soft);
+  flex: 1;
+}
+.analysis-conclusion {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.85rem;
+  color: var(--ink);
+  font-weight: 500;
+  padding-left: 2.25rem;
+}
+.analysis-conclusion::before {
+  content: '→ ';
+  color: var(--accent);
+}
+/* Top 3 divider */
+.top3-divider {
+  margin: 3rem 0 2.5rem;
+}
+/* Footer */
+.footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer a {
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+.footer a:hover {
+  color: var(--accent);
+}
+/* Responsive */
+@media (max-width: 640px) {
+  .container { padding: 2rem 1rem 3rem; }
+  .header h1 { font-size: 1.4rem; }
+  .analysis-row { flex-direction: column; gap: 0.2rem; }
+  .analysis-label { width: auto; }
+  .project-header { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="header">
+  <div class="header-label">GitHub Trending Daily</div>
+  <h1>Top 10 精选</h1>
+  <div class="date">2026-06-21</div>
+  <div class="stats">从 17 个项目中筛选 · 总增星 12,339 · 7 种语言</div>
+</header>
+
+<div class="section-label top3-divider">Top 3</div>
+
+<!-- #1 headroom -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">01</span>
+    <span class="project-name"><a href="https://github.com/chopratejas/headroom" target="_blank">chopratejas/headroom</a></span>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-meta">
+    <span class="accent">+3,795 today</span> · 41,874 stars · 2,878 forks
+  </div>
+  <div class="project-desc">Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">LLM 上下文压缩层，在 token 送达模型前将工具输出、日志、RAG 结果等压缩 60-95%，答案质量不变。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">v0.26.0 于 6 月 16 日发布。Context Engineering 浪潮推动 adoption，省 token 就是省钱。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Python + Rust 内核，HuggingFace Kompress-v2-base 模型，支持 MCP / 代理 / 库三种接入方式。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">每天跑 AI coding agent 的开发者，想省 API 费用又不想改代码。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">后端 / AI / 全栈工程师，Claude Code / Cursor / Codex 用户。</span>
+    </div>
+  </div>
+  <div class="analysis-conclusion">如果你每天用 AI 编码 agent，这是必装工具——一行命令就能省 60%+ token。</div>
+</article>
+
+<!-- #2 Pake -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">02</span>
+    <span class="project-name"><a href="https://github.com/tw93/Pake" target="_blank">tw93/Pake</a></span>
+    <span class="project-lang">Rust</span>
+  </div>
+  <div class="project-meta">
+    <span class="accent">+2,546 today</span> · 54,772 stars · 10,877 forks
+  </div>
+  <div class="project-desc">Turn any webpage into a desktop app with one command. Nearly 20x smaller than Electron packages.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">一行命令把任意网页打包成桌面应用，支持 macOS / Windows / Linux，比 Electron 小 20 倍。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">V3.11.10 于 6 月 18 日发布，持续迭代。中国开发者社区口碑传播。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Rust (94%) + Tauri 框架，CLI 工具 + GitHub Actions 在线构建。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">想把常用网页（ChatGPT / YouTube / 微信读书等）变成轻量桌面客户端。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">所有桌面用户，尤其是内存敏感型用户。</span>
+    </div>
+  </div>
+  <div class="analysis-conclusion">想要原生体验的桌面应用包装器，Pake 是最佳选择，5MB 搞定。</div>
+</article>
+
+<!-- #3 codebase-memory-mcp -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">03</span>
+    <span class="project-name"><a href="https://github.com/DeusData/codebase-memory-mcp" target="_blank">DeusData/codebase-memory-mcp</a></span>
+    <span class="project-lang">C</span>
+  </div>
+  <div class="project-meta">
+    <span class="accent">+1,271 today</span> · 9,355 stars · 708 forks
+  </div>
+  <div class="project-desc">High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — sub-ms queries.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">高性能 MCP 代码索引服务器，把代码库建成持久化知识图谱，亚毫秒查询，支持 158 种语言。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">MCP 生态爆发式增长，解决了 AI 编码 agent 理解代码库的痛点。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">C 语言实现，单个静态二进制文件，零依赖。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">用 Claude Code / Cursor 等 MCP 客户端的开发者，想让 agent 深度理解代码库。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">AI 编码工具用户，大型代码库维护者。</span>
+    </div>
+  </div>
+  <div class="analysis-conclusion">如果你用 MCP 兼容的 AI agent，这个能让它真正"读懂"你的代码库。</div>
+</article>
+
+<div class="section-label">Trending</div>
+
+<!-- #4 mattpocock/skills -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">04</span>
+    <span class="project-name"><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills</a></span>
+    <span class="project-lang">Shell</span>
+  </div>
+  <div class="project-meta">
+    <span class="accent">+1,395 today</span> · 138,237 stars · 11,994 forks
+  </div>
+  <div class="project-desc">Skills for Real Engineers. Straight from my .claude directory.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">Matt Pocock 的 Claude Code 工程 skills 集合，覆盖 TDD、需求澄清、领域建模、代码架构改进。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">v1.0.1 于 6 月 17 日发布。Matt Pocock 6 万+ newsletter 订阅者推动传播。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Shell 脚本，Claude Code skill 格式，npm 安装器。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">想让 Claude Code 遵循工程纪律（TDD、grilling session、领域建模）的开发者。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">Claude Code 用户，追求工程品质的全栈工程师。</span>
+    </div>
+  </div>
+  <div class="analysis-conclusion">目前最成熟的 Claude Code 工程 skills 合集，直接抄作业。</div>
+</article>
+
+<!-- #5 turso -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">05</span>
+    <span class="project-name"><a href="https://github.com/tursodatabase/turso" target="_blank">tursodatabase/turso</a></span>
+    <span class="project-lang">Rust</span>
+  </div>
+  <div class="project-meta">
+    <span class="accent">+801 today</span> · 20,328 stars · 1,042 forks
+  </div>
+  <div class="project-desc">Turso is an in-process SQL database, compatible with SQLite.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">用 Rust 重写的 SQLite 兼容数据库，支持 BEGIN CONCURRENT、CDC、异步 I/O、向量搜索。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">Beta 阶段持续成熟，新增 MCP server 模式让 AI agent 直接操作数据库。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Rust (86%)，多语言绑定（Go / JS / Python / Java / .NET），WebAssembly 支持。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">需要 SQLite 兼容性但又想要现代特性的应用（并发写入、向量搜索、边缘部署）。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">后端 / 全栈开发者，嵌入式数据库用户。</span>
+    </div>
+  </div>
+  <div class="analysis-conclusion">SQLite 的未来形态——如果你需要并发写入和向量搜索，Turso 值得一试。</div>
+</article>
+
+<!-- #6 OpenMontage -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">06</span>
+    <span class="project-name"><a href="https://github.com/calesthio/OpenMontage" target="_blank">calesthio/OpenMontage</a></span>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-meta">
+    <span class="accent">+677 today</span> · 7,056 stars · 1,151 forks
+  </div>
+  <div class="project-desc">World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">开源 AI 视频制作系统，12 条管线、52 个工具、500+ agent 技能，把 AI assistant 变成视频制作工作室。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">AI 视频制作赛道火热，该项目填补了开源自动化视频生产的空白。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Python，多模型集成。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">内容创作者想用 AI 自动化视频制作流程。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">内容创作者、视频制作人、AI 应用开发者。</span>
+    </div>
+  </div>
+  <div class="analysis-conclusion">想用 AI agent 批量生产视频？这是目前最完整的开源方案。</div>
+</article>
+
+<!-- #7 palmier-pro -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">07</span>
+    <span class="project-name"><a href="https://github.com/palmier-io/palmier-pro" target="_blank">palmier-io/palmier-pro</a></span>
+    <span class="project-lang">Swift</span>
+  </div>
+  <div class="project-meta">
+    <span class="accent">+902 today</span> · 3,363 stars · 280 forks
+  </div>
+  <div class="project-desc">macOS video editor built for AI. Swift-native, MCP server integration.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">为 AI 打造的 macOS 视频编辑器，原生 Swift 开发，内置生成式 AI + MCP 服务器，agent 可直接操作时间线。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">YC S24 公司，v0.3.5 于 6 月 20 日发布，MCP 集成引发关注。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Swift (99%)，需要 macOS 26 Tahoe + Apple Silicon。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">Mac 用户想在视频编辑中集成 AI 生成和 agent 协作。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">Mac 视频创作者，AI 视频爱好者。</span>
+    </div>
+  </div>
+  <div class="analysis-conclusion">AI 原生视频编辑器的新范式——MCP 让 agent 和你在同一时间线协作。</div>
+</article>
+
+<!-- #8 kilocode -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">08</span>
+    <span class="project-name"><a href="https://github.com/Kilo-Org/kilocode" target="_blank">Kilo-Org/kilocode</a></span>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-meta">
+    <span class="accent">+513 today</span> · 23,359 stars · 2,742 forks
+  </div>
+  <div class="project-desc">The open source coding agent for building with AI in VS Code, JetBrains, or the CLI.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">开源 AI 编码 agent，支持 VS Code / JetBrains / CLI，500+ 模型可切换，按提供商原价计费。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">作为 Cursor / Copilot 的开源替代持续增长，v7.3.50 于 6 月 19 日发布。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">TypeScript (84%) + Kotlin (12%)，VS Code 扩展 + CLI + JetBrains 插件。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">想要开源、透明定价的 AI 编码 agent，不被单一厂商锁定。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">所有使用 AI 编码工具的开发者。</span>
+    </div>
+  </div>
+  <div class="analysis-conclusion">商业 AI 编码工具的最佳开源替代，500+ 模型随心切换。</div>
+</article>
+
+<!-- #9 timesfm -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">09</span>
+    <span class="project-name"><a href="https://github.com/google-research/timesfm" target="_blank">google-research/timesfm</a></span>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-meta">
+    <span class="accent">+433 today</span> · 24,548 stars · 2,328 forks
+  </div>
+  <div class="project-desc">TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model by Google Research.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">Google Research 的时间序列基础模型，200M 参数，16k 上下文长度，支持连续分位数预测。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">TimesFM 2.5 发布，已集成到 BigQuery ML 和 Google Sheets。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Python，PyTorch / Flax，HuggingFace Transformers + PEFT 微调。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">需要时间序列预测的场景（销售预测、运维监控、金融分析）。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">数据科学家、ML 工程师。</span>
+    </div>
+  </div>
+  <div class="analysis-conclusion">时间序列预测的 SOTA 基础模型，Google 背书，值得一试。</div>
+</article>
+
+<!-- #10 penpot -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">10</span>
+    <span class="project-name"><a href="https://github.com/penpot/penpot" target="_blank">penpot/penpot</a></span>
+    <span class="project-lang">Clojure</span>
+  </div>
+  <div class="project-meta">
+    <span class="accent">+420 today</span> · 51,429 stars · 3,303 forks
+  </div>
+  <div class="project-desc">Penpot: The open-source design tool for design and code collaboration.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">开源设计协作平台，自托管，支持 Design Tokens、MCP 服务器、CSS Grid / Flex 布局。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">v2.16.0 于 6 月 11 日发布，作为 Figma 替代持续吸引关注。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Clojure (74%) + JavaScript + Rust，WASM 渲染引擎。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">想要完全掌控设计基础设施的团队，不被 SaaS 厂商锁定。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">设计团队、设计系统维护者、全栈开发者。</span>
+    </div>
+  </div>
+  <div class="analysis-conclusion">最成熟的开源设计工具，自托管 + 开放标准 = 真正的设计自由。</div>
+</article>
+
+<footer class="footer">
+  <span>Source: <a href="https://github.com/trending" target="_blank">github.com/trending</a></span>
+  <span>Generated by Claude Code</span>
+</footer>
+
+</div>
+</body>
+</html>

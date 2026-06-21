@@ -1,0 +1,189 @@
+{
+  "date": "2026-06-21",
+  "total_projects": 17,
+  "selected": 10,
+  "total_stars_today": 12339,
+  "languages": 7,
+  "projects": [
+    {
+      "rank": 1,
+      "name": "chopratejas/headroom",
+      "url": "https://github.com/chopratejas/headroom",
+      "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+      "language": "Python",
+      "stars": 41874,
+      "forks": 2878,
+      "stars_today": 3795,
+      "analysis": {
+        "what": "LLM 上下文压缩层，在 token 送达模型前将工具输出、日志、RAG 结果等压缩 60-95%，答案质量不变。",
+        "why_hot": "v0.26.0 于 6 月 16 日发布。Context Engineering 浪潮推动 adoption，开发者直呼省 token 就是省钱。",
+        "tech_stack": "Python + Rust 内核，HuggingFace Kompress-v2-base 模型，支持 MCP/代理/库三种模式。",
+        "use_case": "每天跑 AI coding agent 的开发者，想省 API 费用又不想改代码。",
+        "audience": "后端/AI/全栈工程师，Claude Code/Cursor/Codex 用户。",
+        "conclusion": "如果你每天用 AI 编码 agent，这是必装工具——一行命令就能省 60%+ token。"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "tw93/Pake",
+      "url": "https://github.com/tw93/Pake",
+      "description": "Turn any webpage into a desktop app with one command.",
+      "language": "Rust",
+      "stars": 54772,
+      "forks": 10877,
+      "stars_today": 2546,
+      "analysis": {
+        "what": "一行命令把任意网页打包成桌面应用，支持 macOS/Windows/Linux，比 Electron 小 20 倍。",
+        "why_hot": "V3.11.10 于 6 月 18 日发布，持续迭代。中国开发者社区口碑传播。",
+        "tech_stack": "Rust (94%) + Tauri 框架，CLI 工具 + GitHub Actions 在线构建。",
+        "use_case": "想把常用网页（ChatGPT/YouTube/微信读书等）变成轻量桌面客户端。",
+        "audience": "所有桌面用户，尤其是内存敏感型用户。",
+        "conclusion": "想要原生体验的桌面应用包装器，Pake 是最佳选择，5MB 搞定。"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "DeusData/codebase-memory-mcp",
+      "url": "https://github.com/DeusData/codebase-memory-mcp",
+      "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph.",
+      "language": "C",
+      "stars": 9355,
+      "forks": 708,
+      "stars_today": 1271,
+      "analysis": {
+        "what": "高性能 MCP 代码索引服务器，把代码库建成持久化知识图谱，亚毫秒查询，支持 158 种语言。",
+        "why_hot": "MCP 生态爆发式增长，解决了 AI 编码 agent 理解代码库的痛点。",
+        "tech_stack": "C 语言实现，单个静态二进制文件，零依赖。",
+        "use_case": "用 Claude Code/Cursor 等 MCP 客户端的开发者，想让 agent 深度理解代码库。",
+        "audience": "AI 编码工具用户，大型代码库维护者。",
+        "conclusion": "如果你用 MCP 兼容的 AI agent，这个能让它真正'读懂'你的代码库。"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .claude directory.",
+      "language": "Shell",
+      "stars": 138237,
+      "forks": 11994,
+      "stars_today": 1395,
+      "analysis": {
+        "what": "Matt Pocock 的 Claude Code 工程 skills 集合，覆盖 TDD、需求澄清、领域建模、代码架构改进等。",
+        "why_hot": "v1.0.1 于 6 月 17 日发布。Matt Pocock 6 万+ newsletter 订阅者推动传播。",
+        "tech_stack": "Shell 脚本，Claude Code skill 格式，npm 安装器。",
+        "use_case": "想让 Claude Code 遵循工程纪律（TDD、grilling session、领域建模）的开发者。",
+        "audience": "Claude Code 用户，追求工程品质的全栈工程师。",
+        "conclusion": "目前最成熟的 Claude Code 工程 skills 合集，直接抄作业。"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "tursodatabase/turso",
+      "url": "https://github.com/tursodatabase/turso",
+      "description": "Turso is an in-process SQL database, compatible with SQLite.",
+      "language": "Rust",
+      "stars": 20328,
+      "forks": 1042,
+      "stars_today": 801,
+      "analysis": {
+        "what": "用 Rust 重写的 SQLite 兼容数据库，支持 BEGIN CONCURRENT、CDC、异步 I/O、向量搜索。",
+        "why_hot": "Beta 阶段持续成熟，新增 MCP server 模式让 AI agent 直接操作数据库。",
+        "tech_stack": "Rust (86%)，多语言绑定（Go/JS/Python/Java/.NET），WebAssembly 支持。",
+        "use_case": "需要 SQLite 兼容性但又想要现代特性的应用（并发写入、向量搜索、边缘部署）。",
+        "audience": "后端/全栈开发者，嵌入式数据库用户。",
+        "conclusion": "SQLite 的未来形态——如果你需要并发写入和向量搜索，Turso 值得一试。"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "calesthio/OpenMontage",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "description": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills.",
+      "language": "Python",
+      "stars": 7056,
+      "forks": 1151,
+      "stars_today": 677,
+      "analysis": {
+        "what": "开源 AI 视频制作系统，12 条管线、52 个工具、500+ agent 技能，把 AI coding assistant 变成视频制作工作室。",
+        "why_hot": "AI 视频制作赛道火热，该项目填补了开源自动化视频生产的空白。",
+        "tech_stack": "Python，多模型集成。",
+        "use_case": "内容创作者想用 AI 自动化视频制作流程。",
+        "audience": "内容创作者、视频制作人、AI 应用开发者。",
+        "conclusion": "想用 AI agent 批量生产视频？这是目前最完整的开源方案。"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "palmier-io/palmier-pro",
+      "url": "https://github.com/palmier-io/palmier-pro",
+      "description": "macOS video editor built for AI.",
+      "language": "Swift",
+      "stars": 3363,
+      "forks": 280,
+      "stars_today": 902,
+      "analysis": {
+        "what": "为 AI 打造的 macOS 视频编辑器，原生 Swift 开发，内置生成式 AI + MCP 服务器，agent 可直接操作时间线。",
+        "why_hot": "YC S24 公司，v0.3.5 于 6 月 20 日发布，MCP 集成引发关注。",
+        "tech_stack": "Swift (99%)，需要 macOS 26 Tahoe + Apple Silicon。",
+        "use_case": "Mac 用户想在视频编辑中集成 AI 生成和 agent 协作。",
+        "audience": "Mac 视频创作者，AI 视频爱好者。",
+        "conclusion": "AI 原生视频编辑器的新范式——MCP 让 agent 和你在同一时间线协作。"
+      }
+    },
+    {
+      "rank": 8,
+      "name": "Kilo-Org/kilocode",
+      "url": "https://github.com/Kilo-Org/kilocode",
+      "description": "Kilo is the all-in-one agentic engineering platform.",
+      "language": "TypeScript",
+      "stars": 23359,
+      "forks": 2742,
+      "stars_today": 513,
+      "analysis": {
+        "what": "开源 AI 编码 agent，支持 VS Code/JetBrains/CLI，500+ 模型可切换，按提供商原价计费。",
+        "why_hot": "作为 Cursor/Copilot 的开源替代持续增长，v7.3.50 于 6 月 19 日发布。",
+        "tech_stack": "TypeScript (84%) + Kotlin (12%)，VS Code 扩展 + CLI + JetBrains 插件。",
+        "use_case": "想要开源、透明定价的 AI 编码 agent，不被单一厂商锁定。",
+        "audience": "所有使用 AI 编码工具的开发者。",
+        "conclusion": "商业 AI 编码工具的最佳开源替代，500+ 模型随心切换。"
+      }
+    },
+    {
+      "rank": 9,
+      "name": "google-research/timesfm",
+      "url": "https://github.com/google-research/timesfm",
+      "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research.",
+      "language": "Python",
+      "stars": 24548,
+      "forks": 2328,
+      "stars_today": 433,
+      "analysis": {
+        "what": "Google Research 的时间序列基础模型，200M 参数，16k 上下文长度，支持连续分位数预测。",
+        "why_hot": "TimesFM 2.5 发布，已集成到 BigQuery ML 和 Google Sheets。",
+        "tech_stack": "Python，PyTorch/Flax，HuggingFace Transformers + PEFT 微调。",
+        "use_case": "需要时间序列预测的场景（销售预测、运维监控、金融分析）。",
+        "audience": "数据科学家、ML 工程师。",
+        "conclusion": "时间序列预测的 SOTA 基础模型，Google 背书，值得一试。"
+      }
+    },
+    {
+      "rank": 10,
+      "name": "penpot/penpot",
+      "url": "https://github.com/penpot/penpot",
+      "description": "Penpot: The open-source design tool for design and code collaboration.",
+      "language": "Clojure",
+      "stars": 51429,
+      "forks": 3303,
+      "stars_today": 420,
+      "analysis": {
+        "what": "开源设计协作平台，自托管，支持 Design Tokens、MCP 服务器、CSS Grid/Flex 布局。",
+        "why_hot": "v2.16.0 于 6 月 11 日发布，作为 Figma 替代持续吸引关注。",
+        "tech_stack": "Clojure (74%) + JavaScript + Rust，WASM 渲染引擎。",
+        "use_case": "想要完全掌控设计基础设施的团队，不被 SaaS 厂商锁定。",
+        "audience": "设计团队、设计系统维护者、全栈开发者。",
+        "conclusion": "最成熟的开源设计工具，自托管 + 开放标准 = 真正的设计自由。"
+      }
+    }
+  ]
+}
