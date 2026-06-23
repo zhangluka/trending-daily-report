@@ -1,0 +1,186 @@
+{
+  "date": "2026-06-23",
+  "total_repos": 16,
+  "top10": [
+    {
+      "rank": 1,
+      "name": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .claude directory.",
+      "language": "Shell",
+      "stars": 141623,
+      "forks": 12252,
+      "stars_today": 2051,
+      "analysis": {
+        "what": "Matt Pocock（Total TypeScript 作者）公开了他日常使用的 .claude skills 集合，涵盖代码审查、测试、文档等工程师核心工作流。",
+        "why": "Matt Pocock 本身就是 TypeScript 社区 KOL，分享实用 .claude 配置引发大量关注。Claude Code 生态爆发期，用户急需高质量 skill 参考。",
+        "tech_stack": "Shell scripts, Claude Code Skills API",
+        "use_case": "使用 Claude Code 的工程师想要即插即用的高质量 skill 配置",
+        "audience": "全栈 / TypeScript / 任何使用 AI 编码助手的开发者",
+        "verdict": "如果你用 Claude Code，这是必读的参考配置"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "calesthio/OpenMontage",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "description": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills.",
+      "language": "Python",
+      "stars": 12028,
+      "forks": 1550,
+      "stars_today": 2938,
+      "analysis": {
+        "what": "首个开源 agentic 视频制作系统，将 AI coding assistant 变成完整的视频制作工作室。包含 12 条流水线、52 个工具、500+ agent skills。",
+        "why": "「Agentic 视频制作」是全新概念，填补了 AI agent 在创意生产领域的空白。项目刚发布就展示了完整的端到端能力。",
+        "tech_stack": "Python, FFmpeg, Remotion, OpenAI, ElevenLabs, Stable Diffusion",
+        "use_case": "用 AI agent 自动化视频制作流程，从脚本到成片",
+        "audience": "视频创作者、AI 开发者、内容自动化团队",
+        "verdict": "野心很大的项目，值得关注其发展"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "ZhuLinsen/daily_stock_analysis",
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送。",
+      "language": "Python",
+      "stars": 45808,
+      "forks": 41913,
+      "stars_today": 1557,
+      "analysis": {
+        "what": "LLM 驱动的多市场股票分析系统，支持 A 股、美股等多市场，集成实时新闻、决策看板和自动推送，支持零成本定时运行。",
+        "why": "AI + 金融是当下最热的交叉领域。项目成熟度高（45k+ stars），中文社区传播力强，实用价值直接。",
+        "tech_stack": "Python, LLM API, 多源行情数据, 定时任务",
+        "use_case": "散户或量化团队用 LLM 做日常股票分析和决策辅助",
+        "audience": "金融从业者、量化开发者、散户投资者",
+        "verdict": "做股票分析的必试工具，零成本门槛很有吸引力"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "palmier-io/palmier-pro",
+      "url": "https://github.com/palmier-io/palmier-pro",
+      "description": "macOS video editor built for AI",
+      "language": "Swift",
+      "stars": 7347,
+      "forks": 506,
+      "stars_today": 2463,
+      "analysis": {
+        "what": "为 AI 打造的 macOS 原生视频编辑器，支持 MCP 协议，可与 Claude 等 AI 助手联动。",
+        "why": "原生 macOS 视频编辑器 + AI + MCP 的组合非常新颖。MCP 生态扩展到创意工具领域。",
+        "tech_stack": "Swift, MCP protocol, AI integration",
+        "use_case": "macOS 用户需要 AI 辅助的视频编辑工作流",
+        "audience": "视频创作者、macOS 开发者、MCP 生态参与者",
+        "verdict": "macOS 上 AI 视频编辑的新选择，值得关注"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "DeusData/codebase-memory-mcp",
+      "url": "https://github.com/DeusData/codebase-memory-mcp",
+      "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph.",
+      "language": "C",
+      "stars": 11548,
+      "forks": 855,
+      "stars_today": 1185,
+      "analysis": {
+        "what": "高性能代码智能 MCP server，将代码库索引为持久化知识图谱。支持 158 种语言，亚毫秒查询，token 消耗减少 99%。",
+        "why": "MCP 生态持续爆发，代码智能是杀手级应用场景。单二进制、零依赖的部署方式降低了门槛。",
+        "tech_stack": "C, Tree-sitter, SQLite, MCP protocol, knowledge graph",
+        "use_case": "AI coding assistant 需要理解大型代码库的结构和语义",
+        "audience": "MCP 生态开发者、AI 工具构建者、大型项目维护者",
+        "verdict": "MCP 生态的基础设施级项目，必装"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "bytedance/deer-flow",
+      "url": "https://github.com/bytedance/deer-flow",
+      "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates.",
+      "language": "Python",
+      "stars": 73243,
+      "forks": 9900,
+      "stars_today": 738,
+      "analysis": {
+        "what": "字节跳动开源的长周期 SuperAgent 框架，集成沙箱、记忆、工具、技能、子 agent 和消息网关，处理从分钟级到小时级的复杂任务。",
+        "why": "大厂开源 agent 框架自带流量。相比轻量 agent 框架，deer-flow 主打「长周期」和「多层级」，差异化明显。",
+        "tech_stack": "Python, TypeScript, Node.js, LangGraph, multi-agent architecture",
+        "use_case": "需要长时间运行的复杂 AI agent 任务，如深度研究、代码生成、内容创作",
+        "audience": "AI 开发者、agent 框架研究者、企业 AI 团队",
+        "verdict": "字节的 agent 框架野心之作，适合复杂场景"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "mukul975/Anthropic-Cybersecurity-Skills",
+      "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "description": "817 structured cybersecurity skills for AI agents, mapped to 6 frameworks.",
+      "language": "Python",
+      "stars": 18683,
+      "forks": 2210,
+      "stars_today": 956,
+      "analysis": {
+        "what": "817 个结构化网络安全 skills，映射到 MITRE ATT&CK、NIST CSF 2.0 等 6 大框架，覆盖 29 个安全领域，兼容 20+ AI 平台。",
+        "why": "AI + 安全是刚需。将安全知识系统化为 AI agent 可用的 skills，填补了安全自动化的知识空白。",
+        "tech_stack": "Python, MCP, MITRE ATT&CK, NIST CSF 2.0, D3FEND",
+        "use_case": "AI agent 执行安全评估、威胁狩猎、事件响应",
+        "audience": "安全工程师、DevSecOps、红队操作员",
+        "verdict": "AI agent 安全技能的权威知识库"
+      }
+    },
+    {
+      "rank": 8,
+      "name": "penpot/penpot",
+      "url": "https://github.com/penpot/penpot",
+      "description": "Penpot: The open-source design tool for design and code collaboration",
+      "language": "Clojure",
+      "stars": 52863,
+      "forks": 3386,
+      "stars_today": 728,
+      "analysis": {
+        "what": "开源设计工具，支持设计与代码协作，SVG 原生格式，支持自托管。",
+        "why": "作为 Figma 的开源替代品持续增长，尤其在 Figma 定价变更和 Adobe 收购失败后获得更多关注。",
+        "tech_stack": "Clojure, ClojureScript, SVG, Web-based",
+        "use_case": "设计团队需要开源、可自托管的设计协作工具",
+        "audience": "设计师、设计工程师、避免供应商锁定的团队",
+        "verdict": "最成熟的开源设计工具，生产可用"
+      }
+    },
+    {
+      "rank": 9,
+      "name": "tursodatabase/turso",
+      "url": "https://github.com/tursodatabase/turso",
+      "description": "Turso is an in-process SQL database, compatible with SQLite.",
+      "language": "Rust",
+      "stars": 21474,
+      "forks": 1087,
+      "stars_today": 540,
+      "analysis": {
+        "what": "用 Rust 编写的进程内 SQL 数据库，兼容 SQLite。支持 BEGIN CONCURRENT（MVCC）、变更数据捕获（CDC）、异步 I/O。",
+        "why": "SQLite 的现代继任者，解决了 SQLite 在并发写入场景的瓶颈。Rust 重写保证了性能和安全性。",
+        "tech_stack": "Rust, SQLite C API, MVCC, CDC, async I/O, multi-language bindings",
+        "use_case": "需要嵌入式 SQL 但 SQLite 并发不够的应用",
+        "audience": "后端开发者、系统程序员、边缘计算场景",
+        "verdict": "SQLite 的现代替代品，并发场景必试"
+      }
+    },
+    {
+      "rank": 10,
+      "name": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "language": "TypeScript",
+      "stars": 29988,
+      "forks": 2822,
+      "stars_today": 395,
+      "analysis": {
+        "what": "HeyGen 开源的框架：用 HTML 写内容，直接渲染成视频，专为 AI agent 设计。",
+        "why": "将 Web 开发范式引入视频制作，降低了程序化视频生成的门槛。HeyGen 品牌效应加持。",
+        "tech_stack": "TypeScript, HTML/CSS, FFmpeg, Puppeteer, GSAP",
+        "use_case": "程序化生成视频内容，agent 驱动的视频自动化",
+        "audience": "开发者、内容自动化团队、AI agent 构建者",
+        "verdict": "用 HTML 思维做视频，开发者友好"
+      }
+    }
+  ]
+}
