@@ -1,0 +1,190 @@
+{
+  "date": "2026-06-24",
+  "source": "https://github.com/trending",
+  "total_projects_scraped": 15,
+  "selected_count": 10,
+  "total_stars_today": 12252,
+  "languages_count": 7,
+  "projects": [
+    {
+      "rank": 1,
+      "name": "calesthio/OpenMontage",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "description": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills.",
+      "language": "Python",
+      "stars": 15902,
+      "forks": 1887,
+      "stars_today": 3592,
+      "analysis": {
+        "what": "开源 agentic 视频制作系统，用自然语言描述需求，AI agent 自动完成从调研、脚本、素材生成到最终合成的全流程。12 条生产线、52 个工具、500+ 技能。",
+        "why_hot": "演示视频成本极低（$0.15-$1.50），支持真实素材纪录片和 AI 生成动画两种路径，零 API key 也能用。",
+        "tech_stack": "Python + Remotion (React) + FFmpeg + FLUX + ElevenLabs + Piper TTS + Suno AI",
+        "use_case": "需要快速产出视频内容的创作者、教育者、营销团队。从 30 秒产品宣传片到 90 秒纪录片都能做。",
+        "audience": "内容创作者、全栈开发者、AI 工程师",
+        "conclusion": "如果你需要批量生产视频内容，这是目前最完整的开源方案。零成本路径已经很能打，配上 API key 更是起飞。"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "palmier-io/palmier-pro",
+      "url": "https://github.com/palmier-io/palmier-pro",
+      "description": "macOS video editor built for AI",
+      "language": "Swift",
+      "stars": 8465,
+      "forks": 554,
+      "stars_today": 1630,
+      "analysis": {
+        "what": "原生 macOS 视频编辑器，内置 AI 生成能力（Seedance、Kling 等），通过 MCP 服务器让 Claude Code/Cursor 直接操控时间线。",
+        "why_hot": "v0.4.0 刚发布，首个将 MCP 协议引入视频编辑的原生 Mac 应用。Swift 原生，非 Electron。",
+        "tech_stack": "Swift + macOS 26 (Tahoe) + Apple Silicon + MCP Server",
+        "use_case": "Mac 上做视频编辑，想让 AI agent 参与剪辑流程的创作者。编辑器免费，AI 功能需订阅。",
+        "audience": "Mac 用户、视频创作者、AI-assisted 编辑爱好者",
+        "conclusion": "MCP 集成是亮点——让 AI agent 直接操控时间线。但仅限 macOS 26 + Apple Silicon，门槛不低。"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "ZhuLinsen/daily_stock_analysis",
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "description": "LLM 驱动的多市场股票智能分析系统",
+      "language": "Python",
+      "stars": 47158,
+      "forks": 42423,
+      "stars_today": 1119,
+      "analysis": {
+        "what": "覆盖 A 股/港股/美股/日股/韩股的 AI 股票分析系统，自动生成决策仪表盘并推送到企业微信/飞书/Telegram 等。",
+        "why_hot": "v3.23.0 刚发布，GitHub Actions 零成本定时运行，fork 数极高说明大量用户在实际部署。",
+        "tech_stack": "Python + LLM (DeepSeek/Gemini/Claude 等) + AkShare + GitHub Actions",
+        "use_case": "个人投资者日常盯盘。每日自动分析自选股，给出买入/观望/卖出建议和风险警报。",
+        "audience": "股票投资者、量化交易者、中国市场参与者",
+        "conclusion": "中文区最活跃的 AI 股票分析项目，fork 数 42K 说明实际使用者众。零成本方案很实用。"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "jamiepine/voicebox",
+      "url": "https://github.com/jamiepine/voicebox",
+      "description": "The open-source AI voice studio. Clone, dictate, create.",
+      "language": "TypeScript",
+      "stars": 33214,
+      "forks": 4004,
+      "stars_today": 1045,
+      "analysis": {
+        "what": "本地优先的 AI 语音工作室——克隆声音、生成语音、全局听写、给 AI agent 配声音。ElevenLabs + WisprFlow 的开源替代。",
+        "why_hot": "7 个 TTS 引擎、23 种语言、MCP 服务器内置、Tauri 原生非 Electron。隐私完全本地。",
+        "tech_stack": "Tauri (Rust) + React + FastAPI + Qwen3-TTS + Whisper + MLX/CUDA",
+        "use_case": "语音克隆、语音合成、开发者听写、给 AI agent 配声音。支持 macOS/Windows/Linux。",
+        "audience": "内容创作者、开发者、无障碍需求用户",
+        "conclusion": "目前最完整的开源语音 I/O 方案。本地运行、隐私友好、MCP 集成让 agent 能直接说话。"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "mukul975/Anthropic-Cybersecurity-Skills",
+      "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "description": "817 structured cybersecurity skills for AI agents",
+      "language": "Python",
+      "stars": 19762,
+      "forks": 2306,
+      "stars_today": 1041,
+      "analysis": {
+        "what": "817 个结构化网络安全技能，覆盖 29 个安全领域，映射到 MITRE ATT&CK、NIST CSF 2.0、ATLAS、D3FEND、AI RMF 和 F3 六大框架。",
+        "why_hot": "v1.3.0 刚发布，新增 MITRE Fight Fraud Framework (F3) 支持。唯一覆盖六大框架的开源技能库。",
+        "tech_stack": "Python + agentskills.io 标准 + YAML frontmatter + Markdown",
+        "use_case": "给 AI agent 注入专家级安全知识。从内存取证到云安全到红队，agent 能按标准流程执行。",
+        "audience": "安全工程师、DevSecOps、AI agent 构建者",
+        "conclusion": "安全领域的知识库标杆。每个技能 ~30 token 扫描、500-2000 token 加载，agent 检索效率很高。"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "garrytan/gstack",
+      "url":https://github.com/garrytan/gstack",
+      "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools",
+      "language": "TypeScript",
+      "stars": 114149,
+      "forks": 16895,
+      "stars_today": 1011,
+      "analysis": {
+        "what": "Y Combinator CEO Garry Tan 开源的 Claude Code 工作流——23 个 slash 命令覆盖 CEO、设计师、工程经理、QA、发布工程师等角色。",
+        "why_hot": "114K star，Garry 称用这套工具 60 天发布了 3 个生产服务、40+ 功能，代码产出是 2013 年的 810 倍。",
+        "tech_stack": "TypeScript + Bun + Playwright + Claude Code Skills + MCP",
+        "use_case": "结构化 AI 辅助开发流程。从 /office-hours 产品思考到 /ship 发布的完整 sprint 闭环。",
+        "audience": "创始人、工程师、Claude Code 用户",
+        "conclusion": "目前 star 数最高的 Claude Code 工具集。适合想要「AI 工程团队」而非「AI 补全」的用户。"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "NousResearch/hermes-agent",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "description": "The agent that grows with you",
+      "language": "Python",
+      "stars": 201013,
+      "forks": 35856,
+      "stars_today": 936,
+      "analysis": {
+        "what": "NousResearch 的自进化 AI agent——内置学习循环、自主技能创建、跨会话记忆、多平台消息网关（Telegram/Discord/Slack/WhatsApp）。",
+        "why_hot": "v0.17.0 刚发布，201K star 说明社区活跃度极高。从 OpenClaw 迁移路径已打通。",
+        "tech_stack": "Python + LangChain + MCP + 多 LLM 提供商 + TUI",
+        "use_case": "个人 AI 助手，能从经验中学习、创建技能、跨平台对话。跑在 $5 VPS 上就行。",
+        "audience": "AI 爱好者、开发者、Power User",
+        "conclusion": "star 数最高的 agent 项目。自进化能力是核心卖点——用得越多越懂你。但功能复杂度也高。"
+      }
+    },
+    {
+      "rank": 8,
+      "name": "JCodesMore/ai-website-cloner-template",
+      "url": "https://github.com/JCodesMore/ai-website-cloner-template",
+      "description": "Clone any website with one command using AI coding agents",
+      "language": "TypeScript",
+      "stars": 18606,
+      "forks": 2808,
+      "stars_today": 826,
+      "analysis": {
+        "what": "一条命令克隆任意网站为现代 Next.js 代码库。AI agent 自动提取设计 token、截图、写组件规格、并行构建。",
+        "why_hot": "支持 10+ AI 编码平台（Claude Code、Cursor、Copilot 等），多阶段管线（侦察→基础→规格→并行构建→组装）。",
+        "tech_stack": "Next.js 16 + shadcn/ui + Tailwind CSS v4 + 多 AI agent 支持",
+        "use_case": "平台迁移（WordPress→Next.js）、丢失源码恢复、学习生产网站的实现方式。",
+        "audience": "Web 开发者、设计师、代理商",
+        "conclusion": "实用的网站逆向工程模板。注意只用于合法用途——不要用来仿冒或侵权。"
+      }
+    },
+    {
+      "rank": 9,
+      "name": "bytedance/deer-flow",
+      "url": "https://github.com/bytedance/deer-flow",
+      "description": "An open-source long-horizon SuperAgent harness",
+      "language": "Python",
+      "stars": 73968,
+      "forks": 9975,
+      "stars_today": 739,
+      "analysis": {
+        "what": "字节跳动开源的超级 agent 框架——编排子 agent、记忆、沙箱，处理从几分钟到几小时的复杂任务。v2.0 是完全重写。",
+        "why_hot": "v2.0 地面重写，与 Volcengine 的 Doubao-Seed-2.0-Code 深度集成。支持 Telegram/Slack/飞书等 IM 渠道。",
+        "tech_stack": "LangGraph + LangChain + Python + Docker 沙箱 + MCP",
+        "use_case": "需要深度研究 + 编码 + 创作的长时间任务。从研究报告到幻灯片到网站，一个框架搞定。",
+        "audience": "AI 工程师、研究人员、企业开发者",
+        "conclusion": "字节出品，质量有保障。适合需要「长时间运行、多 agent 协作」的复杂场景。"
+      }
+    },
+    {
+      "rank": 10,
+      "name": "DeusData/codebase-memory-mcp",
+      "url": "https://github.com/DeusData/codebase-memory-mcp",
+      "description": "High-performance code intelligence MCP server",
+      "language": "C",
+      "stars": 13035,
+      "forks": 946,
+      "stars_today": 1300,
+      "analysis": {
+        "what": "高性能代码智能 MCP 服务器——毫秒级索引代码库为知识图谱。Linux 内核（28M 行）3 分钟索引完成。158 种语言，查询 <1ms。",
+        "why_hot": "v0.8.1 刚发布，Hybrid LSP 语义类型解析覆盖 10 种语言。单静态二进制，零依赖。",
+        "tech_stack": "C + C++ + tree-sitter + SQLite + Cypher 查询",
+        "use_case": "给 AI 编码 agent 提供代码结构理解能力。一次索引，agent 就能理解函数调用链、架构、死代码。",
+        "audience": "使用 AI 编码 agent 的开发者",
+        "conclusion": "代码理解的基础设施级项目。99.2% token 节省意味着 agent 能理解更大代码库。C 写的，性能怪兽。"
+      }
+    }
+  ]
+}
