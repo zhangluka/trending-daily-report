@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Daily · 2026-06-25</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf9f5;
+  --bg-warm: #f5f3ed;
+  --ink: #1a1918;
+  --ink-soft: #6b6966;
+  --ink-muted: #9e9b97;
+  --accent: #c4603c;
+  --accent-soft: rgba(196, 96, 60, 0.08);
+  --rule: #e8e6e1;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+}
+/* Header */
+.header {
+  margin-bottom: 4rem;
+}
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+.header .date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+}
+.header .meta {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.header .meta span {
+  font-family: 'JetBrains Mono', monospace;
+}
+/* Section label */
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+/* Project card */
+.project {
+  margin-bottom: 4rem;
+}
+.project:last-child { margin-bottom: 0; }
+.project-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.project-rank {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  flex-shrink: 0;
+  min-width: 1.5rem;
+}
+.project-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.project-name:hover { color: var(--accent); }
+.project-lang {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  flex-shrink: 0;
+}
+.project-stats {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.75rem;
+  padding-left: 2.25rem;
+}
+.project-stats .accent { color: var(--accent); font-weight: 500; }
+.project-desc {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.25rem;
+  padding-left: 2.25rem;
+}
+/* Analysis grid */
+.analysis {
+  padding-left: 2.25rem;
+}
+.analysis-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+.analysis-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  min-width: 5rem;
+  flex-shrink: 0;
+  padding-top: 0.1rem;
+}
+.analysis-value {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  flex: 1;
+}
+.analysis-conclusion {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  padding-left: 0;
+}
+.analysis-conclusion .analysis-label {
+  color: var(--accent);
+}
+.analysis-conclusion .analysis-value {
+  color: var(--ink);
+  font-weight: 500;
+}
+/* Footer */
+.footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.footer a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.footer a:hover { color: var(--accent); }
+/* Mobile */
+@media (max-width: 600px) {
+  .container { padding: 2.5rem 1rem 3rem; }
+  .analysis-row { flex-direction: column; gap: 0.2rem; }
+  .analysis-label { min-width: auto; }
+  .header .meta { flex-direction: column; gap: 0.3rem; }
+  .project-header { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="header">
+  <h1>GitHub Trending Daily</h1>
+  <div class="date">2026-06-25 · Top 10</div>
+  <div class="meta">
+    <div>增星合计 <span>10,290</span></div>
+    <div>语言 <span>7 种</span></div>
+    <div>来源 <span>github.com/trending</span></div>
+  </div>
+</header>
+
+<div class="section-label">Top 3</div>
+
+<!-- #1 OpenMontage -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">01</span>
+    <a class="project-name" href="https://github.com/calesthio/OpenMontage" target="_blank">calesthio/OpenMontage</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats"><span class="accent">+3,719 today</span> · 19,668 stars · 2,225 forks</div>
+  <div class="project-desc">World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">开源 agentic 视频制作系统，用自然语言描述需求，AI agent 自动完成从调研、脚本、素材生成到最终合成的全流程。12 条生产线、52 个工具、500+ 技能。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">连续霸榜 Trending，社区活跃度极高。支持真实素材纪录片和 AI 生成动画两种路径，零 API key 也能用。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Python · Remotion (React) · FFmpeg · FLUX · ElevenLabs · Piper TTS · Suno AI</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">需要快速产出视频内容的创作者、教育者、营销团队。从 30 秒产品宣传片到 90 秒纪录片都能做。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">内容创作者 · 全栈开发者 · AI 工程师</span>
+    </div>
+    <div class="analysis-row analysis-conclusion">
+      <span class="analysis-label">结论</span>
+      <span class="analysis-value">目前最完整的开源视频制作方案。连续多日 Trending Top 1，社区热度持续不减。</span>
+    </div>
+  </div>
+</article>
+
+<!-- #2 apple/container -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">02</span>
+    <a class="project-name" href="https://github.com/apple/container" target="_blank">apple/container</a>
+    <span class="project-lang">Swift</span>
+  </div>
+  <div class="project-stats"><span class="accent">+1,838 today</span> · 42,314 stars · 1,244 forks</div>
+  <div class="project-desc">A tool for creating and running Linux containers using lightweight virtual machines on a Mac. Written in Swift, optimized for Apple silicon.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">Apple 官方开源的 macOS 容器工具——用轻量级虚拟机运行 Linux 容器，Swift 原生，专为 Apple Silicon 优化。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">Apple 官方出品，替代 Docker Desktop 的原生方案。v0.5.0 刚发布，性能和资源占用远优于 Docker。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Swift · Virtualization.framework · Apple Silicon · OCI 镜像标准</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">Mac 开发者跑 Linux 容器。比 Docker Desktop 更轻、更快、更原生。支持 Docker Hub 镜像。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">Mac 开发者 · DevOps 工程师 · 容器化应用开发者</span>
+    </div>
+    <div class="analysis-row analysis-conclusion">
+      <span class="analysis-label">结论</span>
+      <span class="analysis-value">Apple 官方的容器方案，Swift 原生非 Electron。如果你在 Mac 上用容器，这是最优雅的选择。</span>
+    </div>
+  </div>
+</article>
+
+<!-- #3 daily_stock_analysis -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">03</span>
+    <a class="project-name" href="https://github.com/ZhuLinsen/daily_stock_analysis" target="_blank">ZhuLinsen/daily_stock_analysis</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats"><span class="accent">+1,468 today</span> · 48,627 stars · 43,013 forks</div>
+  <div class="project-desc">LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">覆盖 A 股/港股/美股/日股/韩股的 AI 股票分析系统，自动生成决策仪表盘并推送到企业微信/飞书/Telegram 等。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">fork 数 43K 说明大量用户在实际部署。GitHub Actions 零成本定时运行，v3.23.0 持续迭代。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Python · LLM (DeepSeek/Gemini/Claude 等) · AkShare · GitHub Actions</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">适用场景</span>
+      <span class="analysis-value">个人投资者日常盯盘。每日自动分析自选股，给出买入/观望/卖出建议和风险警报。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">受众</span>
+      <span class="analysis-value">股票投资者 · 量化交易者 · 中国市场参与者</span>
+    </div>
+    <div class="analysis-row analysis-conclusion">
+      <span class="analysis-label">结论</span>
+      <span class="analysis-value">中文区最活跃的 AI 股票分析项目，fork 数极高说明实际使用者众。零成本方案很实用。</span>
+    </div>
+  </div>
+</article>
+
+<div class="section-label">4 — 10</div>
+
+<!-- #4 hermes-agent -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">04</span>
+    <a class="project-name" href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/hermes-agent</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats"><span class="accent">+1,178 today</span> · 202,136 stars · 36,123 forks</div>
+  <div class="project-desc">The agent that grows with you</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">NousResearch 的自进化 AI agent——内置学习循环、自主技能创建、跨会话记忆、多平台消息网关（Telegram/Discord/Slack/WhatsApp）。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">202K star，持续 Trending。v0.17.0 持续迭代，从 OpenClaw 迁移路径已打通。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Python · LangChain · MCP · 多 LLM 提供商 · TUI</span>
+    </div>
+    <div class="analysis-row analysis-conclusion">
+      <span class="analysis-label">结论</span>
+      <span class="analysis-value">star 数最高的 agent 项目。自进化能力是核心卖点——用得越多越懂你。</span>
+    </div>
+  </div>
+</article>
+
+<!-- #5 ai-website-cloner-template -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">05</span>
+    <a class="project-name" href="https://github.com/JCodesMore/ai-website-cloner-template" target="_blank">JCodesMore/ai-website-cloner-template</a>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats"><span class="accent">+692 today</span> · 19,400 stars · 2,892 forks</div>
+  <div class="project-desc">Clone any website with one command using AI coding agents</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">一条命令克隆任意网站为现代 Next.js 代码库。AI agent 自动提取设计 token、截图、写组件规格、并行构建。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">支持 10+ AI 编码平台（Claude Code、Cursor、Copilot 等），多阶段管线（侦察→基础→规格→并行构建→组装）。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Next.js 16 · shadcn/ui · Tailwind CSS v4 · 多 AI agent 支持</span>
+    </div>
+    <div class="analysis-row analysis-conclusion">
+      <span class="analysis-label">结论</span>
+      <span class="analysis-value">实用的网站逆向工程模板。注意只用于合法用途——不要用来仿冒或侵权。</span>
+    </div>
+  </div>
+</article>
+
+<!-- #6 design.md -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">06</span>
+    <a class="project-name" href="https://github.com/google-labs-code/design.md" target="_blank">google-labs-code/design.md</a>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats"><span class="accent">+619 today</span> · 17,423 stars · 1,569 forks</div>
+  <div class="project-desc">A format specification for describing a visual identity to coding agents. DESIGN.md gives agents a persistent, structured understanding of a design system.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">Google Labs 推出的设计系统描述规范——用 DESIGN.md 文件向编码 agent 持久化传达视觉身份。颜色、字体、间距、组件规范全部结构化。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">Google 官方出品，解决 AI 编码 agent「不懂设计」的痛点。Claude Code/Cursor 等已支持。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">TypeScript · YAML/Markdown 规范 · 多 AI agent 兼容</span>
+    </div>
+    <div class="analysis-row analysis-conclusion">
+      <span class="analysis-label">结论</span>
+      <span class="analysis-value">AI 编码时代的 Design Token 标准。Google 出品，有望成为行业规范。</span>
+    </div>
+  </div>
+</article>
+
+<!-- #7 orca -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">07</span>
+    <a class="project-name" href="https://github.com/stablyai/orca" target="_blank">stablyai/orca</a>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats"><span class="accent">+331 today</span> · 6,855 stars · 495 forks</div>
+  <div class="project-desc">Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">Agent Development Environment (ADE)——管理并行 agent 舰队的 IDE。用自己的 API key 跑多个 coding agent，桌面和移动端都支持。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">新概念 ADE，从「一个 agent」到「一群 agent」的范式转变。支持 Claude Code/Cursor/Copilot 等主流 agent。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">TypeScript · Electron · 多 agent 编排 · MCP</span>
+    </div>
+    <div class="analysis-row analysis-conclusion">
+      <span class="analysis-label">结论</span>
+      <span class="analysis-value">ADE 概念的先行者。如果你同时用多个 AI agent，这是目前最好的编排工具。</span>
+    </div>
+  </div>
+</article>
+
+<!-- #8 harness -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">08</span>
+    <a class="project-name" href="https://github.com/revfactory/harness" target="_blank">revfactory/harness</a>
+    <span class="project-lang">HTML</span>
+  </div>
+  <div class="project-stats"><span class="accent">+277 today</span> · 7,771 stars · 1,058 forks</div>
+  <div class="project-desc">A meta-skill that designs domain-specific agent teams, defines specialized agents, and generates the skills they use.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">元技能框架——自动设计领域专用 agent 团队、定义专业 agent、生成它们使用的技能。从「用 agent」到「造 agent」。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">Meta-skill 概念新颖，让 agent 自己设计 agent 团队。Claude Code 生态的重要补充。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">HTML · Claude Code Skills · Agent 编排</span>
+    </div>
+    <div class="analysis-row analysis-conclusion">
+      <span class="analysis-label">结论</span>
+      <span class="analysis-value">从「使用 agent」到「设计 agent」的进阶工具。适合想要深度定制 AI 工作流的用户。</span>
+    </div>
+  </div>
+</article>
+
+<!-- #9 hiring-agent -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">09</span>
+    <a class="project-name" href="https://github.com/interviewstreet/hiring-agent" target="_blank">interviewstreet/hiring-agent</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats"><span class="accent">+203 today</span> · 2,256 stars · 601 forks</div>
+  <div class="project-desc">AI agent to evaluate and score resumes.</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">AI 简历筛选 agent——自动评估和打分简历，支持自定义评分标准、批量处理、多格式支持。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">HackerRank 背景团队出品，招聘场景的 AI 自动化。解决 HR 筛简历的痛点。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Python · LLM · 文档解析 · 评分引擎</span>
+    </div>
+    <div class="analysis-row analysis-conclusion">
+      <span class="analysis-label">结论</span>
+      <span class="analysis-value">招聘场景的 AI 落地应用。如果你需要批量筛简历，这比人工效率高很多。</span>
+    </div>
+  </div>
+</article>
+
+<!-- #10 no-mistakes -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">10</span>
+    <a class="project-name" href="https://github.com/kunchenguid/no-mistakes" target="_blank">kunchenguid/no-mistakes</a>
+    <span class="project-lang">Go</span>
+  </div>
+  <div class="project-stats"><span class="accent">+110 today</span> · 2,216 stars · 149 forks</div>
+  <div class="project-desc">git push no-mistakes</div>
+  <div class="analysis">
+    <div class="analysis-row">
+      <span class="analysis-label">做什么</span>
+      <span class="analysis-value">Git 提交质量守护工具——在 git push 前自动检查代码质量、测试覆盖率、安全漏洞，确保「零错误推送」。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">为什么火</span>
+      <span class="analysis-value">轻量级 Go 实现，零配置即用。解决「push 后才发现问题」的常见痛点。</span>
+    </div>
+    <div class="analysis-row">
+      <span class="analysis-label">技术栈</span>
+      <span class="analysis-value">Go · Git hooks · 静态分析 · 测试检查</span>
+    </div>
+    <div class="analysis-row analysis-conclusion">
+      <span class="analysis-label">结论</span>
+      <span class="analysis-value">简单实用的 git 质量守护工具。Go 写的，性能好，零依赖。</span>
+    </div>
+  </div>
+</article>
+
+<footer class="footer">
+  <span>数据来源：<a href="https://github.com/trending" target="_blank">github.com/trending</a></span>
+  <span>生成时间：2026-06-25</span>
+</footer>
+
+</div>
+</body>
+</html>

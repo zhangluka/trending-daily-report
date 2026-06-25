@@ -1,6 +1,10 @@
 {
   "reports": [
     {
+      "date": "2026-06-25",
+      "top3": "calesthio/OpenMontage · apple/container · ZhuLinsen/daily_stock_analysis"
+    },
+    {
       "date": "2026-06-24",
       "top3": "calesthio/OpenMontage · palmier-io/palmier-pro · ZhuLinsen/daily_stock_analysis"
     },
