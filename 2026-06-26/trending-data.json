@@ -1,0 +1,109 @@
+{
+  "date": "2026-06-26",
+  "total_repos_scanned": 16,
+  "top10_selected": 10,
+  "total_stars_today": 10196,
+  "languages_count": 4,
+  "repos": [
+    {
+      "rank": 1,
+      "name": "calesthio/OpenMontage",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "description": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills.",
+      "language": "Python",
+      "stars": 22294,
+      "forks": 2498,
+      "stars_today": 3434
+    },
+    {
+      "rank": 2,
+      "name": "google-labs-code/design.md",
+      "url": "https://github.com/google-labs-code/design.md",
+      "description": "A format specification for describing a visual identity to coding agents.",
+      "language": "TypeScript",
+      "stars": 19509,
+      "forks": 1662,
+      "stars_today": 1475
+    },
+    {
+      "rank": 3,
+      "name": "apple/container",
+      "url": "https://github.com/apple/container",
+      "description": "A tool for creating and running Linux containers using lightweight virtual machines on a Mac.",
+      "language": "Swift",
+      "stars": 43270,
+      "forks": 1270,
+      "stars_today": 1351
+    },
+    {
+      "rank": 4,
+      "name": "JCodesMore/ai-website-cloner-template",
+      "url": "https://github.com/JCodesMore/ai-website-cloner-template",
+      "description": "Clone any website with one command using AI coding agents",
+      "language": "TypeScript",
+      "stars": 20568,
+      "forks": 3022,
+      "stars_today": 1024
+    },
+    {
+      "rank": 5,
+      "name": "garrytan/gstack",
+      "url": "https://github.com/garrytan/gstack",
+      "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+      "language": "TypeScript",
+      "stars": 115893,
+      "forks": 17178,
+      "stars_today": 767
+    },
+    {
+      "rank": 6,
+      "name": "opendatalab/MinerU",
+      "url": "https://github.com/opendatalab/MinerU",
+      "description": "Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.",
+      "language": "Python",
+      "stars": 69674,
+      "forks": 5893,
+      "stars_today": 644
+    },
+    {
+      "rank": 7,
+      "name": "mukul975/Anthropic-Cybersecurity-Skills",
+      "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "description": "817 structured cybersecurity skills for AI agents, mapped to 6 frameworks.",
+      "language": "Python",
+      "stars": 21312,
+      "forks": 2455,
+      "stars_today": 571
+    },
+    {
+      "rank": 8,
+      "name": "NanmiCoder/MediaCrawler",
+      "url": "https://github.com/NanmiCoder/MediaCrawler",
+      "description": "小红书、抖音、快手、B站、微博、贴吧、知乎爬虫",
+      "language": "Python",
+      "stars": 52867,
+      "forks": 10931,
+      "stars_today": 398
+    },
+    {
+      "rank": 9,
+      "name": "xbtlin/ai-berkshire",
+      "url": "https://github.com/xbtlin/ai-berkshire",
+      "description": "AI 时代的伯克希尔：基于 Claude Code 的价值投资研究框架",
+      "language": "Python",
+      "stars": 2123,
+      "forks": 320,
+      "stars_today": 309
+    },
+    {
+      "rank": 10,
+      "name": "IceWhaleTech/CasaOS",
+      "url": "https://github.com/IceWhaleTech/CasaOS",
+      "description": "CasaOS - A simple, easy-to-use, elegant open-source Personal Cloud system.",
+      "language": "Go",
+      "stars": 34884,
+      "forks": 1993,
+      "stars_today": 223
+    }
+  ]
+}

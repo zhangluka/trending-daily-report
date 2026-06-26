@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Daily · 2026-06-26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf9f5;
+  --bg-warm: #f5f3ed;
+  --ink: #1a1918;
+  --ink-soft: #6b6966;
+  --ink-muted: #9e9b97;
+  --accent: #c4603c;
+  --accent-soft: rgba(196, 96, 60, 0.08);
+  --rule: #e8e6e1;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Geist Sans', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+
+header {
+  margin-bottom: 5rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+header .meta {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+header .meta span {
+  margin-right: 1.5rem;
+}
+
+.stats-bar {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.repo {
+  margin-bottom: 4rem;
+}
+
+.repo-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.repo-rank {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  flex-shrink: 0;
+  width: 1.5rem;
+}
+
+.repo-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.repo-name:hover {
+  color: var(--accent);
+}
+
+.repo-lang {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  background: var(--bg-warm);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.repo-stats {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
+
+.repo-stats .highlight {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.repo-desc {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.analysis {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0.4rem 1rem;
+  font-size: 0.85rem;
+}
+
+.analysis-label {
+  color: var(--ink-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding-top: 0.1rem;
+}
+
+.analysis-value {
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.verdict {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.85rem;
+  color: var(--ink);
+}
+
+.verdict-label {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+footer a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 2rem 1.25rem 4rem;
+  }
+
+  .analysis {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .analysis-label {
+    padding-top: 0;
+  }
+
+  .stats-bar {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>GitHub Trending Daily</h1>
+  <div class="meta">
+    <span>2026-06-26</span>
+    <span>Top 10 精选</span>
+  </div>
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-value">10,196</span>
+      <span class="stat-label">总增星</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">4</span>
+      <span class="stat-label">语言</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">16</span>
+      <span class="stat-label">扫描项目</span>
+    </div>
+  </div>
+</header>
+
+<div class="section-label">Top 3</div>
+
+<!-- #1 OpenMontage -->
+<div class="repo">
+  <div class="repo-header">
+    <span class="repo-rank">01</span>
+    <a href="https://github.com/calesthio/OpenMontage" class="repo-name" target="_blank">calesthio/OpenMontage</a>
+    <span class="repo-lang">Python</span>
+  </div>
+  <div class="repo-stats">
+    <span class="highlight">+3,434 today</span>
+    <span>22,294 stars</span>
+    <span>2,498 forks</span>
+  </div>
+  <div class="repo-desc">World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills.</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">把 AI 编码助手变成完整的视频制作工作室。用自然语言描述需求，agent 自动完成研究、脚本、素材生成、剪辑和最终合成。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">首创"agentic video production"概念，支持从免费素材库构建真实视频（不只是图片动画），成本低至 $0.15。与 Claude Code、Cursor、Copilot 等主流 agent 深度集成。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Python + Remotion (React) + HyperFrames (GSAP) + FFmpeg。支持 14 个视频生成 provider、10 个图像生成工具、4 个 TTS provider。</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">教育视频、产品演示、社交媒体内容、纪录片、动画短片、播客剪辑、多语言配音。12 条生产流水线覆盖主流需求。</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">内容创作者、独立开发者、营销团队、教育工作者、AI 工具爱好者。</span>
+  </div>
+  <div class="verdict">
+    <div class="verdict-label">结论</div>
+    如果你做视频内容，这是目前最完整的开源 AI 视频制作系统。不只是"图片转视频"，能真正从免费素材库构建专业级视频。值得一试。
+  </div>
+</div>
+
+<!-- #2 design.md -->
+<div class="repo">
+  <div class="repo-header">
+    <span class="repo-rank">02</span>
+    <a href="https://github.com/google-labs-code/design.md" class="repo-name" target="_blank">google-labs-code/design.md</a>
+    <span class="repo-lang">TypeScript</span>
+  </div>
+  <div class="repo-stats">
+    <span class="highlight">+1,475 today</span>
+    <span>19,509 stars</span>
+    <span>1,662 forks</span>
+  </div>
+  <div class="repo-desc">A format specification for describing a visual identity to coding agents. DESIGN.md gives agents a persistent, structured understanding of a design system.</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">为 AI coding agent 定义设计系统的标准格式。YAML front matter 存机器可读的 design tokens，Markdown body 存人类可读的设计理念。Agent 读了就能产出符合品牌规范的 UI。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">Google Labs 官方出品，解决了"AI 生成的 UI 没有设计一致性"的痛点。CLI 工具支持 lint、diff、export（Tailwind/DTCG），已发布 v0.3.0。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">TypeScript，npm 包 @google/design.md，支持 Tailwind v3/v4 和 W3C DTCG 标准导出。</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">团队协作时让 AI agent 保持设计一致性、自动化设计系统迁移、多框架项目统一 design tokens。</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">前端开发者、设计师、设计系统团队、使用 AI coding agent 的任何人。</span>
+  </div>
+  <div class="verdict">
+    <div class="verdict-label">结论</div>
+    如果你用 AI agent 写 UI 代码，这是必装的。一个文件解决"AI 不懂你的设计系统"的问题。Google 出品，格式有望成为行业标准。
+  </div>
+</div>
+
+<!-- #3 apple/container -->
+<div class="repo">
+  <div class="repo-header">
+    <span class="repo-rank">03</span>
+    <a href="https://github.com/apple/container" class="repo-name" target="_blank">apple/container</a>
+    <span class="repo-lang">Swift</span>
+  </div>
+  <div class="repo-stats">
+    <span class="highlight">+1,351 today</span>
+    <span>43,270 stars</span>
+    <span>1,270 forks</span>
+  </div>
+  <div class="repo-desc">A tool for creating and running Linux containers using lightweight virtual machines on a Mac. Written in Swift, optimized for Apple silicon.</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">Apple 官方的 Linux 容器工具，用轻量级虚拟机在 Mac 上运行 Linux 容器。生产 OCI 兼容镜像，可推送到任何标准容器 registry。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">Apple 官方开源，v1.0.0 刚发布（6月9日）。基于 macOS 26 的 Virtualization.framework，Apple silicon 深度优化，Docker Desktop 的原生替代方案。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Swift 98.2%，基于 Apple Containerization Swift package，需要 macOS 26+。</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">Mac 开发者的容器化工作流，替代 Docker Desktop，CI/CD 中的容器构建和测试。</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">Mac 开发者、DevOps 工程师、使用 Apple silicon 的任何人。</span>
+  </div>
+  <div class="verdict">
+    <div class="verdict-label">结论</div>
+    Apple 官方出品的 Docker 替代品。v1.0 刚发布，需要 macOS 26。如果你是 Mac 开发者且受够了 Docker Desktop 的资源占用，这是值得关注的原生方案。
+  </div>
+</div>
+
+<div class="section-label">Trending</div>
+
+<!-- #4 ai-website-cloner-template -->
+<div class="repo">
+  <div class="repo-header">
+    <span class="repo-rank">04</span>
+    <a href="https://github.com/JCodesMore/ai-website-cloner-template" class="repo-name" target="_blank">JCodesMore/ai-website-cloner-template</a>
+    <span class="repo-lang">TypeScript</span>
+  </div>
+  <div class="repo-stats">
+    <span class="highlight">+1,024 today</span>
+    <span>20,568 stars</span>
+    <span>3,022 forks</span>
+  </div>
+  <div class="repo-desc">Clone any website with one command using AI coding agents</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">用 AI agent 一键克隆任意网站。指向一个 URL，agent 自动截图、提取设计 tokens、下载素材、并行重建每个组件，输出干净的 Next.js 代码。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">解决了"想迁移网站到现代框架但源码丢了"的真实痛点。多 agent 并行构建，支持 Claude Code、Cursor、Copilot 等 10+ 平台。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Next.js 16 + shadcn/ui + Tailwind CSS v4。多 phase pipeline：侦察→基础→组件规格→并行构建→组装 QA。</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">平台迁移（WordPress/Webflow→Next.js）、丢失源码的网站重建、学习优秀网站的布局和动画实现。</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">前端开发者、网站所有者、想学习 UI 实现的人。</span>
+  </div>
+  <div class="verdict">
+    <div class="verdict-label">结论</div>
+    实用性极高的工具。如果你有旧网站想迁移到现代框架，或者想学习某个网站的实现方式，一键克隆比手动重建快 10 倍。推荐 Claude Code + Opus 4.7 组合。
+  </div>
+</div>
+
+<!-- #5 gstack -->
+<div class="repo">
+  <div class="repo-header">
+    <span class="repo-rank">05</span>
+    <a href="https://github.com/garrytan/gstack" class="repo-name" target="_blank">garrytan/gstack</a>
+    <span class="repo-lang">TypeScript</span>
+  </div>
+  <div class="repo-stats">
+    <span class="highlight">+767 today</span>
+    <span>115,893 stars</span>
+    <span>17,178 forks</span>
+  </div>
+  <div class="repo-desc">Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">YC 总裁 Garry Tan 的 Claude Code 工具集。23 个 slash command 模拟完整工程团队：CEO 视角规划、设计师审查、工程经理 review、QA 测试、发布工程师 ship。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">名人效应（YC CEO）+ 实用性（116K stars 说明一切）。Garry 声称用这套工具 60 天内发布了 3 个生产服务、40+ 功能，2026 年代码产出是 2013 年的 810 倍。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">TypeScript + Bun，集成 Playwright 浏览器自动化、OpenAI Codex 交叉审查、GBrain 持久记忆。</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">用 Claude Code 做正式项目开发、需要结构化 review 流程、想让 AI 模拟完整工程团队协作。</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">创始人、技术负责人、Staff+ 工程师、重度 Claude Code 用户。</span>
+  </div>
+  <div class="verdict">
+    <div class="verdict-label">结论</div>
+    如果你是 Claude Code 重度用户且做正式项目，gstack 把"一个人+AI"变成"一个团队+AI"。/office-hours 和 /review 是最有价值的两个 skill。MIT 开源，免费。
+  </div>
+</div>
+
+<!-- #6 MinerU -->
+<div class="repo">
+  <div class="repo-header">
+    <span class="repo-rank">06</span>
+    <a href="https://github.com/opendatalab/MinerU" class="repo-name" target="_blank">opendatalab/MinerU</a>
+    <span class="repo-lang">Python</span>
+  </div>
+  <div class="repo-stats">
+    <span class="highlight">+644 today</span>
+    <span>69,674 stars</span>
+    <span>5,893 forks</span>
+  </div>
+  <div class="repo-desc">Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">高精度文档解析引擎，把 PDF/DOCX/PPTX/XLSX/图片转成结构化 Markdown/JSON。VLM+OCR 双引擎，支持 109 种语言。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">v3.4 刚发布（6月18日），OCR 准确率提升 11%，处理速度翻倍。RAG/Agent workflow 的基础设施，MCP Server 集成 Cursor/Claude Desktop。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Python，支持 vLLM/LMDeploy/mlx 推理后端，纯 CPU 也能跑。国产 AI 芯片全覆盖（华为昇腾、寒武纪等 10 家）。</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">RAG 系统的文档预处理、Agent workflow 的数据摄入、批量文档转结构化数据、多语言文档处理。</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">AI/ML 工程师、RAG 系统开发者、数据处理团队、企业知识库建设者。</span>
+  </div>
+  <div class="verdict">
+    <div class="verdict-label">结论</div>
+    做 RAG 或 Agent 必备的文档解析工具。70K stars 不是白来的。v3.4 的 pipeline 后端在 CPU 上也能跑出高精度，门槛很低。
+  </div>
+</div>
+
+<!-- #7 Anthropic-Cybersecurity-Skills -->
+<div class="repo">
+  <div class="repo-header">
+    <span class="repo-rank">07</span>
+    <a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" class="repo-name" target="_blank">mukul975/Anthropic-Cybersecurity-Skills</a>
+    <span class="repo-lang">Python</span>
+  </div>
+  <div class="repo-stats">
+    <span class="highlight">+571 today</span>
+    <span>21,312 stars</span>
+    <span>2,455 forks</span>
+  </div>
+  <div class="repo-desc">817 structured cybersecurity skills for AI agents, mapped to 6 frameworks.</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">给 AI agent 赋予专业安全分析师的技能。817 个结构化安全技能，覆盖 29 个安全领域，映射到 MITRE ATT&CK、NIST CSF 2.0 等 6 大框架。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">最大的开源 AI 安全技能库。v1.3.0 刚发布（6月22日），新增 MITRE F3 反欺诈框架映射（94 个欺诈相关技能）。agentskills.io 标准，20+ 平台兼容。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Python + YAML frontmatter + Markdown。每个技能 ~30 tokens 扫描、500-2000 tokens 完整加载，渐进式披露架构。</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">安全团队的 AI 辅助分析、威胁狩猎、事件响应、合规审计、安全培训。</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">安全工程师、SOC 分析师、渗透测试人员、CISO、安全合规团队。</span>
+  </div>
+  <div class="verdict">
+    <div class="verdict-label">结论</div>
+    非 Anthropic 官方但质量极高。如果你的 AI agent 需要做安全分析，这是目前最完整的技能库。6 框架映射让它在合规场景也有用。
+  </div>
+</div>
+
+<!-- #8 MediaCrawler -->
+<div class="repo">
+  <div class="repo-header">
+    <span class="repo-rank">08</span>
+    <a href="https://github.com/NanmiCoder/MediaCrawler" class="repo-name" target="_blank">NanmiCoder/MediaCrawler</a>
+    <span class="repo-lang">Python</span>
+  </div>
+  <div class="repo-stats">
+    <span class="highlight">+398 today</span>
+    <span>52,867 stars</span>
+    <span>10,931 forks</span>
+  </div>
+  <div class="repo-desc">小红书、抖音、快手、B站、微博、贴吧、知乎爬虫</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">多平台自媒体数据采集工具，支持小红书、抖音、快手、B站、微博、贴吧、知乎等 7 大平台。基于 Playwright 浏览器自动化，无需 JS 逆向。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">中文社交媒体数据需求旺盛。Pro 版新增 AI Agent Skill（OpenClaw/Claude Code 一键安装），让 agent 自动爬取数据。WebUI 可视化操作降低门槛。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Python + Playwright + Node.js。支持 CDP 模式连接已有 Chrome，复用登录态降低风控风险。</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">社交媒体数据分析、竞品监控、舆情监测、内容研究、评论词云生成。</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">数据分析师、运营人员、市场研究人员、AI 应用开发者。</span>
+  </div>
+  <div class="verdict">
+    <div class="verdict-label">结论</div>
+    中文社交媒体爬虫的事实标准。53K stars 说明一切。学习 Playwright 自动化的好项目，但注意合规使用。
+  </div>
+</div>
+
+<!-- #9 ai-berkshire -->
+<div class="repo">
+  <div class="repo-header">
+    <span class="repo-rank">09</span>
+    <a href="https://github.com/xbtlin/ai-berkshire" class="repo-name" target="_blank">xbtlin/ai-berkshire</a>
+    <span class="repo-lang">Python</span>
+  </div>
+  <div class="repo-stats">
+    <span class="highlight">+309 today</span>
+    <span>2,123 stars</span>
+    <span>320 forks</span>
+  </div>
+  <div class="repo-desc">AI 时代的伯克希尔：基于 Claude Code 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">把巴菲特、芒格、段永平、李录四位大师的投资方法论系统化为 16 个 Claude Code Skill。4 个 Agent 并行研究一家公司，模拟真实投研团队。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">中文特色项目，实盘验证（2024 年 +69%，2025 年 +66%，大幅跑赢标普500）。"一个人+Claude=一个投研团队"的概念很吸引人。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Python + Claude Code Skills。16 个 slash command 覆盖深度研究、财报分析、行业筛选、持仓管理。金融计算用 decimal.Decimal 精确十进制。</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">个人投资研究、上市公司分析、行业扫描、财报精读、投资组合管理。</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">价值投资者、个人投资者、金融从业者、对 AI 投研感兴趣的人。</span>
+  </div>
+  <div class="verdict">
+    <div class="verdict-label">结论</div>
+    中文区特色项目，四大师视角对抗的设计很巧妙。实盘收益亮眼但需注意"历史不代表未来"。适合想用 AI 辅助投资研究的人。
+  </div>
+</div>
+
+<!-- #10 CasaOS -->
+<div class="repo">
+  <div class="repo-header">
+    <span class="repo-rank">10</span>
+    <a href="https://github.com/IceWhaleTech/CasaOS" class="repo-name" target="_blank">IceWhaleTech/CasaOS</a>
+    <span class="repo-lang">Go</span>
+  </div>
+  <div class="repo-stats">
+    <span class="highlight">+223 today</span>
+    <span>34,884 stars</span>
+    <span>1,993 forks</span>
+  </div>
+  <div class="repo-desc">CasaOS - A simple, easy-to-use, elegant open-source Personal Cloud system.</div>
+  <div class="analysis">
+    <span class="analysis-label">做什么</span>
+    <span class="analysis-value">简单易用的开源个人云系统。友好的 Web UI，一键安装 Docker 应用（Nextcloud、HomeAssistant、Jellyfin 等），优雅的文件和驱动器管理。</span>
+    <span class="analysis-label">为什么火</span>
+    <span class="analysis-value">老牌项目持续活跃，35K stars。个人云/自托管趋势持续增长，CasaOS 是入门门槛最低的方案之一。支持树莓派、旧电脑等低功耗硬件。</span>
+    <span class="analysis-label">技术栈</span>
+    <span class="analysis-value">Go 90.3% + Vue.js。支持 amd64、arm64、armv7 架构，兼容 Debian、Ubuntu、树莓派 OS 等主流系统。</span>
+    <span class="analysis-label">适用场景</span>
+    <span class="analysis-value">家庭 NAS、个人云存储、智能家居中枢、自托管服务、旧电脑再利用。</span>
+    <span class="analysis-label">受众</span>
+    <span class="analysis-value">Homelab 爱好者、自托管玩家、想摆脱 SaaS 依赖的人、树莓派玩家。</span>
+  </div>
+  <div class="verdict">
+    <div class="verdict-label">结论</div>
+    想建个人云但不想折腾 TrueNAS/Unraid？CasaOS 是最友好的入门选择。一行命令安装，Web UI 管理，适合给家人用。
+  </div>
+</div>
+
+<footer>
+  Source: <a href="https://github.com/trending" target="_blank">github.com/trending</a>
+  &nbsp;·&nbsp;
+  <a href="https://zhangluka.github.io/trending-daily-report/" target="_blank">Archive</a>
+</footer>
+
+</div>
+</body>
+</html>
