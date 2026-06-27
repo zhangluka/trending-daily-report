@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Daily · 2026-06-27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#faf9f5;
+  --bg-warm:#f5f3ed;
+  --ink:#1a1918;
+  --ink-soft:#6b6966;
+  --ink-muted:#9e9b97;
+  --accent:#c4603c;
+  --accent-soft:rgba(196,96,60,0.08);
+  --rule:#e8e6e1;
+  --font-body:'Geist Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+html{font-size:16px;-webkit-font-smoothing:antialiased}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  line-height:1.65;
+  min-height:100vh;
+}
+.container{
+  max-width:720px;
+  margin:0 auto;
+  padding:3rem 1.5rem 5rem;
+}
+
+/* Header */
+.header{
+  margin-bottom:4rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--rule);
+}
+.header h1{
+  font-size:1.5rem;
+  font-weight:600;
+  letter-spacing:-0.02em;
+  color:var(--ink);
+  margin-bottom:0.5rem;
+}
+.header .meta{
+  font-family:var(--font-mono);
+  font-size:0.8rem;
+  color:var(--ink-muted);
+  display:flex;
+  gap:1.5rem;
+  flex-wrap:wrap;
+}
+.header .meta span{
+  display:inline-flex;
+  align-items:center;
+  gap:0.35rem;
+}
+
+/* Section label */
+.section-label{
+  font-family:var(--font-mono);
+  font-size:0.75rem;
+  font-weight:500;
+  color:var(--ink-muted);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  margin-bottom:2rem;
+  padding-bottom:0.75rem;
+  border-bottom:1px solid var(--rule);
+}
+
+/* Project card */
+.project{
+  margin-bottom:3.5rem;
+}
+.project:last-child{margin-bottom:0}
+.project-header{
+  display:flex;
+  align-items:baseline;
+  gap:0.75rem;
+  margin-bottom:0.25rem;
+}
+.project-rank{
+  font-family:var(--font-mono);
+  font-size:0.8rem;
+  color:var(--ink-muted);
+  flex-shrink:0;
+  width:1.5rem;
+  text-align:right;
+}
+.project-name{
+  font-size:1.1rem;
+  font-weight:600;
+  color:var(--ink);
+  text-decoration:none;
+  letter-spacing:-0.01em;
+}
+.project-name:hover{color:var(--accent)}
+.project-lang{
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  color:var(--ink-muted);
+  background:var(--bg-warm);
+  padding:0.15rem 0.5rem;
+  border-radius:3px;
+  flex-shrink:0;
+}
+.project-stats{
+  font-family:var(--font-mono);
+  font-size:0.75rem;
+  color:var(--ink-muted);
+  margin-bottom:1rem;
+  padding-left:2.25rem;
+}
+.project-stats .today{
+  color:var(--accent);
+  font-weight:500;
+}
+.project-desc{
+  font-size:0.9rem;
+  color:var(--ink-soft);
+  margin-bottom:1.25rem;
+  padding-left:2.25rem;
+  line-height:1.6;
+}
+
+/* Analysis grid */
+.analysis{
+  padding-left:2.25rem;
+  display:grid;
+  grid-template-columns:5rem 1fr;
+  gap:0.4rem 1rem;
+  font-size:0.85rem;
+}
+.analysis dt{
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  color:var(--ink-muted);
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  padding-top:0.15rem;
+}
+.analysis dd{
+  color:var(--ink-soft);
+  line-height:1.55;
+}
+.analysis .verdict{
+  margin-top:0.75rem;
+  padding-top:0.75rem;
+  border-top:1px solid var(--rule);
+  grid-column:1/-1;
+  font-size:0.85rem;
+  color:var(--ink);
+}
+.analysis .verdict strong{
+  font-weight:600;
+  color:var(--accent);
+}
+
+/* Footer */
+.footer{
+  margin-top:5rem;
+  padding-top:2rem;
+  border-top:1px solid var(--rule);
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  color:var(--ink-muted);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:0.5rem;
+}
+.footer a{
+  color:var(--ink-muted);
+  text-decoration:none;
+}
+.footer a:hover{color:var(--accent)}
+
+/* Responsive */
+@media(max-width:600px){
+  .container{padding:2rem 1rem 3rem}
+  .header h1{font-size:1.25rem}
+  .analysis{grid-template-columns:1fr;gap:0.2rem}
+  .analysis dt{padding-top:0.5rem}
+  .project-header{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="header">
+  <h1>GitHub Trending Daily</h1>
+  <div class="meta">
+    <span>2026-06-27</span>
+    <span>Top 10 from 20 repos</span>
+    <span>+9,677 stars today</span>
+    <span>5 languages</span>
+  </div>
+</header>
+
+<div class="section-label">Top 3</div>
+
+<!-- #1 -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">01</span>
+    <a class="project-name" href="https://github.com/google-labs-code/design.md" target="_blank">google-labs-code/design.md</a>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+2,407 today</span> · 21,909 stars · 1,759 forks
+  </div>
+  <p class="project-desc">A format specification for describing a visual identity to coding agents. DESIGN.md gives agents a persistent, structured understanding of a design system.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>定义一种 DESIGN.md 文件格式，把设计系统（颜色、字体、间距、组件）用 YAML front matter + Markdown 散文的方式写下来，让 AI coding agent 能精确理解和复用你的视觉规范。</dd>
+    <dt>为什么火</dt>
+    <dd>Google Labs 官方出品。AI agent 生成 UI 时最大的痛点是"不懂你的设计系统"，这个规范直接解决了这个问题。配套 CLI 工具支持 lint、diff、export（Tailwind/DTCG），已经可用。</dd>
+    <dt>技术栈</dt>
+    <dd>TypeScript · CLI via npm · YAML + Markdown 混合格式 · 支持导出 Tailwind v3/v4 和 W3C DTCG token</dd>
+    <dt>适用场景</dt>
+    <dd>团队使用 AI coding agent（Claude Code、Cursor 等）生成前端代码时，希望产出物符合品牌设计规范。</dd>
+    <dt>受众</dt>
+    <dd>前端工程师 · 设计系统团队 · 用 AI agent 做 UI 的全栈开发者</dd>
+    <dd class="verdict"><strong>结论：</strong>如果你在用 AI agent 写前端代码，这是必关注的项目。Google 出品的格式规范，生态位很重要——可能成为 AI-agent-to-design-system 的事实标准。</dd>
+  </dl>
+</article>
+
+<!-- #2 -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">02</span>
+    <a class="project-name" href="https://github.com/xbtlin/ai-berkshire" target="_blank">xbtlin/ai-berkshire</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+1,274 today</span> · 3,423 stars · 512 forks
+  </div>
+  <p class="project-desc">AI 时代的伯克希尔：基于 Claude Code 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多 Agent 并行研究。</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>一套 Claude Code Skill 合集，把巴菲特、芒格、段永平、李录四位投资大师的方法论结构化，通过 4 个 AI Agent 并行研究一家公司，输出可决策的投研报告。</dd>
+    <dt>为什么火</dt>
+    <dd>实盘业绩亮眼：2024 全年 +69.29%，2025 年至今 +66.38%，连续两年大幅跑赢标普 500 和恒生指数。"一个人 + Claude = 一个投研团队"的叙事击中了散户投资者的痛点。</dd>
+    <dt>技术栈</dt>
+    <dd>Python · Claude Code Skills · 多 Agent 并行架构 · Python decimal 精确计算 · WebSearch 数据交叉验证</dd>
+    <dt>适用场景</dt>
+    <dd>想用 AI 辅助做价值投资研究的个人投资者，尤其是关注港股和中概股的投资者。</dd>
+    <dt>受众</dt>
+    <dd>个人投资者 · 价值投资爱好者 · Claude Code 用户中对金融感兴趣的人</dd>
+    <dd class="verdict"><strong>结论：</strong>框架设计精巧——四大师视角对抗、反偏见机制、精确计算工具——不是简单的"问 AI 买什么股"。如果你做价值投资且用 Claude Code，值得深入研究。但记住：历史收益不代表未来表现。</dd>
+  </dl>
+</article>
+
+<!-- #3 -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">03</span>
+    <a class="project-name" href="https://github.com/JCodesMore/ai-website-cloner-template" target="_blank">JCodesMore/ai-website-cloner-template</a>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+1,088 today</span> · 21,695 stars · 3,132 forks
+  </div>
+  <p class="project-desc">Clone any website with one command using AI coding agents. Point it at a URL, run /clone-website, and your AI agent will inspect the site, extract design tokens, and reconstruct every section.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>一个 Next.js 模板项目，配合 Claude Code 等 AI agent 的 /clone-website skill，可以自动逆向工程任何网站：截图分析 → 提取设计 token → 编写组件 spec → 并行构建 → 组装 QA。</dd>
+    <dt>为什么火</dt>
+    <dd>实用性极强——平台迁移、丢失源码重建、学习优秀网站的实现方式。支持 10+ AI agent（Claude Code、Cursor、Codex、Copilot 等），降低了使用门槛。</dd>
+    <dt>技术栈</dt>
+    <dd>Next.js 16 · React 19 · TypeScript · shadcn/ui · Tailwind CSS v4 · 多 agent 并行构建（git worktree）</dd>
+    <dt>适用场景</dt>
+    <dd>需要把 WordPress/Webflow/Squarespace 网站迁移到现代 Next.js 技术栈；或者网站源码丢失需要重建。</dd>
+    <dt>受众</dt>
+    <dd>前端开发者 · 独立开发者 · 需要网站迁移的团队</dd>
+    <dd class="verdict"><strong>结论：</strong>一个非常实用的 AI agent 工作流。如果你有网站迁移需求或想学习优秀网站的实现，一键克隆的能力很诱人。注意合法使用，不要用于钓鱼或侵权。</dd>
+  </dl>
+</article>
+
+<div class="section-label">Trending</div>
+
+<!-- #4 -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">04</span>
+    <a class="project-name" href="https://github.com/garrytan/gstack" target="_blank">garrytan/gstack</a>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+950 today</span> · 116,876 stars · 17,344 forks
+  </div>
+  <p class="project-desc">Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>Y Combinator CEO Garry Tan 开源的 Claude Code 工作流工具集。23 个 slash command 覆盖完整软件开发周期：从产品构思（/office-hours）到架构评审、设计审查、代码 review、QA 测试、部署发布。</dd>
+    <dt>为什么火</dt>
+    <dd>Garry Tan 本人的号召力 + 产品确实硬核。他声称 2026 年的代码产出是 2013 年的 810 倍。支持 10 个 AI agent，不只是 Claude Code。每天持续更新。</dd>
+    <dt>技术栈</dt>
+    <dd>TypeScript · Bun · 支持 Claude Code / Codex / Cursor / OpenCode 等 10 个 agent · 真实浏览器 QA（Playwright）</dd>
+    <dt>适用场景</dt>
+    <dd>使用 AI coding agent 做产品开发的个人或团队，想要一套结构化的工作流而不是随意对话。</dd>
+    <dt>受众</dt>
+    <dd>创始人 · 技术负责人 · 全栈开发者 · Claude Code 重度用户</dd>
+    <dd class="verdict"><strong>结论：</strong>如果你用 Claude Code 做产品开发，gstack 几乎是必装的。23 个工具覆盖了从想法到上线的全流程，而且完全免费 MIT 开源。117k star 说明了一切。</dd>
+  </dl>
+</article>
+
+<!-- #5 -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">05</span>
+    <a class="project-name" href="https://github.com/topoteretes/cognee" target="_blank">topoteretes/cognee</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+729 today</span> · 23,523 stars · 2,228 forks
+  </div>
+  <p class="project-desc">The open-source AI memory platform for agents. Give your AI agents persistent long-term memory across sessions with a self-hosted knowledge graph engine.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>为 AI agent 提供持久化记忆层。摄入任意格式数据，自动构建知识图谱，让 agent 跨会话记住和关联信息。核心 API 只有四个操作：remember、recall、forget、improve。</dd>
+    <dt>为什么火</dt>
+    <dd>发布了研究论文（arXiv 2025），在 BEAM benchmark 上 100K token 设置超越了 previous SOTA。支持 Claude Code 插件、Rust/TypeScript 客户端、多种部署方式。昨天刚发了 v1.2.2。</dd>
+    <dt>技术栈</dt>
+    <dd>Python · 知识图谱 · 向量嵌入 · 支持 Postgres/Neo4j/SQLite · MCP server · Claude Code 插件</dd>
+    <dt>适用场景</dt>
+    <dd>需要 AI agent 跨会话保持记忆的场景：客服 agent、SQL copilot、个人知识管理。</dd>
+    <dt>受众</dt>
+    <dd>AI agent 开发者 · 需要长期记忆能力的应用开发者 · 知识管理爱好者</dd>
+    <dd class="verdict"><strong>结论：</strong>AI agent 记忆是当前最热的基础设施赛道之一。Cognee 的方案成熟度高（121 个 release），且已验证了 benchmark 性能。如果你在做 agent 应用，这是值得评估的记忆层方案。</dd>
+  </dl>
+</article>
+
+<!-- #6 -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">06</span>
+    <a class="project-name" href="https://github.com/NanmiCoder/MediaCrawler" target="_blank">NanmiCoder/MediaCrawler</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+673 today</span> · 53,582 stars · 10,992 forks
+  </div>
+  <p class="project-desc">小红书笔记 | 评论爬虫、抖音视频 | 评论爬虫、快手视频 | 评论爬虫、B 站视频 ｜ 评论爬虫、微博帖子 ｜ 评论爬虫、百度贴吧帖子 ｜ 百度贴吧评论回复爬虫 | 知乎问答文章｜评论爬虫</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>多平台自媒体数据采集工具，支持小红书、抖音、快手、B站、微博、贴吧、知乎七大平台的帖子信息和评论抓取。基于 Playwright 浏览器自动化，无需 JS 逆向。</dd>
+    <dt>为什么火</dt>
+    <dd>Pro 版本发布带动了开源版关注度。新增了 AI Agent Skill 支持（OpenClaw / Claude Code / Cursor 一键安装），让爬虫可以被 AI agent 直接驱动。中文开发者社区的刚需工具。</dd>
+    <dt>技术栈</dt>
+    <dd>Python · Playwright · CDP 模式连接 Chrome · 支持 IP 代理池 · WebUI 可视化界面</dd>
+    <dt>适用场景</dt>
+    <dd>自媒体数据分析、竞品监控、舆情分析、学术研究等需要采集国内社交平台公开数据的场景。</dd>
+    <dt>受众</dt>
+    <dd>数据分析师 · 自媒体运营 · Python 开发者 · AI agent 开发者</dd>
+    <dd class="verdict"><strong>结论：</strong>中文社交媒体爬虫的事实标准。53k star 说明了社区认可度。新加入的 AI agent 集成让它从"手动脚本"进化为"agent 可调用的工具"，值得关注。</dd>
+  </dl>
+</article>
+
+<!-- #7 -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">07</span>
+    <a class="project-name" href="https://github.com/IceWhaleTech/CasaOS" target="_blank">IceWhaleTech/CasaOS</a>
+    <span class="project-lang">Go</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+619 today</span> · 35,573 stars · 2,035 forks
+  </div>
+  <p class="project-desc">CasaOS - A simple, easy-to-use, elegant open-source Personal Cloud system.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>面向家庭场景的个人云系统。一键安装，友好 UI，支持 Docker 应用商店（Nextcloud、HomeAssistant、Jellyfin 等），优雅的文件管理和系统监控。</dd>
+    <dt>为什么火</dt>
+    <dd>长期稳定的开源项目，最近可能有新版本或社区活动带动关注。家庭 NAS / 自托管在隐私意识增强的背景下持续升温。</dd>
+    <dt>技术栈</dt>
+    <dd>Go · Vue.js · Docker · 支持 amd64/arm64/armv7 · 兼容 Ubuntu/Debian/Raspberry Pi OS</dd>
+    <dt>适用场景</dt>
+    <dd>想搭建家庭 NAS 或个人云存储但不想折腾 TrueNAS/Unraid 的用户。旧电脑再利用。</dd>
+    <dt>受众</dt>
+    <dd>家庭用户 · NAS 爱好者 · 树莓派玩家 · 想自托管服务的个人</dd>
+    <dd class="verdict"><strong>结论：</strong>如果你想要一个比 TrueNAS 更简单、比群晖更自由的个人云方案，CasaOS 是最佳选择之一。一键安装 + Docker 生态 = 开箱即用。</dd>
+  </dl>
+</article>
+
+<!-- #8 -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">08</span>
+    <a class="project-name" href="https://github.com/every-app/open-seo" target="_blank">every-app/open-seo</a>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+594 today</span> · 3,134 stars · 355 forks
+  </div>
+  <p class="project-desc">Open source alternative to Semrush and Ahrefs. All-in-one SEO tool for you and your AI agent.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>开源 SEO 工具，定位是 Semrush/Ahrefs 的平替。关键词研究、排名追踪、竞品分析、外链分析、站点审计，自带 MCP server 让 AI agent 直接操作 SEO 数据。</dd>
+    <dt>为什么火</dt>
+    <dd>SEO 工具市场长期被 Semrush（$130/月）和 Ahrefs（$99/月）垄断，开源 + 按需付费（DataForSEO API）的模式切中了中小站长的痛点。AI agent 集成是差异化卖点。</dd>
+    <dt>技术栈</dt>
+    <dd>TypeScript · Next.js · Drizzle ORM · Cloudflare Workers · DataForSEO API · MCP server · Docker 自托管</dd>
+    <dt>适用场景</dt>
+    <dd>个人站长、中小团队做 SEO 优化，不想付 Semrush/Ahrefs 高额月费。想用 AI agent 自动化 SEO 工作流。</dd>
+    <dt>受众</dt>
+    <dd>SEO 从业者 · 独立开发者 · 内容创作者 · 数字营销人员</dd>
+    <dd class="verdict"><strong>结论：</strong>开源 SEO 工具赛道的新玩家，AI agent 集成是亮点。项目还很年轻（3k star），但方向正确。如果你的 SEO 需求不需要 Semrush 的全量数据，值得一试。</dd>
+  </dl>
+</article>
+
+<!-- #9 -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">09</span>
+    <a class="project-name" href="https://github.com/hugohe3/ppt-master" target="_blank">hugohe3/ppt-master</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+589 today</span> · 32,611 stars · 2,787 forks
+  </div>
+  <p class="project-desc">AI generates a real, editable PowerPoint from any document — native shapes & animations, speaker notes voiced as audio narration, and the option to follow your own .pptx template.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>AI 驱动的 PPT 生成工具。输入 PDF/DOCX/文本，输出真正可编辑的 .pptx 文件——不是图片贴进 PPT，而是原生 DrawingML 形状、文本框、图表、动画，每个元素都能在 PowerPoint 里直接点击编辑。</dd>
+    <dt>为什么火</dt>
+    <dd>v2.11.0 刚发布（6月20日），新增了语音旁白功能。作者 Hugo He 是金融从业者（CPA），项目实用性很强。支持 Claude Code、Cursor 等多种 AI IDE 作为运行环境。</dd>
+    <dt>技术栈</dt>
+    <dd>Python · python-pptx · SVG 生成 · 支持 Claude/GPT/Gemini/Kimi 等模型 · gpt-image-2 图片生成</dd>
+    <dt>适用场景</dt>
+    <dd>需要频繁制作高质量 PPT 的职场人士：咨询、金融、学术、商业演示。</dd>
+    <dt>受众</dt>
+    <dd>咨询顾问 · 金融从业者 · 学术研究者 · 需要做 PPT 的所有人</dd>
+    <dd class="verdict"><strong>结论：</strong>市面上的 AI PPT 工具（Gamma、Beautiful.ai）输出的都是图片或受限模板。PPT Master 是唯一输出真正可编辑原生 PPT 的开源方案。如果你重视 PPT 的可编辑性，这是必试工具。</dd>
+  </dl>
+</article>
+
+<!-- #10 -->
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">10</span>
+    <a class="project-name" href="https://github.com/Anil-matcha/Open-Generative-AI" target="_blank">Anil-matcha/Open-Generative-AI</a>
+    <span class="project-lang">JavaScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+254 today</span> · 21,162 stars · 3,617 forks
+  </div>
+  <p class="project-desc">Unrestricted Open-source alternative to AI video platforms — Free AI image & video generation studio with 200+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>开源 AI 图片/视频生成工作台。集成 200+ 模型（Flux、Midjourney、Kling、Sora、Veo、Seedance 等），支持文生图、图生图、文生视频、图生视频、唇形同步，无内容过滤。桌面端支持本地推理。</dd>
+    <dt>为什么火</dt>
+    <dd>"无内容过滤"是核心卖点——对标 Runway、Pika 等封闭平台。支持本地推理（sd.cpp / Wan2GP），不依赖云端 API。桌面端一键安装，降低了使用门槛。</dd>
+    <dt>技术栈</dt>
+    <dd>JavaScript · Next.js · Electron · Tailwind CSS · Muapi.ai API · sd.cpp（C++ 本地推理）· Wan2GP</dd>
+    <dt>适用场景</dt>
+    <dd>需要 AI 图片/视频生成但不想受平台内容限制的创作者。想在本地运行模型保护隐私的用户。</dd>
+    <dt>受众</dt>
+    <dd>内容创作者 · AI 艺术家 · 视频制作人 · 想自托管 AI 生成服务的团队</dd>
+    <dd class="verdict"><strong>结论：</strong>如果你需要一个不受限制、可自托管的 AI 生成工作台，这是目前最完整的开源方案。200+ 模型覆盖 + 本地推理能力 + 桌面端 = 开箱即用。</dd>
+  </dl>
+</article>
+
+<footer class="footer">
+  <span>Source: <a href="https://github.com/trending" target="_blank">github.com/trending</a></span>
+  <span>Generated by Claude Code</span>
+  <span><a href="https://zhangluka.github.io/trending-daily-report/">All reports</a></span>
+</footer>
+
+</div>
+</body>
+</html>
