@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Daily · 2026-06-28</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#faf9f5;
+  --bg-warm:#f5f3ed;
+  --ink:#1a1918;
+  --ink-soft:#6b6966;
+  --ink-muted:#9e9b97;
+  --accent:#c4603c;
+  --accent-soft:rgba(196,96,60,0.08);
+  --rule:#e8e6e1;
+  --font-body:'Geist Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+html{font-size:16px;-webkit-font-smoothing:antialiased}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  line-height:1.65;
+  min-height:100vh;
+}
+.container{
+  max-width:720px;
+  margin:0 auto;
+  padding:3rem 1.5rem 5rem;
+}
+.header{
+  margin-bottom:4rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--rule);
+}
+.header h1{
+  font-size:1.5rem;
+  font-weight:600;
+  letter-spacing:-0.02em;
+  color:var(--ink);
+  margin-bottom:0.5rem;
+}
+.header .meta{
+  font-family:var(--font-mono);
+  font-size:0.8rem;
+  color:var(--ink-muted);
+  display:flex;
+  gap:1.5rem;
+  flex-wrap:wrap;
+}
+.header .meta span{
+  display:inline-flex;
+  align-items:center;
+  gap:0.35rem;
+}
+.section-label{
+  font-family:var(--font-mono);
+  font-size:0.75rem;
+  font-weight:500;
+  color:var(--ink-muted);
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  margin-bottom:2rem;
+  padding-bottom:0.75rem;
+  border-bottom:1px solid var(--rule);
+}
+.project{
+  margin-bottom:3.5rem;
+}
+.project:last-child{margin-bottom:0}
+.project-header{
+  display:flex;
+  align-items:baseline;
+  gap:0.75rem;
+  margin-bottom:0.25rem;
+}
+.project-rank{
+  font-family:var(--font-mono);
+  font-size:0.8rem;
+  color:var(--ink-muted);
+  flex-shrink:0;
+  width:1.5rem;
+  text-align:right;
+}
+.project-name{
+  font-size:1.1rem;
+  font-weight:600;
+  color:var(--ink);
+  text-decoration:none;
+  letter-spacing:-0.01em;
+}
+.project-name:hover{color:var(--accent)}
+.project-lang{
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  color:var(--ink-muted);
+  background:var(--bg-warm);
+  padding:0.15rem 0.5rem;
+  border-radius:3px;
+  flex-shrink:0;
+}
+.project-stats{
+  font-family:var(--font-mono);
+  font-size:0.75rem;
+  color:var(--ink-muted);
+  margin-bottom:1rem;
+  padding-left:2.25rem;
+}
+.project-stats .today{
+  color:var(--accent);
+  font-weight:500;
+}
+.project-desc{
+  font-size:0.9rem;
+  color:var(--ink-soft);
+  margin-bottom:1.25rem;
+  padding-left:2.25rem;
+  line-height:1.6;
+}
+.analysis{
+  padding-left:2.25rem;
+  display:grid;
+  grid-template-columns:5rem 1fr;
+  gap:0.4rem 1rem;
+  font-size:0.85rem;
+}
+.analysis dt{
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  color:var(--ink-muted);
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  padding-top:0.15rem;
+}
+.analysis dd{
+  color:var(--ink-soft);
+  line-height:1.55;
+}
+.analysis .verdict{
+  margin-top:0.75rem;
+  padding-top:0.75rem;
+  border-top:1px solid var(--rule);
+  grid-column:1/-1;
+  font-size:0.85rem;
+  color:var(--ink);
+}
+.analysis .verdict strong{
+  font-weight:600;
+  color:var(--accent);
+}
+.footer{
+  margin-top:5rem;
+  padding-top:2rem;
+  border-top:1px solid var(--rule);
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  color:var(--ink-muted);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:0.5rem;
+}
+.footer a{
+  color:var(--ink-muted);
+  text-decoration:none;
+}
+.footer a:hover{color:var(--accent)}
+@media(max-width:600px){
+  .container{padding:2rem 1rem 3rem}
+  .header h1{font-size:1.25rem}
+  .analysis{grid-template-columns:1fr;gap:0.2rem}
+  .analysis dt{padding-top:0.5rem}
+  .project-header{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="header">
+  <h1>GitHub Trending Daily</h1>
+  <div class="meta">
+    <span>2026-06-28</span>
+    <span>Top 10 from 20 repos</span>
+    <span>+7,940 stars today</span>
+    <span>5 languages</span>
+  </div>
+</header>
+
+<div class="section-label">Top 3</div>
+
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">01</span>
+    <a class="project-name" href="https://github.com/google-labs-code/design.md" target="_blank">google-labs-code/design.md</a>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+1,541 today</span> · 22,418 stars · 1,790 forks
+  </div>
+  <p class="project-desc">A format specification for describing a visual identity to coding agents. DESIGN.md gives agents a persistent, structured understanding of a design system.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>Google 定义的 DESIGN.md 文件格式，用 YAML front matter（机器可读 token）+ Markdown 散文（人类可读设计理由）描述设计系统，让 AI agent 精确理解品牌规范。配套 CLI 支持 lint、diff、export（Tailwind/DTCG）。</dd>
+    <dt>为什么火</dt>
+    <dd>连续第三天登顶 trending。Google 官方出品，解决了 AI agent 生成 UI 时"不懂设计系统"的核心痛点。v0.3.0 刚发布两周，生态正在快速形成。</dd>
+    <dt>技术栈</dt>
+    <dd>TypeScript · CLI via npm · YAML + Markdown · Tailwind v3/v4 & DTCG export</dd>
+    <dt>适用场景</dt>
+    <dd>用 AI coding agent（Claude Code、Cursor 等）生成前端代码时，希望产出物符合品牌设计规范。</dd>
+    <dt>受众</dt>
+    <dd>前端工程师 · 设计系统团队 · AI agent UI 开发者</dd>
+    <dd class="verdict"><strong>结论：</strong>连续三天霸榜，说明社区对"AI agent + 设计系统"这个交叉点有强烈需求。如果你在用 AI 写前端，现在就开始写你的 DESIGN.md。</dd>
+  </dl>
+</article>
+
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">02</span>
+    <a class="project-name" href="https://github.com/simplex-chat/simplex-chat" target="_blank">simplex-chat/simplex-chat</a>
+    <span class="project-lang">Haskell</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+1,469 today</span> · 13,953 stars · 800 forks
+  </div>
+  <p class="project-desc">SimpleX - the first messaging network operating without user identifiers of any kind - 100% private by design! iOS, Android and desktop apps.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>全球首个完全没有用户标识符的通讯网络。不像 Signal 用手机号、Matrix 用随机 ID，SimpleX 用单向消息队列的 pairwise 标识符，连"匿名 ID"都没有。双棘轮 E2E 加密 + 后量子密钥交换。</dd>
+    <dt>为什么火</dt>
+    <dd>Jack Dorsey 和 Asymmetric 的投资 + v6.5.5 刚发布。在隐私焦虑持续升温的背景下，"无用户标识符"的设计理念极具吸引力。Trail of Bits 两次安全审计背书。</dd>
+    <dt>技术栈</dt>
+    <dd>Haskell（核心协议）· Kotlin（Android）· Swift（iOS）· TypeScript（桌面端）· SMP/XFTP 协议</dd>
+    <dt>适用场景</dt>
+    <dd>对通讯隐私有极高要求的个人或组织。记者、活动家、隐私极客。不想让任何平台知道你和谁在聊天。</dd>
+    <dt>受众</dt>
+    <dd>隐私倡导者 · 安全研究员 · Haskell 开发者 · 对 Signal/Telegram 不满的用户</dd>
+    <dd class="verdict"><strong>结论：</strong>如果你认为 Signal 已经够私密了，SimpleX 会刷新你的认知——它连"你在跟谁聊天"这个元数据都保护了。Haskell 写的协议层非常硬核。</dd>
+  </dl>
+</article>
+
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">03</span>
+    <a class="project-name" href="https://github.com/topoteretes/cognee" target="_blank">topoteretes/cognee</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+780 today</span> · 24,074 stars · 2,258 forks
+  </div>
+  <p class="project-desc">The open-source AI memory platform for agents. Give your AI agents persistent long-term memory across sessions with a self-hosted knowledge graph engine.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>为 AI agent 提供持久化记忆层。四个核心 API：remember（存储）、recall（检索）、forget（删除）、improve（优化）。自动构建知识图谱，支持向量 + 图混合检索。可在单个 Postgres 实例上运行整个记忆层。</dd>
+    <dt>为什么火</dt>
+    <dd>BEAM benchmark 上超越 previous SOTA（100K token: 0.79 vs 0.735）。v1.2.2 昨天刚发布。Claude Code 插件一键安装。Rust/TypeScript 客户端扩展了生态。</dd>
+    <dt>技术栈</dt>
+    <dd>Python · 知识图谱 · pgvector · Postgres/Neo4j/SQLite · MCP server · Claude Code 插件</dd>
+    <dt>适用场景</dt>
+    <dd>AI agent 需要跨会话记忆：客服 agent、个人知识库、SQL copilot、企业知识管理。</dd>
+    <dt>受众</dt>
+    <dd>AI agent 开发者 · 需要长期记忆的应用开发者 · 知识管理爱好者</dd>
+    <dd class="verdict"><strong>结论：</strong>AI agent 记忆赛道的领跑者。单 Postgres 运行全栈的方案大幅降低了部署门槛。如果你在做 agent 应用，这是首选记忆层。</dd>
+  </dl>
+</article>
+
+<div class="section-label">Trending</div>
+
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">04</span>
+    <a class="project-name" href="https://github.com/JCodesMore/ai-website-cloner-template" target="_blank">JCodesMore/ai-website-cloner-template</a>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+750 today</span> · 22,202 stars · 3,180 forks
+  </div>
+  <p class="project-desc">Clone any website with one command using AI coding agents. Point it at a URL, run /clone-website, and your AI agent will inspect the site, extract design tokens, and reconstruct every section.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>AI 网站克隆模板。/clone-website 命令触发多阶段流水线：侦察（截图+设计 token 提取）→ 基础（字体/颜色/资源）→ 组件 spec → 并行构建（git worktree）→ 组装 QA。支持 10+ AI agent。</dd>
+    <dt>为什么火</dt>
+    <dd>实用性极强——平台迁移、源码丢失重建、学习优秀网站。支持 Claude Code / Cursor / Codex / Copilot 等全平台。Next.js 16 + React 19 + Tailwind v4 技术栈现代。</dd>
+    <dt>技术栈</dt>
+    <dd>Next.js 16 · React 19 · TypeScript · shadcn/ui · Tailwind CSS v4 · git worktree 并行构建</dd>
+    <dt>适用场景</dt>
+    <dd>网站迁移（WordPress→Next.js）、源码丢失重建、逆向学习优秀网站。</dd>
+    <dt>受众</dt>
+    <dd>前端开发者 · 独立开发者 · 需要网站迁移的团队</dd>
+    <dd class="verdict"><strong>结论：</strong>AI agent 驱动的网站逆向工程，多阶段流水线设计精巧。合法使用场景很广，但注意不要用于侵权。</dd>
+  </dl>
+</article>
+
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">05</span>
+    <a class="project-name" href="https://github.com/xbtlin/ai-berkshire" target="_blank">xbtlin/ai-berkshire</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+685 today</span> · 4,326 stars · 603 forks
+  </div>
+  <p class="project-desc">AI 时代的伯克希尔：基于 Claude Code / Codex 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多 Agent 并行研究。</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>18 个投资研究 Skill，覆盖深度研究、财报分析、行业筛选、持仓管理、思维工具。4 个 Agent 并行（段永平/巴菲特/芒格/李录视角），强制给结论、反偏见机制、精确计算。</dd>
+    <dt>为什么火</dt>
+    <dd>新增 Codex 支持（昨天还是仅 Claude Code），扩大了用户群。实盘业绩 +146% 的叙事持续发酵。Skills 从 16 个扩展到 18 个（新增 /bottleneck-hunter 和 /wechat-article）。</dd>
+    <dt>技术栈</dt>
+    <dd>Python · Claude Code Skills · Codex Skills · 多 Agent 并行 · Python decimal 精确计算</dd>
+    <dt>适用场景</dt>
+    <dd>用 AI 做价值投资研究，尤其是港股/中概股投资者。</dd>
+    <dt>受众</dt>
+    <dd>个人投资者 · 价值投资爱好者 · Claude Code / Codex 用户</dd>
+    <dd class="verdict"><strong>结论：</strong>从 Claude Code 扩展到 Codex，说明框架的通用性在增强。四大师对抗 + 反偏见机制的设计理念值得学习，不只是投资工具。</dd>
+  </dl>
+</article>
+
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">06</span>
+    <a class="project-name" href="https://github.com/garrytan/gstack" target="_blank">garrytan/gstack</a>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+674 today</span> · 117,329 stars · 17,431 forks
+  </div>
+  <p class="project-desc">Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>Y Combinator CEO Garry Tan 的 Claude Code 工作流工厂。23 个 slash command 覆盖完整开发周期：/office-hours（产品构思）→ /plan-ceo-review → /review → /qa → /ship。支持 10 个 AI agent。</dd>
+    <dt>为什么火</dt>
+    <dd>持续稳定增长，117k star 已经是现象级项目。Garry Tan 的个人影响力 + 产品确实解决了"AI coding 没有流程"的痛点。</dd>
+    <dt>技术栈</dt>
+    <dd>TypeScript · Bun · 支持 10 个 AI agent · Playwright 浏览器 QA · Conductor 并行调度</dd>
+    <dt>适用场景</dt>
+    <dd>用 AI coding agent 做产品开发，想要结构化工作流而非随意对话。</dd>
+    <dt>受众</dt>
+    <dd>创始人 · 技术负责人 · Claude Code 重度用户</dd>
+    <dd class="verdict"><strong>结论：</strong>如果你用 Claude Code 做产品，gstack 几乎是必装的。23 个工具覆盖从想法到上线全流程，免费 MIT 开源。</dd>
+  </dl>
+</article>
+
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">07</span>
+    <a class="project-name" href="https://github.com/hugohe3/ppt-master" target="_blank">hugohe3/ppt-master</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+589 today</span> · 33,195 stars · 2,817 forks
+  </div>
+  <p class="project-desc">AI generates a real, editable PowerPoint from any document — native shapes & animations, speaker notes voiced as audio narration, and the option to follow your own .pptx template.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>AI 驱动的 PPT 生成，输出真正可编辑的原生 .pptx——DrawingML 形状、文本框、图表、动画，每个元素可在 PowerPoint 中直接编辑。支持语音旁白和模板填充。</dd>
+    <dt>为什么火</dt>
+    <dd>v2.11.0 稳定增长。33k star 说明了市场对"可编辑 AI PPT"的强需求。Claude Code 插件生态 + 多模型支持降低了使用门槛。</dd>
+    <dt>技术栈</dt>
+    <dd>Python · python-pptx · SVG · Claude/GPT/Gemini/Kimi · gpt-image-2</dd>
+    <dt>适用场景</dt>
+    <dd>频繁制作高质量 PPT 的职场人士：咨询、金融、学术、商业演示。</dd>
+    <dt>受众</dt>
+    <dd>咨询顾问 · 金融从业者 · 学术研究者</dd>
+    <dd class="verdict"><strong>结论：</strong>唯一输出真正可编辑原生 PPT 的开源方案。如果你重视 PPT 的可编辑性（而非图片贴片），这是必试工具。</dd>
+  </dl>
+</article>
+
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">08</span>
+    <a class="project-name" href="https://github.com/IceWhaleTech/CasaOS" target="_blank">IceWhaleTech/CasaOS</a>
+    <span class="project-lang">Go</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+502 today</span> · 35,833 stars · 2,045 forks
+  </div>
+  <p class="project-desc">CasaOS - A simple, easy-to-use, elegant open-source Personal Cloud system.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>面向家庭场景的个人云系统。一键安装，友好 UI，Docker 应用商店（Nextcloud、HomeAssistant、Jellyfin 等），优雅的文件管理和系统监控。</dd>
+    <dt>为什么火</dt>
+    <dd>长期稳定的开源项目，家庭 NAS / 自托管在隐私意识增强的背景下持续升温。35k star 说明社区认可度很高。</dd>
+    <dt>技术栈</dt>
+    <dd>Go · Vue.js · Docker · 支持 amd64/arm64/armv7 · Ubuntu/Debian/Raspberry Pi OS</dd>
+    <dt>适用场景</dt>
+    <dd>搭建家庭 NAS 或个人云存储，旧电脑再利用。</dd>
+    <dt>受众</dt>
+    <dd>家庭用户 · NAS 爱好者 · 树莓派玩家</dd>
+    <dd class="verdict"><strong>结论：</strong>比 TrueNAS 更简单、比群晖更自由的个人云方案。一键安装 + Docker 生态 = 开箱即用。</dd>
+  </dl>
+</article>
+
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">09</span>
+    <a class="project-name" href="https://github.com/NanmiCoder/MediaCrawler" target="_blank">NanmiCoder/MediaCrawler</a>
+    <span class="project-lang">Python</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+394 today</span> · 53,823 stars · 11,015 forks
+  </div>
+  <p class="project-desc">小红书笔记 | 评论爬虫、抖音视频 | 评论爬虫、快手视频 | 评论爬虫、B 站视频 ｜ 评论爬虫、微博帖子 ｜ 评论爬虫、百度贴吧帖子 ｜ 百度贴吧评论回复爬虫 | 知乎问答文章｜评论爬虫</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>七大中文社交平台数据采集工具。基于 Playwright 浏览器自动化，无需 JS 逆向。支持关键词搜索、指定帖子、评论、创作者主页。CDP 模式可复用 Chrome 登录态。</dd>
+    <dt>为什么火</dt>
+    <dd>Pro 版本发布 + AI Agent Skill 集成（OpenClaw / Claude Code / Cursor）让爬虫从"手动脚本"进化为"agent 可调用的工具"。中文开发者刚需。</dd>
+    <dt>技术栈</dt>
+    <dd>Python · Playwright · CDP · IP 代理池 · WebUI · AI Agent Skill</dd>
+    <dt>适用场景</dt>
+    <dd>自媒体数据分析、竞品监控、舆情分析、学术研究。</dd>
+    <dt>受众</dt>
+    <dd>数据分析师 · 自媒体运营 · Python 开发者</dd>
+    <dd class="verdict"><strong>结论：</strong>中文社交媒体爬虫的事实标准。53k star + AI agent 集成 = 从工具进化为基础设施。</dd>
+  </dl>
+</article>
+
+<article class="project">
+  <div class="project-header">
+    <span class="project-rank">10</span>
+    <a class="project-name" href="https://github.com/every-app/open-seo" target="_blank">every-app/open-seo</a>
+    <span class="project-lang">TypeScript</span>
+  </div>
+  <div class="project-stats">
+    <span class="today">+239 today</span> · 3,465 stars · 377 forks
+  </div>
+  <p class="project-desc">Open source alternative to Semrush and Ahrefs. All-in-one SEO tool for you and your AI agent.</p>
+  <dl class="analysis">
+    <dt>做什么</dt>
+    <dd>开源 SEO 工具，定位 Semrush/Ahrefs 平替。关键词研究、排名追踪、竞品分析、外链分析、站点审计。自带 MCP server 让 AI agent 直接操作 SEO 数据。</dd>
+    <dt>为什么火</dt>
+    <dd>SEO 工具市场被 Semrush（$130/月）和 Ahrefs（$99/月）垄断，开源 + 按需付费（DataForSEO API）切中痛点。AI agent 集成是差异化卖点。</dd>
+    <dt>技术栈</dt>
+    <dd>TypeScript · Next.js · Drizzle ORM · Cloudflare Workers · DataForSEO API · MCP server · Docker</dd>
+    <dt>适用场景</dt>
+    <dd>个人站长、中小团队做 SEO，不想付高额月费。想用 AI agent 自动化 SEO 工作流。</dd>
+    <dt>受众</dt>
+    <dd>SEO 从业者 · 独立开发者 · 内容创作者</dd>
+    <dd class="verdict"><strong>结论：</strong>开源 SEO 赛道新玩家，AI agent 集成是亮点。项目年轻但方向正确——SEO 工具该被 AI agent 原生驱动了。</dd>
+  </dl>
+</article>
+
+<footer class="footer">
+  <span>Source: <a href="https://github.com/trending" target="_blank">github.com/trending</a></span>
+  <span>Generated by Claude Code</span>
+  <span><a href="https://zhangluka.github.io/trending-daily-report/">All reports</a></span>
+</footer>
+
+</div>
+</body>
+</html>
