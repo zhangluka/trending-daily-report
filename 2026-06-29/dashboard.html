@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Daily · 2026-06-29</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf9f5;
+  --bg-warm: #f5f3ed;
+  --ink: #1a1918;
+  --ink-soft: #6b6966;
+  --ink-muted: #9e9b97;
+  --accent: #c4603c;
+  --accent-soft: rgba(196, 96, 60, 0.08);
+  --rule: #e8e6e1;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 6rem;
+}
+
+/* Header */
+.header { margin-bottom: 5rem; }
+.header-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.header-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.header-rule { border: none; border-top: 1px solid var(--rule); margin: 1.5rem 0 0; }
+
+/* Stats bar */
+.stats-bar {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+.stat-item { display: flex; flex-direction: column; gap: 0.15rem; }
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+}
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+/* Section */
+.section { margin-bottom: 5rem; }
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Project card */
+.project { margin-bottom: 4rem; }
+.project:last-child { margin-bottom: 0; }
+
+.project-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.project-rank {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  min-width: 1.5rem;
+}
+.project-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.project-name a {
+  color: inherit;
+  text-decoration: none;
+}
+.project-name a:hover { color: var(--accent); }
+.project-lang {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  margin-left: auto;
+}
+
+.project-stats {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.75rem;
+  padding-left: 2.25rem;
+}
+
+.project-desc {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  padding-left: 2.25rem;
+}
+
+/* Analysis grid */
+.analysis {
+  padding-left: 2.25rem;
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0.4rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.analysis-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: 0.15rem;
+}
+.analysis-value { color: var(--ink-soft); }
+
+/* Conclusion */
+.conclusion {
+  margin-top: 1rem;
+  padding-left: 2.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+.conclusion-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+}
+.footer a { color: var(--ink-soft); text-decoration: none; }
+.footer a:hover { color: var(--accent); }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container { padding: 2.5rem 1rem 4rem; }
+  .header-title { font-size: 1.25rem; }
+  .stats-bar { gap: 1.5rem; }
+  .stat-value { font-size: 1.25rem; }
+  .project-header { flex-wrap: wrap; }
+  .project-lang { margin-left: 0; width: 100%; padding-left: 2.25rem; }
+  .analysis { grid-template-columns: 1fr; gap: 0.15rem 0; }
+  .analysis-label { padding-top: 0.5rem; }
+  .project-stats, .project-desc, .analysis, .conclusion { padding-left: 0; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<header class="header">
+  <h1 class="header-title">GitHub Trending Daily</h1>
+  <div class="header-meta">
+    <span>2026-06-29</span>
+    <span>Top 10 selected from 13 repos</span>
+  </div>
+  <hr class="header-rule">
+</header>
+
+<!-- Stats -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-label">Total stars today</span>
+    <span class="stat-value">7,961</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-label">Languages</span>
+    <span class="stat-value">7</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-label">Top growth</span>
+    <span class="stat-value">+2,190</span>
+  </div>
+</div>
+
+<!-- Top 3 -->
+<section class="section">
+  <div class="section-label">Top 3</div>
+
+  <!-- #1 -->
+  <article class="project">
+    <div class="project-header">
+      <span class="project-rank">01</span>
+      <span class="project-name"><a href="https://github.com/DeusData/codebase-memory-mcp">DeusData / codebase-memory-mcp</a></span>
+      <span class="project-lang">C</span>
+    </div>
+    <div class="project-stats">+2,190 today · 20,031 stars · 1,443 forks</div>
+    <p class="project-desc">High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.</p>
+    <div class="analysis">
+      <span class="analysis-label">What</span>
+      <span class="analysis-value">A blazing-fast codebase indexer that builds a knowledge graph from any repo in milliseconds, exposing 14 MCP tools for AI coding agents to query functions, classes, call chains, HTTP routes, and cross-service links.</span>
+      <span class="analysis-label">Why hot</span>
+      <span class="analysis-value">The MCP ecosystem is exploding as every AI coding tool adopts the protocol. This is the fastest codebase-to-context bridge available — "99% fewer tokens" directly translates to lower API costs and better AI responses. v0.8.1 shipped June 12 with graph visualization UI.</span>
+      <span class="analysis-label">Stack</span>
+      <span class="analysis-value">C · Tree-sitter · SQLite · MCP protocol · Zero dependencies · 158 languages supported</span>
+      <span class="analysis-label">Use case</span>
+      <span class="analysis-value">Any AI coding workflow — Claude Code, Cursor, Codex, Windsurf — where the agent needs deep codebase understanding without blowing the context window.</span>
+      <span class="analysis-label">Audience</span>
+      <span class="analysis-value">AI tooling engineers · Developer experience teams · Anyone building on top of coding agents</span>
+    </div>
+    <div class="conclusion">
+      <span class="conclusion-label">Bottom line</span>
+      If you use AI coding tools daily, this is the single highest-ROI MCP server to install. It turns your entire codebase into a queryable knowledge graph.
+    </div>
+  </article>
+
+  <!-- #2 -->
+  <article class="project">
+    <div class="project-header">
+      <span class="project-rank">02</span>
+      <span class="project-name"><a href="https://github.com/xbtlin/ai-berkshire">xbtlin / ai-berkshire</a></span>
+      <span class="project-lang">Python</span>
+    </div>
+    <div class="project-stats">+1,445 today · 5,630 stars · 755 forks</div>
+    <p class="project-desc">AI 时代的伯克希尔：基于 Claude Code / Codex 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。</p>
+    <div class="analysis">
+      <span class="analysis-label">What</span>
+      <span class="analysis-value">A value investing research framework that uses multiple AI agents in parallel to analyze stocks through the lens of four investing masters — Buffett, Munger, Duan Yongping, and Li Lu. Each agent applies a different methodology, then results are synthesized adversarially.</span>
+      <span class="analysis-label">Why hot</span>
+      <span class="analysis-value">It sits at a novel intersection: AI agents × quantitative value investing. The Chinese fintech community has been rapidly adopting AI coding tools, and this framework gives retail investors institutional-grade analysis capabilities previously unavailable to individuals.</span>
+      <span class="analysis-label">Stack</span>
+      <span class="analysis-value">Python · Claude Code / Codex · MCP protocol · Multi-agent adversarial analysis · Financial data APIs</span>
+      <span class="analysis-label">Use case</span>
+      <span class="analysis-value">Deep fundamental analysis of stocks, competitive moat evaluation, and portfolio construction using Buffett-style value investing principles, automated by AI agents.</span>
+      <span class="analysis-label">Audience</span>
+      <span class="analysis-value">Retail investors · Fintech developers · Anyone interested in combining AI with value investing methodology</span>
+    </div>
+    <div class="conclusion">
+      <span class="conclusion-label">Bottom line</span>
+      A fascinating experiment in agentic AI for finance. More a research framework than a trading bot — best for investors who want to apply disciplined value-investing methodology at scale.
+    </div>
+  </article>
+
+  <!-- #3 -->
+  <article class="project">
+    <div class="project-header">
+      <span class="project-rank">03</span>
+      <span class="project-name"><a href="https://github.com/simplex-chat/simplex-chat">simplex-chat / simplex-chat</a></span>
+      <span class="project-lang">Haskell</span>
+    </div>
+    <div class="project-stats">+1,180 today · 15,282 stars · 879 forks</div>
+    <p class="project-desc">SimpleX — the first messaging network operating without user identifiers of any kind — 100% private by design! iOS, Android and desktop apps.</p>
+    <div class="analysis">
+      <span class="analysis-label">What</span>
+      <span class="analysis-value">A messaging platform that eliminates user identifiers entirely — no phone numbers, no usernames, no email. Uses unidirectional message queues with double-ratchet E2EE, making metadata surveillance impossible by design.</span>
+      <span class="analysis-label">Why hot</span>
+      <span class="analysis-value">Growing global privacy regulation and surveillance concerns are driving users away from traditional messengers. SimpleX's "no identifiers" architecture is unique — even Signal requires a phone number. Recent surge likely tied to privacy policy changes at major platforms.</span>
+      <span class="analysis-label">Stack</span>
+      <span class="analysis-value">Haskell · E2EE (double-ratchet) · Unidirectional queues · SMP protocol · iOS/Android/Desktop</span>
+      <span class="analysis-label">Use case</span>
+      <span class="analysis-value">Privacy-critical communication for journalists, activists, businesses handling sensitive data, or anyone who wants messaging without surveillance surface area.</span>
+      <span class="analysis-label">Audience</span>
+      <span class="analysis-value">Privacy advocates · Security researchers · Journalists · Anyone who takes metadata privacy seriously</span>
+    </div>
+    <div class="conclusion">
+      <span class="conclusion-label">Bottom line</span>
+      The most architecturally private messenger in existence. If you care about metadata privacy beyond just encryption, this is the standard-bearer.
+    </div>
+  </article>
+</section>
+
+<!-- Trending 4-10 -->
+<section class="section">
+  <div class="section-label">Trending</div>
+
+  <!-- #4 -->
+  <article class="project">
+    <div class="project-header">
+      <span class="project-rank">04</span>
+      <span class="project-name"><a href="https://github.com/HKUDS/Vibe-Trading">HKUDS / Vibe-Trading</a></span>
+      <span class="project-lang">Python</span>
+    </div>
+    <div class="project-stats">+492 today · 14,468 stars · 2,644 forks</div>
+    <p class="project-desc">"Vibe-Trading: Your Personal Trading Agent" — multi-agent AI trading system with MCP support, backtesting, and quantitative finance tooling.</p>
+    <div class="analysis">
+      <span class="analysis-label">What</span>
+      <span class="analysis-value">A personal AI trading agent that combines LLM reasoning with quantitative finance tools — backtesting, multi-agent debate, MCP protocol for data feeds, and shadow accounts for safe experimentation.</span>
+      <span class="analysis-label">Why hot</span>
+      <span class="analysis-value">Just shipped cross-platform setup (Jun 28) with Windows support and file-tool hardening. The AI + finance intersection continues to attract both developers and traders. MCP integration means it can consume real-time data from any compatible source.</span>
+      <span class="analysis-label">Stack</span>
+      <span class="analysis-value">Python · MCP · Multi-agent LLM · Backtesting engine · TypeScript build tooling</span>
+      <span class="analysis-label">Use case</span>
+      <span class="analysis-value">Algorithmic trading research, strategy backtesting, and AI-assisted trade decision-making with guardrails (shadow accounts for paper trading).</span>
+      <span class="analysis-label">Audience</span>
+      <span class="analysis-value">Quantitative traders · Fintech developers · AI researchers interested in agentic finance</span>
+    </div>
+    <div class="conclusion">
+      <span class="conclusion-label">Bottom line</span>
+      One of the more polished AI trading frameworks. The shadow account feature makes it safe to experiment. Watch for the MCP data ecosystem growing around it.
+    </div>
+  </article>
+
+  <!-- #5 -->
+  <article class="project">
+    <div class="project-header">
+      <span class="project-rank">05</span>
+      <span class="project-name"><a href="https://github.com/ripienaar/free-for-dev">ripienaar / free-for-dev</a></span>
+      <span class="project-lang">HTML</span>
+    </div>
+    <div class="project-stats">+495 today · 125,537 stars · 13,187 forks</div>
+    <p class="project-desc">A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev.</p>
+    <div class="analysis">
+      <span class="analysis-label">What</span>
+      <span class="analysis-value">The definitive community-curated list of developer tools with genuinely useful free tiers — CI/CD, databases, monitoring, APIs, hosting, email, and more. Over 125k stars and continuously updated.</span>
+      <span class="analysis-label">Why hot</span>
+      <span class="analysis-value">Evergreen resource. With cloud costs rising and more developers bootstrapping projects, the demand for quality free-tier services keeps growing. Regular community contributions keep it relevant.</span>
+      <span class="analysis-label">Stack</span>
+      <span class="analysis-value">Markdown · Community-curated · Categorized by service type (Major Cloud, CI/CD, DB, Monitoring, etc.)</span>
+      <span class="analysis-label">Use case</span>
+      <span class="analysis-value">Bootstrapping a new project on a budget, finding free alternatives to paid services, discovering tools you didn't know had free tiers.</span>
+      <span class="analysis-label">Audience</span>
+      <span class="analysis-value">All developers · DevOps engineers · Indie hackers · Startup founders</span>
+    </div>
+    <div class="conclusion">
+      <span class="conclusion-label">Bottom line</span>
+      Bookmark it. You'll reference it every time you start a new project. The most starred "awesome list" for good reason.
+    </div>
+  </article>
+
+  <!-- #6 -->
+  <article class="project">
+    <div class="project-header">
+      <span class="project-rank">06</span>
+      <span class="project-name"><a href="https://github.com/opendatalab/MinerU">opendatalab / MinerU</a></span>
+      <span class="project-lang">Python</span>
+    </div>
+    <div class="project-stats">+380 today · 71,773 stars · 6,022 forks</div>
+    <p class="project-desc">Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.</p>
+    <div class="analysis">
+      <span class="analysis-label">What</span>
+      <span class="analysis-value">A document parsing pipeline that takes PDFs, images, DOCX, PPTX, XLSX and outputs clean, semantically coherent markdown or JSON — removing headers/footers/footnotes, preserving reading order across complex layouts, and extracting tables and formulas.</span>
+      <span class="analysis-label">Why hot</span>
+      <span class="analysis-value">RAG (Retrieval-Augmented Generation) pipelines are only as good as their document parsing. MinerU has become the go-to open-source solution for turning messy real-world documents into LLM-ingestible formats. The agentic workflow angle ("for your Agentic workflows") aligns with the current AI trend.</span>
+      <span class="analysis-label">Stack</span>
+      <span class="analysis-value">Python · OCR engine · Layout analysis models · Docker deployment · Supports PDF/DOCX/PPTX/XLSX/images</span>
+      <span class="analysis-label">Use case</span>
+      <span class="analysis-value">Preparing documents for RAG pipelines, fine-tuning data preparation, enterprise document digitization, academic paper parsing.</span>
+      <span class="analysis-label">Audience</span>
+      <span class="analysis-value">AI/ML engineers · RAG pipeline builders · Data engineers · Enterprise AI teams</span>
+    </div>
+    <div class="conclusion">
+      <span class="conclusion-label">Bottom line</span>
+      If you're building any RAG system that ingests PDFs or Office documents, this is the parsing layer you should evaluate first. 71k stars don't lie.
+    </div>
+  </article>
+
+  <!-- #7 -->
+  <article class="project">
+    <div class="project-header">
+      <span class="project-rank">07</span>
+      <span class="project-name"><a href="https://github.com/Robbyant/lingbot-map">Robbyant / lingbot-map</a></span>
+      <span class="project-lang">Python</span>
+    </div>
+    <div class="project-stats">+372 today · 8,305 stars · 808 forks</div>
+    <p class="project-desc">A feed-forward 3D foundation model for reconstructing scenes from streaming data.</p>
+    <div class="analysis">
+      <span class="analysis-label">What</span>
+      <span class="analysis-value">A 3D foundation model that reconstructs complete scenes from streaming (sequential) image data — feed-forward means no per-scene optimization needed, just one forward pass. Supports windowed inference for long sequences, sky masking, and offline video processing.</span>
+      <span class="analysis-label">Why hot</span>
+      <span class="analysis-value">The "streaming data" capability is the differentiator — most 3D reconstruction (NeRFs, Gaussian Splatting) requires offline processing of complete datasets. Feed-forward inference opens the door to real-time applications in robotics and AR.</span>
+      <span class="analysis-label">Stack</span>
+      <span class="analysis-value">Python · PyTorch · Feed-forward 3D reconstruction · Streaming inference · Apache 2.0 license</span>
+      <span class="analysis-label">Use case</span>
+      <span class="analysis-value">Real-time 3D mapping for robotics, AR/VR scene capture, autonomous vehicle environment modeling, video-to-3D conversion.</span>
+      <span class="analysis-label">Audience</span>
+      <span class="analysis-value">Computer vision researchers · Robotics engineers · AR/VR developers · Autonomous systems teams</span>
+    </div>
+    <div class="conclusion">
+      <span class="conclusion-label">Bottom line</span>
+      Feed-forward 3D reconstruction is where the field is heading. This is research-grade but the streaming capability makes it practically interesting for robotics teams.
+    </div>
+  </article>
+
+  <!-- #8 -->
+  <article class="project">
+    <div class="project-header">
+      <span class="project-rank">08</span>
+      <span class="project-name"><a href="https://github.com/altic-dev/FluidVoice">altic-dev / FluidVoice</a></span>
+      <span class="project-lang">Swift</span>
+    </div>
+    <div class="project-stats">+365 today · 3,834 stars · 243 forks</div>
+    <p class="project-desc">FluidVoice — Fastest macOS Offline Dictation app — Voice to Text fully Local.</p>
+    <div class="analysis">
+      <span class="analysis-label">What</span>
+      <span class="analysis-value">A native macOS dictation app that runs entirely on-device — zero cloud dependency. Features on-device AI enhancement for smart formatting, Command Mode for voice-controlled Mac operations, global hotkey for instant capture, and adaptive light/dark theming.</span>
+      <span class="analysis-label">Why hot</span>
+      <span class="analysis-value">v1.6.1 just dropped (Jun 28) with Fluid Intelligence for context-aware formatting. The "fully local" pitch resonates strongly as privacy concerns grow. macOS dictation has historically been mediocre — FluidVoice fills a real gap with quality on-device AI.</span>
+      <span class="analysis-label">Stack</span>
+      <span class="analysis-value">Swift · macOS native · On-device AI (Apple Neural Engine) · GPL 3.0 · 35 releases and counting</span>
+      <span class="analysis-label">Use case</span>
+      <span class="analysis-value">Daily dictation for writing, coding comments, emails — anywhere you'd rather speak than type. Command Mode for hands-free Mac control.</span>
+      <span class="analysis-label">Audience</span>
+      <span class="analysis-value">macOS power users · Writers · Developers · Privacy-conscious professionals · Anyone with RSI concerns</span>
+    </div>
+    <div class="conclusion">
+      <span class="conclusion-label">Bottom line</span>
+      If you're on a Mac and do any significant amount of writing, this is worth installing. The fully-local architecture means zero privacy tradeoffs, and the polish is impressive for an open-source app.
+    </div>
+  </article>
+
+  <!-- #9 -->
+  <article class="project">
+    <div class="project-header">
+      <span class="project-rank">09</span>
+      <span class="project-name"><a href="https://github.com/commaai/openpilot">commaai / openpilot</a></span>
+      <span class="project-lang">Python</span>
+    </div>
+    <div class="project-stats">+266 today · 62,476 stars · 11,096 forks</div>
+    <p class="project-desc">openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.</p>
+    <div class="analysis">
+      <span class="analysis-label">What</span>
+      <span class="analysis-value">An open-source operating system for robotics that currently focuses on upgrading factory driver assistance systems. Supports 300+ car models, providing lane-keeping, adaptive cruise, and driver monitoring that often outperforms OEM systems.</span>
+      <span class="analysis-label">Why hot</span>
+      <span class="analysis-value">Continuous hardware and software improvements keep it on trending. comma.ai's approach — retrofit existing cars rather than build new ones — continues to resonate as a pragmatic path to better driving automation.</span>
+      <span class="analysis-label">Stack</span>
+      <span class="analysis-value">Python · C++ · Custom ML models for perception/planning · MIT license · Runs on comma hardware or PC</span>
+      <span class="analysis-label">Use case</span>
+      <span class="analysis-value">Upgrading your car's driver assistance beyond what the manufacturer provides. Also serves as a robotics research platform for end-to-end learning approaches.</span>
+      <span class="analysis-label">Audience</span>
+      <span class="analysis-value">Automotive enthusiasts · Robotics engineers · AV researchers · Anyone with a compatible car</span>
+    </div>
+    <div class="conclusion">
+      <span class="conclusion-label">Bottom line</span>
+      The most successful open-source automotive project ever. If your car is supported, it's a genuine quality-of-life upgrade for highway driving.
+    </div>
+  </article>
+
+  <!-- #10 -->
+  <article class="project">
+    <div class="project-header">
+      <span class="project-rank">10</span>
+      <span class="project-name"><a href="https://github.com/ByteByteGoHq/system-design-101">ByteByteGoHq / system-design-101</a></span>
+      <span class="project-lang">—</span>
+    </div>
+    <div class="project-stats">+250 today · 84,610 stars · 9,359 forks</div>
+    <p class="project-desc">Explain complex systems using visuals and simple terms. Help you prepare for system design interviews.</p>
+    <div class="analysis">
+      <span class="analysis-label">What</span>
+      <span class="analysis-value">A visual guide to system design concepts — covers databases, message queues, microservices, API design, cloud architecture, and more through diagrams and plain-English explanations. Covers real systems like how ChatGPT, Kafka, and S3 work under the hood.</span>
+      <span class="analysis-label">Why hot</span>
+      <span class="analysis-value">System design interviews remain the hardest part of senior engineering loops. This repo distills complex distributed systems concepts into digestible visuals — exactly what candidates need. The ByteByteGo brand (Alex Xu's books) gives it credibility.</span>
+      <span class="analysis-label">Stack</span>
+      <span class="analysis-value">Markdown · Diagrams · Covers 100+ system design topics · From basics (Linux permissions) to advanced (Kafka internals)</span>
+      <span class="analysis-label">Use case</span>
+      <span class="analysis-value">System design interview preparation, onboarding new engineers to distributed systems concepts, architecture decision reference.</span>
+      <span class="analysis-label">Audience</span>
+      <span class="analysis-value">Software engineers preparing for interviews · Engineering managers · Students · Anyone learning distributed systems</span>
+    </div>
+    <div class="conclusion">
+      <span class="conclusion-label">Bottom line</span>
+      The go-to free resource for system design interview prep. 84k stars and the ByteByteGo brand make this an easy recommendation for any engineer leveling up.
+    </div>
+  </article>
+
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>Source: <a href="https://github.com/trending">github.com/trending</a> · Generated 2026-06-29 by <a href="https://github.com/zhangluka/trending-daily-report">trending-daily-report</a></p>
+</footer>
+
+</div>
+</body>
+</html>

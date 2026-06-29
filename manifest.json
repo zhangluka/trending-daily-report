@@ -1,6 +1,10 @@
 {
   "reports": [
     {
+      "date": "2026-06-29",
+      "top3": "2026-06-29"
+    },
+    {
       "date": "2026-06-28",
       "top3": "google-labs-code/design.md · simplex-chat/simplex-chat · topoteretes/cognee"
     },

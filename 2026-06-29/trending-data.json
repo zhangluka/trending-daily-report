@@ -1,0 +1,189 @@
+{
+  "date": "2026-06-29",
+  "total_repos": 13,
+  "selected": 10,
+  "total_stars_today": 7961,
+  "languages": ["C", "Python", "Haskell", "HTML", "Swift"],
+  "repos": [
+    {
+      "rank": 1,
+      "name": "DeusData/codebase-memory-mcp",
+      "url": "https://github.com/DeusData/codebase-memory-mcp",
+      "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+      "language": "C",
+      "stars": 20031,
+      "forks": 1443,
+      "stars_today": 2190,
+      "analysis": {
+        "what": "A blazing-fast codebase indexer that builds a knowledge graph from any repo in milliseconds, exposing 14 MCP tools for AI coding agents to query functions, classes, call chains, HTTP routes, and cross-service links.",
+        "why_hot": "The MCP ecosystem is exploding as every AI coding tool adopts the protocol. This is the fastest codebase-to-context bridge available — '99% fewer tokens' directly translates to lower API costs and better AI responses. v0.8.1 shipped June 12 with graph visualization UI.",
+        "stack": "C · Tree-sitter · SQLite · MCP protocol · Zero dependencies · 158 languages supported",
+        "use_case": "Any AI coding workflow — Claude Code, Cursor, Codex, Windsurf — where the agent needs deep codebase understanding without blowing the context window.",
+        "audience": "AI tooling engineers · Developer experience teams · Anyone building on top of coding agents",
+        "bottom_line": "If you use AI coding tools daily, this is the single highest-ROI MCP server to install. It turns your entire codebase into a queryable knowledge graph."
+      }
+    },
+    {
+      "rank": 2,
+      "name": "xbtlin/ai-berkshire",
+      "url": "https://github.com/xbtlin/ai-berkshire",
+      "description": "AI 时代的伯克希尔：基于 Claude Code / Codex 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。",
+      "language": "Python",
+      "stars": 5630,
+      "forks": 755,
+      "stars_today": 1445,
+      "analysis": {
+        "what": "A value investing research framework that uses multiple AI agents in parallel to analyze stocks through the lens of four investing masters — Buffett, Munger, Duan Yongping, and Li Lu.",
+        "why_hot": "Sits at a novel intersection: AI agents × quantitative value investing. The Chinese fintech community has been rapidly adopting AI coding tools.",
+        "stack": "Python · Claude Code / Codex · MCP protocol · Multi-agent adversarial analysis",
+        "use_case": "Deep fundamental analysis of stocks, competitive moat evaluation, and portfolio construction using Buffett-style value investing principles.",
+        "audience": "Retail investors · Fintech developers · Anyone interested in combining AI with value investing methodology",
+        "bottom_line": "A fascinating experiment in agentic AI for finance. More a research framework than a trading bot — best for investors who want to apply disciplined value-investing methodology at scale."
+      }
+    },
+    {
+      "rank": 3,
+      "name": "simplex-chat/simplex-chat",
+      "url": "https://github.com/simplex-chat/simplex-chat",
+      "description": "SimpleX - the first messaging network operating without user identifiers of any kind - 100% private by design!",
+      "language": "Haskell",
+      "stars": 15282,
+      "forks": 879,
+      "stars_today": 1180,
+      "analysis": {
+        "what": "A messaging platform that eliminates user identifiers entirely — no phone numbers, no usernames, no email. Uses unidirectional message queues with double-ratchet E2EE.",
+        "why_hot": "Growing global privacy regulation and surveillance concerns are driving users away from traditional messengers. SimpleX's 'no identifiers' architecture is unique — even Signal requires a phone number.",
+        "stack": "Haskell · E2EE (double-ratchet) · Unidirectional queues · SMP protocol · iOS/Android/Desktop",
+        "use_case": "Privacy-critical communication for journalists, activists, businesses handling sensitive data, or anyone who wants messaging without surveillance surface area.",
+        "audience": "Privacy advocates · Security researchers · Journalists · Anyone who takes metadata privacy seriously",
+        "bottom_line": "The most architecturally private messenger in existence. If you care about metadata privacy beyond just encryption, this is the standard-bearer."
+      }
+    },
+    {
+      "rank": 4,
+      "name": "HKUDS/Vibe-Trading",
+      "url": "https://github.com/HKUDS/Vibe-Trading",
+      "description": "Vibe-Trading: Your Personal Trading Agent",
+      "language": "Python",
+      "stars": 14468,
+      "forks": 2644,
+      "stars_today": 492,
+      "analysis": {
+        "what": "A personal AI trading agent that combines LLM reasoning with quantitative finance tools — backtesting, multi-agent debate, MCP protocol for data feeds.",
+        "why_hot": "Just shipped cross-platform setup (Jun 28) with Windows support and file-tool hardening. The AI + finance intersection continues to attract both developers and traders.",
+        "stack": "Python · MCP · Multi-agent LLM · Backtesting engine · TypeScript build tooling",
+        "use_case": "Algorithmic trading research, strategy backtesting, and AI-assisted trade decision-making.",
+        "audience": "Quantitative traders · Fintech developers · AI researchers interested in agentic finance",
+        "bottom_line": "One of the more polished AI trading frameworks. The shadow account feature makes it safe to experiment."
+      }
+    },
+    {
+      "rank": 5,
+      "name": "ripienaar/free-for-dev",
+      "url": "https://github.com/ripienaar/free-for-dev",
+      "description": "A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev",
+      "language": "HTML",
+      "stars": 125537,
+      "forks": 13187,
+      "stars_today": 495,
+      "analysis": {
+        "what": "The definitive community-curated list of developer tools with genuinely useful free tiers — CI/CD, databases, monitoring, APIs, hosting, email, and more.",
+        "why_hot": "Evergreen resource. With cloud costs rising and more developers bootstrapping projects, the demand for quality free-tier services keeps growing.",
+        "stack": "Markdown · Community-curated · Categorized by service type",
+        "use_case": "Bootstrapping a new project on a budget, finding free alternatives to paid services.",
+        "audience": "All developers · DevOps engineers · Indie hackers · Startup founders",
+        "bottom_line": "Bookmark it. You'll reference it every time you start a new project."
+      }
+    },
+    {
+      "rank": 6,
+      "name": "opendatalab/MinerU",
+      "url": "https://github.com/opendatalab/MinerU",
+      "description": "Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.",
+      "language": "Python",
+      "stars": 71773,
+      "forks": 6022,
+      "stars_today": 380,
+      "analysis": {
+        "what": "A document parsing pipeline that takes PDFs, images, DOCX, PPTX, XLSX and outputs clean, semantically coherent markdown or JSON.",
+        "why_hot": "RAG pipelines are only as good as their document parsing. MinerU has become the go-to open-source solution for turning messy real-world documents into LLM-ingestible formats.",
+        "stack": "Python · OCR engine · Layout analysis models · Docker deployment",
+        "use_case": "Preparing documents for RAG pipelines, fine-tuning data preparation, enterprise document digitization.",
+        "audience": "AI/ML engineers · RAG pipeline builders · Data engineers · Enterprise AI teams",
+        "bottom_line": "If you're building any RAG system that ingests PDFs or Office documents, this is the parsing layer you should evaluate first."
+      }
+    },
+    {
+      "rank": 7,
+      "name": "Robbyant/lingbot-map",
+      "url": "https://github.com/Robbyant/lingbot-map",
+      "description": "A feed-forward 3D foundation model for reconstructing scenes from streaming data",
+      "language": "Python",
+      "stars": 8305,
+      "forks": 808,
+      "stars_today": 372,
+      "analysis": {
+        "what": "A 3D foundation model that reconstructs complete scenes from streaming image data — feed-forward means no per-scene optimization needed, just one forward pass.",
+        "why_hot": "The 'streaming data' capability is the differentiator — most 3D reconstruction requires offline processing. Feed-forward inference opens the door to real-time applications.",
+        "stack": "Python · PyTorch · Feed-forward 3D reconstruction · Streaming inference · Apache 2.0",
+        "use_case": "Real-time 3D mapping for robotics, AR/VR scene capture, autonomous vehicle environment modeling.",
+        "audience": "Computer vision researchers · Robotics engineers · AR/VR developers",
+        "bottom_line": "Feed-forward 3D reconstruction is where the field is heading. The streaming capability makes it practically interesting for robotics teams."
+      }
+    },
+    {
+      "rank": 8,
+      "name": "altic-dev/FluidVoice",
+      "url": "https://github.com/altic-dev/FluidVoice",
+      "description": "FluidVoice — Fastest macOS Offline Dictation app — Voice to Text fully Local.",
+      "language": "Swift",
+      "stars": 3834,
+      "forks": 243,
+      "stars_today": 365,
+      "analysis": {
+        "what": "A native macOS dictation app that runs entirely on-device with AI enhancement for smart formatting, Command Mode for voice-controlled Mac operations.",
+        "why_hot": "v1.6.1 just dropped (Jun 28) with Fluid Intelligence for context-aware formatting. The 'fully local' pitch resonates strongly as privacy concerns grow.",
+        "stack": "Swift · macOS native · On-device AI (Apple Neural Engine) · GPL 3.0 · 35 releases",
+        "use_case": "Daily dictation for writing, coding comments, emails. Command Mode for hands-free Mac control.",
+        "audience": "macOS power users · Writers · Developers · Privacy-conscious professionals",
+        "bottom_line": "If you're on a Mac and do any significant amount of writing, this is worth installing. The fully-local architecture means zero privacy tradeoffs."
+      }
+    },
+    {
+      "rank": 9,
+      "name": "commaai/openpilot",
+      "url": "https://github.com/commaai/openpilot",
+      "description": "openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.",
+      "language": "Python",
+      "stars": 62476,
+      "forks": 11096,
+      "stars_today": 266,
+      "analysis": {
+        "what": "An open-source OS for robotics that upgrades factory driver assistance systems on 300+ car models.",
+        "why_hot": "Continuous hardware and software improvements keep it on trending. The retrofit approach continues to resonate as a pragmatic path to better driving automation.",
+        "stack": "Python · C++ · Custom ML models · MIT license",
+        "use_case": "Upgrading your car's driver assistance beyond manufacturer systems. Robotics research platform.",
+        "audience": "Automotive enthusiasts · Robotics engineers · AV researchers",
+        "bottom_line": "The most successful open-source automotive project ever. If your car is supported, it's a genuine quality-of-life upgrade."
+      }
+    },
+    {
+      "rank": 10,
+      "name": "ByteByteGoHq/system-design-101",
+      "url": "https://github.com/ByteByteGoHq/system-design-101",
+      "description": "Explain complex systems using visuals and simple terms. Help you prepare for system design interviews.",
+      "language": null,
+      "stars": 84610,
+      "forks": 9359,
+      "stars_today": 250,
+      "analysis": {
+        "what": "A visual guide to system design concepts — databases, message queues, microservices, API design, cloud architecture — through diagrams and plain-English explanations.",
+        "why_hot": "System design interviews remain the hardest part of senior engineering loops. The ByteByteGo brand gives it credibility.",
+        "stack": "Markdown · Diagrams · 100+ system design topics",
+        "use_case": "System design interview preparation, onboarding engineers to distributed systems concepts.",
+        "audience": "Software engineers · Engineering managers · Students learning distributed systems",
+        "bottom_line": "The go-to free resource for system design interview prep. 84k stars and the ByteByteGo brand make this an easy recommendation."
+      }
+    }
+  ]
+}
